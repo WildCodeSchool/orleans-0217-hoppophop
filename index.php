@@ -2,7 +2,8 @@
 require('php/header.php');
 ?>
 <div class="text-center">
-    <img src="src/img/logo-only.png" alt="Logo du Festival" class="welcome_logo">
+    <img src="src/img/logo-only.png" alt="Logo du Festival" class="welcome_logo hidden-xs">
+    <img src="src/img/logo-only.png" alt="Logo du Festival" class="welcome_logo visible-xs img-responsive">
 </div>
 <div class="container-fluid">
     <div class="row welcome_navRow">
