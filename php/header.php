@@ -24,13 +24,29 @@
             </div>
             <div class="collapse navbar-collapse navbar_collapse" id="navbar-collapsed">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Programmation</a></li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programmation <span class="caret"></span></a>
+                        <ul class="dropdown-menu navbar_dropdown">
+                            <li><a href="#">Artistes</a></li>
+                            <li><a href="#">Planning</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#">Billeterie</a></li>
                     <li><a href="#">Cashless</a></li>
-                    <li><a href="#">La vie au Festival</a></li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">La vie au festival <span class="caret"></span></a>
+                        <ul class="dropdown-menu navbar_dropdown">
+                            <li><a href="#">Bénévolat</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Lieux</a></li>
+                            <li><a href="#">Comment venir</a></li>
+                            <li><a href="#">Dimanche à Orléans</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#">Infos Pratique</a></li>
                     <li><a href="#">Partenaires</a></li>
                     <li><a href="#">Contact</a></li>
+
                 </ul>
             </div>
         </div>
