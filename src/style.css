@@ -7,10 +7,6 @@ body {
     padding-top: 70px;
 }
 
-.hr {
-    width: 80%;
-    border-color: #18252e;
-}
 /*Navbar*/
 
 .navbar_nav {
@@ -57,6 +53,14 @@ body {
 .footer {
 
 }
+.footer_top {
+    background-color: rgba(6, 115, 122, 1);
+    padding: 2.5%;
+}
+.footer_bottom {
+    background-color: rgba(235, 226, 181, 1);
+    padding: 1%;
+}
 .footer_title {
     color: white;
 }
@@ -65,8 +69,12 @@ body {
     width: 50px;
     margin: 5%;
 }
+.footer_img {
+    margin: 2%;
+}
 .footer_legal {
     color: white;
+    margin-bottom: 0;
 }
 
 /*Fin Footer*/
@@ -75,17 +83,27 @@ body {
 
 /*Welcome */
 
-.welcome_navRow {
-    margin-top: 5%;
-    margin-bottom: 5%;
+.welcome_div {
+    background-color: rgba(235, 226, 181, 0.75);
+    padding: 5%;
+}
+.welcome_divTitle {
+    background-color: rgba(6, 115, 122, 0.75);
+    margin-top: 0;
+    padding: 1%;
+}
+.welcome_divH1 {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 60px;
+    color: white;
 }
 .welcome_newsDiv {
-    color: #ed7a21;
-    padding:0;
     background-color: white;
-    padding: none;
+    padding: 1%;
 }
 .welcome_newsH1 {
+    color: rgb(90, 195, 152);
 }
 .welcome_newsP {
 
