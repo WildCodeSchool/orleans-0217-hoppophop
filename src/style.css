@@ -9,7 +9,7 @@ body {
 
 /*Navbar*/
 
-.navbar_nav {
+.navbar {
     border: none;
     -webkit-border-radius:0;
     -moz-border-radius:0;
@@ -20,30 +20,29 @@ body {
     background-color: #18252e;
 }
 @media (max-width: 768px) {
-    .navbar_collapse {
+    .navbar-collapse {
         background-color: #18252e;
     }
 }
-.navbar_dropdown {
+.dropdown-menu {
     background-color: #18252e;
     border: none;
     border-radius: 0;
 }
-.navbar_logo {
-}
-.navbar_title {
-    display: inline;
-    color: white;
-    line-height: 24px;
-}
-.navbar_collapseButton {
+.navbar-toggle {
     border: none;
 }
-.navbar_collapse{
+.navbar-collapse{
     border-top: none;
 }
-.navbar_title {
-    color: white;
+.navbar-nav > li > a {
+    color: white!important;
+}
+.dropdown-menu > li > a {
+    color: white!important;
+}
+.dropdown-menu > li > a:hover {
+    background-color: transparent;
 }
 
 /*Fin Navbar */
@@ -54,12 +53,12 @@ body {
 
 }
 .footer_top {
-    background-color: rgba(6, 115, 122, 1);
-    padding: 2.5%;
+    background-color: rgba(24, 37, 46, 1);
+    padding: 0.1%;
 }
 .footer_bottom {
-    background-color: rgba(235, 226, 181, 1);
-    padding: 1%;
+    background-color: rgba(90, 195, 152, 1);
+    padding: 0.1%;
 }
 .footer_title {
     color: white;

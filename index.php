@@ -47,16 +47,17 @@ require('php/header.php');
                 <h1 class="welcome_newsH1">Titre</h1>
                 <p class="welcome_newsP">Principium autem unde latius se funditabat, emersit ex negotio tali. Chilo ex vicario et coniux eius Maxima nomine, questi apud Olybrium ea tempestate urbi praefectum, vitamque suam venenis petitam adseverantes inpetrarunt ut hi, quos suspectati sunt, ilico rapti conpingerentur in vincula, organarius Sericus et Asbolius palaestrita et aruspex Campensis.</p>
             </div>
-            <div class="col-xs-12 col-xs-offset-0 col-sm-2 col-sm-offset-1 welcome_newsDiv text-center">
+            <div class="col-xs-12 col-xs-offset-0 col-sm-2 col-sm-offset-1 welcome_newsDiv text-left">
                 <img src="http://placehold.it/200x200">
                 <h1 class="welcome_newsH1">Titre</h1>
                 <p class="welcome_newsP">Principium autem unde latius se funditabat, emersit ex negotio tali. Chilo ex vicario et coniux eius Maxima nomine, questi apud Olybrium ea tempestate urbi praefectum, vitamque suam venenis petitam adseverantes inpetrarunt ut hi, quos suspectati sunt, ilico rapti conpingerentur in vincula, organarius Sericus et Asbolius palaestrita et aruspex Campensis.</p>
             </div>
-            <div class="col-xs-12 col-xs-offset-0 col-sm-2 col-sm-offset-1 welcome_newsDiv text-right">
+            <div class="col-xs-12 col-xs-offset-0 col-sm-2 col-sm-offset-1 welcome_newsDiv text-left">
                 <img src="http://placehold.it/200x200">
                 <h1 class="welcome_newsH1">Titre</h1>
                 <p class="welcome_newsP">Principium autem unde latius se funditabat, emersit ex negotio tali. Chilo ex vicario et coniux eius Maxima nomine, questi apud Olybrium ea tempestate urbi praefectum, vitamque suam venenis petitam adseverantes inpetrarunt ut hi, quos suspectati sunt, ilico rapti conpingerentur in vincula, organarius Sericus et Asbolius palaestrita et aruspex Campensis.</p>
             </div>
+
         </div>
     </div>
     <br />
