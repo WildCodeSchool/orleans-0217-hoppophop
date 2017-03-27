@@ -45,7 +45,7 @@ require('php/header.php');
                     <img src="src/img/tristesse_contemporaine.jpg" class="img-responsive">
                     <h2 class="welcome_newsH1">Tristesse Contemporaine</h2>
                     <hr class="welcome_newsHR">
-                    <p class="welcome_newsP">Tristesse Contemporaine. Acte III, scène 1. Après un premier album en forme de déclaration d’indépendance Tristesse Contemporaine et un second en lévitation au dessus de la meute Stay Golden, Stop and Start vient clore une trilogie tout en anticipant un nouveau cycle.</p>
+                    <p class="welcome_newsP">Tristesse Contemporaine. Acte III, scène 1. Après un premier album en forme de déclaration d’indépendance Tristesse Contemporaine et un second en lévitation au dessus de la meute Stay Golden, Stop and Start vient clore une trilogie.</p>
                 </div>
             </div>
             <div class="col-xs-12 col-xs-offset-0 col-sm-2 col-sm-offset-1">
@@ -53,7 +53,7 @@ require('php/header.php');
                     <img src="src/img/tristesse_contemporaine.jpg" class="img-responsive">
                     <h2 class="welcome_newsH1">Tristesse Contemporaine</h2>
                     <hr class="welcome_newsHR">
-                    <p class="welcome_newsP">Tristesse Contemporaine. Acte III, scène 1. Après un premier album en forme de déclaration d’indépendance Tristesse Contemporaine et un second en lévitation au dessus de la meute Stay Golden, Stop and Start vient clore une trilogie tout en anticipant un nouveau cycle.</p>
+                    <p class="welcome_newsP">Tristesse Contemporaine. Acte III, scène 1. Après un premier album en forme de déclaration d’indépendance Tristesse Contemporaine et un second en lévitation au dessus de la meute Stay Golden, Stop and Start vient clore une trilogie.</p>
                 </div>
             </div>
         </div>
