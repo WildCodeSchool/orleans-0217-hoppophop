@@ -137,3 +137,18 @@ p {
 .welcome_newsP {
 
 }
+
+/*Fin Welcome*/
+
+/*Lieux*/
+
+.lieux_title {
+    color: white;
+}
+
+.lieux_thumbnail {
+    background-color: transparent;
+    border: none;
+    height: 200px;
+}
+/*Fin Lieux*/
