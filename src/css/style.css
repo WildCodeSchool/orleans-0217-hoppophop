@@ -31,15 +31,7 @@ p {
     -webkit-border-radius:0;
     -moz-border-radius:0;
     border-radius:0;
-    background-color: transparent;
-}
-.navbar_color {
     background-color: #18252e;
-}
-@media (max-width: 768px) {
-    .navbar-collapse {
-        background-color: #18252e;
-    }
 }
 .dropdown-menu {
     background-color: #18252e;
@@ -52,14 +44,21 @@ p {
 .navbar-collapse{
     border-top: none;
 }
+.navbar-nav > li:hover {
+    background-color: white;
+}
 .navbar-nav > li > a {
     color: white!important;
+}
+.navbar-nav > li > a:hover {
+    color: #18252e!important;
 }
 .dropdown-menu > li > a {
     color: white!important;
 }
 .dropdown-menu > li > a:hover {
-    background-color: transparent;
+    background-color: white;
+    color: #18252e!important;
 }
 
 /*Fin Navbar */
@@ -100,18 +99,20 @@ p {
 /*Welcome */
 
 .welcome_div {
-    background-color: rgba(141, 189, 69, 0.5);
+    /*background-color: rgba(141, 189, 69, 1);*/
+    /*background-color: rgba(90, 195, 152, 1);*/
+    background-color: rgba(234, 230, 247, 0.25);
     padding: 5%;
 }
 .welcome_divTitle {
-    background-color: rgba(24, 37, 46, 1);
+    background-color: rgba(24, 37, 46, 0.75);
     margin-top: 0;
     padding: 1%;
 }
 .welcome_divH1 {
     margin-bottom: 0;
     margin-top: 0;
-    font-size: 60px;
+    font-size: 10vw;
     color: white;
 }
 .welcome_newsDiv {

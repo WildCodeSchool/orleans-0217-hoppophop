@@ -7,10 +7,10 @@ require('php/header.php');
     </div>
     <br />
     <br />
-    <div class="welcome_divTitle text-center hidden-xs">
+    <div class="welcome_divTitle text-center">
         <h1 class="welcome_divH1">PROGRAMMATION</h1>
     </div>
-    <div class="welcome_div hidden-xs">
+    <div class="welcome_div">
         <a href="#" class="welcome_divImg"><img src="src/img/programmation.png" class="img-responsive"></a>
     </div>
     <div class="welcome_divTitle text-center">
