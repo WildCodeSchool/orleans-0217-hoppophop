@@ -14,7 +14,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top navbar_nav" id="navbar">
         <div class="container-fluid">
             <div class="navbar-header text-center">
-                <a href="index.php"><img src="src/img/logo-min.png" class="navbar_logo navbar-brand"></a>
+                <a href="index.php"><img src="../src/img/logo-min.png" class="navbar_logo navbar-brand"></a>
                 <button type="button" class="navbar-toggle collapsed navbar_collapseButton" data-toggle="collapse" data-target="#navbar-collapsed" aria-expanded="false">
                     <span class="sr-only">Menu</span>
                     <span class="icon-bar"></span>
