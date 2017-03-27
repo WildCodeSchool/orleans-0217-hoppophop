@@ -1,5 +1,13 @@
+/*Planning*/
+@import url("styleplanning.css");
+/*Planning*/
+
 /*Général*/
 
+@font-face {
+    font-family: 'Circula';
+    src: url('../fonts/circula-medium.otf');
+}
 body {
     background: url("../src/img/background.png") center center  no-repeat;
     background-size: cover;
@@ -90,3 +98,4 @@ body {
 .welcome_newsP {
 
 }
+

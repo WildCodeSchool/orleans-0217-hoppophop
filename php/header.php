@@ -7,8 +7,8 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Hop Pop Hop</title>
     <!-- Bootstrap -->
-    <link href="../src/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../src/style.css" rel="stylesheet">
+    <link href="src/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="src/style.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top navbar_nav" id="navbar">
