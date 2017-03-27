@@ -17,5 +17,5 @@ require("header.php");
         </div>
     </div>
 <?php
-require("header.php");
+require("footer.php");
 ?>
