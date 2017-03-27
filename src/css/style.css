@@ -1,0 +1,142 @@
+/*Général*/
+
+body {
+    background: url("../img/background.png") center center  no-repeat;
+    background-size: cover;
+    position: relative;
+    padding-top: 70px;
+}
+
+@font-face {
+    font-family: 'Circula-Medium';
+    src: url('../fonts/circula-medium.otf');
+}
+@font-face {
+    font-family: 'Dokyo';
+    src: url('../fonts/Dokyo.ttf');
+}
+* {
+    font-family: 'Circula-Medium', sans-serif;
+}
+h1 {
+    font-family: 'Dokyo', sans-serif;
+}
+p {
+    font-family: sans-serif;
+}
+/*Navbar*/
+
+.navbar {
+    border: none;
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+    border-radius:0;
+    background-color: #18252e;
+}
+.dropdown-menu {
+    background-color: #18252e;
+    border: none;
+    border-radius: 0;
+}
+.navbar-toggle {
+    border: none;
+}
+.navbar-collapse{
+    border-top: none;
+}
+.navbar-nav > li:hover {
+    background-color: white;
+}
+.navbar-nav > li > a {
+    color: white!important;
+}
+.navbar-nav > li > a:hover {
+    color: #18252e!important;
+}
+.dropdown-menu > li > a {
+    color: white!important;
+}
+.dropdown-menu > li > a:hover {
+    background-color: white;
+    color: #18252e!important;
+}
+
+/*Fin Navbar */
+
+/*Footer*/
+
+.footer {
+
+}
+.footer_top {
+    background-color: rgba(24, 37, 46, 1);
+    padding: 0.1%;
+}
+.footer_bottom {
+    background-color: rgba(90, 195, 152, 1);
+    padding: 0.1%;
+}
+.footer_title {
+    color: white;
+}
+.footer_img {
+    height: 50px;
+    width: 50px;
+    margin: 5%;
+}
+.footer_img {
+    margin: 2%;
+}
+.footer_legal {
+    color: white;
+    margin-bottom: 1%;
+}
+
+/*Fin Footer*/
+
+/*Fin Général */
+
+/*Welcome */
+
+.welcome_div {
+    /*background-color: rgba(141, 189, 69, 0.5);*/
+    background-color: rgba(90, 195, 152, 0.5);
+    /*background-color: rgba(234, 230, 247, 0.5);*/
+    padding: 5%;
+}
+.welcome_div2 {
+    background-color: rgba(141, 189, 69, 0.5);
+    /*background-color: rgba(90, 195, 152, 0.5);*/
+    /*background-color: rgba(234, 230, 247, 0.5);*/
+    padding: 5%;
+}
+.welcome_divTitle {
+    background-color: rgba(24, 37, 46, 0.75);
+    margin-top: 0;
+    padding: 1%;
+}
+.welcome_divH1 {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 10vw;
+    color: white;
+}
+.welcome_newsDiv {
+    background-color: white;
+    height: 575px;
+    padding: 5%;
+    border: 5px solid rgba(90, 195, 152, 1);
+    margin-bottom: 1%;
+}
+.welcome_newsH1 {
+    color: rgb(90, 195, 152);
+}
+.welcome_newsHR {
+    border: 1px solid rgba(90, 195, 152, 1);
+}
+.welcome_newsP {
+
+}
+.itemx {
+    margin: 50px;
+}
