@@ -99,9 +99,15 @@ p {
 /*Welcome */
 
 .welcome_div {
-    /*background-color: rgba(141, 189, 69, 1);*/
-    /*background-color: rgba(90, 195, 152, 1);*/
-    background-color: rgba(234, 230, 247, 0.25);
+    /*background-color: rgba(141, 189, 69, 0.5);*/
+    background-color: rgba(90, 195, 152, 0.5);
+    /*background-color: rgba(234, 230, 247, 0.5);*/
+    padding: 5%;
+}
+.welcome_div2 {
+    background-color: rgba(141, 189, 69, 0.5);
+    /*background-color: rgba(90, 195, 152, 0.5);*/
+    /*background-color: rgba(234, 230, 247, 0.5);*/
     padding: 5%;
 }
 .welcome_divTitle {
@@ -117,13 +123,16 @@ p {
 }
 .welcome_newsDiv {
     background-color: white;
-    height: 550px;
+    height: 575px;
     padding: 5%;
     border: 5px solid rgba(90, 195, 152, 1);
     margin-bottom: 1%;
 }
 .welcome_newsH1 {
     color: rgb(90, 195, 152);
+}
+.welcome_newsHR {
+    border: 1px solid rgba(90, 195, 152, 1);
 }
 .welcome_newsP {
 

@@ -16,7 +16,7 @@ require('php/header.php');
     <div class="welcome_divTitle text-center">
         <h1 class="welcome_divH1">BILLETERIE</h1>
     </div>
-    <div class="welcome_div">
+    <div class="welcome_div2">
         <div class="row">
             <div class="col-xs-12 col-xs-offset-0 col-sm-2 col-sm-offset-2 welcome_ticketDiv text-center">
                 <img src="http://placehold.it/200x200">
@@ -36,6 +36,7 @@ require('php/header.php');
                 <div class="welcome_newsDiv text-left">
                     <img src="src/img/la_jungle.jpg" class="img-responsive">
                     <h2 class="welcome_newsH1">La Jungle</h2>
+                    <hr class="welcome_newsHR">
                     <p class="welcome_newsP">Une six-cordes et un casio. Il n’en faut parfois pas plus pour faire péter le mercure et irriter les yeux de sueur après deux breaks et trois accords. Deux singes rouquins, un très grand et un plus petit, vous emmènent dans leur milieu naturel : La Jungle !</p>
                 </div>
             </div>
@@ -43,6 +44,7 @@ require('php/header.php');
                 <div class="welcome_newsDiv text-left">
                     <img src="src/img/tristesse_contemporaine.jpg" class="img-responsive">
                     <h2 class="welcome_newsH1">Tristesse Contemporaine</h2>
+                    <hr class="welcome_newsHR">
                     <p class="welcome_newsP">Tristesse Contemporaine. Acte III, scène 1. Après un premier album en forme de déclaration d’indépendance Tristesse Contemporaine et un second en lévitation au dessus de la meute Stay Golden, Stop and Start vient clore une trilogie tout en anticipant un nouveau cycle.</p>
                 </div>
             </div>
@@ -50,6 +52,7 @@ require('php/header.php');
                 <div class="welcome_newsDiv text-left">
                     <img src="src/img/tristesse_contemporaine.jpg" class="img-responsive">
                     <h2 class="welcome_newsH1">Tristesse Contemporaine</h2>
+                    <hr class="welcome_newsHR">
                     <p class="welcome_newsP">Tristesse Contemporaine. Acte III, scène 1. Après un premier album en forme de déclaration d’indépendance Tristesse Contemporaine et un second en lévitation au dessus de la meute Stay Golden, Stop and Start vient clore une trilogie tout en anticipant un nouveau cycle.</p>
                 </div>
             </div>
