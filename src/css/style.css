@@ -1,12 +1,29 @@
 /*Général*/
 
 body {
-    background: url("../src/img/background.png") center center  no-repeat;
+    background: url("../img/background.png") center center  no-repeat;
     background-size: cover;
     position: relative;
     padding-top: 70px;
 }
 
+@font-face {
+    font-family: 'Circula-Medium';
+    src: url('../fonts/circula-medium.otf');
+}
+@font-face {
+    font-family: 'Dokyo';
+    src: url('../fonts/Dokyo.ttf');
+}
+* {
+    font-family: 'Circula-Medium', sans-serif;
+}
+h1 {
+    font-family: 'Dokyo', sans-serif;
+}
+p {
+    font-family: sans-serif;
+}
 /*Navbar*/
 
 .navbar {
@@ -73,7 +90,7 @@ body {
 }
 .footer_legal {
     color: white;
-    margin-bottom: 0;
+    margin-bottom: 1%;
 }
 
 /*Fin Footer*/
@@ -99,7 +116,10 @@ body {
 }
 .welcome_newsDiv {
     background-color: white;
-    padding: 1%;
+    height: 550px;
+    padding: 5%;
+    border: 5px solid rgba(235, 226, 181, 1);
+    margin-bottom: 1%;
 }
 .welcome_newsH1 {
     color: rgb(90, 195, 152);
