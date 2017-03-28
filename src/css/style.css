@@ -1,7 +1,7 @@
 /*Général*/
 
 body {
-    background: url("../img/background.png") center center  no-repeat;
+    background: url("../img/background.png") center center no-repeat;
     background-size: cover;
     position: relative;
     padding-top: 70px;
@@ -137,6 +137,14 @@ p {
 .welcome_newsP {
 
 }
+
+
+/* --- Partie css page programmation  --- */
+
 .itemx {
     margin: 50px;
+    border:none;
+}
+.labelx {
+    background-color: rgba(141, 189, 69, 0.5);
 }
