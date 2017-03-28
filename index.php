@@ -6,7 +6,7 @@ require('php/header.php');
         <img src="src/img/logo-only.png" alt="Logo du Festival" class="welcome_logo img-responsive visible-xs">
     </div>
     <br />
-    <br />
+    <br />  
     <div class="welcome_divTitle text-center">
         <h1 class="welcome_divH1">PROGRAMMATION</h1>
     </div>

@@ -1,18 +1,20 @@
 h1 {
+    font-family: 'Dokyo';
     color: white;
+    text-align :center;
+    font-size: 70px;
+
 }
 
 .planning {
     background-color: #ed7a21;
 }
-.salle {
+h2 {
     color: white;
-    font-family: 'Circula';
+    font-family: 'Dokyo';
     font-size: x-large;
     text-align: center;
-    display: table-cell;
     vertical-align: middle;
-    padding:
 }
 
 .concert {

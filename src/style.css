@@ -8,6 +8,10 @@
     font-family: 'Circula';
     src: url('../fonts/circula-medium.otf');
 }
+@font-face {
+    font-family: 'Dokyo';
+    src: url('../fonts/Dokyo.ttf');
+}
 body {
     background: url("../src/img/background.png") center center  no-repeat;
     background-size: cover;
