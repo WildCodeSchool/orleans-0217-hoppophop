@@ -6,71 +6,158 @@ require('php/header.php');
         <h1>PLANNING</h1>
     </div>
     <div class="container">
-        <div class="row salles">
-            <div class="col-md-2 hidden-sm salle">
-                <div class="container-fluid planning">
-                    <div class="col-md-10 col-md-offset-1 text">JARDIN DE L'EVECHE</div>
-                </div>
+        <div class="row">
+            <!-- jardins de l'évêché -->
+            <div class="col-md-2 hidden-sm">
+                    <div class="row">
+                            <div class="salle">
+                                JARDINS DE L'EVÊCHE
+                                <div class="row">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                </div>
+                                <div class="row">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                </div>
+                                <div class="row">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                </div>
+                                <div class="row">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                </div>
+                            </div>
+                    </div>
+            </div>
+            <div class="col-md-2 hidden-sm">
+                    <div class="row">
+                            <div class="salle">
+                                LE 108
+                                <div class="row">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                </div>
+                                <div class="row">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                </div>
+                                <div class="row">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                </div>
+                                <div class="row">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                </div>
+                            </div>
+                    </div>
             </div>
             <div class="col-md-2 hidden-sm salle">
-                <div class="container-fluid planning">
-                    <div class="col-md-10 col-md-offset-1 text">LE 108</div>
-                </div>
+                    <div class="row">
+                            <div class="salle">
+                                CCNO
+                                <div class="row">
+                                    <div class="col-md-12 hidden-sm">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 hidden-sm">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 hidden-sm">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 hidden-sm">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
             </div>
             <div class="col-md-2 hidden-sm salle">
-                <div class="container-fluid planning">
-                    <div class="col-md-10 col-md-offset-1 text">LE CCNO</div>
-                </div>
+                    <div class="row">
+                            <div class="salle">
+                                SCENE NATIONALE D'ORLEANS
+                                <div class="row">
+                                    <div class="col-md-12 hidden-sm">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 hidden-sm">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 hidden-sm">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 hidden-sm">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
             </div>
             <div class="col-md-2 hidden-sm salle">
-                <div class="container-fluid planning">
-                    <div class="col-md-10 col-md-offset-1 text">SCENE NATIONALE D'ORLEANS</div>
-                </div>
+                    <div class="row">
+                            <div class="salle">
+                                SCENE DE L'IINSTITUT
+                                <div class="row">
+                                    <div class="col-md-12 hidden-sm">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 hidden-sm">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 hidden-sm">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 hidden-sm">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
             </div>
             <div class="col-md-2 hidden-sm salle">
-                <div class="container-fluid planning">
-                    <div class="col-md-10 col-md-offset-1 text">SALLE DE L'INSTITUT</div>
-                </div>
-            </div>
-            <div class="col-md-2 hidden-sm salle">
-                <div class="container-fluid planning">
-                    <div class="col-md-10 col-md-offset-1 text">HOTEL DUPANLOUP</div>
-                </div>
-            </div>
-        </div>
-        <div class="row concerts">
-            <div class="col-md-2 hidden-sm hidden-xs concertsalle">
-                <div class="container-fluid concert">
-                    <div class="col-md-10 col-md-offset-1 textconcert">Concert<br />18h-19h</div>
-                </div>
-            </div>
-            <div class="col-md-2 hidden-sm hidden-xs concertsalle">
-                <div class="container-fluid concert">
-                    <div class="col-md-10 col-md-offset-1 textconcert">Concert<br />18h-19h</div>
-                </div>
-            </div>
-            <div class="col-md-2 hidden-sm hidden-xs concertsalle">
-                <div class="container-fluid concert">
-                    <div class="col-md-10 col-md-offset-1 textconcert">Concert<br />18h-19h</div>
-                </div>
-            </div>
-            <div class="col-md-2 hidden-sm hidden-xs concertsalle">
-                <div class="container-fluid concert">
-                    <div class="col-md-10 col-md-offset-1 textconcert">Concert<br />18h-19h</div>
-                </div>
-            </div>
-            <div class="col-md-2 hidden-sm hidden-xs concertsalle">
-                <div class="container-fluid concert">
-                    <div class="col-md-10 col-md-offset-1 textconcert">Concert<br />18h-19h</div>
-                </div>
-            </div>
-            <div class="col-md-2 hidden-sm hidden-xs concertsalle">
-                <div class="container-fluid concert">
-                    <div class="col-md-10 col-md-offset-1 textconcert">Concert<br />18h-19h</div>
-                </div>
+                    <div class="row">
+                            <div class="salle">
+                                HÔTEL DUPANLOUP
+                                <div class="row">
+                                    <div class="col-md-2 hidden-sm">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2 hidden-sm">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2 hidden-sm">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2 hidden-sm">
+                                        <div class="concert">Concert<br />18h-19h</div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
             </div>
         </div>
     </div>
+<!-- concerts -->
+
 <?php
 require('php/footer.php');
 ?>
