@@ -14,7 +14,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" id="navbar">
         <div class="container-fluid">
             <div class="navbar-header text-center">
-                <a href="index.php"><img src="src/img/logo-min.png" class="navbar-brand"></a>
+                <a href="../index.php"><img src="../src/img/logo-min.png" class="navbar-brand"></a>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapsed" aria-expanded="false">
                     <span class="sr-only">Menu</span>
                     <span class="icon-bar"></span>
@@ -37,7 +37,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">La vie au festival <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Se restaurer</a></li>
-                            <li><a href="#">Lieux</a></li>
+                            <li><a href="php/lieux.php">Lieux</a></li>
                         </ul>
                     </li>
                     <li>
