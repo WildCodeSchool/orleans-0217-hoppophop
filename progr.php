@@ -13,7 +13,7 @@ require('php/header.php');
                 <h3 class="titletri">Trier par  :</h3>
             </div>
             <div class="col-xs-2 col-md-2 col-lg-1 ">
-                <a class="btn dropdown-toggle btntri" data-toggle="dropdown" href=#>Lieux<span class="caret"></span></a>
+                <a class="btn dropdown-toggle btntri" data-toggle="dropdown" href=#>Lieux <span class="caret"></span></a>
                 <ul class="dropdown-menu listtri">
                     <li><a href=#>Choix n°1</a></li>
                     <li><a href=#>Choix n°2</a></li>
@@ -21,7 +21,7 @@ require('php/header.php');
                 </ul>
             </div>
             <div class="col-xs-2 col-md-2 col-lg-1">
-                <a class="btn dropdown-toggle btntri" data-toggle="dropdown" href=#>Date<span class="caret"></span></a>
+                <a class="btn dropdown-toggle btntri" data-toggle="dropdown" href=#>Date <span class="caret"></span></a>
                 <ul class="dropdown-menu listtri">
                     <li><a href=#>Choix n°1</a></li>
                     <li><a href=#>Choix n°2</a></li>
@@ -29,7 +29,7 @@ require('php/header.php');
                 </ul>
             </div>
             <div class="col-xs-2 col-md-2 col-lg-1">
-                <a class="btn dropdown-toggle btntri" data-toggle="dropdown" href=#>Groupes Locaux<span class="caret"></span></a>
+                <a class="btn dropdown-toggle btntri" data-toggle="dropdown" href=#>Groupes Locaux <span class="caret"></span></a>
                 <ul class="dropdown-menu listtri">
                     <li><a href=#>Choix n°1</a></li>
                     <li><a href=#>Choix n°2</a></li>

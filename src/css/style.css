@@ -174,6 +174,7 @@ p {
     background-color: rgba(24, 37, 46, 0.75);
     position: relative;
     top:-20px;
+    padding:10px;
 }
 
 .titletri {
@@ -188,15 +189,14 @@ p {
     color: #ffffff;
     font-size: 1.8em;
     /*background-color: rgba(237, 122, 33, 1);        !* Fond orange *!*/
-    /*background-color: transparent;      !* Fond Transparent *!*/
-    background-color: rgba(90, 195, 152, 1);      /* Fond cyan */
+    background-color: transparent;      /* Fond Transparent */
+    /*background-color: rgba(90, 195, 152, 1);      !* Fond cyan *!*/
     /*border: 3px solid rgba(237, 122, 33, 1);        !* Bordure orange *!*/
+    border: 3px solid rgba(90, 195, 152, 1);        /* Bordure cyan */
     /*border: 3px solid rgba(90, 195, 152, 1);        !* Bordure cyan *!*/
-    /*border: 3px solid rgba(90, 195, 152, 1);        !* Bordure cyan *!*/
-    border: 3px solid #ffffff;        /* Bordure blanche */
+    /*border-right: 3px solid #ffffff;        !* Bordure blanche *!*/
+    /*border-left: 3px solid #ffffff;*/
     position: relative;
-    margin-top: auto;
-    margin-bottom: auto;
     top:5px;
     left:-15px;
 
@@ -259,6 +259,10 @@ p {
 .layoutag {
     position: relative;
     top: -16px;
+}
+
+.filtreprog a:hover {
+    color: rgba(90, 195, 152, 1);
 }
 
 @media all and (max-device-width: 570px) {
