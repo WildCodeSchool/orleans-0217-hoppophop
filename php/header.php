@@ -36,7 +36,7 @@
                     <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">La vie au festival <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Se restaurer</a></li>
+                            <li><a href="php/food.php">Se restaurer</a></li>
                             <li><a href="php/lieux.php">Lieux</a></li>
                         </ul>
                     </li>

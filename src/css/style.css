@@ -161,3 +161,16 @@ p {
 }
 /*Fin Lieux*/
 
+/*Food*/
+.food_div {
+    background-color: white;
+    padding: 1%;
+    border: 5px solid rgba(90, 195, 152, 1);
+    margin-bottom: 1%;
+}
+
+.food_hr {
+    border: 1px solid rgba(90, 195, 152, 1);
+}
+
+/*Fin Food*/
