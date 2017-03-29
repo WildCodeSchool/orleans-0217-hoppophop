@@ -45,7 +45,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="#">Bénévolat</a></li>
                             <li><a href="#">FAQ</a></li>
-                            <li><a href="#">Comment venir</a></li>
+                            <li><a href="../php/venir.php">Comment venir</a></li>
                             <li><a href="#">Dimanche à Orléans</a></li>
                         </ul>
                     </li>

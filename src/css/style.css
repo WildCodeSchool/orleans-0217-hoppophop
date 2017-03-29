@@ -233,6 +233,21 @@ p {
 
 /*Fin Food*/
 
+/*Venir*/
+
+.venir_div {
+    background-color: white;
+    padding: 1%;
+    border: 5px solid rgba(90, 195, 152, 1);
+    margin-bottom: 1%;
+}
+
+.venir_hr {
+    border: 1px solid rgba(90, 195, 152, 1);
+    width: 80%;
+}
+/*Fin Venir*/
+
 /* -- style image seule -- */
 
 .itemx img {
