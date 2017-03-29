@@ -2,7 +2,9 @@
 require('php/header.php');
 
 ?>
-    <h1>PLANNING</h1>
+    <div class="welcome_divTitle text-center">
+        <h1 class="welcome_divH1">PLANNING</h1>
+    </div>
     <h2 class="jour">VENDREDI</h2>
     <div class="container-fluid text-center">
         <div class="row">
@@ -31,7 +33,7 @@ require('php/header.php');
                 <div class="concertbleu"><p>Concert<br />18h-19h</p></div><br />
                 <div class="concertbleu"><p>Concert de la mort qui tue<br />18h-19h</p></div><br />
                 <div class="concertbleu"><p>Concert<br />18h-19h</p></div><br />
-                <div class="concertbleu"><p></p>Concert<br />18h-19h</div><br />
+                <div class="concertbleu"><p>Concert<br />18h-19h</p></div><br />
             </div>
             <div class="col-md-2 hidden-sm hidden-xs">
                 <div class="concertorange"><p>Concert<br />18h-19h</p></div><br/>
@@ -43,7 +45,7 @@ require('php/header.php');
                 <div class="concertbleu"><p>Concert<br />18h-19h</p></div><br />
                 <div class="concertbleu"><p>Concert de la mort qui tue<br />18h-19h</p></div><br />
                 <div class="concertbleu"><p>Concert<br />18h-19h</p></div><br />
-                <div class="concertbleu"><p></p>Concert<br />18h-19h</div><br />
+                <div class="concertbleu"><p>Concert<br />18h-19h</p></div><br />
             </div>
             <div class="col-md-2 hidden-sm hidden-xs">
                 <div class="concertorange"><p>Concert<br />18h-19h</p></div><br/>
@@ -55,7 +57,7 @@ require('php/header.php');
                 <div class="concertbleu"><p>Concert<br />18h-19h</p></div><br />
                 <div class="concertbleu"><p>Concert de la mort qui tue<br />18h-19h</p></div><br />
                 <div class="concertbleu"><p>Concert<br />18h-19h</p></div><br />
-                <div class="concertbleu"><p></p>Concert<br />18h-19h</div><br />
+                <div class="concertbleu"><p>Concert<br />18h-19h</p></div><br />
             </div>
             <div class="col-md-2 hidden-sm hidden-xs">
                 <div class="concertorange"><p>Concert<br />18h-19h</p></div><br/>
@@ -127,7 +129,7 @@ require('php/header.php');
                 <div class="concertbleu"><p>Concert<br />18h-19h</p></div><br />
                 <div class="concertbleu"><p>Concert de la mort qui tue<br />18h-19h</p></div><br />
                 <div class="concertbleu"><p>Concert<br />18h-19h</p></div><br />
-                <div class="concertbleu"><p></p>Concert<br />18h-19h</div><br />
+                <div class="concertbleu"><p>Concert<br />18h-19h</p></div><br />
             </div>
             <div class="col-md-2 hidden-sm hidden-xs">
                 <div class="concertorange"><p>Concert<br />18h-19h</p></div><br/>
@@ -139,7 +141,7 @@ require('php/header.php');
                 <div class="concertbleu"><p>Concert<br />18h-19h</p></div><br />
                 <div class="concertbleu"><p>Concert de la mort qui tue<br />18h-19h</p></div><br />
                 <div class="concertbleu"><p>Concert<br />18h-19h</p></div><br />
-                <div class="concertbleu"><p></p>Concert<br />18h-19h</div><br />
+                <div class="concertbleu"><p>Concert<br />18h-19h</p></div><br />
             </div>
             <div class="col-md-2 hidden-sm hidden-xs">
                 <div class="concertorange"><p>Concert<br />18h-19h</p></div><br/>
@@ -151,7 +153,7 @@ require('php/header.php');
                 <div class="concertbleu"><p>Concert<br />18h-19h</p></div><br />
                 <div class="concertbleu"><p>Concert de la mort qui tue<br />18h-19h</p></div><br />
                 <div class="concertbleu"><p>Concert<br />18h-19h</p></div><br />
-                <div class="concertbleu"><p></p>Concert<br />18h-19h</div><br />
+                <div class="concertbleu"><p>Concert<br />18h-19h</p></div><br />
             </div>
             <div class="col-md-2 hidden-sm hidden-xs">
                 <div class="concertorange"><p>Concert<br />18h-19h</p></div><br/>
