@@ -8,7 +8,7 @@
     <title>Hop Pop Hop</title>
     <!-- Bootstrap -->
     <link href="src/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="src/style.css" rel="stylesheet">
+    <link href="src/css/style.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" id="navbar">
