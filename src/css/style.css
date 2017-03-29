@@ -1,5 +1,5 @@
 /*Général*/
-
+@import url("styleplanning.css");
 body {
     background: url("../img/background.png") center center  no-repeat fixed;
     background-size: cover;
