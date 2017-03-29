@@ -10,14 +10,14 @@ h1 {
 .planning {
     background-color: #ed7a21;
 }
-h2 {
+.jour {
     font-family: 'Dokyo';
     color: white;
     text-align :center;
     font-size: 70px;
     background-color: #18252e;
 }
-h3 {
+.salle {
     color: white;
     font-family: 'Dokyo';
     font-size: x-large;
@@ -26,7 +26,7 @@ h3 {
 }
 .concertsmartphone {
     color: white;
-    font-family: 'Dokyo';
+    font-family: 'Circula';
     text-align: center;
     font-weight: 100;
     font-size: 30px;
@@ -48,7 +48,8 @@ h3 {
     font-weight: bold;
     font-family: 'Circula';
     text-align: center;
-    font-size: 28px;
+    font-size: 25px;
+    width: 280px;
 }
 .concertorange {
     color: #ed7a21;
@@ -61,7 +62,9 @@ h3 {
     font-weight: bold;
     font-family: 'Circula';
     text-align: center;
-    font-size: 28px;
+    font-size: 25px;
+    width: 280px;
+
 }
 
 .concertsalle {

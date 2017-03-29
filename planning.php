@@ -3,27 +3,27 @@ require('php/header.php');
 
 ?>
     <h1>PLANNING</h1>
-    <h2>VENDREDI</h2>
+    <h2 class="jour">VENDREDI</h2>
     <div class="container-fluid text-center">
         <div class="row">
             <!-- jardins de l'évêché -->
             <div class="col-md-2 hidden-sm hidden-xs">
-                <h3>JARDINS DE L'EVÊCHE</h3>
+                <h3 class="salle">JARDINS DE L'EVÊCHE</h3>
             </div>
             <div class="col-md-2 hidden-sm hidden-xs">
-                <h3>LE 108</h3>
+                <h3 class="salle">LE 108</h3>
             </div>
             <div class="col-md-2 hidden-sm hidden-xs">
-                <h3>CCNO</h3>
+                <h3 class="salle">CCNO</h3>
             </div>
             <div class="col-md-2 hidden-sm hidden-xs">
-                <h3>SCENE NATIONALE D'ORLEANS</h3>
+                <h3 class="salle">SCENE NATIONALE D'ORLEANS</h3>
             </div>
             <div class="col-md-2 hidden-sm hidden-xs">
-                <h3>SCENE DE L'INSTITUT</h3>
+                <h3 class="salle">SCENE DE L'INSTITUT</h3>
             </div>
             <div class="col-md-2 hidden-sm hidden-xs">
-                <h3>HÔTEL DUPANLOUP</h3>
+                <h3 class="salle">HÔTEL DUPANLOUP</h3>
             </div>
         </div>
         <div class="row">
@@ -99,27 +99,27 @@ require('php/header.php');
             </div>
         </div>
     </div>
-    <h2>SAMEDI</h2>
+    <h2 class="jour">SAMEDI</h2>
     <div class="container-fluid text-center">
         <div class="row">
             <!-- jardins de l'évêché -->
             <div class="col-md-2 hidden-sm  hidden-xs">
-                <h3>JARDINS DE L'EVÊCHE</h3>
+                <h3 class="salle">JARDINS DE L'EVÊCHE</h3>
             </div>
             <div class="col-md-2 hidden-sm hidden-xs">
-                <h3>LE 108</h3>
+                <h3 class="salle">LE 108</h3>
             </div>
             <div class="col-md-2 hidden-sm hidden-xs">
-                <h3>CCNO</h3>
+                <h3 class="salle">CCNO</h3>
             </div>
             <div class="col-md-2 hidden-sm hidden-xs">
-                <h3>SCENE NATIONALE D'ORLEANS</h3>
+                <h3 class="salle">SCENE NATIONALE D'ORLEANS</h3>
             </div>
             <div class="col-md-2 hidden-sm hidden-xs">
-                <h3>SCENE DE L'INSTITUT</h3>
+                <h3 class="salle">SCENE DE L'INSTITUT</h3>
             </div>
             <div class="col-md-2 hidden-sm hidden-xs">
-                <h3>HÔTEL DUPANLOUP</h3>
+                <h3 class="salle">HÔTEL DUPANLOUP</h3>
             </div>
         </div>
         <div class="row">
