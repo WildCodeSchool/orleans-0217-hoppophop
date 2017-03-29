@@ -12,7 +12,7 @@ require('php/header.php');
 
     </div>
     <br />
-    <br />
+    <br />  
     <div class="welcome_divTitle text-center">
         <h1 class="welcome_divH1">PROGRAMMATION</h1>
     </div>
