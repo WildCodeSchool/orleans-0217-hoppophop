@@ -1,22 +1,37 @@
 <?php
 require('php/header.php');
 ?>
-    <div class="text-center">
-        <img src="src/img/logo-only.png" alt="Logo du Festival" class="welcome_logo hidden-xs">
-        <img src="src/img/logo-only.png" alt="Logo du Festival" class="welcome_logo img-responsive visible-xs">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-3">
+                <a href="#">
+                    <img src="src/img/button-left.png" alt="Boutton Gauche" class="img-responsive welcome_buttonLeft">
+                </a>
+            </div>
+            <div class="col-xs-6">
+                <img src="src/img/logo-only.png" alt="Logo du Festival" class="img-responsive">
+            </div>
+            <div class="col-xs-3">
+                <div class="">
+                    <a href="#">
+                        <img src="src/img/button-right.png" alt="Boutton Droite" class="img-responsive welcome_buttonRight">
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
     <br />
     <br />  
-    <div class="welcome_divTitle text-center">
+    <div class="welcome_divTitle text-center visible-sm">
         <h1 class="welcome_divH1">PROGRAMMATION</h1>
     </div>
-    <div class="welcome_div">
+    <div class="welcome_div visible-sm">
         <a href="#" class="welcome_divImg"><img src="src/img/programmation.png" class="img-responsive"></a>
     </div>
-    <div class="welcome_divTitle text-center">
+    <div class="welcome_divTitle text-center visible-sm">
         <h1 class="welcome_divH1">BILLETERIE</h1>
     </div>
-    <div class="welcome_div2">
+    <div class="welcome_div visible-sm">
         <div class="row">
             <div class="col-xs-12 col-xs-offset-0 col-sm-2 col-sm-offset-2 welcome_ticketDiv text-center">
                 <img src="http://placehold.it/200x200">

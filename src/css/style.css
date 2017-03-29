@@ -1,7 +1,7 @@
 /*Général*/
 
 body {
-    background: url("../img/background.png") center center  no-repeat;
+    background: url("../img/background.png") center center  no-repeat fixed;
     background-size: cover;
     position: relative;
     padding-top: 70px;
@@ -70,26 +70,26 @@ p {
 }
 .footer_top {
     background-color: rgba(24, 37, 46, 1);
-    padding: 0.1%;
 }
 .footer_bottom {
     background-color: rgba(90, 195, 152, 1);
-    padding: 0.1%;
 }
 .footer_title {
     color: white;
 }
-.footer_img {
-    height: 50px;
-    width: 50px;
-    margin: 5%;
-}
-.footer_img {
-    margin: 2%;
-}
 .footer_legal {
     color: white;
     margin-bottom: 1%;
+}
+.footer_sponsor {
+    height: 50px;
+    max-width: 150px;
+    margin: 5%;
+}
+.footer_social {
+    width: 50px;
+    height: 50px;
+    margin: 5%;
 }
 
 /*Fin Footer*/
@@ -98,15 +98,19 @@ p {
 
 /*Welcome */
 
+.welcome_buttonLeft {
+    position: absolute;
+    left: 30%;
+    margin-top: 45%;
+}
+.welcome_buttonRight {
+    position: absolute;
+    right: 35%;
+    margin-top: 45%;
+}
 .welcome_div {
     /*background-color: rgba(141, 189, 69, 0.5);*/
     background-color: rgba(90, 195, 152, 0.5);
-    /*background-color: rgba(234, 230, 247, 0.5);*/
-    padding: 5%;
-}
-.welcome_div2 {
-    background-color: rgba(141, 189, 69, 0.5);
-    /*background-color: rgba(90, 195, 152, 0.5);*/
     /*background-color: rgba(234, 230, 247, 0.5);*/
     padding: 5%;
 }
