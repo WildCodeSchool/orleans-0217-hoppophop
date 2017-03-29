@@ -21,9 +21,11 @@ body {
 h1 {
     font-family: 'Dokyo', sans-serif;
 }
+
 p {
     font-family: sans-serif;
 }
+
 /*Navbar*/
 
 .navbar {
@@ -139,51 +141,111 @@ p {
 }
 
 
-/* --- Partie css page programmation  --- */
+/* ---- Partie css page programmation  ---- */
 
-.headerpro {
-    height: 300px;
-    background-color: rgba(24, 37, 46, 0.75);
-    border-bottom: 3px solid rgba(237, 122, 33, 0.75);
+
+/* -- style header -- */
+
+.headerprog{
+    height: 240px;
+    /*background-color: rgba(24, 37, 46, 0.85);     !* Fond bleu foncé *!*/
+    /*background-color: rgba(90, 195, 152, 0.85);     !* Fond bleu cyan *!*!*/
+    /*border-bottom: 3px solid rgba(237, 122, 33, 0.75);*/
     /*border-bottom: 2px solid rgba(90, 195, 152, 1);*/
     position: relative;
     top:-20px;
+    display:none;
 
 }
 
-.mozcontainer {
-    background-color:
+
+/* -- style zone filtre -- */
+
+.filtreprog {
+    /*background-color: rgba(141, 189, 69, 0.85); !* Fond vert clair *!*/
+    /*background-color: rgba(90, 195, 152, 0.85); !* Fond bleu cyan *!*/
+    background-color: rgba(24, 37, 46, 0.85);
+    position: relative;
+    top:-20px;
 }
 
+.titletri {
+    color: #ffffff;
+    position: relative;
+    top:-3px;
+    font-size: 2em;
+}
+
+.btntri {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 2.4em;
+    background-color: rgba(237, 122, 33, 1);
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+
+.listtri {
+ background-color: rgba(90, 195, 152, 0.85);
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+}
+
+
+/* -- style image + sous-titre -- */
 
 .itemx {
-    margin: 20px;
     border: none;
     background-color: transparent;
 
 }
 
+/* -- style image seule -- */
+
 .itemx img {
-    border: 3px solid rgba(90, 195, 152, 1);
+    /*border: 3px solid rgba(90, 195, 152, 1);*/
+    /*border: 3px solid rgba(237, 122, 33, 1);*/
+    /*box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;*/
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
 }
 
-
-
+/* -- style bloc sous-titre -- */
 
 .labelx {
-    /*background-color: rgba(90, 195, 152, 1);*/
-    background-color: rgba(24, 37, 46, 1);
-    width:250px;
+    /*background-color: rgba(90, 195, 152, 1);*/        /*couleur fond bleu cyan*/
+    background-color: rgba(24, 37, 46, 1);      /*couleur fond bleu foncé*/
+    width:180px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
     top: -20px;
     height:50px;
     color: #ffffff;
-    border: 3px solid rgba(237, 122, 33, 1);
+    /*border: 3px solid rgba(90, 195, 152, 1);       !* bordure cyan *!*/
+    border: 3px solid rgba(237, 122, 33, 1);        /* bordure orange */
+    /*border: 3px solid rgba(24, 37, 46, 1); */         /* bordure bleu foncé */
+    /*border: 3px solid rgba(141, 189, 69, 1);          !* bordure vert clair *!*/
+    /*box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;*/
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+
 }
+
+/* -- style nom de l'artiste -- */
+
 .layoutartiste {
     font-size: 1.5em;
     font-family: 'Dokyo', sans-serif;
 
+}
+
+/* -- style date -- */
+
+.layoutag {
+    position: relative;
+    top: -16px;
+}
+
+@media all (max-width: 1280px) {
+    
 }
