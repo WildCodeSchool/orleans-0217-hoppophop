@@ -6,9 +6,7 @@ require('php/header.php');
 </div>
 
 
-<div class="container-fluid">
-
-    <div class="container">
+    <div class="container-fluid mozcontainer">
 
         <div class="row">
 
@@ -72,8 +70,8 @@ require('php/header.php');
         </div>
 
     </div>
-
 </div>
+
 
 <?php
 require('php/footer.php');

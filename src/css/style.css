@@ -144,22 +144,35 @@ p {
 .headerpro {
     height: 300px;
     background-color: rgba(24, 37, 46, 0.75);
-    border-bottom: 10px solid rgba(237, 122, 33, 0.75);
+    border-bottom: 3px solid rgba(237, 122, 33, 0.75);
+    /*border-bottom: 2px solid rgba(90, 195, 152, 1);*/
     position: relative;
     top:-20px;
 
 }
 
+.mozcontainer {
+    background-color:
+}
+
 
 .itemx {
     margin: 20px;
-    border:none;
+    border: none;
     background-color: transparent;
 
 }
+
+.itemx img {
+    border: 3px solid rgba(90, 195, 152, 1);
+}
+
+
+
+
 .labelx {
-    background-color: rgba(90, 195, 152, 1);
-    margin-bottom: px;
+    /*background-color: rgba(90, 195, 152, 1);*/
+    background-color: rgba(24, 37, 46, 1);
     width:250px;
     margin-left: auto;
     margin-right: auto;
@@ -167,7 +180,7 @@ p {
     top: -20px;
     height:50px;
     color: #ffffff;
-    border: 5px solid rgba(234, 230, 247, 1);
+    border: 3px solid rgba(237, 122, 33, 1);
 }
 .layoutartiste {
     font-size: 1.5em;
