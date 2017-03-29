@@ -6,7 +6,7 @@ require('php/header.php');
 
 <div class="container-fluid">
     <div class="row welcome_navRow">
-        
+
 
 
     <div class="container-fluid">

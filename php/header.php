@@ -15,8 +15,11 @@
         <div class="container-fluid">
             <div class="navbar-header text-center">
 
-                <a href="../index.php"><img src="../src/img/logo-min.png" class="navbar-brand"></a>
-   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapsed" aria-expanded="false">
+
+
+                <a href="index.php"><img src="../src/img/logo-min.png" class="navbar-brand"></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapsed" aria-expanded="false">
+
 
                     <span class="sr-only">Menu</span>
                     <span class="icon-bar"></span>
