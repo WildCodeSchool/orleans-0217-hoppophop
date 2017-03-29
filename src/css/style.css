@@ -145,7 +145,10 @@ p {
 }
 
 
-/* ---- Partie css page programmation  ---- */
+
+
+
+/* ---- DEBUT Partie css page programmation  ---- */
 
 
 /* -- style header -- */
@@ -168,7 +171,7 @@ p {
 .filtreprog {
     /*background-color: rgba(141, 189, 69, 0.85); !* Fond vert clair *!*/
     /*background-color: rgba(90, 195, 152, 0.85); !* Fond bleu cyan *!*/
-    background-color: rgba(24, 37, 46, 0.85);
+    background-color: rgba(24, 37, 46, 0.75);
     position: relative;
     top:-20px;
 }
@@ -184,7 +187,13 @@ p {
     text-decoration: none;
     color: #ffffff;
     font-size: 1.8em;
-    background-color: rgba(237, 122, 33, 1);
+    /*background-color: rgba(237, 122, 33, 1);        !* Fond orange *!*/
+    /*background-color: transparent;      !* Fond Transparent *!*/
+    background-color: rgba(90, 195, 152, 1);      /* Fond cyan */
+    /*border: 3px solid rgba(237, 122, 33, 1);        !* Bordure orange *!*/
+    /*border: 3px solid rgba(90, 195, 152, 1);        !* Bordure cyan *!*/
+    /*border: 3px solid rgba(90, 195, 152, 1);        !* Bordure cyan *!*/
+    border: 3px solid #ffffff;        /* Bordure blanche */
     position: relative;
     margin-top: auto;
     margin-bottom: auto;
@@ -194,7 +203,7 @@ p {
 }
 
 .listtri {
-    background-color: rgba(90, 195, 152, 0.85);
+    background-color: rgba(90, 195, 152, 0.85);     /* Fond cyan */
     box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
 }
 
@@ -219,7 +228,7 @@ p {
 /* -- style bloc sous-titre -- */
 
 .labelx {
-    /*background-color: rgba(90, 195, 152, 1);*/        /*couleur fond bleu cyan*/
+    /*background-color: rgba(90, 195, 152, 1);        !*couleur fond bleu cyan*!*/
     background-color: rgba(24, 37, 46, 1);      /*couleur fond bleu foncé*/
     width:180px;
     margin-left: auto;
@@ -233,7 +242,7 @@ p {
     /*border: 3px solid rgba(24, 37, 46, 1); */         /* bordure bleu foncé */
     /*border: 3px solid rgba(141, 189, 69, 1);          !* bordure vert clair *!*/
     /*box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;*/
-    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);        /*Ombre autour du layout artiste*/
 
 }
 
@@ -251,6 +260,29 @@ p {
     position: relative;
     top: -16px;
 }
+
+@media all and (max-device-width: 570px) {
+
+
+.titletri {
+    font-size:1em;
+}
+.btntri {
+    font-size: 1em;
+}
+
+}
+
+@media all and (max-device-width: 570px) {
+
+
+
+}
+
+
+/* ---- FIN Partie css page programmation  ---- */
+
+
 
 
 /*Fin Welcome*/
