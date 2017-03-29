@@ -50,7 +50,7 @@
                         </ul>
                     </li>
                     <li><a href="#">Partenaires</a></li>
-                    <li><a href="#" class="navbar_a">Contact</a></li>
+                    <li><a href="#">Contact</a></li>
 
                 </ul>
             </div>
