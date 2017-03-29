@@ -183,16 +183,18 @@ p {
 .btntri {
     text-decoration: none;
     color: #ffffff;
-    font-size: 2.4em;
+    font-size: 1.8em;
     background-color: rgba(237, 122, 33, 1);
     position: relative;
     margin-top: auto;
     margin-bottom: auto;
+    top:5px;
+    left:-15px;
 
 }
 
 .listtri {
- background-color: rgba(90, 195, 152, 0.85);
+    background-color: rgba(90, 195, 152, 0.85);
     box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
 }
 
@@ -200,38 +202,10 @@ p {
 /* -- style image + sous-titre -- */
 
 .itemx {
-    margin: 50px;
-}
-
-
-/*Fin Welcome*/
-
-/*Lieux*/
-
-.lieux_title {
-    color: white;
-}
-
-.lieux_thumbnail {
-    background-color: transparent;
     border: none;
-    height: 200px;
-}
-/*Fin Lieux*/
+    background-color: transparent;
 
-/*Food*/
-.food_div {
-    background-color: white;
-    padding: 1%;
-    border: 5px solid rgba(90, 195, 152, 1);
-    margin-bottom: 1%;
 }
-
-.food_hr {
-    border: 1px solid rgba(90, 195, 152, 1);
-}
-
-/*Fin Food*/
 
 /* -- style image seule -- */
 
@@ -278,6 +252,32 @@ p {
     top: -16px;
 }
 
-@media all (max-width: 1280px) {
-    
+
+/*Fin Welcome*/
+
+/*Lieux*/
+
+.lieux_title {
+    color: white;
 }
+
+.lieux_thumbnail {
+    background-color: transparent;
+    border: none;
+    height: 200px;
+}
+/*Fin Lieux*/
+
+/*Food*/
+.food_div {
+    background-color: white;
+    padding: 1%;
+    border: 5px solid rgba(90, 195, 152, 1);
+    margin-bottom: 1%;
+}
+
+.food_hr {
+    border: 1px solid rgba(90, 195, 152, 1);
+}
+
+/*Fin Food*/
