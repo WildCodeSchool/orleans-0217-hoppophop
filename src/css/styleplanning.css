@@ -26,7 +26,7 @@ h1 {
 }
 .concertsmartphone {
     color: white;
-    font-family: 'Circula';
+    font-family: 'Circula-Medium';
     text-align: center;
     font-weight: 100;
     font-size: 30px;
@@ -37,7 +37,7 @@ h1 {
     text-align: center;
     font-size: 48px;
 }
-.concertbleu {
+.concertbleu p {
     color: #2baf97;
     display: table-cell;
     vertical-align: middle;
@@ -46,12 +46,12 @@ h1 {
     border: 5px solid #2baf97;
     box-shadow: 3px 3px 0px #017553;
     font-weight: bold;
-    font-family: 'Circula';
+    font-family: 'Circula-Medium';
     text-align: center;
     font-size: 25px;
     width: 280px;
 }
-.concertorange {
+.concertorange p {
     color: #ed7a21;
     display: table-cell;
     vertical-align: middle;
@@ -60,7 +60,7 @@ h1 {
     border: 5px solid #ed7a21;
     box-shadow: 3px 3px 0px #ed7a22;
     font-weight: bold;
-    font-family: 'Circula';
+    font-family: 'Circula-Medium';
     text-align: center;
     font-size: 25px;
     width: 280px;
