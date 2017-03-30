@@ -285,13 +285,14 @@ p {
     background-color: transparent;      /* Fond Transparent */
     /*background-color: rgba(90, 195, 152, 1);      !* Fond cyan *!*/
     /*border: 3px solid rgba(237, 122, 33, 1);        !* Bordure orange *!*/
-    border: 3px solid rgba(90, 195, 152, 1);        /* Bordure cyan */
     /*border: 3px solid rgba(90, 195, 152, 1);        !* Bordure cyan *!*/
-    /*border-right: 3px solid #ffffff;        !* Bordure blanche *!*/
-    /*border-left: 3px solid #ffffff;*/
+    /*border: 3px solid rgba(90, 195, 152, 1);        !* Bordure cyan *!*/
+    border-right: 3px solid rgba(90, 195, 152, 1);        /* Bordure blanche */
+    border-left: 3px solid rgba(90, 195, 152, 1);
     position: relative;
     top:5px;
     left:-15px;
+    border-radius: inherit;
 
 }
 
@@ -373,7 +374,8 @@ p {
 
 
 .filtreprog a:hover {
-    color: rgba(90, 195, 152, 1);
+    color: rgba(90, 195, 152, 1);       /* Hover cyan */
+    /*color: rgba(237, 122, 33, 1);       !* Hover orange *!*/
 }
 
 @media all and (max-device-width: 570px) {
