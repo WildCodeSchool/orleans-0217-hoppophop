@@ -7,15 +7,23 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Hop Pop Hop</title>
     <!-- Bootstrap -->
+
     <link href="../../src/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../src/css/style.css" rel="stylesheet">
+
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" id="navbar">
         <div class="container-fluid">
             <div class="navbar-header text-center">
+
+
                 <a href="../index.php"><img src="../src/img/logo-min.png" class="navbar-brand"></a>
+
+
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapsed" aria-expanded="false">
+
+
                     <span class="sr-only">Menu</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -45,7 +53,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="#">Bénévolat</a></li>
                             <li><a href="#">FAQ</a></li>
-                            <li><a href="#">Comment venir</a></li>
+                            <li><a href="../php/venir.php">Comment venir</a></li>
                             <li><a href="#">Dimanche à Orléans</a></li>
                         </ul>
                     </li>
