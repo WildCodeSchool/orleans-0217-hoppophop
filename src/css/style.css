@@ -1,9 +1,5 @@
-/*Planning*/
-@import url("styleplanning.css");
-/*Planning*/
+/*General*/
 
-/*Général*/
-/*@import url("styleplanning.css");*/
 body {
     background: url("../img/background.png") center center  no-repeat fixed;
     background-size: cover;
@@ -19,16 +15,56 @@ body {
     font-family: 'Dokyo';
     src: url('../fonts/Dokyo.ttf');
 }
-* {
+.font-circula {
     font-family: 'Circula-Medium', sans-serif;
 }
-h1 {
+.font-dokyo {
     font-family: 'Dokyo', sans-serif;
 }
-
-p {
-    font-family: sans-serif;
+.content-div {
+    background-color: white;
+    border: 5px solid rgba(90, 195, 152, 1);
+    padding: 2.5%;
 }
+.hr {
+    border: 1px solid rgba(90, 195, 152, 1);
+}
+.header-div {
+    height: 240px;
+    /*background-color: rgba(24, 37, 46, 0.85);     !* Fond bleu foncé *!*/
+    /*background-color: rgba(90, 195, 152, 0.85);     !* Fond bleu cyan *!*!*/
+    /*border-bottom: 3px solid rgba(237, 122, 33, 0.75);*/
+    /*border-bottom: 2px solid rgba(90, 195, 152, 1);*/
+    position: relative;
+    top:-20px;
+    display:none;
+}
+.separator-titleDiv {
+    background-color: rgba(24, 37, 46, 0.75);
+    margin-top: 0;
+    padding: 1%;
+}
+.separator-title {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 8vw;
+    color: white;
+}
+.separator-div {
+    /*background-color: rgba(141, 189, 69, 0.5);*/
+    background-color: rgba(90, 195, 152, 0.5);
+    /*background-color: rgba(234, 230, 247, 0.5);*/
+    padding: 5%;
+}
+.thumbnail-div {
+    background-color: transparent;
+    border: none;
+    height: 200px;
+}
+.thumbnail-title {
+    color: white;
+}
+/*Fin General*/
 
 /*Navbar*/
 
@@ -39,149 +75,75 @@ p {
     border-radius:0;
     background-color: #18252e;
 }
-.dropdown-menu {
+.navbar-dropdown {
     background-color: #18252e;
     border: none;
     border-radius: 0;
 }
-.navbar-toggle {
+.navbar-burger {
     border: none;
 }
-.navbar-collapse{
+.navbar-menu {
     border-top: none;
 }
-.navbar-nav > li:hover {
+.navbar-list > li:hover {
     background-color: white;
 }
-.navbar-nav > li > a {
+.navbar-list > li > a {
     color: white!important;
 }
-.navbar-nav > li > a:hover {
+.navbar-list > li > a:hover {
     color: #18252e!important;
 }
 .dropdown-menu > li > a {
     color: white!important;
 }
-.dropdown-menu > li > a:hover {
+.navbar-dropdown > li > a:hover {
     background-color: white;
     color: #18252e!important;
 }
 
-/*Fin Navbar */
+/*Fin Navbar*/
 
-/**************Page Artiste**************/
+/*Accueil*/
 
-
-
-.artistdescr{
-    background-color: rgba(255,255,255,0.8);
-/*    height: 300px;*/
-    padding-left: 10px;
+.logo-buttonLeft {
+    position: absolute;
+    left: 30%;
+    margin-top: 45%;
 }
-.artistdescr h1{
-    text-decoration: underline;
-    margin-top: 0%;
-
+.logo-buttonRight {
+    position: absolute;
+    right: 35%;
+    margin-top: 45%;
 }
-.tagartist{
-    margin-top: 70px;
+.news-title {
+    color: rgb(90, 195, 152);
 }
 
-.logosoc{
-    height: 20px;
-    width: 20px;
-    margin: 3%;
-}
-
-
-.artistprog{
-    text-align: center;
-    background-color: rgba(255,255,255,0.8);
-    min-height: 180px;
-    color: rgba(43, 175, 151, 1);
-    font-size: 25px;
-    padding: 10% 0 10% 0;
-    margin-top: 54px;
-    font-family: 'Dokyo', sans-serif;
-}
-.separateur {
-    border: thin solid grey;
-    width: 65%;
-}
-.trait{
-    border-top: 1px solid grey;
-    display: block;
-    height: 1px;
-    width: 50px;
-    margin: 20px auto;
-}
-.progmob p{
-    font-family: 'Dokyo', sans-serif;
-    color: rgba(43, 175, 151, 1);
-    font-size: 20px;
-}
-
-.artistvid{
-    margin: 50px 0px 350px;
-    padding: 5px 5px 0px 5px;
-    text-align: center;
-    position: relative;
-}
-/*.artistprogmob{
-    text-align: center;
-    color: rgba(43, 175, 151, 1);
-    font-size: 25px;
-    padding:10px;
-    font-family: 'Dokyo', sans-serif;
-}*/
-.logosocmob{
-    height: 15px;
-    width: 15px;
-    margin: 3%;
-}
-.artistvidmob{
-    text-align: center;
-    margin-bottom: 70px;
-}
-
-
-
-
-.imgartiste{
-    width: 100%;
-    overflow: hidden;
-    height: 100%;
-    display: block;
-    overflow-clip: padding-box;
-}
-
-/*************Fin Page Artiste****************/
-
+/*Fin Accueil*/
 
 /*Footer*/
 
 .footer {
 
 }
-.footer_top {
+.footer-top {
     background-color: rgba(24, 37, 46, 1);
 }
-.footer_bottom {
+.footer-bottom {
     background-color: rgba(90, 195, 152, 1);
 }
-.footer_title {
-    color: white;
-}
-.footer_legal {
+.footer-legal {
     color: white;
     margin-bottom: 1%;
 }
-.footer_sponsor {
+.footer-sponsor {
     height: 50px;
     max-width: 150px;
     margin: 5%;
 }
-.footer_social {
+.footer-social {
     width: 50px;
     height: 50px;
     margin: 5%;
@@ -189,79 +151,9 @@ p {
 
 /*Fin Footer*/
 
-/*Fin Général */
+/*Programmation*/
 
-/*Welcome */
-
-.welcome_buttonLeft {
-    position: absolute;
-    left: 30%;
-    margin-top: 45%;
-}
-.welcome_buttonRight {
-    position: absolute;
-    right: 35%;
-    margin-top: 45%;
-}
-.welcome_div {
-    /*background-color: rgba(141, 189, 69, 0.5);*/
-    background-color: rgba(90, 195, 152, 0.5);
-    /*background-color: rgba(234, 230, 247, 0.5);*/
-    padding: 5%;
-}
-.welcome_divTitle {
-    background-color: rgba(24, 37, 46, 0.75);
-    margin-top: 0;
-    padding: 1%;
-}
-.welcome_divH1 {
-    margin-bottom: 0;
-    margin-top: 0;
-    font-size: 10vw;
-    color: white;
-}
-.welcome_newsDiv {
-    background-color: white;
-    height: 575px;
-    padding: 5%;
-    border: 5px solid rgba(90, 195, 152, 1);
-    margin-bottom: 1%;
-}
-.welcome_newsH1 {
-    color: rgb(90, 195, 152);
-}
-.welcome_newsHR {
-    border: 1px solid rgba(90, 195, 152, 1);
-}
-.welcome_newsP {
-
-}
-
-
-
-
-
-/* ---- DEBUT Partie css page programmation  ---- */
-
-
-/* -- style header -- */
-
-.headerprog{
-    height: 240px;
-    /*background-color: rgba(24, 37, 46, 0.85);     !* Fond bleu foncé *!*/
-    /*background-color: rgba(90, 195, 152, 0.85);     !* Fond bleu cyan *!*!*/
-    /*border-bottom: 3px solid rgba(237, 122, 33, 0.75);*/
-    /*border-bottom: 2px solid rgba(90, 195, 152, 1);*/
-    position: relative;
-    top:-20px;
-    display:none;
-
-}
-
-
-/* -- style zone filtre -- */
-
-.filtreprog {
+.prog-filter {
     /*background-color: rgba(141, 189, 69, 0.85); !* Fond vert clair *!*/
     /*background-color: rgba(90, 195, 152, 0.85); !* Fond bleu cyan *!*/
     background-color: rgba(24, 37, 46, 0.75);
@@ -269,15 +161,13 @@ p {
     top:-20px;
     padding:10px;
 }
-
-.titletri {
+.filter-title {
     color: #ffffff;
     position: relative;
     top:-3px;
     font-size: 2em;
 }
-
-.btntri {
+.filter-btn {
     text-decoration: none;
     color: #ffffff;
     font-size: 1.8em;
@@ -293,52 +183,22 @@ p {
     top:5px;
     left:-15px;
     border-radius: inherit;
-
 }
-
-.listtri {
+.filter-list {
     background-color: rgba(90, 195, 152, 0.85);     /* Fond cyan */
     box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
 }
-
-
-/* -- style image + sous-titre -- */
-
-.itemx {
+.prog-artist {
     border: none;
     background-color: transparent;
-
 }
-
-/*Fin Food*/
-
-/*Venir*/
-
-.venir_div {
-    background-color: white;
-    padding: 1%;
-    border: 5px solid rgba(90, 195, 152, 1);
-    margin-bottom: 1%;
-}
-
-.venir_hr {
-    border: 1px solid rgba(90, 195, 152, 1);
-    width: 80%;
-}
-/*Fin Venir*/
-
-/* -- style image seule -- */
-
-.itemx img {
+.prog-artist img {
     /*border: 3px solid rgba(90, 195, 152, 1);*/
     /*border: 3px solid rgba(237, 122, 33, 1);*/
     /*box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;*/
     box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
 }
-
-/* -- style bloc sous-titre -- */
-
-.labelx {
+.prog-info {
     /*background-color: rgba(90, 195, 152, 1);        !*couleur fond bleu cyan*!*/
     background-color: rgba(24, 37, 46, 1);      /*couleur fond bleu foncé*/
     width:180px;
@@ -356,78 +216,125 @@ p {
     box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);        /*Ombre autour du layout artiste*/
 
 }
-
-/* -- style nom de l'artiste -- */
-
-.layoutartiste {
+.prog-name {
     font-size: 1.5em;
     font-family: 'Dokyo', sans-serif;
 
 }
-
-/* -- style date -- */
-
-.layoutag {
+.prog-tag {
     position: relative;
     top: -16px;
 }
-
-
-.filtreprog a:hover {
+.filter-list a:hover {
     color: rgba(90, 195, 152, 1);       /* Hover cyan */
     /*color: rgba(237, 122, 33, 1);       !* Hover orange *!*/
 }
-
 @media all and (max-device-width: 570px) {
-
-
-.titletri {
-    font-size:1em;
-}
-.btntri {
-    font-size: 1em;
-}
-
+    .filter-title {
+        font-size:1em;
+    }
+    .filter-btn {
+        font-size: 1em;
+    }
 }
 
-@media all and (max-device-width: 570px) {
+/*Fin Programmation*/
 
+/*Planning*/
 
-
-}
-
-
-/* ---- FIN Partie css page programmation  ---- */
-
-
-
-
-/*Fin Welcome*/
-
-/*Lieux*/
-
-.lieux_title {
+.planning-location {
     color: white;
+    font-size: x-large;
+    text-align: center;
+    vertical-align: middle;
 }
-
-.lieux_thumbnail {
-    background-color: transparent;
-    border: none;
-    height: 200px;
-}
-/*Fin Lieux*/
-
-/*Food*/
-.food_div {
+.planning-show {
+    display: table-cell;
+    vertical-align: middle;
     background-color: white;
-    padding: 1%;
-    border: 5px solid rgba(90, 195, 152, 1);
-    margin-bottom: 1%;
+    border-radius : 20px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+    width: 280px;
+}
+.show-blue {
+    color: #2baf97;
+    border: 5px solid #2baf97;
+    box-shadow: 3px 3px 0px #017553;
+}
+.show-orange {
+    color: #ed7a21;
+    border: 5px solid #ed7a21;
+    box-shadow: 3px 3px 0px #ed7a22;
+}
+.planning-showSmall {
+    color: white;
+    text-align: center;
+    font-weight: 100;
+    font-size: 30px;
+}
+.planning-locationSmall {
+    color: white;
+    text-align: center;
+    font-size: 48px;
 }
 
-.food_hr {
-    border: 1px solid rgba(90, 195, 152, 1);
+/*Fin Planning*/
+
+/*Artiste*/
+
+.artiste-info {
+    background-color: rgba(255,255,255,0.8);
+    /*    height: 300px;*/
+    padding: 2.5%;
+}
+.artiste-title {
+    text-decoration: underline;
+    margin-top: 0%;
+}
+.artiste-tag{
+    margin-top: 70px;
+}
+.social-logo{
+    height: 20px;
+    width: 20px;
+    margin: 3%;
+}
+.artiste-img{
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    display: block;
+    overflow-clip: padding-box;
+}
+.artiste-vid{
+    margin: 50px 0px 350px;
+    padding: 5px 5px 0px 5px;
+    text-align: center;
+    position: relative;
+}
+.artiste-prog{
+    text-align: center;
+    background-color: rgba(255,255,255,0.8);
+    min-height: 180px;
+    color: rgba(43, 175, 151, 1);
+    font-size: 25px;
+    padding: 10% 0 10% 0;
+    margin-top: 54px;
+}
+.artiste-progMobile{
+    color: rgba(43, 175, 151, 1);
+    font-size: 20px;
+}
+.social-logoMobile{
+    height: 15px;
+    width: 15px;
+    margin: 3%;
+}
+.artiste-vidMobile{
+    text-align: center;
+    margin-bottom: 70px;
 }
 
-/*Fin Food*/
-
+/*Fin Artiste*/
