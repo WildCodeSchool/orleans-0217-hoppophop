@@ -234,7 +234,10 @@ p {
 }
 
 
-/* ---- Partie css page programmation  ---- */
+
+
+
+/* ---- DEBUT Partie css page programmation  ---- */
 
 
 /* -- style header -- */
@@ -257,9 +260,10 @@ p {
 .filtreprog {
     /*background-color: rgba(141, 189, 69, 0.85); !* Fond vert clair *!*/
     /*background-color: rgba(90, 195, 152, 0.85); !* Fond bleu cyan *!*/
-    background-color: rgba(24, 37, 46, 0.85);
+    background-color: rgba(24, 37, 46, 0.75);
     position: relative;
     top:-20px;
+    padding:10px;
 }
 
 .titletri {
@@ -272,16 +276,23 @@ p {
 .btntri {
     text-decoration: none;
     color: #ffffff;
-    font-size: 2.4em;
-    background-color: rgba(237, 122, 33, 1);
+    font-size: 1.8em;
+    /*background-color: rgba(237, 122, 33, 1);        !* Fond orange *!*/
+    background-color: transparent;      /* Fond Transparent */
+    /*background-color: rgba(90, 195, 152, 1);      !* Fond cyan *!*/
+    /*border: 3px solid rgba(237, 122, 33, 1);        !* Bordure orange *!*/
+    border: 3px solid rgba(90, 195, 152, 1);        /* Bordure cyan */
+    /*border: 3px solid rgba(90, 195, 152, 1);        !* Bordure cyan *!*/
+    /*border-right: 3px solid #ffffff;        !* Bordure blanche *!*/
+    /*border-left: 3px solid #ffffff;*/
     position: relative;
-    margin-top: auto;
-    margin-bottom: auto;
+    top:5px;
+    left:-15px;
 
 }
 
 .listtri {
- background-color: rgba(90, 195, 152, 0.85);
+    background-color: rgba(90, 195, 152, 0.85);     /* Fond cyan */
     box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
 }
 
@@ -289,8 +300,83 @@ p {
 /* -- style image + sous-titre -- */
 
 .itemx {
-    margin: 50px;
+    border: none;
+    background-color: transparent;
+
 }
+
+/* -- style image seule -- */
+
+.itemx img {
+    /*border: 3px solid rgba(90, 195, 152, 1);*/
+    /*border: 3px solid rgba(237, 122, 33, 1);*/
+    /*box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;*/
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+}
+
+/* -- style bloc sous-titre -- */
+
+.labelx {
+    /*background-color: rgba(90, 195, 152, 1);        !*couleur fond bleu cyan*!*/
+    background-color: rgba(24, 37, 46, 1);      /*couleur fond bleu foncé*/
+    width:180px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -20px;
+    height:50px;
+    color: #ffffff;
+    /*border: 3px solid rgba(90, 195, 152, 1);       !* bordure cyan *!*/
+    border: 3px solid rgba(237, 122, 33, 1);        /* bordure orange */
+    /*border: 3px solid rgba(24, 37, 46, 1); */         /* bordure bleu foncé */
+    /*border: 3px solid rgba(141, 189, 69, 1);          !* bordure vert clair *!*/
+    /*box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;*/
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);        /*Ombre autour du layout artiste*/
+
+}
+
+/* -- style nom de l'artiste -- */
+
+.layoutartiste {
+    font-size: 1.5em;
+    font-family: 'Dokyo', sans-serif;
+
+}
+
+/* -- style date -- */
+
+.layoutag {
+    position: relative;
+    top: -16px;
+}
+
+
+.filtreprog a:hover {
+    color: rgba(90, 195, 152, 1);
+}
+
+@media all and (max-device-width: 570px) {
+
+
+.titletri {
+    font-size:1em;
+}
+.btntri {
+    font-size: 1em;
+}
+
+}
+
+@media all and (max-device-width: 570px) {
+
+
+
+}
+
+
+/* ---- FIN Partie css page programmation  ---- */
+
+
 
 
 /*Fin Welcome*/
@@ -321,49 +407,4 @@ p {
 }
 
 /*Fin Food*/
-
-/* -- style image seule -- */
-
-.itemx img {
-    /*border: 3px solid rgba(90, 195, 152, 1);*/
-    /*border: 3px solid rgba(237, 122, 33, 1);*/
-    /*box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;*/
-    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
-}
-
-/* -- style bloc sous-titre -- */
-
-.labelx {
-    /*background-color: rgba(90, 195, 152, 1);*/        /*couleur fond bleu cyan*/
-    background-color: rgba(24, 37, 46, 1);      /*couleur fond bleu foncé*/
-    width:180px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    top: -20px;
-    height:50px;
-    color: #ffffff;
-    /*border: 3px solid rgba(90, 195, 152, 1);       !* bordure cyan *!*/
-    border: 3px solid rgba(237, 122, 33, 1);        /* bordure orange */
-    /*border: 3px solid rgba(24, 37, 46, 1); */         /* bordure bleu foncé */
-    /*border: 3px solid rgba(141, 189, 69, 1);          !* bordure vert clair *!*/
-    /*box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;*/
-    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
-
-}
-
-/* -- style nom de l'artiste -- */
-
-.layoutartiste {
-    font-size: 1.5em;
-    font-family: 'Dokyo', sans-serif;
-
-}
-
-/* -- style date -- */
-
-.layoutag {
-    position: relative;
-    top: -16px;
-}
 
