@@ -19,7 +19,6 @@ require('php/header.php');
                 </div>
             </div>
         </div>
-
     </div>
     <br />
     <br />
