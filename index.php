@@ -1,10 +1,6 @@
 <?php
 require('php/header.php');
 ?>
-
-
-
-<div class="container-fluid">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-3">
@@ -26,7 +22,7 @@ require('php/header.php');
 
     </div>
     <br />
-    <br />  
+    <br />
     <div class="welcome_divTitle text-center visible-sm">
         <h1 class="welcome_divH1">PROGRAMMATION</h1>
     </div>
