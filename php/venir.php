@@ -3,6 +3,7 @@ require('header.php');
 ?>
 <div class="container text-center">
     <div class="venir_div">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
         <h3>COMMENT VENIR SUR HOP POP HOP ?</h3>
         <p>À pied, en vélo, en train, en voiture, en bus… vous avez sans doute votre façon pour venir au festival ! Situé en plein centre-ville d’Orléans, les 6 lieux de concerts du festival sont accessibles à moins de 5 minutes à pied les uns des autres.</p>
         <hr class="venir_hr">
