@@ -3,7 +3,7 @@
 /*Planning*/
 
 /*Général*/
-
+/*@import url("styleplanning.css");*/
 body {
     background: url("../img/background.png") center center  no-repeat fixed;
     background-size: cover;
@@ -68,6 +68,95 @@ p {
 }
 
 /*Fin Navbar */
+
+/**************Page Artiste**************/
+
+
+
+.artistdescr{
+    background-color: rgba(255,255,255,0.8);
+/*    height: 300px;*/
+    padding-left: 10px;
+}
+.artistdescr h1{
+    text-decoration: underline;
+    margin-top: 0%;
+
+}
+.tagartist{
+    margin-top: 70px;
+}
+
+.logosoc{
+    height: 20px;
+    width: 20px;
+    margin: 3%;
+}
+
+
+.artistprog{
+    text-align: center;
+    background-color: rgba(255,255,255,0.8);
+    min-height: 180px;
+    color: rgba(43, 175, 151, 1);
+    font-size: 25px;
+    padding: 10% 0 10% 0;
+    margin-top: 54px;
+    font-family: 'Dokyo', sans-serif;
+}
+.separateur {
+    border: thin solid grey;
+    width: 65%;
+}
+.trait{
+    border-top: 1px solid grey;
+    display: block;
+    height: 1px;
+    width: 50px;
+    margin: 20px auto;
+}
+.progmob p{
+    font-family: 'Dokyo', sans-serif;
+    color: rgba(43, 175, 151, 1);
+    font-size: 20px;
+}
+
+.artistvid{
+    margin: 50px 0px 350px;
+    padding: 5px 5px 0px 5px;
+    text-align: center;
+    position: relative;
+}
+/*.artistprogmob{
+    text-align: center;
+    color: rgba(43, 175, 151, 1);
+    font-size: 25px;
+    padding:10px;
+    font-family: 'Dokyo', sans-serif;
+}*/
+.logosocmob{
+    height: 15px;
+    width: 15px;
+    margin: 3%;
+}
+.artistvidmob{
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+
+
+
+.imgartiste{
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    display: block;
+    overflow-clip: padding-box;
+}
+
+/*************Fin Page Artiste****************/
+
 
 /*Footer*/
 
@@ -149,7 +238,10 @@ p {
 }
 
 
-/* ---- Partie css page programmation  ---- */
+
+
+
+/* ---- DEBUT Partie css page programmation  ---- */
 
 
 /* -- style header -- */
@@ -172,9 +264,10 @@ p {
 .filtreprog {
     /*background-color: rgba(141, 189, 69, 0.85); !* Fond vert clair *!*/
     /*background-color: rgba(90, 195, 152, 0.85); !* Fond bleu cyan *!*/
-    background-color: rgba(24, 37, 46, 0.85);
+    background-color: rgba(24, 37, 46, 0.75);
     position: relative;
     top:-20px;
+    padding:10px;
 }
 
 .titletri {
@@ -187,16 +280,23 @@ p {
 .btntri {
     text-decoration: none;
     color: #ffffff;
-    font-size: 2.4em;
-    background-color: rgba(237, 122, 33, 1);
+    font-size: 1.8em;
+    /*background-color: rgba(237, 122, 33, 1);        !* Fond orange *!*/
+    background-color: transparent;      /* Fond Transparent */
+    /*background-color: rgba(90, 195, 152, 1);      !* Fond cyan *!*/
+    /*border: 3px solid rgba(237, 122, 33, 1);        !* Bordure orange *!*/
+    border: 3px solid rgba(90, 195, 152, 1);        /* Bordure cyan */
+    /*border: 3px solid rgba(90, 195, 152, 1);        !* Bordure cyan *!*/
+    /*border-right: 3px solid #ffffff;        !* Bordure blanche *!*/
+    /*border-left: 3px solid #ffffff;*/
     position: relative;
-    margin-top: auto;
-    margin-bottom: auto;
+    top:5px;
+    left:-15px;
 
 }
 
 .listtri {
- background-color: rgba(90, 195, 152, 0.85);
+    background-color: rgba(90, 195, 152, 0.85);     /* Fond cyan */
     box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
 }
 
@@ -204,8 +304,100 @@ p {
 /* -- style image + sous-titre -- */
 
 .itemx {
-    margin: 50px;
+    border: none;
+    background-color: transparent;
+
 }
+
+/*Fin Food*/
+
+/*Venir*/
+
+.venir_div {
+    background-color: white;
+    padding: 1%;
+    border: 5px solid rgba(90, 195, 152, 1);
+    margin-bottom: 1%;
+}
+
+.venir_hr {
+    border: 1px solid rgba(90, 195, 152, 1);
+    width: 80%;
+}
+/*Fin Venir*/
+
+/* -- style image seule -- */
+
+.itemx img {
+    /*border: 3px solid rgba(90, 195, 152, 1);*/
+    /*border: 3px solid rgba(237, 122, 33, 1);*/
+    /*box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;*/
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+}
+
+/* -- style bloc sous-titre -- */
+
+.labelx {
+    /*background-color: rgba(90, 195, 152, 1);        !*couleur fond bleu cyan*!*/
+    background-color: rgba(24, 37, 46, 1);      /*couleur fond bleu foncé*/
+    width:180px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -20px;
+    height:50px;
+    color: #ffffff;
+    /*border: 3px solid rgba(90, 195, 152, 1);       !* bordure cyan *!*/
+    border: 3px solid rgba(237, 122, 33, 1);        /* bordure orange */
+    /*border: 3px solid rgba(24, 37, 46, 1); */         /* bordure bleu foncé */
+    /*border: 3px solid rgba(141, 189, 69, 1);          !* bordure vert clair *!*/
+    /*box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;*/
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);        /*Ombre autour du layout artiste*/
+
+}
+
+/* -- style nom de l'artiste -- */
+
+.layoutartiste {
+    font-size: 1.5em;
+    font-family: 'Dokyo', sans-serif;
+
+}
+
+/* -- style date -- */
+
+.layoutag {
+    position: relative;
+    top: -16px;
+}
+
+
+.filtreprog a:hover {
+    color: rgba(90, 195, 152, 1);
+}
+
+@media all and (max-device-width: 570px) {
+
+
+.titletri {
+    font-size:1em;
+}
+.btntri {
+    font-size: 1em;
+}
+
+}
+
+@media all and (max-device-width: 570px) {
+
+
+
+}
+
+
+/* ---- FIN Partie css page programmation  ---- */
+
+
 
 
 /*Fin Welcome*/
@@ -237,51 +429,3 @@ p {
 
 /*Fin Food*/
 
-/* -- style image seule -- */
-
-.itemx img {
-    /*border: 3px solid rgba(90, 195, 152, 1);*/
-    /*border: 3px solid rgba(237, 122, 33, 1);*/
-    /*box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;*/
-    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
-}
-
-/* -- style bloc sous-titre -- */
-
-.labelx {
-    /*background-color: rgba(90, 195, 152, 1);*/        /*couleur fond bleu cyan*/
-    background-color: rgba(24, 37, 46, 1);      /*couleur fond bleu foncé*/
-    width:180px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    top: -20px;
-    height:50px;
-    color: #ffffff;
-    /*border: 3px solid rgba(90, 195, 152, 1);       !* bordure cyan *!*/
-    border: 3px solid rgba(237, 122, 33, 1);        /* bordure orange */
-    /*border: 3px solid rgba(24, 37, 46, 1); */         /* bordure bleu foncé */
-    /*border: 3px solid rgba(141, 189, 69, 1);          !* bordure vert clair *!*/
-    /*box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;*/
-    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
-
-}
-
-/* -- style nom de l'artiste -- */
-
-.layoutartiste {
-    font-size: 1.5em;
-    font-family: 'Dokyo', sans-serif;
-
-}
-
-/* -- style date -- */
-
-.layoutag {
-    position: relative;
-    top: -16px;
-}
-
-@media all (max-width: 1280px) {
-    
-}

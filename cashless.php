@@ -1,7 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: wilder9
- * Date: 29/03/17
- * Time: 15:44
- */
+require('php/header.php');
+
+?>
+    <div class="welcome_divTitle text-center">
+        <h1 class="welcome_divH1">PLANNING</h1>
+    </div>
+
+
+<?php
+require('php/footer.php');
+?>

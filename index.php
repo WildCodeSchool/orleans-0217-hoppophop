@@ -1,6 +1,10 @@
 <?php
 require('php/header.php');
 ?>
+
+
+
+<div class="container-fluid">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-3">
@@ -19,6 +23,7 @@ require('php/header.php');
                 </div>
             </div>
         </div>
+
     </div>
     <br />
     <br />  
