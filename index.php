@@ -5,15 +5,12 @@ require('php/header.php');
 
 
 <div class="container-fluid">
-<<<<<<< HEAD
+
     <div class="row welcome_navRow">
 
 
 
-=======
 
-
->>>>>>> artiste
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-3">
