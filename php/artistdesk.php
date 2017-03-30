@@ -1,9 +1,13 @@
 <?php
 include("header.php");
 
-?>
-	<div class="container-fluid blocPage hidden-xs">
-		<div class="row blocHaut">
+?>  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    <script> AOS.init(); </script>
+
+
+    <div class="container-fluid hidden-xs">
+		<div class="row">
 			<div class="col-xs-6 col-xs-offset-1">
                 <div class="artistdescr text-left">
                     <h1>ARTISTE</h1>
@@ -24,19 +28,20 @@ include("header.php");
                 </div>
 
 			</div>
-            <div class="col-xs-4">
-                <img src="http://www.auplod.com/u/oadupl94867.jpeg" class="img-responsive" >
+            <div class="col-xs-4 col-sm-4">
+                <div data-aos="fade-left"><img src="http://www.auplod.com/u/oadupl94867.jpeg" class="img-responsive imgartiste" ></div>
+
             </div>
         </div>
-        <div class="row blocBas">
-            <div class="col-xs-6 col-xs-offset-1">
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-1 col-sm-6">
                 <div class="artistvid">
                     <iframe width="100%" height="480" src="https://www.youtube.com/embed/wHylQRVN2Qs" frameborder="0" allowfullscreen></iframe>                </div>
 
             </div>
 
 
-            <div class="col-xs-4">
+            <div class="col-xs-4 col-sm-4">
                 <div class="artistprog">
                    <h2>VEN. 16 SEPTEMBRE<br/></h2>
                     <div class="trait"></div>
@@ -64,7 +69,7 @@ include("header.php");
                         <p>JARDIN DE L'EVÊCHÉ<br/>
                         21H35 > 22H35</p>
                     </div>
-                    <h3><span class="pays">France</span><span>/</span><span class="style">Chanson</span>/</span><span class="style">Chanson</span></h3>
+                    <h3><span class="pays">France</span><span>/</span><span class="style">Chanson</span><span>/</span><span class="style">Chanson</span></h3>
 
                         <img src="../src/img/social/fb-logo.png" class="logosocmob">
                         <img src="../src/img/social/twitter-logo.png" class="logosocmob">
@@ -87,6 +92,7 @@ include("header.php");
 
 
     </div>
+
 
 <?php
 require('footer.php');
