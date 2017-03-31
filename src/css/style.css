@@ -60,7 +60,6 @@ body {
 .thumbnail-div {
     background-color: transparent;
     border: none;
-    height: 200px;
 }
 .thumbnail-title {
     color: white;
@@ -127,7 +126,7 @@ body {
 /*Footer*/
 
 .footer {
-    margin-top: 5%;
+    margin-top: 1%;
 }
 .footer-top {
     background-color: rgba(24, 37, 46, 1);
@@ -140,7 +139,8 @@ body {
     color: white;
 }
 .footer-sponsor {
-    margin: 5%;
+    max-width: 100px;
+    max-height: 100px;
 }
 .footer-social {
     width: 50px;
@@ -343,3 +343,11 @@ body {
 }
 
 /*Fin Artiste*/
+
+/*Lieux*/
+
+.lieux-thumbnail {
+    height: 200px;
+}
+
+/*Fin Lieux*/

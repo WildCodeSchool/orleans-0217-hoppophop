@@ -52,7 +52,13 @@ require('php/header.php');
                 ?>
                 <div class="col-xs-12 col-xs-offset-0 col-sm-4">
                     <div class="content-div text-left">
-                        <img src="src/img/la_jungle.jpg" class="img-responsive">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-6 col-xs-offset-3">
+                                    <img src="src/img/la_jungle.jpg" class="img-responsive">
+                                </div>
+                            </div>
+                        </div>
                         <h2 class="news-title font-circula">La Jungle</h2>
                         <hr class="hr">
                         <p>Une six-cordes et un casio. Il n’en faut parfois pas plus pour faire péter le mercure et irriter les yeux de sueur après deux breaks et trois accords. Deux singes rouquins, un très grand et un plus petit, vous emmènent dans leur milieu naturel : La Jungle !</p>
