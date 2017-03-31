@@ -67,7 +67,6 @@ body {
 .thumbnail-div {
     background-color: transparent;
     border: none;
-    height: 200px;
 }
 .thumbnail-title {
     color: white;
@@ -111,7 +110,9 @@ body {
     color: #18252e!important;
 }
 
-/*Fin Navbar*/
+
+/*Fin Navbar */
+
 
 /*Accueil*/
 
@@ -119,6 +120,7 @@ body {
     position: absolute;
     left: 30%;
     margin-top: 45%;
+
 }
 .logo-buttonRight {
     position: absolute;
@@ -134,22 +136,21 @@ body {
 /*Footer*/
 
 .footer {
-
+    margin-top: 2.5%;
 }
 .footer-top {
     background-color: rgba(24, 37, 46, 1);
 }
 .footer-bottom {
     background-color: rgba(90, 195, 152, 1);
+    padding: 1%;
 }
 .footer-legal {
     color: white;
-    margin-bottom: 1%;
 }
 .footer-sponsor {
-    height: 50px;
-    max-width: 150px;
-    margin: 5%;
+    max-width: 100px;
+    max-height: 100px;
 }
 .footer-social {
     width: 50px;
@@ -251,6 +252,20 @@ body {
         font-size: 1em;
     }
 }
+.prog-cancel {
+    position: absolute;
+    z-index: 1;
+    margin: auto;
+    top: 0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin-top: 10%;
+    color: red;
+}
+.img-cancel {
+    opacity: 0.25;
+}
 
 /*Fin Programmation*/
 
@@ -305,57 +320,18 @@ body {
 
 /*Artiste*/
 
-.artiste-info {
-    background-color: rgba(255,255,255,0.8);
-    /*    height: 300px;*/
-    padding: 2.5%;
-}
-.artiste-title {
-    text-decoration: underline;
-    margin-top: 0%;
-}
-.artiste-tag{
-    margin-top: 70px;
-}
 .social-logo{
     height: 20px;
     width: 20px;
     margin: 3%;
 }
-.artiste-img{
-    width: 100%;
-    overflow: hidden;
-    height: 100%;
-    display: block;
-    overflow-clip: padding-box;
-}
-.artiste-vid{
-    margin: 50px 0px 350px;
-    padding: 5px 5px 0px 5px;
-    text-align: center;
-    position: relative;
-}
-.artiste-prog{
-    text-align: center;
-    background-color: rgba(255,255,255,0.8);
-    min-height: 180px;
-    color: rgba(43, 175, 151, 1);
-    font-size: 25px;
-    padding: 10% 0 10% 0;
-    margin-top: 54px;
-}
-.artiste-progMobile{
-    color: rgba(43, 175, 151, 1);
-    font-size: 20px;
-}
-.social-logoMobile{
-    height: 15px;
-    width: 15px;
-    margin: 3%;
-}
-.artiste-vidMobile{
-    text-align: center;
-    margin-bottom: 70px;
-}
 
 /*Fin Artiste*/
+
+/*Lieux*/
+
+.lieux-thumbnail {
+    height: 200px;
+}
+
+/*Fin Lieux*/
