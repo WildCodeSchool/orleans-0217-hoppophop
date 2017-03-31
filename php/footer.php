@@ -2,29 +2,39 @@
     <div class="footer-top">
         <div class="container">
             <div class="row">
-                <div class="col-xs-6 col-sm-2 col-sm-offset-1">
+                <div class="col-xs-4 col-md-3">
                     <a href="#" class="">
-                        <img src="../src/img/sponsors/sponsor-1.png" class="img-responsive footer-sponsor">
+                        <img src="../src/img/sponsors/adami.png" class="img-responsive footer-sponsor">
                     </a>
                 </div>
-                <div class="col-xs-6 col-sm-2">
+                <div class="col-xs-4 col-md-3">
                     <a href="#" class="">
-                        <img src="../src/img/sponsors/sponsor-2.png" class="img-responsive footer-sponsor">
+                        <img src="../src/img/sponsors/cnv.png" class="img-responsive footer-sponsor">
                     </a>
                 </div>
-                <div class="col-xs-6 col-sm-2">
+                <div class="col-xs-4 col-md-3">
                     <a href="#" class="">
-                        <img src="../src/img/sponsors/sponsor-3.png" class="img-responsive footer-sponsor">
+                        <img src="../src/img/sponsors/creditmut.png" class="img-responsive footer-sponsor">
                     </a>
                 </div>
-                <div class="col-xs-6 col-sm-2 col-sm-offset-0">
+                <div class="col-xs-4 col-md-3">
                     <a href="#" class="">
-                        <img src="../src/img/sponsors/sponsor-4.png" class="img-responsive footer-sponsor">
+                        <img src="../src/img/sponsors/loiret.png" class="img-responsive footer-sponsor">
                     </a>
                 </div>
-                <div class="col-xs-6 col-xs-offset-3 col-sm-2 col-sm-offset-0">
+                <div class="col-xs-4 col-md-3 col-md-offset-1">
                     <a href="#" class="">
-                        <img src="../src/img/sponsors/sponsor-5.png" class="img-responsive footer-sponsor">
+                        <img src="../src/img/sponsors/orleans.png" class="img-responsive footer-sponsor">
+                    </a>
+                </div>
+                <div class="col-xs-4 col-md-3">
+                    <a href="#" class="">
+                        <img src="../src/img/sponsors/region.png" class="img-responsive footer-sponsor">
+                    </a>
+                </div>
+                <div class="col-xs-4 col-xs-offset-4 col-md-3 col-md-offset-0">
+                    <a href="#" class="">
+                        <img src="../src/img/sponsors/sacem.png" class="img-responsive footer-sponsor">
                     </a>
                 </div>
             </div>
