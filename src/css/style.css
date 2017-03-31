@@ -181,16 +181,17 @@ body {
     color: #ffffff;
     font-size: 1.8em;
     /*background-color: rgba(237, 122, 33, 1);        !* Fond orange *!*/
-    background-color: transparent;      /* Fond Transparent */
+    background-color: #18252e;
+    /* Fond Transparent */
     /*background-color: rgba(90, 195, 152, 1);      !* Fond cyan *!*/
     /*border: 3px solid rgba(237, 122, 33, 1);        !* Bordure orange *!*/
-    border: 3px solid rgba(90, 195, 152, 1);        /* Bordure cyan */
+    /*border: 1px solid rgba(90, 195, 152, 1);        /* Bordure cyan */
     /*border-right: 3px solid rgba(90, 195, 152, 1);        !* Bordure cyan droite*!*/
     /*border-left: 3px solid rgba(90, 195, 152, 1);       !* Bordure cyan gauche*!*/
     position: relative;
     top:5px;
     left:-15px;
-    border-radius: inherit;
+    border-radius: 5px;
 
 }
 .filter-list {
@@ -224,7 +225,7 @@ body {
     height:50px;
     color: #ffffff;
     /*border: 3px solid rgba(90, 195, 152, 1);       !* bordure cyan *!*/
-    border: 3px solid rgba(237, 122, 33, 1);        /* bordure orange */
+    border: 1px solid rgba(237, 122, 33, 1);        /* bordure orange */
     /*border: 3px solid rgba(24, 37, 46, 1); */         /* bordure bleu foncé */
     /*border: 3px solid rgba(141, 189, 69, 1);          !* bordure vert clair *!*/
     /*box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;*/
@@ -254,7 +255,6 @@ body {
 }
 .prog-cancel {
     position: absolute;
-    z-index: 1;
     margin: auto;
     top: 0;
     left:0;

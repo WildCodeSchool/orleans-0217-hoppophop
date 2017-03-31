@@ -2,8 +2,10 @@
 require('header.php');
 
 ?>
-    <div class="separator-titleDiv text-center">
-        <h1 class="separator-title font-dokyo">PLANNING</h1>
+    <div class="header-div text-center">
+        <h1 class="font-dokyo">PLANNING</h1>
+    </div>
+    <div class="separator-titleDiv text-center>">
         <h2 class="planning-day font-dokyo">VENDREDI</h2></div>
     </div>
 
