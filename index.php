@@ -22,16 +22,17 @@ require('php/header.php');
     </div>
     <br />
     <br />
-    <div class="separator-titleDiv text-center visible-sm">
+    <!--
+    <div class="separator-titleDiv text-center">
         <h1 class="separator-title font-dokyo">PROGRAMMATION</h1>
     </div>
-    <div class="separator-div visible-sm">
+    <div class="separator-div">
         <a href="#" class="separator-content"><img src="src/img/programmation.png" class="img-responsive"></a>
     </div>
-    <div class="separator-titleDiv text-center visible-sm">
+    <div class="separator-titleDiv text-center">
         <h1 class="separator-title font-dokyo">BILLETERIE</h1>
     </div>
-    <div class="separator-div visible-sm">
+    <div class="separator-div">
         <div class="row">
             <div class="col-xs-12 col-xs-offset-0 col-sm-2 col-sm-offset-2 separator-content text-center">
                 <img src="http://placehold.it/200x200">
@@ -40,6 +41,7 @@ require('php/header.php');
             </div>
         </div>
     </div>
+    -->
     <div class="separator-titleDiv text-center">
         <h1 class="separator-title font-dokyo">ACTUALITES</h1>
     </div>
