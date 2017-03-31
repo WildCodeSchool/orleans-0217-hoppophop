@@ -25,6 +25,7 @@ body {
     background-color: white;
     border: 5px solid rgba(90, 195, 152, 1);
     padding: 2.5%;
+    margin: 1%;
 }
 .hr {
     border: 1px solid rgba(90, 195, 152, 1);
@@ -126,7 +127,7 @@ body {
 /*Footer*/
 
 .footer {
-
+    margin-top: 5%;
 }
 .footer-top {
     background-color: rgba(24, 37, 46, 1);

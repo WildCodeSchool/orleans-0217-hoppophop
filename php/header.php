@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Hop Pop Hop</title>
     <!-- Bootstrap -->
-
+    <link rel="stylesheet" href="../../src/font-awesome/css/font-awesome.min.css">
     <link href="../../src/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../src/css/style.css" rel="stylesheet">
 
