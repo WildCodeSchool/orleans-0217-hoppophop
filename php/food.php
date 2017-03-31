@@ -1,6 +1,9 @@
 <?php
 require('header.php');
 ?>
+<div class="header-div text-center">
+    <h1 class="header-title font-dokyo">SE NOURRIR</h1>
+</div>
 <div class="container">
     <div class="row">
         <?php
@@ -20,6 +23,7 @@ require('header.php');
                         <h4 class="font-circula">Vendredi de 18h à 22h | Devant le 108</h4>
                     </div>
                 </div>
+                <br />
             </div>
             <?php
         }

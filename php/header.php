@@ -36,7 +36,7 @@
                         </ul>
                     </li>
                     <li><a href="#">Billetterie</a></li>
-                    <li><a href="#">Cashless</a></li>
+                    <li><a href="../php/cashless.php">Cashless</a></li>
                     <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">La vie au festival <span class="caret"></span></a>
                         <ul class="dropdown-menu navbar-dropdown">
