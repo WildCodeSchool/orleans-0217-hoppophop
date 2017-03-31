@@ -17,7 +17,7 @@ require('../php/header.php');
                     <input type="text" class="form-control" id="email" name="email" placeholder="Votre e-mail" required>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" id="subject" name="subject" placeholder="Votre texte" required></textarea>
+                    <textarea class="form-control" id="subject" name="subject" placeholder="Votre texte" rows="7" required></textarea>
                 </div>
                 <button type="button" id="submit" name="submit" class="btn btn-primary">Envoyer votre message</button>
             </form>
