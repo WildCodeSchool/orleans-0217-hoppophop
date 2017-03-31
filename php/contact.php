@@ -5,7 +5,7 @@ require('../php/header.php');
 
 <div class="container-fluid contact-content" style="margin-right: auto; margin-left: auto">
     <div class="col-md-offset-3 col-md-6">
-        <div class="form-area">
+        <div class="form-area text-center">
             <form role="form">
                 <br style="clear:both">
                 <h3 style="margin-bottom: 25px; text-align: center;">Contact Form</h3>
@@ -23,7 +23,7 @@ require('../php/header.php');
                     <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>
                 </div>
 
-                <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Submit Form</button>
+                <button type="button" id="submit" name="submit" class="btn btn-primary">Submit Form</button>
             </form>
         </div>
     </div>
