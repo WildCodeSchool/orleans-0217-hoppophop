@@ -5,21 +5,21 @@ require('php/header.php');
     <br/>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-3">
+            <!--<div class="col-xs-3">
                 <a href="#">
                     <img src="src/img/button-left.png" alt="Boutton Gauche" class="img-responsive logo-buttonLeft">
                 </a>
-            </div>
-            <div class="col-xs-6">
+            </div>-->
+            <div class="col-xs-6 col-xs-offset-3">
                 <img src="src/img/logo-only.png" alt="Logo du Festival" class="img-responsive">
             </div>
-            <div class="col-xs-3">
+            <!--<div class="col-xs-3">
                 <div class="">
                     <a href="php/programmation.php">
                         <img src="src/img/button-right.png" alt="Boutton Droite" class="img-responsive logo-buttonRight">
                     </a>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
     <br />

@@ -1,29 +1,25 @@
 <?php
 require('../php/header.php');
 ?>
-<script type="text/javascript" src="../src/js/contact.js"></script>
-
-<div class="container-fluid contact-content" style="margin-right: auto; margin-left: auto">
+<div class="header-div text-center">
+    <h1 class="header-title font-dokyo">CONTACT</h1>
+</div>
+<div class="container-fluid contact-content">
     <div class="col-md-offset-3 col-md-6">
         <div class="form-area text-center">
             <form role="form">
-                <br style="clear:both">
-                <h3 style="margin-bottom: 25px; text-align: center;">Contact Form</h3>
+                <br/>
+                <h3>Nous contacter</h3>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Votre nom" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Votre e-mail" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                    <textarea class="form-control" id="subject" name="subject" placeholder="Votre texte" required></textarea>
                 </div>
-                <div class="form-group">
-                    <textarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>
-                    <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>
-                </div>
-
-                <button type="button" id="submit" name="submit" class="btn btn-primary">Submit Form</button>
+                <button type="button" id="submit" name="submit" class="btn btn-primary">Envoyer votre message</button>
             </form>
         </div>
     </div>
