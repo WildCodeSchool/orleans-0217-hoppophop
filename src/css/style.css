@@ -7,6 +7,7 @@ body {
     padding-top: 30px;
 }
 
+
 @font-face {
     font-family: 'Circula-Medium';
     src: url('../fonts/circula-medium.otf');
@@ -200,10 +201,6 @@ body {
     background-color: transparent;
 }
 
-
-/* -- style image seule -- */
-
-
 .prog-artist img {
     /*border: 3px solid rgba(90, 195, 152, 1);*/
     /*border: 3px solid rgba(237, 122, 33, 1);*/
@@ -237,10 +234,12 @@ body {
     position: relative;
     top: -16px;
 }
-.filter-list a:hover {
+
+.prog-filter a:hover {
     color: rgba(90, 195, 152, 1);       /* Hover cyan */
     /*color: rgba(237, 122, 33, 1);       !* Hover orange *!*/
 }
+
 @media all and (max-device-width: 570px) {
     .filter-title {
         font-size:1em;
@@ -332,3 +331,83 @@ body {
 }
 
 /*Fin Lieux*/
+
+
+
+
+
+
+/* Début page Dimanche à Orléans */
+
+
+.sunday-all h2 {
+    font-family: 'Circula-Medium', sans-serif;
+}
+
+.sunday-hr1 {
+    border: 0;
+    height: 2px;
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #5AC398, #f0f0f0);
+    background-image: -moz-linear-gradient(left, #f0f0f0, #5AC398, #f0f0f0);
+    background-image: -ms-linear-gradient(left, #f0f0f0, #5AC398, #f0f0f0);
+    background-image: -o-linear-gradient(left, #f0f0f0, #5AC398, #f0f0f0);
+}
+
+.sunday-hr2 {
+    border: 0;
+    height: 2px;
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #5AC398, #f0f0f0);
+    background-image: -moz-linear-gradient(left, #f0f0f0, #5AC398, #f0f0f0);
+    background-image: -ms-linear-gradient(left, #f0f0f0, #5AC398, #f0f0f0);
+    background-image: -o-linear-gradient(left, #f0f0f0, #5AC398, #f0f0f0);
+}
+
+.sunday-1 {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+    padding:10px;
+    color: rgba(24, 37, 46, 1);
+    border: 4px solid rgba(90, 195, 152, 1);
+}
+
+
+.sunday-2 {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+    padding:10px;
+    color: rgba(24, 37, 46, 1);
+    border: 4px solid rgba(90, 195, 152, 1);
+
+
+}
+
+.sunday-content1 {
+
+}
+.sunday-content2 {
+
+}
+
+.sunday-thumb  {
+    border:none;
+    background: transparent;
+    margin:10px;
+    padding:10px;
+}
+.sunday-img {
+    box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+}
+
+
+/* Fin page Dimanche à Orléans */
+
+
+
+/* Début de page CONTACT */
+
+.contact-content{
+    margin:30px;
+}
+
+/* Fin de page CONTACT */
+
