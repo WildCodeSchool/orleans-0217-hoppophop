@@ -36,7 +36,7 @@
                         </ul>
                     </li>
                     <li><a href="#">Billetterie</a></li>
-                    <li><a href="#">Cashless</a></li>
+                    <li><a href="../php/cashless.php">Cashless</a></li>
                     <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">La vie au festival <span class="caret"></span></a>
                         <ul class="dropdown-menu navbar-dropdown">
@@ -50,11 +50,11 @@
                             <li><a href="#">Bénévolat</a></li>
                             <li><a href="#">FAQ</a></li>
                             <li><a href="../php/venir.php">Comment venir</a></li>
-                            <li><a href="#">Dimanche à Orléans</a></li>
+                            <li><a href="../php/dimaorl.php">Dimanche à Orléans</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Partenaires</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="../php/contact.php">Contact</a></li>
                 </ul>
             </div>
         </div>
