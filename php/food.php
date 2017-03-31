@@ -1,6 +1,9 @@
 <?php
 require('header.php');
 ?>
+<div class="header-div text-center">
+    <h1 class="header-title font-dokyo">SE NOURRIR</h1>
+</div>
 <div class="container">
     <div class="row">
         <?php

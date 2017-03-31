@@ -1,8 +1,8 @@
 <?php
 require('header.php');
 ?>
-    <div class="container-fluid header-div">
-
+    <div class="header-div text-center">
+        <h1 class="header-title font-dokyo">PROGRAMMATION</h1>
     </div>
     <div class="container-fluid prog-filter">
         <div class="row">

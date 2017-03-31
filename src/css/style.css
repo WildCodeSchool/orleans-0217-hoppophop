@@ -4,7 +4,7 @@ body {
     background: url("../img/background.png") center center  no-repeat fixed;
     background-size: cover;
     position: relative;
-    padding-top: 70px;
+    padding-top: 30px;
 }
 
 @font-face {
@@ -37,14 +37,11 @@ body {
     border: 1px solid rgba(90, 195, 152, 1);
 }
 .header-div {
-    height: 240px;
-    /*background-color: rgba(24, 37, 46, 0.85);     !* Fond bleu foncé *!*/
-    /*background-color: rgba(90, 195, 152, 0.85);     !* Fond bleu cyan *!*!*/
-    /*border-bottom: 3px solid rgba(237, 122, 33, 0.75);*/
-    /*border-bottom: 2px solid rgba(90, 195, 152, 1);*/
-    position: relative;
-    top:-20px;
-    display:none;
+    color: white;
+    background-color: rgba(24, 37, 46, 0.75);
+}
+.header-title {
+    font-size: 5vw;
 }
 .separator-titleDiv {
     background-color: rgba(24, 37, 46, 0.75);
