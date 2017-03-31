@@ -28,7 +28,7 @@ require('header.php');
                 <h3 class="planning-location font-dokyo">HÔTEL DUPANLOUP</h3>
             </div>
         </div>
-        <div class="row">
+        <div class="row planning">
             <div class="col-md-2 hidden-sm hidden-xs">
                 <div class="planning-show show-blue font-default"><p>CONCERT<br />18h-19h</p></div><br />
                 <div class="planning-show show-blue font-default"><p>CONCERT DE LA MORT QUI TUE<br />18h-19h</p></div><br />

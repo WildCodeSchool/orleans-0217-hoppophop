@@ -136,7 +136,7 @@ body {
 /*Footer*/
 
 .footer {
-    margin-top: 2.5%;
+    margin-top: 5%;
 }
 .footer-top {
     background-color: rgba(24, 37, 46, 1);
@@ -270,6 +270,9 @@ body {
 /*Fin Programmation*/
 
 /*Planning*/
+.planning {
+    margin-bottom: 5%;
+}
 .planning-day {
     color: white;
     font-size: 5vw;
