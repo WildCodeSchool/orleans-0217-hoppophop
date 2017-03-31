@@ -42,7 +42,7 @@ body {
     background-color: rgba(24, 37, 46, 0.75);
 }
 .header-title {
-    font-size: 5vw;
+    font-size: 5vm;
 }
 .separator-titleDiv {
     background-color: rgba(24, 37, 46, 0.75);
@@ -164,8 +164,6 @@ body {
     /*background-color: rgba(141, 189, 69, 0.85); !* Fond vert clair *!*/
     /*background-color: rgba(90, 195, 152, 0.85); !* Fond bleu cyan *!*/
     background-color: rgba(24, 37, 46, 0.75);
-    position: relative;
-    top:-20px;
     padding:10px;
 }
 .filter-title {
