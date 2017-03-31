@@ -3,7 +3,7 @@ require('php/header.php');
 
 ?>
     <div class="welcome_divTitle text-center">
-        <h1 class="welcome_divH1">PLANNING</h1>
+        <h1 class="header-titre">PLANNING</h1>
     </div>
     <h2 class="jour">VENDREDI</h2>
     <div class="container-fluid text-center">
