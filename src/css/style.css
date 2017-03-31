@@ -203,9 +203,26 @@ body {
     width: 15px;
     margin: 3%;
 }
+.img_mob{
+    width: 100%;
+    border: 3px solid rgba(141, 189, 69, 1);
+    border-bottom: none;
+}
+/*******Fin Page Artiste*******/
+
+/*******Page Partenaire*******/
+.separator-green{
+    background-color: rgba(43, 175, 151, 1);
+    font-family: 'Circula-Medium', sans-serif;
+    text-align: center;
+    color: white;
+}
+
+
 /*Fin Navbar*/
 
 /*Accueil*/
+
 
 .logo-buttonLeft {
     position: absolute;
@@ -219,13 +236,7 @@ body {
     margin-top: 45%;
 }
 
-.img_mob{
-    width: 100%;
-    border: 3px solid rgba(141, 189, 69, 1);
 
-    border-bottom: none;
-
-}
 
 
 
