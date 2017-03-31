@@ -20,6 +20,7 @@ require('header.php');
                         <h4 class="font-circula">Vendredi de 18h à 22h | Devant le 108</h4>
                     </div>
                 </div>
+                <br />
             </div>
             <?php
         }

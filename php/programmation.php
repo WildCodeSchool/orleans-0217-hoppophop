@@ -12,25 +12,26 @@ require('header.php');
             <div class="col-xs-2 col-md-2 col-lg-1">
                 <a class="btn dropdown-toggle filter-btn" data-toggle="dropdown" href=#>Lieux <span class="caret"></span></a>
                 <ul class="dropdown-menu filter-list">
-                    <li><a href=#>Choix n°1</a></li>
-                    <li><a href=#>Choix n°2</a></li>
-                    <li><a href=#>Choix n°3</a></li>
+                    <li><a href=#>JARDINS DE L'EVÊCHE</a></li>
+                    <li><a href=#>LE 108</a></li>
+                    <li><a href=#>CCNO</a></li>
+                    <li><a href=#>SCENE NATIONALE D'ORLEANS</a></li>
+                    <li><a href=#>SCENE DE L'INSTITUT</a></li>
+                    <li><a href=#>HÔTEL DUPANLOUP</a></li>
                 </ul>
             </div>
             <div class="col-xs-2 col-md-2 col-lg-1">
                 <a class="btn dropdown-toggle filter-btn" data-toggle="dropdown" href=#>Date <span class="caret"></span></a>
                 <ul class="dropdown-menu filter-list">
-                    <li><a href=#>Choix n°1</a></li>
-                    <li><a href=#>Choix n°2</a></li>
-                    <li><a href=#>Choix n°3</a></li>
+                    <li><a href=#>Vendredi Soir</a></li>
+                    <li><a href=#>Samedi Soir</a></li>
                 </ul>
             </div>
             <div class="col-xs-2 col-md-2 col-lg-1">
                 <a class="btn dropdown-toggle filter-btn" data-toggle="dropdown" href=#>Groupes Locaux <span class="caret"></span></a>
                 <ul class="dropdown-menu filter-list">
-                    <li><a href=#>Choix n°1</a></li>
-                    <li><a href=#>Choix n°2</a></li>
-                    <li><a href=#>Choix n°3</a></li>
+                    <li><a href=#>Oui</a></li>
+                    <li><a href=#>Non</a></li>
                 </ul>
             </div>
         </div>

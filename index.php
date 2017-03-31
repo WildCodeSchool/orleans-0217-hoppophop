@@ -64,6 +64,7 @@ require('php/header.php');
                         <h2 class="news-title font-circula">La Jungle</h2>
                         <hr class="hr">
                         <p>Une six-cordes et un casio. Il n’en faut parfois pas plus pour faire péter le mercure et irriter les yeux de sueur après deux breaks et trois accords. Deux singes rouquins, un très grand et un plus petit, vous emmènent dans leur milieu naturel : La Jungle !</p>
+                        <a href="php/artiste.php">En savoir plus</a>
                     </div>
                 </div>
                 <?php
@@ -90,7 +91,7 @@ require('php/header.php');
     </div><!-- /.modal -->
 <?php
 require('php/footer.php');
-$alert = 1;
+$alert = 0;
 if($alert==1){
     echo '<script> $("#modal-news").modal("show");</script>';
 }

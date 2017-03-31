@@ -186,7 +186,7 @@ body {
 
 }
 .filter-list {
-    background-color: rgba(90, 195, 152, 0.85);     /* Fond cyan */
+    background-color: rgba(90, 195, 152, 1);     /* Fond cyan */
     box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
     color: rgba(237, 122, 33, 1);
 }
