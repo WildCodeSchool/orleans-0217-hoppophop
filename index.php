@@ -29,8 +29,8 @@ require('php/header.php');
     <div class="separator-div">
         <a href="#" class="separator-content"><img src="src/img/programmation.png" class="img-responsive"></a>
     </div>
-    <div class="separator-titleDiv text-center">
-        <h1 class="separator-title font-dokyo">BILLETERIE</h1>
+    <div class="separator-titleDiv text-center visible-sm">
+        <h1 class="separator-title font-dokyo">BILLETTERIE</h1>
     </div>
     <div class="separator-div">
         <div class="row">

@@ -7,6 +7,8 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Hop Pop Hop</title>
     <!-- Bootstrap -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="../../src/font-awesome/css/font-awesome.min.css">
     <link href="../../src/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../src/css/style.css" rel="stylesheet">
@@ -33,7 +35,7 @@
                             <li><a href="../php/planning.php">Planning</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Billeterie</a></li>
+                    <li><a href="#">Billetterie</a></li>
                     <li><a href="#">Cashless</a></li>
                     <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">La vie au festival <span class="caret"></span></a>
@@ -43,7 +45,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Infos Pratique <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Infos Pratiques <span class="caret"></span></a>
                         <ul class="dropdown-menu navbar-dropdown">
                             <li><a href="#">Bénévolat</a></li>
                             <li><a href="#">FAQ</a></li>
