@@ -408,7 +408,9 @@ body {
 
 /* Début de page CONTACT */
 
-
+.contact-content{
+    margin:30px;
+}
 
 /* Fin de page CONTACT */
 
