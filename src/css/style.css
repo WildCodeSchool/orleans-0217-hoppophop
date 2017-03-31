@@ -15,11 +15,18 @@ body {
     font-family: 'Dokyo';
     src: url('../fonts/Dokyo.ttf');
 }
+@font-face {
+    font-family: 'Roboto', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Roboto');
+}
 .font-circula {
     font-family: 'Circula-Medium', sans-serif;
 }
 .font-dokyo {
     font-family: 'Dokyo', sans-serif;
+}
+.font-default {
+    font-family: 'Roboto', sans-serif;
 }
 .content-div {
     background-color: white;
@@ -43,6 +50,7 @@ body {
     background-color: rgba(24, 37, 46, 0.75);
     margin-top: 0;
     padding: 1%;
+    margin-bottom: 3%;
 }
 .separator-title {
     margin-bottom: 0;
@@ -247,6 +255,11 @@ body {
 /*Fin Programmation*/
 
 /*Planning*/
+.planning-day {
+    color: white;
+    font-size: 5vw;
+    text-align: center;
+}
 
 .planning-location {
     color: white;
@@ -261,17 +274,19 @@ body {
     border-radius : 20px;
     font-weight: bold;
     text-align: center;
-    font-size: 25px;
+    font-size: 18px;
     width: 280px;
 }
 .show-blue {
-    color: #2baf97;
-    border: 5px solid #2baf97;
+    padding-top: 3%;
+    color: #004e57;
+    border: 2px solid #2baf97;
     box-shadow: 3px 3px 0px #017553;
 }
 .show-orange {
-    color: #ed7a21;
-    border: 5px solid #ed7a21;
+    padding-top: 3%;
+    color: #a54d1e;
+    border: 2px solid #ed7a21;
     box-shadow: 3px 3px 0px #ed7a22;
 }
 .planning-showSmall {

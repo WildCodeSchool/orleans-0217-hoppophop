@@ -8,8 +8,9 @@
     <title>Hop Pop Hop</title>
     <!-- Bootstrap -->
 
-    <link href="../../src/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../src/css/style.css" rel="stylesheet">
+    <link href="../src/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
 </head>
 <body>
@@ -33,7 +34,7 @@
                             <li><a href="../php/planning.php">Planning</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Billeterie</a></li>
+                    <li><a href="#">Billetterie</a></li>
                     <li><a href="#">Cashless</a></li>
                     <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">La vie au festival <span class="caret"></span></a>
@@ -43,7 +44,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Infos Pratique <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Infos Pratiques <span class="caret"></span></a>
                         <ul class="dropdown-menu navbar-dropdown">
                             <li><a href="#">Bénévolat</a></li>
                             <li><a href="#">FAQ</a></li>
