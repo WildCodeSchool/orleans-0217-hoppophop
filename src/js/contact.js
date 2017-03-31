@@ -1,45 +1,18 @@
-/**
- * Created by wilder1 on 31/03/17.
- */
-// Input Lock
-$('textarea').blur(function () {
-    $('#hire textarea').each(function () {
-        $this = $(this);
-        if ( this.value != '' ) {
-            $this.addClass('focused');
-            $('textarea + label + span').css({'opacity': 1});
+$(document).ready(function(){
+    $('#characterLeft').text('140 characters left');
+    $('#message').keydown(function () {
+        var max = 140;
+        var len = $(this).val().length;
+        if (len >= max) {
+            $('#characterLeft').text('You have reached the limit');
+            $('#characterLeft').addClass('red');
+            $('#btnSubmit').addClass('disabled');
         }
         else {
-            $this.removeClass('focused');
-            $('textarea + label + span').css({'opacity': 0});
-        }
-    });
-});
-
-$('#hire .field:first-child input').blur(function () {
-    $('#hire .field:first-child input').each(function () {
-        $this = $(this);
-        if ( this.value != '' ) {
-            $this.addClass('focused');
-            $('.field:first-child input + label + span').css({'opacity': 1});
-        }
-        else {
-            $this.removeClass('focused');
-            $('.field:first-child input + label + span').css({'opacity': 0});
-        }
-    });
-});
-
-$('#hire .field:nth-child(2) input').blur(function () {
-    $('#hire .field:nth-child(2) input').each(function () {
-        $this = $(this);
-        if ( this.value != '' ) {
-            $this.addClass('focused');
-            $('.field:nth-child(2) input + label + span').css({'opacity': 1});
-        }
-        else {
-            $this.removeClass('focused');
-            $('.field:nth-child(2) input + label + span').css({'opacity': 0});
+            var ch = max - len;
+            $('#characterLeft').text(ch + ' characters left');
+            $('#btnSubmit').removeClass('disabled');
+            $('#characterLeft').removeClass('red');
         }
     });
 });

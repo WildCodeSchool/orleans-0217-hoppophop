@@ -408,8 +408,8 @@ body {
 
 /* Début de page CONTACT */
 
-.contact-content{
-    margin:30px;
+.contact-content h3 {
+    color: #ffffff;
 }
 
 /* Fin de page CONTACT */

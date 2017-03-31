@@ -1,35 +1,35 @@
 <?php
 require('../php/header.php');
 ?>
+<script type="text/javascript" src="../src/js/contact.js"></script>
 
-
-<div class="container-fluid text-center contact-content">
-        <section id="hire">
-            <h1>Contact Me</h1>
-
-            <form>
-                <div class="field name-box">
-                    <input type="text" id="name" placeholder="Who Are You?"/>
-                    <label for="name">Name</label>
-                    <span class="ss-icon">check</span>
+<div class="container-fluid contact-content" style="margin-right: auto; margin-left: auto">
+    <div class="col-md-offset-3 col-md-6">
+        <div class="form-area">
+            <form role="form">
+                <br style="clear:both">
+                <h3 style="margin-bottom: 25px; text-align: center;">Contact Form</h3>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>
+                    <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>
                 </div>
 
-                <div class="field email-box">
-                    <input type="text" id="email" placeholder="name@email.com"/>
-                    <label for="email">Email</label>
-                    <span class="ss-icon">check</span>
-                </div>
-
-                <div class="field msg-box">
-                    <textarea id="msg" rows="4" placeholder="Your message goes here..."></textarea>
-                    <label for="msg">Msg</label>
-                    <span class="ss-icon">check</span>
-                </div>
-
-                <input class="button" type="submit" value="Send" />
+                <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Submit Form</button>
             </form>
-        </section>
-
+        </div>
+    </div>
 </div>
 
 
