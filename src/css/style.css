@@ -339,12 +339,7 @@ body {
 
 /* Début page Dimanche à Orléans */
 
-
-.sunday-all h2 {
-    font-family: 'Circula-Medium', sans-serif;
-}
-
-.sunday-hr1 {
+.sunday-hr {
     border: 0;
     height: 2px;
     background-image: -webkit-linear-gradient(left, #f0f0f0, #5AC398, #f0f0f0);
@@ -352,52 +347,17 @@ body {
     background-image: -ms-linear-gradient(left, #f0f0f0, #5AC398, #f0f0f0);
     background-image: -o-linear-gradient(left, #f0f0f0, #5AC398, #f0f0f0);
 }
-
-.sunday-hr2 {
-    border: 0;
-    height: 2px;
-    background-image: -webkit-linear-gradient(left, #f0f0f0, #5AC398, #f0f0f0);
-    background-image: -moz-linear-gradient(left, #f0f0f0, #5AC398, #f0f0f0);
-    background-image: -ms-linear-gradient(left, #f0f0f0, #5AC398, #f0f0f0);
-    background-image: -o-linear-gradient(left, #f0f0f0, #5AC398, #f0f0f0);
-}
-
-.sunday-1 {
-    background-color: rgba(255, 255, 255, 1);
+.sunday-div {
     box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
-    padding:10px;
-    color: rgba(24, 37, 46, 1);
-    border: 4px solid rgba(90, 195, 152, 1);
+    border-radius: 5px;
 }
-
-
-.sunday-2 {
-    background-color: rgba(255, 255, 255, 1);
-    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
-    padding:10px;
-    color: rgba(24, 37, 46, 1);
-    border: 4px solid rgba(90, 195, 152, 1);
-
-
-}
-
-.sunday-content1 {
-
-}
-.sunday-content2 {
-
-}
-
-.sunday-thumb  {
-    border:none;
-    background: transparent;
+.sunday-thumbnail {
     margin:10px;
     padding:10px;
 }
 .sunday-img {
     box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.7);
 }
-
 
 /* Fin page Dimanche à Orléans */
 
