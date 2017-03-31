@@ -214,6 +214,10 @@ body {
 /*******Fin Page Artiste*******/
 
 /*******Page Partenaire*******/
+.partenaire{
+    text-align: center;
+    margin-bottom: 7%;
+}
 .separator-green{
     background-color: rgba(43, 175, 151, 1);
     font-family: 'Circula-Medium', sans-serif;

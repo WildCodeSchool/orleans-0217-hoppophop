@@ -4,12 +4,12 @@ include('header.php');
 
     <div class="container-fluid">
         <div class="header-div">
-            <h1>NOS PARTENAIRES</h1>
+            <h1 class="partenaire">NOS PARTENAIRES</h1>
         </div>
         <div class="bloc-page">
             <div class="row">
                 <div class="separator-titleDiv separator-green">
-                <h2 class="partenaire_off">PARTENAIRES OFFICIELS</h2>
+                <h2 class="partenaire-off">PARTENAIRES OFFICIELS</h2>
                 </div>
                 <div class="col-xs-3 col-md-3">
                     <a href="#" class="">
