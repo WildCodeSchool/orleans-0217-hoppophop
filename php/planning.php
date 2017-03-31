@@ -68,7 +68,7 @@ require('header.php');
             <div class="visible-xs visible-sm">
                 <div class="col-sm-12 col-xs-12">
                     <h3 class="planning-locationSmall font-dokyo">JARDINS DE L'EVÊCHE</h3>
-                    <p class="planning-showSmall font-default">18h-19h : concert<br/>
+                    <p class="planning-showSmall font-circula">18h-19h : concert<br/>
                         18h-19h : concert<br/>
                         18h-19h : concert<br/>
                         18h-19h : concert<br/></p>
@@ -165,7 +165,7 @@ require('header.php');
             <div class="visible-xs visible-sm">
                 <div class="col-sm-12 col-xs-12">
                     <h3 class="planning-locationSmall font-dokyo">JARDINS DE L'EVÊCHE</h3>
-                    <p class="planning-showSmall font-default">18h-19h : concert<br/>
+                    <p class="planning-showSmall font-circula">18h-19h : concert<br/>
                         18h-19h : concert<br/>
                         18h-19h : concert<br/>
                         18h-19h : concert<br/></p>
