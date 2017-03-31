@@ -2,38 +2,38 @@
     <div class="footer-top">
         <div class="container">
             <div class="row">
-                <div class="col-xs-4 col-md-3">
-                    <a href="#" class="">
+                <div class="col-md-2 col-xs-4">
+                    <a href="#" class="thumbnail thumbnail-div">
                         <img src="../src/img/sponsors/adami.png" class="img-responsive footer-sponsor">
                     </a>
                 </div>
-                <div class="col-xs-4 col-md-3">
-                    <a href="#" class="">
+                <div class="col-md-2 col-xs-4">
+                    <a href="#" class="thumbnail thumbnail-div">
                         <img src="../src/img/sponsors/cnv.png" class="img-responsive footer-sponsor">
                     </a>
                 </div>
-                <div class="col-xs-4 col-md-3">
-                    <a href="#" class="">
+                <div class="col-md-2 col-xs-4">
+                    <a href="#" class="thumbnail thumbnail-div">
                         <img src="../src/img/sponsors/creditmut.png" class="img-responsive footer-sponsor">
                     </a>
                 </div>
-                <div class="col-xs-4 col-md-3">
-                    <a href="#" class="">
+                <div class="col-md-2 col-xs-4">
+                    <a href="#" class="thumbnail thumbnail-div">
                         <img src="../src/img/sponsors/loiret.png" class="img-responsive footer-sponsor">
                     </a>
                 </div>
-                <div class="col-xs-4 col-md-3 col-md-offset-1">
-                    <a href="#" class="">
+                <div class="col-md-2 col-xs-4">
+                    <a href="#" class="thumbnail thumbnail-div">
                         <img src="../src/img/sponsors/orleans.png" class="img-responsive footer-sponsor">
                     </a>
                 </div>
-                <div class="col-xs-4 col-md-3">
-                    <a href="#" class="">
+                <div class="col-md-2 col-xs-4">
+                    <a href="#" class="thumbnail thumbnail-div">
                         <img src="../src/img/sponsors/region.png" class="img-responsive footer-sponsor">
                     </a>
                 </div>
-                <div class="col-xs-4 col-xs-offset-4 col-md-3 col-md-offset-0">
-                    <a href="#" class="">
+                <div class="col-md-2 col-md-offset-5 col-xs-4  col-xs-offset-4">
+                    <a href="#" class="thumbnail thumbnail-div">
                         <img src="../src/img/sponsors/sacem.png" class="img-responsive footer-sponsor">
                     </a>
                 </div>

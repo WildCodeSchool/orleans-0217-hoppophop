@@ -1,6 +1,9 @@
 <?php
 require('header.php');
 ?>
+<div class="header-div text-center">
+    <h1 class="header-title font-dokyo">VENIR AU FESTIVAL</h1>
+</div>
 <div class="container text-center">
     <div class="content-div">
         <i class="fa fa-map-o" aria-hidden="true"></i>
