@@ -173,23 +173,29 @@ body {
     background-color: transparent;      /* Fond Transparent */
     /*background-color: rgba(90, 195, 152, 1);      !* Fond cyan *!*/
     /*border: 3px solid rgba(237, 122, 33, 1);        !* Bordure orange *!*/
-    /*border: 3px solid rgba(90, 195, 152, 1);        !* Bordure cyan *!*/
-    /*border: 3px solid rgba(90, 195, 152, 1);        !* Bordure cyan *!*/
-    border-right: 3px solid rgba(90, 195, 152, 1);        /* Bordure blanche */
-    border-left: 3px solid rgba(90, 195, 152, 1);
+    border: 3px solid rgba(90, 195, 152, 1);        /* Bordure cyan */
+    /*border-right: 3px solid rgba(90, 195, 152, 1);        !* Bordure cyan droite*!*/
+    /*border-left: 3px solid rgba(90, 195, 152, 1);       !* Bordure cyan gauche*!*/
     position: relative;
     top:5px;
     left:-15px;
     border-radius: inherit;
+
 }
 .filter-list {
     background-color: rgba(90, 195, 152, 0.85);     /* Fond cyan */
     box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+    color: rgba(237, 122, 33, 1);
 }
 .prog-artist {
     border: none;
     background-color: transparent;
 }
+
+
+/* -- style image seule -- */
+
+
 .prog-artist img {
     /*border: 3px solid rgba(90, 195, 152, 1);*/
     /*border: 3px solid rgba(237, 122, 33, 1);*/
