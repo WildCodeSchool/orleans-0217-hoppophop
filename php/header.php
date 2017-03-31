@@ -50,11 +50,11 @@
                             <li><a href="#">Bénévolat</a></li>
                             <li><a href="#">FAQ</a></li>
                             <li><a href="../php/venir.php">Comment venir</a></li>
-                            <li><a href="#">Dimanche à Orléans</a></li>
+                            <li><a href="../php/dimaorl.php">Dimanche à Orléans</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Partenaires</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="../php/contact.php">Contact</a></li>
                 </ul>
             </div>
         </div>
