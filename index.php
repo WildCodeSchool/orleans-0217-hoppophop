@@ -75,6 +75,23 @@ require('php/header.php');
     <br />
     <br />
     <br />
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal-news">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Annulation</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Le groupe La Jungle ne pourra pas assurer ses concerts ce week-end. Nous faisons tout notre possible pour trouver une solution de remplacement.</p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 <?php
 require('php/footer.php');
+$alert = 1;
+if($alert==1){
+    echo '<script> $("#modal-news").modal("show");</script>';
+}
 ?>

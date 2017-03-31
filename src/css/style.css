@@ -244,6 +244,20 @@ body {
         font-size: 1em;
     }
 }
+.prog-cancel {
+    position: absolute;
+    z-index: 1;
+    margin: auto;
+    top: 0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin-top: 10%;
+    color: red;
+}
+.img-cancel {
+    opacity: 0.25;
+}
 
 /*Fin Programmation*/
 

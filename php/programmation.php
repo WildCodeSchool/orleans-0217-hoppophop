@@ -37,15 +37,26 @@ require('header.php');
     </div>
     <div class="container">
         <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <a href="artiste.php">
+                    <div class="thumbnail prog-artist text-center">
+                        <img src="../src/img/chuck.png" class="img-cancel">
+                        <div class="prog-info text-center"><p class="prog-name">Chuck Berry</p><p class="prog-tag">Tag Tag Tag</p></div>
+                        <h1 class="prog-cancel font-dokyo">Annulé</h1>
+                    </div>
+                </a>
+            </div>
             <?php
-            $total = 16;
+            $total = 15;
             for ($i=0;$i<$total;$i++){
                 ?>
                 <div class="col-md-3 col-sm-6">
-                    <div class="thumbnail prog-artist">
-                        <img src="../src/img/chuck.png">
-                        <div class="prog-info text-center"><p class="prog-name">Chuck Berry</p><p class="prog-tag">Tag Tag Tag</p></div>
-                    </div>
+                    <a href="artiste.php">
+                        <div class="thumbnail prog-artist">
+                            <img src="../src/img/chuck.png">
+                            <div class="prog-info text-center"><p class="prog-name">Chuck Berry</p><p class="prog-tag">Tag Tag Tag</p></div>
+                        </div>
+                    </a>
                 </div>
                 <?php
             }
