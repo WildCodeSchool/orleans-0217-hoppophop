@@ -17,7 +17,7 @@ require('header.php');
                     <li><a href=#>CCNO</a></li>
                     <li><a href=#>SCENE NATIONALE D'ORLEANS</a></li>
                     <li><a href=#>SCENE DE L'INSTITUT</a></li>
-                    <li><a href=#>HÔTEL DUPANLOUP</a></li>
+                    <li><a href=#>HÔTEL DUPANLOUP</a></l
                 </ul>
             </div>
             <div class="col-xs-2 col-md-2 col-lg-1">

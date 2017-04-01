@@ -1,7 +1,6 @@
 <?php
 require('../php/header.php');
 ?>
-<script type="text/javascript" src="../src/js/contact.js"></script>
 
 <div class="container-fluid contact-content" style="margin-right: auto; margin-left: auto">
     <div class="col-md-offset-3 col-md-6">
@@ -28,12 +27,6 @@ require('../php/header.php');
         </div>
     </div>
 </div>
-
-
-
-
-
-
 
 <?php
 require('../php/footer.php');
