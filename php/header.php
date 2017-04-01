@@ -48,7 +48,6 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Infos Pratiques <span class="caret"></span></a>
                         <ul class="dropdown-menu navbar-dropdown">
                             <li><a href="#">Bénévolat</a></li>
-                            <li><a href="#">FAQ</a></li>
                             <li><a href="../php/venir.php">Comment venir</a></li>
                             <li><a href="../php/dimaorl.php">Dimanche à Orléans</a></li>
                         </ul>

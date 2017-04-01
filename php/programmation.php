@@ -6,10 +6,10 @@ require('header.php');
     </div>
     <div class="container-fluid prog-filter">
         <div class="row">
-            <div class=" col-xs-3 col-sm-4 col-md-5 col-lg-6 text-center">
+            <div class="col-xs-12 col-sm-4 col-md-5 col-lg-6 text-center">
                 <h3 class="filter-title">Trier par  :</h3>
             </div>
-            <div class="col-xs-2 col-md-2 col-lg-1">
+            <div class="col-xs-12 col-md-2 col-lg-1 col-xs-offset-1 col-md-offset-0 text-left">
                 <a class="btn dropdown-toggle filter-btn" data-toggle="dropdown" href=#>Lieux <span class="caret"></span></a>
                 <ul class="dropdown-menu filter-list">
                     <li><a href=#>JARDINS DE L'EVÊCHE</a></li>
@@ -20,14 +20,14 @@ require('header.php');
                     <li><a href=#>HÔTEL DUPANLOUP</a></l
                 </ul>
             </div>
-            <div class="col-xs-2 col-md-2 col-lg-1">
+            <div class="col-xs-12 col-xs-offset-1 col-md-2  col-md-offset-0 col-lg-1 text-left">
                 <a class="btn dropdown-toggle filter-btn" data-toggle="dropdown" href=#>Date <span class="caret"></span></a>
                 <ul class="dropdown-menu filter-list">
                     <li><a href=#>Vendredi Soir</a></li>
                     <li><a href=#>Samedi Soir</a></li>
                 </ul>
             </div>
-            <div class="col-xs-2 col-md-2 col-lg-1">
+            <div class="col-xs-12 col-xs-offset-1 col-md-2  col-md-offset-0 col-lg-1 text-left">
                 <a class="btn dropdown-toggle filter-btn" data-toggle="dropdown" href=#>Groupes Locaux <span class="caret"></span></a>
                 <ul class="dropdown-menu filter-list">
                     <li><a href=#>Oui</a></li>
