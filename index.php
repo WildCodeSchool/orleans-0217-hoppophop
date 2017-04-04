@@ -6,7 +6,7 @@ require('php/header.php');
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-6 col-xs-offset-3">
-                <img src="src/img/logo-only.png" alt="Logo du Festival" class="img-responsive">
+                <img src="src/img/logo-only.png" alt="Logo du Festival" class="img-responsive" style="margin-left: auto; margin-right: auto">
             </div>
         </div>
     </div>

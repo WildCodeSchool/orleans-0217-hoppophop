@@ -4,7 +4,7 @@ body {
     background: url("../img/background.png") center center  no-repeat fixed;
     background-size: cover;
     position: relative;
-    padding-top: 30px;
+    padding-top: 50px;
 }
 
 
@@ -78,6 +78,16 @@ body {
     -moz-border-radius:0;
     border-radius:0;
     background-color: #18252e;
+    height: 70px;
+}
+.navbar-brand {
+    max-height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+    height:80%;
+    padding-left: 20px !important;
+    padding-top: 10px !important;
+
 }
 .navbar-dropdown {
     background-color: #18252e;
@@ -86,15 +96,20 @@ body {
 }
 .navbar-burger {
     border: none;
+    position: relative;
+    top:10px;
 }
 .navbar-menu {
     border-top: none;
+    position: relative;
+    top:10px;
 }
 .navbar-list > li:hover {
     background-color: white;
 }
 .navbar-list > li > a {
     color: white!important;
+    font-size: 20px;
 }
 .navbar-list > li > a:hover {
     color: #18252e!important;
