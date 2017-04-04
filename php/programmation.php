@@ -42,7 +42,11 @@ require('header.php');
                 <a href="artiste.php">
                     <div class="thumbnail prog-artist text-center">
                         <img src="../src/img/chuck.png" class="img-cancel">
-                        <div class="prog-info text-center"><p class="prog-name">Chuck Berry</p><p class="prog-tag">Tag Tag Tag</p></div>
+                        <div class="content-div prog-info text-center">
+                            <p class="info-text">CHUCK BERRY</p>
+                            <hr class="hr-min">
+                            <p class="info-text">Vendredi 16h</p>
+                        </div>
                         <h1 class="prog-cancel font-dokyo">Annulé</h1>
                     </div>
                 </a>
@@ -55,7 +59,11 @@ require('header.php');
                     <a href="artiste.php">
                         <div class="thumbnail prog-artist">
                             <img src="../src/img/chuck.png">
-                            <div class="prog-info text-center"><p class="prog-name">Chuck Berry</p><p class="prog-tag">Tag Tag Tag</p></div>
+                            <div class="content-div prog-info text-center">
+                                <p class="info-text">CHUCK BERRY</p>
+                                <hr class="hr-min">
+                                <p class="info-text">Vendredi 16h</p>
+                            </div>
                         </div>
                     </a>
                 </div>

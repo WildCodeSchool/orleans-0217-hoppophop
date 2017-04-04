@@ -6,7 +6,7 @@ require('php/header.php');
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-6 col-xs-offset-3">
-                <img src="src/img/logo-only.png" alt="Logo du Festival" class="img-responsive" style="margin-left: auto; margin-right: auto">
+                <img src="src/img/logo-only.png" alt="Logo du Festival" class="img-responsive logo-big">
             </div>
         </div>
     </div>
@@ -22,13 +22,6 @@ require('php/header.php');
         <h1 class="separator-title font-dokyo">BILLETTERIE</h1>
     </div>
     <div class="separator-div">
-        <div class="row">
-            <div class="col-xs-12 col-xs-offset-0 col-sm-2 col-sm-offset-2 separator-content text-center">
-                <img src="http://placehold.it/200x200">
-                <h2>Titre</h2>
-                <p>Principium autem unde latius se funditabat, emersit ex negotio tali. Chilo ex vicario et coniux eius Maxima nomine, questi apud Olybrium ea tempestate urbi praefectum, vitamque suam venenis petitam adseverantes inpetrarunt ut hi, quos suspectati sunt, ilico rapti conpingerentur in vincula, organarius Sericus et Asbolius palaestrita et aruspex Campensis.</p>
-            </div>
-        </div>
     </div>
     <div class="separator-titleDiv text-center">
         <h1 class="separator-title font-dokyo">ACTUALITES</h1>
