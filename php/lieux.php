@@ -1,9 +1,6 @@
 <?php
 require('header.php');
 ?>
-<div class="header-div text-center">
-    <h1 class="header-title font-dokyo">LIEUX</h1>
-</div>
 <div class="container text-center">
     <div class="row">
         <div class="col-xs-6 col-sm-4">

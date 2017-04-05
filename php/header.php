@@ -25,10 +25,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <h1 class="navbar-text mobile-title">PROG'</h1>
             </div>
             <div class="collapse navbar-collapse navbar-menu" id="navbar-collapsed">
                 <ul class="nav navbar-nav navbar-list">
-                    <li>
+                    <li class="navbar-active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programmation <span class="caret"></span></a>
                         <ul class="dropdown-menu navbar-dropdown">
                             <li><a href="../php/programmation.php">Artistes</a></li>
