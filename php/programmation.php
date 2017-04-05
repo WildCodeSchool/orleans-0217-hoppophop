@@ -36,14 +36,17 @@ require('header.php');
             </div>
         </div>
     </div>
+    <br />
+    <br />
+    <br />
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-6">
                 <a href="artiste.php">
-                    <div class="thumbnail prog-artist text-center">
-                        <img src="../src/img/chuck.png" class="img-cancel">
+                    <div class="thumbnail thumbnail-div prog-artist text-center">
+                        <img src="../src/img/chuck.png" class="prog-img img-cancel">
                         <div class="content-div prog-info text-center">
-                            <p class="info-text">CHUCK BERRY</p>
+                            <p class="info-text">CHUCK BERRY CHUCK BERRY CHUCK BERRY</p>
                             <hr class="hr-min">
                             <p class="info-text">Vendredi 16h</p>
                         </div>
@@ -57,8 +60,8 @@ require('header.php');
                 ?>
                 <div class="col-md-3 col-sm-6">
                     <a href="artiste.php">
-                        <div class="thumbnail prog-artist">
-                            <img src="../src/img/chuck.png">
+                        <div class="thumbnail thumbnail-div prog-artist">
+                            <img src="../src/img/chuck.png" class="img-responsive prog-img">
                             <div class="content-div prog-info text-center">
                                 <p class="info-text">CHUCK BERRY</p>
                                 <hr class="hr-min">

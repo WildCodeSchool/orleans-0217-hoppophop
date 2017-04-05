@@ -39,7 +39,7 @@
                 </div>
                 <div class="col-md-1 col-md-offset-0 col-xs-4  col-xs-offset-4">
                     <a href="#" class="thumbnail thumbnail-div planning-show show-blue">
-                        <img src="../src/img/sponsors/sacem.png" class="img-responsive footer-sponsor">
+                        <img src="../src/img/sponsors/ecole.png" class="img-responsive footer-sponsor">
                     </a>
                 </div>
             </div>
