@@ -49,11 +49,6 @@ body {
     border: 2.5px solid rgba(237, 122, 33, 1);
     width: 50%;
 }
-.separator-titleDiv {
-    background-color: rgba(24, 37, 46, 0.75);
-    margin-top: 0;
-    padding: 1%;
-}
 .separator-title {
     margin-bottom: 0;
     margin-top: 0;
@@ -61,9 +56,6 @@ body {
     color: white;
 }
 .separator-div {
-    /*background-color: rgba(141, 189, 69, 0.5);*/
-    /*background-color: rgba(90, 195, 152, 0.5);*/
-    /*background-color: rgba(234, 230, 247, 0.5);*/
     padding: 1%;
 }
 .thumbnail-div {
@@ -246,23 +238,17 @@ body {
 
 /*Programmation*/
 
-.prog-filter {
-    background-color: rgba(24, 37, 46, 0.75);
-}
-.filter-title {
-    color: #ffffff;
-    font-size: 1.75em;
+.prog-dropdown {
+    display: inline;
+    margin: 5%;
 }
 .filter-btn {
     text-decoration: none;
     color: #ffffff;
     font-size: 1.5em;
     background-color: #18252e;
-    position: relative;
-    top:5px;
-    left:-15px;
     border-radius: 5px;
-
+    border: none;
 }
 .filter-list {
     background-color: #18252e;
@@ -325,9 +311,10 @@ body {
 
 .planning-location {
     color: white;
-    font-size: x-large;
+    font-size: 28px;
     text-align: center;
     vertical-align: middle;
+    font-weight: bold;
 }
 .planning-show {
     display: table-cell;
@@ -354,13 +341,12 @@ body {
 .planning-showSmall {
     color: white;
     text-align: center;
-    font-weight: 100;
-    font-size: 30px;
+    font-size: 24px;
 }
 .planning-locationSmall {
     color: white;
     text-align: center;
-    font-size: 48px;
+    font-size: 36px;
 }
 
 /*Fin Planning*/
@@ -378,3 +364,19 @@ body {
 
 /*Fin Artiste*/
 
+/*Venir*/
+
+.venir-icon {
+    font-size: 36px;
+}
+
+/*Fin Venir*/
+
+/*Contact*/
+.contact-btn {
+    color: white;
+    background-color: #2baf97;
+    border: none;
+}
+
+/*Fin Contact*/

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../../src/font-awesome/css/font-awesome.min.css">
     <link href="../../src/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../src/css/style.css" rel="stylesheet">
+    <link href="../../src/img/logo-min.png" rel="icon">
 
 </head>
 <body>

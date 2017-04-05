@@ -1,16 +1,15 @@
 <?php
 require('../php/header.php');
 ?>
-
-
-<div class="container-fluid contact-content" style="margin-right: auto; margin-left: auto">
+<br />
+<br />
+<br />
 <div class="container-fluid contact-content">
-
     <div class="col-md-offset-3 col-md-6">
         <div class="form-area text-center">
             <form role="form">
                 <br/>
-                <h3>Nous contacter</h3>
+                <h2 class="orange font-circula">Nous contacter</h2>
                 <div class="form-group">
                     <input type="text" class="form-control" id="name" name="name" placeholder="Votre nom" required>
                 </div>
@@ -20,7 +19,7 @@ require('../php/header.php');
                 <div class="form-group">
                     <textarea class="form-control" id="subject" name="subject" placeholder="Votre texte" rows="7" required></textarea>
                 </div>
-                <button type="button" id="submit" name="submit" class="btn btn-primary">Envoyer votre message</button>
+                <button type="button" id="submit" name="submit" class="btn btn-default contact-btn">Envoyer votre message</button>
             </form>
         </div>
     </div>
