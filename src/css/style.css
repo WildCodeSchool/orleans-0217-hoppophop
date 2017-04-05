@@ -177,17 +177,45 @@ body {
 /*Fin Navbar */
 
 /*******Page Partenaire*******/
-.partenaire{
+.partenaire_title{
     text-align: center;
     margin-bottom: 7%;
 }
+.adami_sponsor{
+    position: relative;
+ /*   left: 15%;*/
+}
 .separator-green{
-    background-color: rgba(43, 175, 151, 1);
+    background-color: transparent;
     font-family: 'Circula-Medium', sans-serif;
     text-align: center;
     color: white;
+    margin: 5%;
+}
+.separator-partenaire{
+    border: 2.5px solid rgba(237, 122, 33, 1);
 }
 
+.partenaire_button{
+    position: relative;
+    top: 15%;
+    left: 47%;
+    margin-top: 15%;
+    margin-bottom: 15%;
+}
+.btn-lg{
+    background-color: rgba(43, 175, 151, 1);
+}
+.footer-partenaire{
+    background-color: white;
+    border-radius : 20px;
+    color: #004e57;
+    border: 2px solid #2baf97;
+    box-shadow: 3px 3px 0px #017553;
+    width: 80%;
+    height: 150px;
+    margin: 5%;
+}
 
 /*Fin Navbar*/
 
