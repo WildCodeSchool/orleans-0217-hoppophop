@@ -213,7 +213,16 @@ body {
 }
 .btn-lg{
     background-color: rgba(43, 175, 151, 1);
-
+}
+.footer-partenaire{
+    background-color: white;
+    border-radius : 20px;
+    color: #004e57;
+    border: 2px solid #2baf97;
+    box-shadow: 3px 3px 0px #017553;
+    width: 80%;
+    height: 150px;
+    margin: 5%;
 }
 
 /*Fin Navbar*/
