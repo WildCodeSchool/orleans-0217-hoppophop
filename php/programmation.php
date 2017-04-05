@@ -1,6 +1,7 @@
 <?php
 require('header.php');
 ?>
+
 <div class="text-center">
     <div class="dropdown prog-dropdown">
         <button class="btn btn-default dropdown-toggle filter-btn font-circula" type="button" id="filter-places" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Lieux <span class="caret"></span></button>
@@ -70,4 +71,3 @@ require('header.php');
 <?php
 require('footer.php');
 ?>
-

@@ -39,7 +39,7 @@
                 </div>
                 <div class="col-md-3 col-md-offset-0 col-xs-4">
                     <a href="#" class="thumbnail thumbnail-div footer-sponsor">
-                        <img src="../src/img/sponsors/ecole.png" class="img-responsive">
+                        <img src="../src/img/sponsors/ecole.png" class="img-responsive" id="ecole-logo">
                     </a>
                 </div>
             </div>

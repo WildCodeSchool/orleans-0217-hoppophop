@@ -1,256 +1,101 @@
 <?php
 include('header.php');
 ?>
-<div class="container-fluid">
-    <div class="row">
-        <div class="separator-titleDiv separator-green">
-            <h2 class="partenaire-off">PARTENAIRES OFFICIELS</h2>
-            <hr class="separator-partenaire">
-        </div>
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="adami_sponsor">
-                <img src="../src/img/sponsors/adami.png" class="img-responsive footer-partenaire">
+<div class="container">
+    <div class="row text-center">
+        <h1 class="title font-circula">PARTENAIRES OFFICIELS</h1>
+        <hr class="hr">
+        <div class="col-md-3 col-xs-4">
+            <a href="#" class="thumbnail thumbnail-div partnair-logo">
+                <img src="../src/img/sponsors/adami.png" class="img-responsive">
             </a>
         </div>
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/cnv.png" class="img-responsive footer-partenaire">
+        <div class="col-md-3 col-xs-4">
+            <a href="#" class="thumbnail thumbnail-div partnair-logo">
+                <img src="../src/img/sponsors/creditmut.png" class="img-responsive">
             </a>
         </div>
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/creditmut.png" class="img-responsive footer-partenaire">
+        <div class="col-md-3 col-xs-4">
+            <a href="#" class="thumbnail thumbnail-div partnair-logo">
+                <img src="../src/img/sponsors/sacem.png" class="img-responsive">
             </a>
         </div>
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/loiret.png" class="img-responsive footer-partenaire">
+        <div class="col-md-3 col-xs-4">
+            <a href="#" class="thumbnail thumbnail-div partnair-logo">
+                <img src="../src/img/sponsors/cnv.png" class="img-responsive">
             </a>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/adami.png" class="img-responsive footer-partenaire">
+        <div class="col-md-3 col-xs-4">
+            <a href="#" class="thumbnail thumbnail-div partnair-logo">
+                <img src="../src/img/sponsors/loiret.png" class="img-responsive">
             </a>
         </div>
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/cnv.png" class="img-responsive footer-partenaire">
+        <div class="col-md-3 col-xs-4">
+            <a href="#" class="thumbnail thumbnail-div partnair-logo">
+                <img src="../src/img/sponsors/orleans.png" class="img-responsive">
             </a>
         </div>
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/creditmut.png" class="img-responsive footer-partenaire">
+        <div class="col-md-3 col-xs-4">
+            <a href="#" class="thumbnail thumbnail-div partnair-logo">
+                <img src="../src/img/sponsors/region.png" class="img-responsive">
             </a>
         </div>
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/loiret.png" class="img-responsive footer-partenaire">
+        <div class="col-md-3 col-xs-4">
+            <a href="#" class="thumbnail thumbnail-div partnair-logo">
+                <img src="../src/img/sponsors/ecole.png" class="img-responsive" id="partnair-ecole">
             </a>
         </div>
     </div>
-    <div class="row">
-        <div class="separator-titleDiv separator-green">
-            <h2 class="partenaire_off">PARTENAIRES PRIVES</h2>
-            <hr class="separator-partenaire">
-
-        </div>
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/adami.png" class="img-responsive footer-partenaire">
+    <div class="row text-center">
+        <h1 class="title font-circula">PARTENAIRES CULTURELS</h1>
+        <hr class="hr">
+        <div class="col-md-3 col-xs-4">
+            <a href="#" class="thumbnail thumbnail-div partnair-logo">
+                <img src="../src/img/sponsors/adami.png" class="img-responsive">
             </a>
         </div>
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/cnv.png" class="img-responsive footer-partenaire">
+        <div class="col-md-3 col-xs-4">
+            <a href="#" class="thumbnail thumbnail-div partnair-logo">
+                <img src="../src/img/sponsors/creditmut.png" class="img-responsive">
             </a>
         </div>
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/creditmut.png" class="img-responsive footer-partenaire">
+        <div class="col-md-3 col-xs-4">
+            <a href="#" class="thumbnail thumbnail-div partnair-logo">
+                <img src="../src/img/sponsors/sacem.png" class="img-responsive">
             </a>
         </div>
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/loiret.png" class="img-responsive footer-partenaire">
+        <div class="col-md-3 col-xs-4">
+            <a href="#" class="thumbnail thumbnail-div partnair-logo">
+                <img src="../src/img/sponsors/cnv.png" class="img-responsive">
             </a>
         </div>
-    </div>
-    <div class="row">
-
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/adami.png" class="img-responsive footer-partenaire">
+        <div class="col-md-3 col-xs-4">
+            <a href="#" class="thumbnail thumbnail-div partnair-logo">
+                <img src="../src/img/sponsors/loiret.png" class="img-responsive">
             </a>
         </div>
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/cnv.png" class="img-responsive footer-partenaire">
+        <div class="col-md-3 col-xs-4">
+            <a href="#" class="thumbnail thumbnail-div partnair-logo">
+                <img src="../src/img/sponsors/orleans.png" class="img-responsive">
             </a>
         </div>
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/creditmut.png" class="img-responsive footer-partenaire">
+        <div class="col-md-3 col-xs-4">
+            <a href="#" class="thumbnail thumbnail-div partnair-logo">
+                <img src="../src/img/sponsors/region.png" class="img-responsive">
             </a>
         </div>
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/loiret.png" class="img-responsive footer-partenaire">
+        <div class="col-md-3 col-xs-4">
+            <a href="#" class="thumbnail thumbnail-div partnair-logo">
+                <img src="../src/img/sponsors/ecole.png" class="img-responsive" id="partnair-ecole">
             </a>
         </div>
-    </div>
-    <div class="row">
-        <div class="separator-titleDiv separator-green">
-            <h2 class="partenaire_off">PARTENAIRES CULTURELS</h2>
-            <hr class="separator-partenaire">
-        </div>
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/adami.png" class="img-responsive footer-partenaire">
-            </a>
-        </div>
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/cnv.png" class="img-responsive footer-partenaire">
-            </a>
-        </div>
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/creditmut.png" class="img-responsive footer-partenaire">
-            </a>
-        </div>
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/loiret.png" class="img-responsive footer-partenaire">
-            </a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/adami.png" class="img-responsive footer-partenaire">
-            </a>
-        </div>
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/cnv.png" class="img-responsive footer-partenaire">
-            </a>
-        </div>
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/creditmut.png" class="img-responsive footer-partenaire">
-            </a>
-        </div>
-        <div class="col-xs-3 col-md-3">
-            <a href="#" class="">
-                <img src="../src/img/sponsors/loiret.png" class="img-responsive footer-partenaire">
-            </a>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="separator-titleDiv separator-green">
-        <h2 class="partenaire_off">PARTENAIRES ASSOCIATIFS</h2>
-        <hr class="separator-partenaire">
-
-    </div>
-    <div class="col-xs-3 col-md-3">
-        <a href="#" class="">
-            <img src="../src/img/sponsors/adami.png" class="img-responsive footer-partenaire">
-        </a>
-    </div>
-    <div class="col-xs-3 col-md-3">
-        <a href="#" class="">
-            <img src="../src/img/sponsors/cnv.png" class="img-responsive footer-partenaire">
-        </a>
-    </div>
-    <div class="col-xs-3 col-md-3">
-        <a href="#" class="">
-            <img src="../src/img/sponsors/creditmut.png" class="img-responsive footer-partenaire">
-        </a>
-    </div>
-    <div class="col-xs-3 col-md-3">
-        <a href="#" class="">
-            <img src="../src/img/sponsors/loiret.png" class="img-responsive footer-partenaire">
-        </a>
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-3 col-md-3">
-        <a href="#" class="">
-            <img src="../src/img/sponsors/adami.png" class="img-responsive footer-partenaire">
-        </a>
-    </div>
-    <div class="col-xs-3 col-md-3">
-        <a href="#" class="">
-            <img src="../src/img/sponsors/cnv.png" class="img-responsive footer-partenaire">
-        </a>
-    </div>
-    <div class="col-xs-3 col-md-3">
-        <a href="#" class="">
-            <img src="../src/img/sponsors/creditmut.png" class="img-responsive footer-partenaire">
-        </a>
-    </div>
-    <div class="col-xs-3 col-md-3">
-        <a href="#" class="">
-            <img src="../src/img/sponsors/loiret.png" class="img-responsive footer-partenaire">
-        </a>
-    </div>
-</div>
-<div class="row">
-    <div class="separator-titleDiv separator-green">
-        <h2 class="partenaire_off">PARTENAIRES MEDIAS</h2>
-        <hr class="separator-partenaire">
-
-    </div>
-    <div class="col-xs-3 col-md-3">
-        <a href="#" class="">
-            <img src="../src/img/sponsors/adami.png" class="img-responsive footer-partenaire">
-        </a>
-    </div>
-    <div class="col-xs-3 col-md-3">
-        <a href="#" class="">
-            <img src="../src/img/sponsors/cnv.png" class="img-responsive footer-partenaire">
-        </a>
-    </div>
-    <div class="col-xs-3 col-md-3">
-        <a href="#" class="">
-            <img src="../src/img/sponsors/creditmut.png" class="img-responsive footer-partenaire">
-        </a>
-    </div>
-    <div class="col-xs-3 col-md-3">
-        <a href="#" class="">
-            <img src="../src/img/sponsors/loiret.png" class="img-responsive footer-partenaire">
-        </a>
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-3 col-md-3">
-        <a href="#" class="">
-            <img src="../src/img/sponsors/adami.png" class="img-responsive footer-partenaire">
-        </a>
-    </div>
-    <div class="col-xs-3 col-md-3">
-        <a href="#" class="">
-            <img src="../src/img/sponsors/cnv.png" class="img-responsive footer-partenaire">
-        </a>
-    </div>
-    <div class="col-xs-3 col-md-3">
-        <a href="#" class="">
-            <img src="../src/img/sponsors/creditmut.png" class="img-responsive footer-partenaire">
-        </a>
-    </div>
-    <div class="col-xs-3 col-md-3">
-        <a href="#" class="">
-            <img src="../src/img/sponsors/loiret.png" class="img-responsive footer-partenaire">
-        </a>
     </div>
 </div>
 <br />
 <br />
 <div class="text-center">
     <a href="../php/contact.php"><button class="btn btn-primary partnair-btn">Devenez Partenaire</button></a>
+</div>
 </div>
 <?php
 include('footer.php');
