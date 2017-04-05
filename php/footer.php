@@ -45,7 +45,7 @@
             </div>
         </div>
     </div>
-    <div class="footer-bottom text-center">
+    <div class="footer-bottom text-center visible-xs">
         <i class="fa fa-facebook-square social-logo" aria-hidden="true"></i>
         <i class="fa fa-twitter-square social-logo" aria-hidden="true"></i>
         <i class="fa fa-instagram social-logo" aria-hidden="true"></i>

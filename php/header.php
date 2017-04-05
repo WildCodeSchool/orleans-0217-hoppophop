@@ -57,6 +57,13 @@
                     <li><a href="../php/partner.php">Partenaires</a></li>
                     <li><a href="../php/contact.php">Contact</a></li>
                 </ul>
+                <ul class="nav navbar-nav navbar-right social hidden-xs">
+                    <li><a href="#"><i class="fa fa-facebook-square navbar-logo" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter-square navbar-logo" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram navbar-logo" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-spotify navbar-logo" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube-square navbar-logo" aria-hidden="true"></i></a></li>
+                </ul>
             </div>
         </div>
     </nav>

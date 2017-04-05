@@ -159,7 +159,9 @@ body {
 .navbar-active {
     color: #ed7a21!important;
 }
+.navbar-logo {
 
+}
 @media (max-width: 1110px) {
     .navbar-header {
         float: none;
