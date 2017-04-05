@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <h1 class="navbar-text mobile-title">PROG'</h1>
+                <h1 class="navbar-text mobile-title">TITRE</h1>
             </div>
             <div class="collapse navbar-collapse navbar-menu" id="navbar-collapsed">
                 <ul class="nav navbar-nav navbar-list">
@@ -49,7 +49,7 @@
                     <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Infos Pratiques <span class="caret"></span></a>
                         <ul class="dropdown-menu navbar-dropdown">
-                            <li><a href="#">Bénévolat</a></li>
+                            <li><a href="../php/benevolat.php">Bénévolat</a></li>
                             <li><a href="../php/venir.php">Comment venir</a></li>
                             <li><a href="../php/dimaorl.php">Dimanche à Orléans</a></li>
                         </ul>
@@ -61,5 +61,5 @@
         </div>
     </nav>
     <div class="header text-center">
-        <h1 class="font-dokyo">PROGRAMMATION</h1>
+        <h1 class="font-dokyo">TITRE</h1>
     </div>

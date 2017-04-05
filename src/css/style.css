@@ -49,9 +49,17 @@ body {
     border: 2.5px solid rgba(237, 122, 33, 1);
     width: 50%;
 }
-.separator-title {
-    font-size: 7.5vw;
-    color: white;
+@media (max-width: 1110px) {
+    .separator-title {
+        font-size: 11vw;
+        color: white;
+    }
+}
+@media (min-width: 1110px) {
+    .separator-title {
+        font-size: 7.5vw;
+        color: white;
+    }
 }
 .separator-div {
     padding: 1%;
@@ -72,10 +80,20 @@ body {
 .bold {
     font-weight: bold;
 }
-.header {
-    margin-top: 5%;
-    color: white;
-    margin-bottom: 5%;
+@media (max-width: 1110px) {
+    .header {
+        margin-top: 10%;
+        color: white;
+        margin-bottom: 5%;
+        display: none;
+    }
+}
+@media (min-width: 1110px) {
+    .header {
+        margin-top: 5%;
+        color: white;
+        margin-bottom: 5%;
+    }
 }
 /*Fin General*/
 
@@ -303,15 +321,6 @@ body {
 .prog-filter a:hover {
     color: #ed7a21!important;
 }
-
-@media all and (max-device-width: 570px) {
-    .filter-title {
-        font-size:1em;
-    }
-    .filter-btn {
-        font-size: 1em;
-    }
-}
 .prog-cancel {
     position: absolute;
     margin: auto;
@@ -409,3 +418,12 @@ body {
 }
 
 /*Fin Contact*/
+
+/*Benevolat*/
+
+.benevolat-div {
+    color: white;
+    font-size: 18px;
+}
+
+/*Fin Benevolat*/
