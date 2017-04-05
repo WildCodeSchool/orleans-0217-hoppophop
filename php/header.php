@@ -37,7 +37,7 @@
                             <li><a href="../php/planning.php">Planning</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Billetterie</a></li>
+                    <li><a href="../php/billetterie.php">Billetterie</a></li>
                     <li><a href="../php/cashless.php">Cashless</a></li>
                     <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">La vie au festival <span class="caret"></span></a>
@@ -54,9 +54,12 @@
                             <li><a href="../php/dimaorl.php">Dimanche à Orléans</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Partenaires</a></li>
+                    <li><a href="../php/partner.php">Partenaires</a></li>
                     <li><a href="../php/contact.php">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+    <div class="header text-center">
+        <h1 class="font-dokyo">PROGRAMMATION</h1>
+    </div>

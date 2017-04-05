@@ -2,8 +2,6 @@
 require('header.php');
 
 ?>
-<br />
-<br />
     <div class="container text-center">
         <div class="row hidden-sm hidden-xs">
             <h1 class="separator-title font-dokyo">VENDREDI</h1>
@@ -230,9 +228,6 @@ require('header.php');
             </div>
         </div>
     </div>
-
-
-
 <?php
 require('footer.php');
 ?>

@@ -1,9 +1,6 @@
 <?php
 require('../php/header.php');
 ?>
-<br />
-<br />
-<br />
 <div class="container-fluid contact-content">
     <div class="col-md-offset-3 col-md-6">
         <div class="form-area text-center">
@@ -24,7 +21,6 @@ require('../php/header.php');
         </div>
     </div>
 </div>
-
 <?php
 require('../php/footer.php');
 ?>

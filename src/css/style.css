@@ -50,9 +50,7 @@ body {
     width: 50%;
 }
 .separator-title {
-    margin-bottom: 0;
-    margin-top: 0;
-    font-size: 8vw;
+    font-size: 7.5vw;
     color: white;
 }
 .separator-div {
@@ -73,6 +71,11 @@ body {
 }
 .bold {
     font-weight: bold;
+}
+.header {
+    margin-top: 5%;
+    color: white;
+    margin-bottom: 5%;
 }
 /*Fin General*/
 
@@ -196,15 +199,9 @@ body {
     border: 2.5px solid rgba(237, 122, 33, 1);
 }
 
-.partenaire_button{
-    position: relative;
-    top: 15%;
-    left: 47%;
-    margin-top: 15%;
-    margin-bottom: 15%;
-}
-.btn-lg{
+.partnair-btn{
     background-color: rgba(43, 175, 151, 1);
+    border: none;
 }
 .footer-partenaire{
     background-color: white;
@@ -228,6 +225,10 @@ body {
 .logo-big {
     margin-left: auto;
     margin-right: auto;
+}
+.news-top {
+    color: white;
+    font-size: 24px;
 }
 
 /*Fin Accueil*/

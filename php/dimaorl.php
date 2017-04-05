@@ -1,10 +1,6 @@
 <?php
 require('../php/header.php');
 ?>
-<br />
-<br />
-<br />
-<br />
 <div class="container-fluid">
     <div class="row">
         <div class="col-xs-12 col-xs-offset-0 col-sm-4">
@@ -54,9 +50,6 @@ require('../php/header.php');
         </div>
     </div>
 </div>
-
-
-
 <?php
 require('../php/footer.php');
 ?>

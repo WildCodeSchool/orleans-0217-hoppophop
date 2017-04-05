@@ -1,9 +1,6 @@
 <?php
 require('header.php');
 ?>
-<br />
-<br />
-<br />
 <div class="container text-center">
     <div class="content-div">
         <i class="fa fa-map-o venir-icon" aria-hidden="true"></i>
