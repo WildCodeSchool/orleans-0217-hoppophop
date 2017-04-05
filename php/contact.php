@@ -4,10 +4,6 @@ require('../php/header.php');
 
 
 <div class="container-fluid contact-content" style="margin-right: auto; margin-left: auto">
-
-<div class="header-div text-center">
-    <h1 class="header-title font-dokyo">CONTACT</h1>
-</div>
 <div class="container-fluid contact-content">
 
     <div class="col-md-offset-3 col-md-6">

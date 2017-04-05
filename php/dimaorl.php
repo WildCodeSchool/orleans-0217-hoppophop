@@ -1,9 +1,6 @@
 <?php
 require('../php/header.php');
 ?>
-<div class="header-div text-center">
-    <h1 class="header-title font-dokyo">DIMANCHE A ORLEANS</h1>
-</div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-xs-12 col-xs-offset-0 col-sm-4">

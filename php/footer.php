@@ -2,69 +2,55 @@
     <div class="footer-top">
         <div class="container">
             <div class="row text-center">
-                <div class="col-md-1 col-md-offset-2 col-xs-4">
-                    <a href="#" class="thumbnail thumbnail-div planning-show show-blue">
-                        <img src="../src/img/sponsors/adami.png" class="img-responsive footer-sponsor">
+                <div class="col-md-3 col-xs-4">
+                    <a href="#" class="thumbnail thumbnail-div footer-sponsor">
+                        <img src="../src/img/sponsors/adami.png" class="img-responsive">
                     </a>
                 </div>
-                <div class="col-md-1 col-xs-4">
-                    <a href="#" class="thumbnail thumbnail-div planning-show show-blue">
-                        <img src="../src/img/sponsors/cnv.png" class="img-responsive footer-sponsor">
+                <div class="col-md-3 col-xs-4">
+                    <a href="#" class="thumbnail thumbnail-div footer-sponsor">
+                        <img src="../src/img/sponsors/cnv.png" class="img-responsive">
                     </a>
                 </div>
-                <div class="col-md-1 col-xs-4">
-                    <a href="#" class="thumbnail thumbnail-div planning-show show-blue">
-                        <img src="../src/img/sponsors/creditmut.png" class="img-responsive footer-sponsor">
+                <div class="col-md-3 col-xs-4">
+                    <a href="#" class="thumbnail thumbnail-div footer-sponsor">
+                        <img src="../src/img/sponsors/creditmut.png" class="img-responsive">
                     </a>
                 </div>
-                <div class="col-md-1 col-xs-4">
-                    <a href="#" class="thumbnail thumbnail-div planning-show show-blue">
-                        <img src="../src/img/sponsors/loiret.png" class="img-responsive footer-sponsor">
+                <div class="col-md-3 col-xs-4">
+                    <a href="#" class="thumbnail thumbnail-div footer-sponsor">
+                        <img src="../src/img/sponsors/loiret.png" class="img-responsive">
                     </a>
                 </div>
-                <div class="col-md-1 col-xs-4">
-                    <a href="#" class="thumbnail thumbnail-div planning-show show-blue">
-                        <img src="../src/img/sponsors/orleans.png" class="img-responsive footer-sponsor">
+                <div class="col-md-3 col-xs-4">
+                    <a href="#" class="thumbnail thumbnail-div footer-sponsor">
+                        <img src="../src/img/sponsors/orleans.png" class="img-responsive">
                     </a>
                 </div>
-                <div class="col-md-1 col-xs-4">
-                    <a href="#" class="thumbnail thumbnail-div planning-show show-blue">
-                        <img src="../src/img/sponsors/region.png" class="img-responsive footer-sponsor">
+                <div class="col-md-3 col-xs-4">
+                    <a href="#" class="thumbnail thumbnail-div footer-sponsor">
+                        <img src="../src/img/sponsors/region.png" class="img-responsive">
                     </a>
                 </div>
-                <div class="col-md-1 col-md-offset-0 col-xs-4  col-xs-offset-4">
-                    <a href="#" class="thumbnail thumbnail-div planning-show show-blue">
-                        <img src="../src/img/sponsors/sacem.png" class="img-responsive footer-sponsor">
+                <div class="col-md-3 col-md-offset-0 col-xs-4  col-xs-offset-2">
+                    <a href="#" class="thumbnail thumbnail-div footer-sponsor">
+                        <img src="../src/img/sponsors/sacem.png" class="img-responsive">
                     </a>
                 </div>
-                <div class="col-md-1 col-md-offset-0 col-xs-4  col-xs-offset-4">
-                    <a href="#" class="thumbnail thumbnail-div planning-show show-blue">
-                        <img src="../src/img/sponsors/ecole.png" class="img-responsive footer-sponsor">
+                <div class="col-md-3 col-md-offset-0 col-xs-4">
+                    <a href="#" class="thumbnail thumbnail-div footer-sponsor">
+                        <img src="../src/img/sponsors/ecole.png" class="img-responsive">
                     </a>
                 </div>
             </div>
         </div>
     </div>
     <div class="footer-bottom text-center">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-6 col-sm-2 col-sm-offset-1">
-                    <img src="../src/img/social/fb-logo.png" class="footer-social">
-                </div>
-                <div class="col-xs-6 col-sm-2">
-                    <img src="../src/img/social/twitter-logo.png" class="footer-social">
-                </div>
-                <div class="col-xs-6 col-sm-2">
-                    <img src="../src/img/social/instagram-logo.png" class="footer-social">
-                </div>
-                <div class="col-xs-6 col-sm-2 col-sm-offset-0">
-                    <img src="../src/img/social/youtube-logo.png" class="footer-social">
-                </div>
-                <div class="col-xs-6 col-xs-offset-3 col-sm-2 col-sm-offset-0">
-                    <img src="../src/img/social/spotify-logo.png" class="footer-social">
-                </div>
-            </div>
-        </div>
+        <i class="fa fa-facebook-square social-logo" aria-hidden="true"></i>
+        <i class="fa fa-twitter-square social-logo" aria-hidden="true"></i>
+        <i class="fa fa-instagram social-logo" aria-hidden="true"></i>
+        <i class="fa fa-spotify social-logo" aria-hidden="true"></i>
+        <i class="fa fa-youtube-square social-logo" aria-hidden="true"></i>
         <p class="footer-legal">Mentions Légales</p>
     </div>
 </footer>
