@@ -9,7 +9,7 @@
 namespace hph\model;
 
 
-class concert
+class Concert
 {
 
 private $id;

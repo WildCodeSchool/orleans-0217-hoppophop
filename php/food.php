@@ -6,19 +6,13 @@ require('header.php');
         <?php
         for($i=0;$i<3;$i++){
             ?>
-            <div class="col-xs-12">
-                <div class="media content-div">
-                    <div class="media-body">
-                        <h3 class="media-heading font-circula">La Fine Bouche</h3>
-                        <br />
-                        <p>Notre Food Truck est une véritable cuisine mobile. La Fine Bouche vous propose Burger, Frite, Salade, Dessert avec des produits 100% Français, Locaux et Fait Maison ! Cédric 36 ans, Chef Cuisiner, 11 ans d'expérience dans le métier, passionné de « la bonne bouffe », Je souhaite faire découvrir une bonne cuisine avec des produits qui viennent directement de producteurs locaux.</p>
-                        <br />
-                        <h4 class="font-circula">Vendredi de 18h à 22h <span class="turquoise">|</span> <span class="orange font-circula">Devant le 108</span></h4>
-                        <hr class="hr">
-                    </div>
+            <div class="col-xs-12 col-xs-offset-0 col-sm-4">
+                <div class="content-div text-justify">
+                    <img src="../src/img/chuck.png" class="img-responsive">
+                    <h2 class="font-circula">La Jungle</h2>
+                    <hr class="hr">
+                    <p>Une six-cordes et un casio. Il n’en faut parfois pas plus pour faire péter le mercure et irriter les yeux de sueur après deux breaks et trois accords. Deux singes rouquins, un très grand et un plus petit, vous emmènent dans leur milieu naturel : La Jungle !</p>
                 </div>
-                <br />
-                <br />
                 <br />
             </div>
             <?php

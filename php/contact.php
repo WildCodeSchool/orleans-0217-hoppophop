@@ -1,7 +1,7 @@
 <?php
 require('../php/header.php');
 ?>
-<div class="container-fluid contact-content">
+<div class="container contact-content">
     <div class="col-md-offset-3 col-md-6">
         <div class="form-area text-center">
             <form role="form">

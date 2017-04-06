@@ -12,17 +12,17 @@ namespace hph\model;
 class Artist
 {
 
-private $id;
-private $name;
-private $bio;
-private $image_path;
-private $video_url;
-private $facebook_url;
-private $youtube_url;
-private $twitter_url;
-private $spotify_url;
-private $status;
-private $tags;
+    private $id;
+    private $name;
+    private $bio;
+    private $image_path;
+    private $video_url;
+    private $facebook_url;
+    private $youtube_url;
+    private $twitter_url;
+    private $spotify_url;
+    private $status;
+    private $tags;
 
     /**
      * @return mixed

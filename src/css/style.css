@@ -34,8 +34,6 @@ body {
     background-color: transparent;
     color: white;
 }
-.content-img {
-}
 .hr {
     border: 2.5px solid rgba(237, 122, 33, 1);
 }
@@ -242,8 +240,34 @@ body {
 
 /*Accueil*/
 
-.news-title {
-    color: rgba(237, 122, 33, 1);
+@media (max-width: 1110px) {
+    .home-prog {
+        display: inline;
+        font-size: 22px;
+        text-decoration: none;
+    }
+}
+@media (min-width: 1110px) {
+    .home-prog {
+        display: inline;
+        font-size: 36px;
+    }
+}
+.home-link {
+    color: white;
+    text-decoration: none;
+}
+.link-orange:hover {
+    text-decoration: none;
+    color: #ed7a21;
+}
+.link-turquoise:hover {
+    text-decoration: none;
+    color: #2baf97;
+}
+.home-ticket {
+    color: white;
+    font-size: 36px;
 }
 .logo-big {
     margin-left: auto;
@@ -271,6 +295,10 @@ body {
 }
 .footer-legal {
     color: white;
+    margin-bottom: 0;
+}
+.footer-last {
+    padding-bottom: 1%;
 }
 @media (max-width: 1110px) {
     .footer-sponsor {
@@ -309,10 +337,19 @@ body {
 
 /*Programmation*/
 
-.prog-dropdown {
-    display: inline;
-    margin: 5%;
+@media (max-width: 1110px) {
+    .prog-dropdown {
+        display: inline;
+        margin: 0%;
+    }
 }
+@media (min-width: 1110px) {
+    .prog-dropdown {
+        display: inline;
+        margin: 5%;
+    }
+}
+
 .filter-btn {
     text-decoration: none;
     color: #ffffff;
@@ -410,7 +447,34 @@ body {
     text-align: center;
     font-size: 36px;
 }
-
+.planning-collapse {
+    background-color: transparent;
+}
+.collapse-content {
+    background-color: transparent;
+}
+@media (max-width: 1110px) {
+    .planning-link {
+        font-size: 11vw;
+        color: white;
+        text-decoration: none;
+    }
+}
+@media (min-width: 1110px) {
+    .planning-link {
+        font-size: 7.5vw;
+        color: white;
+        text-decoration: none;
+    }
+}
+.planning-link:hover {
+    text-decoration: none;
+    color: #ed7a21;
+}
+.planning-link:focus {
+    text-decoration: none;
+    color: #ed7a21;
+}
 /*Fin Planning*/
 
 /*Artiste*/

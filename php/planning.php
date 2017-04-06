@@ -66,52 +66,54 @@ require('header.php');
                 <div class="planning-show show-orange font-default"><p>Concert<br />18h-19h</p></div><br/>
             </div>
             <div class="visible-xs visible-sm">
-                <h1 class="separator-title font-dokyo">VENDREDI</h1>
+                <h1 class="separator-title"><a class="planning-link font-dokyo" data-toggle="collapse" href="#collapseVendredi" aria-expanded="false" aria-controls="collapseVendredi">VENDREDI</a></h1>
                 <br />
                 <hr class="hr-min">
-                <div class="col-sm-12 col-xs-12">
-                    <h3 class="planning-locationSmall font-dokyo">JARDINS DE L'EVÊCHE</h3>
-                    <p class="planning-showSmall font-circula">
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert très long, mais vraiment, il est trèeeeeeeees long<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                    </p>
-                    <h3 class="planning-locationSmall font-dokyo">LE 108</h3>
-                    <p class="planning-showSmall font-circula">
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                    </p>
-                    <h3 class="planning-locationSmall font-dokyo">CCNO</h3>
-                    <p class="planning-showSmall font-circula">
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                    </p>
-                    <h3 class="planning-locationSmall font-dokyo">SCENE NATIONALE D'ORLEANS</h3>
-                    <p class="planning-showSmall font-circula">
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                    </p>
-                    <h3 class="planning-locationSmall font-dokyo">SCENE DE L'INSTITUT</h3>
-                    <p class="planning-showSmall font-circula">
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                    </p>
-                    <h3 class="planning-locationSmall font-dokyo">HOTEL DUPANLOUP</h3>
-                    <p class="planning-showSmall font-circula">
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                    </p>
+                <div class="collapse planning-collapse" id="collapseVendredi">
+                    <div class="collapse-content">
+                        <h3 class="planning-locationSmall font-dokyo">JARDINS DE L'EVÊCHE</h3>
+                        <p class="planning-showSmall font-circula">
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert très long, mais vraiment, il est trèeeeeeeees long<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                        </p>
+                        <h3 class="planning-locationSmall font-dokyo">LE 108</h3>
+                        <p class="planning-showSmall font-circula">
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                        </p>
+                        <h3 class="planning-locationSmall font-dokyo">CCNO</h3>
+                        <p class="planning-showSmall font-circula">
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                        </p>
+                        <h3 class="planning-locationSmall font-dokyo">SCENE NATIONALE D'ORLEANS</h3>
+                        <p class="planning-showSmall font-circula">
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                        </p>
+                        <h3 class="planning-locationSmall font-dokyo">SCENE DE L'INSTITUT</h3>
+                        <p class="planning-showSmall font-circula">
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                        </p>
+                        <h3 class="planning-locationSmall font-dokyo">HOTEL DUPANLOUP</h3>
+                        <p class="planning-showSmall font-circula">
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -178,52 +180,54 @@ require('header.php');
                 <div class="planning-show show-orange font-default"><p>Concert<br />18h-19h</p></div><br/>
             </div>
             <div class="visible-xs visible-sm">
-                <h1 class="separator-title font-dokyo">SAMEDI</h1>
+                <h1 class="separator-title"><a class="planning-link font-dokyo" data-toggle="collapse" href="#collapseSamedi" aria-expanded="false" aria-controls="collapseSamedi">SAMEDI</a></h1>
                 <br />
                 <hr class="hr-min">
-                <div class="col-sm-12 col-xs-12">
-                    <h3 class="planning-locationSmall font-dokyo">JARDINS DE L'EVÊCHE</h3>
-                    <p class="planning-showSmall font-circula">
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert très long, mais vraiment, il est trèeeeeeeees long<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                    </p>
-                    <h3 class="planning-locationSmall font-dokyo">LE 108</h3>
-                    <p class="planning-showSmall font-circula">
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                    </p>
-                    <h3 class="planning-locationSmall font-dokyo">CCNO</h3>
-                    <p class="planning-showSmall font-circula">
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                    </p>
-                    <h3 class="planning-locationSmall font-dokyo">SCENE NATIONALE D'ORLEANS</h3>
-                    <p class="planning-showSmall font-circula">
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                    </p>
-                    <h3 class="planning-locationSmall font-dokyo">SCENE DE L'INSTITUT</h3>
-                    <p class="planning-showSmall font-circula">
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                    </p>
-                    <h3 class="planning-locationSmall font-dokyo">HOTEL DUPANLOUP</h3>
-                    <p class="planning-showSmall font-circula">
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                    </p>
+                <div class="collapse planning-collapse" id="collapseSamedi">
+                    <div class="collapse-content">
+                        <h3 class="planning-locationSmall font-dokyo">JARDINS DE L'EVÊCHE</h3>
+                        <p class="planning-showSmall font-circula">
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert très long, mais vraiment, il est trèeeeeeeees long<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                        </p>
+                        <h3 class="planning-locationSmall font-dokyo">LE 108</h3>
+                        <p class="planning-showSmall font-circula">
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                        </p>
+                        <h3 class="planning-locationSmall font-dokyo">CCNO</h3>
+                        <p class="planning-showSmall font-circula">
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                        </p>
+                        <h3 class="planning-locationSmall font-dokyo">SCENE NATIONALE D'ORLEANS</h3>
+                        <p class="planning-showSmall font-circula">
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                        </p>
+                        <h3 class="planning-locationSmall font-dokyo">SCENE DE L'INSTITUT</h3>
+                        <p class="planning-showSmall font-circula">
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                        </p>
+                        <h3 class="planning-locationSmall font-dokyo">HOTEL DUPANLOUP</h3>
+                        <p class="planning-showSmall font-circula">
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                            <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
