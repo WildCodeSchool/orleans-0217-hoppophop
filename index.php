@@ -1,22 +1,21 @@
 <?php
 require('php/header.php');
+$alert = 1;
+if($alert==1){
+    ?>
+    <div class="news-top text-center font-default" id="breaking-news">
+        <h2 class="news-topText">
+            Attention, information de dernière minute : La Jungle ne pourra pas être présent.
+            <a class="cross glyphicon glyphicon-remove news-remove" onclick="$('#breaking-news').addClass('delete')"></a>
+        </h2>
+    </div>
+    <?php
+}
 ?>
     <br/>
     <br/>
     <div class="container text-center">
         <div class="row">
-            <?php
-            $alert = 0;
-            if($alert==1){
-                ?>
-                <div class="news-top text-center">
-                    <h1>Attention, information de dernière minute</h1>
-                    <p>La Jungle ne pourra pas être présent.</p>
-                    <hr class="hr">
-                </div>
-                <?php
-            }
-            ?>
             <div class="col-xs-6 col-xs-offset-3">
                 <img src="src/img/logo-only.png" alt="Logo du Festival" class="img-responsive logo-big">
                 <br />

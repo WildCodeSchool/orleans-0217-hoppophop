@@ -275,7 +275,24 @@ body {
 }
 .news-top {
     color: white;
+    background-color: red;
+    padding-top: 0px;
+    margin-top: 0px;
+    width: 100%;
+}
+.news-topText {
     font-size: 24px;
+    padding: 2.5%;
+}
+.delete{
+    display: none;
+}
+.news-remove {
+    align-self: right;
+}
+.cross {
+    color: white;
+    float: right;
 }
 
 /*Fin Accueil*/
