@@ -251,7 +251,22 @@ body {
 }
 .news-top {
     color: white;
-    font-size: 24px;
+    background-color: red;
+    font-size: 12px;
+    height: 12%;
+    padding-top: 0px;
+    margin-top: 0px;
+    position: fixed;
+    width: 100%;
+}
+.delete{
+    display: none;
+}
+.news-remove {
+    align-self: right;
+}
+.cross {
+    color: white;
 }
 
 /*Fin Accueil*/

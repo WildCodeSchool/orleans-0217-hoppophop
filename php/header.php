@@ -67,6 +67,3 @@
             </div>
         </div>
     </nav>
-    <div class="header text-center">
-        <h1 class="font-dokyo">TITRE</h1>
-    </div>
