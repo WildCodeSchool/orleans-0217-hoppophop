@@ -45,12 +45,14 @@
             </div>
         </div>
     </div>
-    <div class="footer-bottom text-center">
+    <div class="footer-bottom text-center visible-xs">
         <i class="fa fa-facebook-square social-logo" aria-hidden="true"></i>
         <i class="fa fa-twitter-square social-logo" aria-hidden="true"></i>
         <i class="fa fa-instagram social-logo" aria-hidden="true"></i>
         <i class="fa fa-spotify social-logo" aria-hidden="true"></i>
         <i class="fa fa-youtube-square social-logo" aria-hidden="true"></i>
+    </div>
+    <div class="footer-last text-center">
         <p class="footer-legal">Mentions Légales</p>
     </div>
 </footer>

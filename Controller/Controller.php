@@ -15,7 +15,7 @@ class Controller
 
         extract($param);
 
-        
+
 
         require '../src/view/'.$path;
 

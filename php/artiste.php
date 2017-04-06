@@ -22,16 +22,13 @@ include("header.php");
                     <i class="fa fa-youtube-square social-logo" aria-hidden="true"></i>
                 </div>
             </div>
+            <br />
+            <iframe width="100%" height="480" src="https://www.youtube.com/embed/wHylQRVN2Qs" frameborder="0" allowfullscreen></iframe>
+
         </div>
         <div class="col-xs-4">
             <div class="content-div upper">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xs-8 col-xs-offset-2">
-                            <img src="../src/img/chuck.png" class="img-responsive">
-                        </div>
-                    </div>
-                </div>
+                <img src="../src/img/chuck.png" class="img-responsive">
                 <div class="text-center">
                     <h2 class="font-circula">Vendredi 16 Septembre</h2>
                     <hr class="hr-small">
@@ -40,24 +37,12 @@ include("header.php");
                 </div>
             </div>
         </div>
-        <div class="col-xs-8">
-            <br />
-            <div class="content-div">
-                <iframe width="100%" height="480" src="https://www.youtube.com/embed/wHylQRVN2Qs" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
     </div>
 </div>
 <div class="visible-xs container">
     <div class="col-xs-12">
         <div class="content-div">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-8 col-xs-offset-2">
-                        <img src="../src/img/la_jungle.jpg" class="img-responsive">
-                    </div>
-                </div>
-            </div>
+            <img src="../src/img/chuck.png" class="img-responsive">
             <h1 class="font-circula">La Jungle</h1>
             <p>Une six-cordes et un casio. Il n’en faut parfois pas plus pour faire péter le mercure et irriter les yeux de sueur après deux breaks et trois accords. Deux singes rouquins, un très grand et un plus petit, vous emmènent dans leur milieu naturel : La Jungle !</p>
             <div class="artiste-tag">
