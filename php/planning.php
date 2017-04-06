@@ -29,42 +29,33 @@ require('header.php');
         <br />
         <br />
         <div class="row planning">
-            <div class="col-md-2 hidden-sm hidden-xs">
-                <div class="planning-show show-blue font-default"><p>CONCERT<br />18h-19h</p></div><br />
-                <div class="planning-show show-blue font-default"><p>CONCERT DE LA MORT QUI TUE<br />18h-19h</p></div><br />
-                <div class="planning-show show-blue font-default"><p>CONCERT<br />18h-19h</p></div><br />
-                <div class="planning-show show-blue font-default"><p>CONCERT<br />18h-19h</p></div><br />
-            </div>
-            <div class="col-md-2 hidden-sm hidden-xs">
-                <div class="planning-show show-orange font-default"><p>Concert<br />18h-19h</p></div><br/>
-                <div class="planning-show show-orange font-default"><p>Concert<br />18h-19h</p></div><br/>
-                <div class="planning-show show-orange font-default"><p>Concert<br />18h-19h</p></div><br/>
-                <div class="planning-show show-orange font-default"><p>Concert<br />18h-19h</p></div><br/>
-            </div>
-            <div class="col-md-2 hidden-sm hidden-xs">
-                <div class="planning-show show-blue font-default"><p>Concert<br />18h-19h</p></div><br />
-                <div class="planning-show show-blue font-default"><p>Concert de la mort qui tue<br />18h-19h</p></div><br />
-                <div class="planning-show show-blue font-default"><p>Concert<br />18h-19h</p></div><br />
-                <div class="planning-show show-blue font-default"><p>Concert<br />18h-19h</p></div><br />
-            </div>
-            <div class="col-md-2 hidden-sm hidden-xs">
-                <div class="planning-show show-orange font-default"><p>Concert<br />18h-19h</p></div><br/>
-                <div class="planning-show show-orange font-default"><p>Concert<br />18h-19h</p></div><br/>
-                <div class="planning-show show-orange font-default"><p>Concert<br />18h-19h</p></div><br/>
-                <div class="planning-show show-orange font-default"><p>Concert<br />18h-19h</p></div><br/>
-            </div>
-            <div class="col-md-2 hidden-sm hidden-xs">
-                <div class="planning-show show-blue font-default"><p>Concert<br />18h-19h</p></div><br />
-                <div class="planning-show show-blue font-default"><p>Concert de la mort qui tue<br />18h-19h</p></div><br />
-                <div class="planning-show show-blue font-default"><p>Concert<br />18h-19h</p></div><br />
-                <div class="planning-show show-blue font-default"><p>Concert<br />18h-19h</p></div><br />
-            </div>
-            <div class="col-md-2 hidden-sm hidden-xs">
-                <div class="planning-show show-orange font-default"><p>Concert<br />18h-19h</p></div><br/>
-                <div class="planning-show show-orange font-default"><p>Concert<br />18h-19h</p></div><br/>
-                <div class="planning-show show-orange font-default"><p>Concert<br />18h-19h</p></div><br/>
-                <div class="planning-show show-orange font-default"><p>Concert<br />18h-19h</p></div><br/>
-            </div>
+            <?php
+                for($i=0;$i<6;$i++){
+                    ?>
+                    <div class="col-md-2 hidden-sm hidden-xs">
+                        <?php
+                        if($i%2==0) {
+                            for ($j = 0; $j < 4; $j++) {
+                                ?>
+                                <div class="planning-show show-blue font-default"><p>CONCERT DE LA MORT QUI TUE<br/>18h-19h
+                                    </p></div><br/>
+                                <?php
+                            }
+                        }
+                        else {
+                            for ($j = 0; $j < 4; $j++) {
+                                ?>
+                                <div class="planning-show show-orange font-default"><p>CONCERT DE LA MORT QUI TUE<br/>18h-19h
+                                    </p></div><br/>
+                                <?php
+                            }
+                        }
+                        ?>
+                    </div>
+                    <?php
+                }
+            ?>
+
             <div class="visible-xs visible-sm">
                 <h1 class="separator-title font-dokyo">VENDREDI</h1>
                 <br />
