@@ -15,11 +15,11 @@ class Controller
 
         extract($param);
 
-        ob_start();
+        
 
         require '../src/view/'.$path;
 
-        return $buffer;
+        return $param;
 
     }
 
