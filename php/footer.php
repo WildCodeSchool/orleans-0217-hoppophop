@@ -51,6 +51,8 @@
         <i class="fa fa-instagram social-logo" aria-hidden="true"></i>
         <i class="fa fa-spotify social-logo" aria-hidden="true"></i>
         <i class="fa fa-youtube-square social-logo" aria-hidden="true"></i>
+    </div>
+    <div class="footer-last text-center">
         <p class="footer-legal">Mentions Légales</p>
     </div>
 </footer>
