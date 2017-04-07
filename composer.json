@@ -1,0 +1,14 @@
+{
+    "name": "hopophop/hph",
+    "description": "projet festival hopophop",
+    "type": "project",
+    "require": {
+        "twig/twig": "v2.3.0"
+    },
+    "authors": [
+        {
+            "name": "M13K",
+            "email": "ag.koffi@hotmail.fr"
+        }
+    ]
+}

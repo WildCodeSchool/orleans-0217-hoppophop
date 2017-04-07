@@ -1,6 +1,3 @@
-<?php
-include('header.php');
-?>
 <div class="container">
     <div class="row text-center">
         <h1 class="title font-circula">PARTENAIRES OFFICIELS</h1>
@@ -94,9 +91,6 @@ include('header.php');
 <br />
 <br />
 <div class="text-center">
-    <a href="../php/contact.php"><button class="btn btn-primary partnair-btn">Devenez Partenaire</button></a>
+    <a href="../index.php?page=contact"><button class="btn btn-primary partnair-btn">Devenez Partenaire</button></a>
 </div>
 </div>
-<?php
-include('footer.php');
-?>
