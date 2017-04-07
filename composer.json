@@ -10,5 +10,10 @@
             "name": "M13K",
             "email": "ag.koffi@hotmail.fr"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "Hph\\": "src/Hph/"
+        }
+    }
 }

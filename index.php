@@ -1,41 +1,43 @@
 <?php
 require_once 'vendor/autoload.php';
-require_once 'controller/HomeController.php';
-$loader = new Twig_Loader_Filesystem('views');
-$twig = new Twig_Environment($loader, array('cache' => false));
 
+$loader = new Twig_Loader_Filesystem('src/Hph/View');
+$twig = new Twig_Environment($loader, array('cache' => false));
 if(isset($_GET['page'])){
     $page = $_GET['page'];
 }else {
     $page = 'home';
 }
 if($page == 'home'){
-    $home = new \hph\controller\HomeController();
+    $home = new \Hph\Controller\HomeController();
     $home->render($twig);
 }else if($page == 'programmation'){
-    include('views/programmation.php');
+    include('src/Hph/View/programmation.php');
 }else if($page == 'artiste'){
-    $page = new \hph\controller\ArtistController();
+    $page = new \Hph\controller\ArtistController();
     $page->render($twig);
 }else if($page == 'planning'){
-    include('views/planning.php');
+    include('src/Hph/View/planning.php');
 }else if($page == 'billetterie'){
-    include('views/billetterie.php');
+    include('src/Hph/View/billetterie.php');
 }else if($page == 'cashless'){
-    include('views/cashless.php');
+    include('src/Hph/View/cashless.php');
 }else if($page == 'food'){
-    include('views/food.html.twig');
-}else if($page == 'lieux'){
-    include('views/lieux.html.twig');
+    $food = new Hph\Controller\FoodController();
+    $food->render($twig);
+}else if($page == 'place'){
+    $place = new Hph\Controller\PlaceController();
+    $place->render($twig);
 }else if($page == 'benevolat'){
-    include('views/benevolat.php');
-}else if($page == 'venir'){
-    include('views/venir.php');
+    include('src/Hph/View/benevolat.php');
+}else if($page == 'transport'){
+    $transport = new Hph\Controller\TransportController();
+    $transport->render($twig);
 }else if($page == 'dimaorl'){
-    include('views/dimaorl.php');
+    include('src/Hph/View/dimaorl.php');
 }else if($page == 'partner'){
-    include('views/partner.php');
+    include('src/Hph/View/partner.php');
 }else if($page == 'contact'){
-    include('views/contact.php');
+    include('src/Hph/View/contact.php');
 }
 ?>
