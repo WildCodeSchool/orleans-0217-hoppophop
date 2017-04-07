@@ -1,5 +1,5 @@
 <?php
-include('views/header.php');
+include('views/header.html.twig');
 if(isset($_GET['page'])){
     $page = $_GET['page'];
 }else {
@@ -14,7 +14,7 @@ if($page == 'home'){
         </h2>
     </div>
     <?php
-    include('views/home.php');
+    include('views/home.html.twig');
 }else if($page == 'programmation'){
     include('views/programmation.php');
 }else if($page == 'artiste'){
@@ -26,9 +26,9 @@ if($page == 'home'){
 }else if($page == 'cashless'){
     include('views/cashless.php');
 }else if($page == 'food'){
-    include('views/food.php');
+    include('views/food.html.twig');
 }else if($page == 'lieux'){
-    include('views/lieux.php');
+    include('views/lieux.html.twig');
 }else if($page == 'benevolat'){
     include('views/benevolat.php');
 }else if($page == 'venir'){
@@ -40,5 +40,5 @@ if($page == 'home'){
 }else if($page == 'contact'){
     include('views/contact.php');
 }
-include('views/footer.php');
+include('views/footer.html.twig');
 ?>
