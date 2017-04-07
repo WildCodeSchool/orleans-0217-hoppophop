@@ -1,5 +1,5 @@
 <?php
-require('header.html.twig');
+require('base.html.twig');
 
 ?>
     <div class="container text-center">
