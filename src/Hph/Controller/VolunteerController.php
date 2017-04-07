@@ -3,16 +3,16 @@
  * Created by PhpStorm.
  * User: quentin
  * Date: 07/04/17
- * Time: 11:41
+ * Time: 17:03
  */
 
 namespace Hph\Controller;
 
 
-class PlaceController
+class VolunteerController
 {
     public function render ($twig)
     {
-        echo $twig->load('place.html.twig')->render();
+        echo $twig->load('volunteer.html.twig')->render();
     }
 }

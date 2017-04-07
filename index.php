@@ -27,8 +27,9 @@ if($page == 'home'){
 }else if($page == 'place'){
     $place = new Hph\Controller\PlaceController();
     $place->render($twig);
-}else if($page == 'benevolat'){
-    include('src/Hph/View/benevolat.php');
+}else if($page == 'volunteer'){
+    $volunteer = new Hph\Controller\VolunteerController();
+    $volunteer->render($twig);
 }else if($page == 'transport'){
     $transport = new Hph\Controller\TransportController();
     $transport->render($twig);
@@ -39,4 +40,3 @@ if($page == 'home'){
 }else if($page == 'contact'){
     include('src/Hph/View/contact.php');
 }
-?>

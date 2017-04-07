@@ -13,7 +13,6 @@ class TransportController
 {
     public function render ($twig)
     {
-        $template = $twig->load('transport.html.twig');
-        echo $template->render();
+        echo $twig->load('transport.html.twig')->render();
     }
 }
