@@ -10,7 +10,11 @@ namespace hph\controller;
 
 class ArtistController extends Controller
 {
-    public function render 
+    public function render ($twig)
+    {
+        $template = $twig->load('artist.html.twig');
+        echo $template->render(array('artist' => '', 'text' => 'Le Texte', 'breakingNews' => 0));
+    }
     public function listAll() {
         //$db = new DB();
         //$artiste = $db -> findAll('artiste');

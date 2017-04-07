@@ -15,7 +15,8 @@ if($page == 'home'){
 }else if($page == 'programmation'){
     include('views/programmation.php');
 }else if($page == 'artiste'){
-    include('views/artiste.php');
+    $page = new \hph\controller\ArtistController();
+    $page->render($twig);
 }else if($page == 'planning'){
     include('views/planning.php');
 }else if($page == 'billetterie'){
