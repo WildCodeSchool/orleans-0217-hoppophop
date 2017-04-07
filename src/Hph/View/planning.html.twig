@@ -1,0 +1,64 @@
+{% extends "base.html.twig" %}
+{% block title %}Planning{% endblock %}
+{% block content %}
+    <div class="container text-center">
+    {% for g in range(0,1) %}
+        <div class="row hidden-sm hidden-xs">
+
+            <h1 class="separator-title hidden-sm hidden-xs font-dokyo">JOUR</h1>
+            <hr class="hr hidden-xs hidden-sm">
+            <br />
+            {% for h in range(0,5) %}
+            <div class="col-md-2 hidden-sm hidden-xs">
+                <h3 class="planning-location font-circula">LIEU</h3>
+            </div>
+            {% endfor %}
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            {% for i in range(0,5) %}
+            <div class="col-md-2 hidden-sm hidden-xs">
+                    {% if i%2==0 %}
+                        {% for j in range(0,3) %}
+                        <div class="planning-show show-blue font-default"><p>CONCERT DE LA MORT QUI TUE<br/>18h-19h
+                    </p></div><br/>
+                        {% endfor %}
+                    {% else %}
+                        {% for j in range(0,3) %}
+                        <div class="planning-show show-orange font-default"><p>CONCERT DE LA MORT QUI TUE<br/>18h-19h
+                    </p></div><br/>
+                        {% endfor %}
+                    {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+        <div class="row">
+            <div class="visible-xs visible-sm">
+            {% for m in range(0,1) %}
+                <h1 class="separator-title">
+                    <a class="planning-link font-dokyo" data-toggle="collapse" href="#collapseVendredi<?= $m ?>"
+                       aria-expanded="false" aria-controls="collapseVendredi<?= $m ?>">JOUR</a>
+                </h1>
+                <br/>
+                <hr class="hr-min">
+                <div class="collapse planning-collapse" id="collapseVendredi<?= $m ?>">
+                    <div class="collapse-content">
+                    {% for n in range (0,5) %}
+                      <h3 class="planning-locationSmall font-dokyo">LIEU</h3>
+                        {% for o in range(0,3) %}
+                        <p class="planning-showSmall font-circula">
+                            <span class="turquoise font-circula bold">18h-19h : </span><br/> concert très long, mais
+                            vraiment, il est trèeeeeeeees long
+                        </p>
+                        <br/>
+                        {% endfor %}
+                    {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

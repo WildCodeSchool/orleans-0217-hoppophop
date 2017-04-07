@@ -31,7 +31,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3 col-sm-6">
-            <a href="artiste.html.twig">
+            <a href="index.php?page=artiste">
                 <div class="thumbnail thumbnail-div prog-artist text-center">
                     <img src="../src/img/chuck.png" class="prog-img img-cancel">
                     <div class="content-div prog-info text-center">
@@ -48,7 +48,7 @@
         for ($i=0;$i<$total;$i++){
             ?>
             <div class="col-md-3 col-sm-6">
-                <a href="artiste.html.twig">
+                <a href="index.php?page=artiste">
                     <div class="thumbnail thumbnail-div prog-artist">
                         <img src="../src/img/chuck.png" class="img-responsive prog-img">
                         <div class="content-div prog-info text-center">

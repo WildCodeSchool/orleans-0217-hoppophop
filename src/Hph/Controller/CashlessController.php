@@ -1,18 +1,19 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: malik
- * Date: 06/04/17
- * Time: 20:22
+ * User: wilder9
+ * Date: 07/04/17
+ * Time: 16:42
  */
 
 namespace Hph\Controller;
 
-class ArtistController
+
+class CashlessController
 {
     public function render($twig)
     {
-        $template = $twig->load('artiste.html.twig');
+        $template=$twig->load('cashless.html.twig');
         echo $template->render();
     }
 }

@@ -13,6 +13,42 @@ if(isset($_GET['page'])){
 if($page == 'home'){
     $home = new Hph\Controller\HomeController;
     $home->render($twig);
+
+
+}else if($page == 'programmation'){
+    include('src/Hph/View/programmation.php');
+
+}else if($page == 'artiste'){
+    $page = new Hph\Controller\ArtistController();
+   $page->render($twig);
+
+}else if($page == 'planning'){
+    $planning = new \Hph\Controller\PlanningController();
+    $planning->render($twig);
+}else if($page == 'billetterie'){
+    $ticket = new Hph\Controller\TicketController();
+    $ticket->render($twig);
+}else if($page == 'cashless'){
+    $cashless = new \Hph\Controller\CashlessController();
+    $cashless->render($twig);
+}else if($page == 'food'){
+    $food = new Hph\Controller\FoodController();
+    $food->render($twig);
+}else if($page == 'place'){
+    $place = new Hph\Controller\PlaceController();
+    $place->render($twig);
+}else if($page == 'benevolat'){
+    include('src/Hph/View/benevolat.php');
+}else if($page == 'transport'){
+    $transport = new Hph\Controller\TransportController();
+    $transport->render($twig);
+}else if($page == 'dimaorl'){
+    include('src/Hph/View/dimaorl.php');
+}else if($page == 'partner'){
+    include('src/Hph/View/partner.php');
+}else if($page == 'contact'){
+    include('src/Hph/View/contact.php');
+
 }
 //elseif($page == 'programmation'){
 //    include('src/Hph/View/programmation.php');
