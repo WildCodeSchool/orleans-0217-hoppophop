@@ -68,47 +68,11 @@
             <div class="collapse planning-collapse" id="collapseVendredi">
                 <div class="collapse-content">
                     <h3 class="planning-locationSmall font-dokyo">JARDINS DE L'EVÊCHE</h3>
-                    <p class="planning-showSmall font-circula">
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert très long, mais vraiment, il est trèeeeeeeees long<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                    </p>
-                    <h3 class="planning-locationSmall font-dokyo">LE 108</h3>
-                    <p class="planning-showSmall font-circula">
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                    </p>
-                    <h3 class="planning-locationSmall font-dokyo">CCNO</h3>
-                    <p class="planning-showSmall font-circula">
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                    </p>
-                    <h3 class="planning-locationSmall font-dokyo">SCENE NATIONALE D'ORLEANS</h3>
-                    <p class="planning-showSmall font-circula">
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                    </p>
-                    <h3 class="planning-locationSmall font-dokyo">SCENE DE L'INSTITUT</h3>
-                    <p class="planning-showSmall font-circula">
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                    </p>
-                    <h3 class="planning-locationSmall font-dokyo">HOTEL DUPANLOUP</h3>
-                    <p class="planning-showSmall font-circula">
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                        <span class="turquoise font-circula bold">18h-19h : </span><br /> concert<br/>
-                    </p>
+                    <?php
+                        for($i=0;$i<10;$i++){
+                            echo 'etst <br />';
+                        }
+                    ?>
                 </div>
             </div>
         </div>

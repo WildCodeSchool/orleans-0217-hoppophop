@@ -1,5 +1,5 @@
 <?php
-require('views/header.html.twig');
+require('views/base.html.twig');
 
 ?>
     <div class="welcome_divTitle text-center">

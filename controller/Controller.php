@@ -11,16 +11,8 @@ namespace hph\controller;
 
 class Controller
 {
-    public function render($path, $param){
-
-        extract($param);
-
-
-
-        require '../src/view/'.$path;
-
-        return $param;
+    public function __construct()
+    {
 
     }
-
 }
