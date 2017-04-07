@@ -7,6 +7,6 @@ class HomeController
     public function render ($twig)
     {
         $template = $twig->load('home.html.twig');
-        echo $template->render(array('title' => 'Le Titre de la mort qui tue', 'text' => 'Le Texte', 'breakingNews' => 0));
+        echo $template->render(array('title' => 'Titre de la News', 'text' => 'Texte de la News', 'breakingNews' => 1));
     }
 }
