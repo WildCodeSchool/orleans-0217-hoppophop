@@ -1,5 +1,5 @@
 <?php
-require('header.php');
+require('header.html.twig');
 
 ?>
     <div class="container text-center">
@@ -159,5 +159,5 @@ require('header.php');
         </div>
     </div>
 <?php
-require('footer.php');
+require('footer.html.twig');
 ?>
