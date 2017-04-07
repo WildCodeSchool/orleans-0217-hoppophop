@@ -4,7 +4,7 @@ body {
     background: url("../img/background.png") center center  no-repeat fixed;
     background-size: cover;
     position: relative;
-    padding-top: 50px;
+    padding-top: 100px;
 }
 
 
@@ -276,8 +276,6 @@ body {
 .news-top {
     color: white;
     background-color: red;
-    padding-top: 0px;
-    margin-top: 0px;
     width: 100%;
 }
 .news-topText {

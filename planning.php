@@ -1,5 +1,5 @@
 <?php
-require('php/header.php');
+require('views/header.php');
 
 ?>
     <div class="welcome_divTitle text-center">
@@ -201,5 +201,5 @@ require('php/header.php');
     </div>
 
 <?php
-require('php/footer.php');
+require('views/footer.php');
 ?>

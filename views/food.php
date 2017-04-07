@@ -1,6 +1,3 @@
-<?php
-require('header.php');
-?>
 <div class="container">
     <div class="row">
         <?php
@@ -20,6 +17,3 @@ require('header.php');
         ?>
     </div>
 </div>
-<?php
-require('footer.php');
-?>

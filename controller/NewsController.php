@@ -8,11 +8,13 @@
 
 namespace hph;
 
+use hph\Controller;
 
-class NewsController
+class NewsController extends Controller
 {
     public function getNews() {
-        $news = new News();
+        //$news = new News();
 
+        return $this->render('article/addArticle.views', ['id'=>1, 'title'=>'Titre', 'text'=>'text', 'img'=>'chuck.png']);
     }
 }

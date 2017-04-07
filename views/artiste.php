@@ -1,6 +1,3 @@
-<?php
-include("header.php");
-?>
 <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
 <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
 <script> AOS.init(); </script>
@@ -66,6 +63,3 @@ include("header.php");
         </div>
     </div>
 </div>
-<?php
-include("footer.php");
-?>

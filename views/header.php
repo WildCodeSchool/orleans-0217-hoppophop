@@ -9,11 +9,10 @@
     <!-- Bootstrap -->
 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="../../src/font-awesome/css/font-awesome.min.css">
-    <link href="../../src/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../src/css/style.css" rel="stylesheet">
-    <link href="../../src/img/logo-min.png" rel="icon">
-
+    <link rel="stylesheet" href="../src/font-awesome/css/font-awesome.min.css">
+    <link href="../src/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/css/style.css" rel="stylesheet">
+    <link href="../src/img/logo-min.png" rel="icon">
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top" id="navbar">
@@ -33,29 +32,29 @@
                 <li class="navbar-active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programmation <span class="caret"></span></a>
                     <ul class="dropdown-menu navbar-dropdown">
-                        <li><a href="../php/programmation.php">Artistes</a></li>
-                        <li><a href="../php/planning.php">Planning</a></li>
+                        <li><a href="../index.php?page=programmation">Artistes</a></li>
+                        <li><a href="../index.php?page=planning">Planning</a></li>
                     </ul>
                 </li>
-                <li><a href="../php/billetterie.php">Billetterie</a></li>
-                <li><a href="../php/cashless.php">Cashless</a></li>
+                <li><a href="../index.php?page=billetterie">Billetterie</a></li>
+                <li><a href="../index.php?page=cashless">Cashless</a></li>
                 <li>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">La vie au festival <span class="caret"></span></a>
                     <ul class="dropdown-menu navbar-dropdown">
-                        <li><a href="../php/food.php">Se restaurer</a></li>
-                        <li><a href="../php/lieux.php">Lieux</a></li>
+                        <li><a href="../index.php?page=food">Se restaurer</a></li>
+                        <li><a href="../index.php?page=lieux">Lieux</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Infos Pratiques <span class="caret"></span></a>
                     <ul class="dropdown-menu navbar-dropdown">
-                        <li><a href="../php/benevolat.php">Bénévolat</a></li>
-                        <li><a href="../php/venir.php">Comment venir</a></li>
-                        <li><a href="../php/dimaorl.php">Dimanche à Orléans</a></li>
+                        <li><a href="../index.php?page=benevolat">Bénévolat</a></li>
+                        <li><a href="../index.php?page=venir">Comment venir</a></li>
+                        <li><a href="../index.php?page=dimaorl">Dimanche à Orléans</a></li>
                     </ul>
                 </li>
-                <li><a href="../php/partner.php">Partenaires</a></li>
-                <li><a href="../php/contact.php">Contact</a></li>
+                <li><a href="../index.php?page=partner">Partenaires</a></li>
+                <li><a href="../index.php?page=contact">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right social hidden-xs">
                 <li><a href="#"><i class="fa fa-facebook-square navbar-logo" aria-hidden="true"></i></a></li>
