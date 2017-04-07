@@ -9,7 +9,7 @@
 namespace hph\model;
 
 
-class artist
+class Artist
 {
 
     private $id;
