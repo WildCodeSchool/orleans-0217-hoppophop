@@ -16,12 +16,11 @@ if($page == 'home'){
 
 
 }else if($page == 'programmation'){
-    include('src/Hph/View/programmation.php');
-
+    $page = new Hph\Controller\ProgrammationController();
+    $page->render($twig);
 }else if($page == 'artiste'){
-    $page = new Hph\Controller\ArtistController();
-   $page->render($twig);
-
+    $artiste = new Hph\Controller\ArtistController();
+    $artiste->render($twig);
 }else if($page == 'planning'){
     $planning = new \Hph\Controller\PlanningController();
     $planning->render($twig);
@@ -38,45 +37,18 @@ if($page == 'home'){
     $place = new Hph\Controller\PlaceController();
     $place->render($twig);
 }else if($page == 'benevolat'){
-    include('src/Hph/View/benevolat.php');
+    $benevolat = new Hph\Controller\BenevolatController();
+    $benevolat->render($twig);
 }else if($page == 'transport'){
     $transport = new Hph\Controller\TransportController();
     $transport->render($twig);
 }else if($page == 'dimaorl'){
-    include('src/Hph/View/dimaorl.php');
+    $dimaorl = new Hph\Controller\DimaorlController();
+    $dimaorl->render($twig);
 }else if($page == 'partner'){
-    include('src/Hph/View/partner.php');
+    $partner = new Hph\Controller\PartnerController();
+    $partner->render($twig);
 }else if($page == 'contact'){
     include('src/Hph/View/contact.php');
 
 }
-//elseif($page == 'programmation'){
-//    include('src/Hph/View/programmation.php');
-//}elseif($page == 'artiste'){
-//    $page = new Hph\Controller\ArtistController();
-//    $page->render($twig);
-//}else if($page == 'planning'){
-//    include('src/Hph/View/planning.php');
-//}else if($page == 'billetterie'){
-//    include('src/Hph/View/billetterie.php');
-//}else if($page == 'cashless'){
-//    include('src/Hph/View/cashless.php');
-//}else if($page == 'food'){
-//    $food = new Hph\Controller\FoodController();
-//    $food->render($twig);
-//}else if($page == 'place'){
-//    $place = new Hph\Controller\PlaceController();
-//    $place->render($twig);
-//}else if($page == 'benevolat'){
-//    include('src/Hph/View/benevolat.php');
-//}else if($page == 'transport'){
-//    $transport = new Hph\Controller\TransportController();
-//    $transport->render($twig);
-//}else if($page == 'dimaorl'){
-//    include('src/Hph/View/dimaorl.php');
-//}else if($page == 'partner'){
-//    include('src/Hph/View/partner.php');
-//}else if($page == 'contact'){
-//    include('src/Hph/View/contact.php');
-//}
-?>
