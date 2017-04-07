@@ -10,6 +10,7 @@ namespace hph\controller;
 
 class ArtistController extends Controller
 {
+    public function render 
     public function listAll() {
         //$db = new DB();
         //$artiste = $db -> findAll('artiste');
