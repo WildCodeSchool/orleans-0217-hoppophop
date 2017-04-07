@@ -6,7 +6,7 @@
  * Time: 20:22
  */
 
-namespace HPH\controller;
+namespace Hph\Controller;
 
 class ArtistController extends Controller
 {

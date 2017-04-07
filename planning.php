@@ -1,5 +1,5 @@
 <?php
-require('views/base.html.twig');
+require('View/base.html.twig');
 
 ?>
     <div class="welcome_divTitle text-center">
@@ -201,5 +201,5 @@ require('views/base.html.twig');
     </div>
 
 <?php
-require('views/footer.html.twig');
+require('View/footer.html.twig');
 ?>

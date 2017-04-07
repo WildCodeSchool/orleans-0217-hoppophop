@@ -1,43 +1,42 @@
 <?php
 require_once 'vendor/autoload.php';
 
-$loader = new Twig_Loader_Filesystem('src/HPH/views');
+$loader = new Twig_Loader_Filesystem('src/Hph/View');
 $twig = new Twig_Environment($loader, array('cache' => false));
 if(isset($_GET['page'])){
     $page = $_GET['page'];
 }else {
     $page = 'home';
 }
-
-
 if($page == 'home'){
-    $home = new HPH\controller\HomeController();
+    $home = new Hph\Controller\HomeController();
     $home->render($twig);
 }else if($page == 'programmation'){
-    include('src/HPH/views/programmation.php');
+    include('src/Hph/View/programmation.php');
 }else if($page == 'artiste'){
-    include('src/HPH/views/artiste.php');
+    include('src/Hph/View/artiste.php');
 }else if($page == 'planning'){
-    include('src/HPH/views/planning.php');
+    include('src/Hph/View/planning.php');
 }else if($page == 'billetterie'){
-    include('src/HPH/views/billetterie.php');
+    include('src/Hph/View/billetterie.php');
 }else if($page == 'cashless'){
-    include('src/HPH/views/cashless.php');
+    include('src/Hph/View/cashless.php');
 }else if($page == 'food'){
-    $food = new \hph\controller\FoodController();
+    $food = new Hph\Controller\FoodController();
     $food->render($twig);
 }else if($page == 'place'){
-    $place = new \hph\controller\PlaceController();
+    $place = new Hph\Controller\PlaceController();
     $place->render($twig);
 }else if($page == 'benevolat'){
-    include('src/HPH/views/benevolat.php');
-}else if($page == 'venir'){
-    include('src/HPH/views/venir.php');
+    include('src/Hph/View/benevolat.php');
+}else if($page == 'transport'){
+    $transport = new Hph\Controller\TransportController();
+    $transport->render($twig);
 }else if($page == 'dimaorl'){
-    include('src/HPH/views/dimaorl.php');
+    include('src/Hph/View/dimaorl.php');
 }else if($page == 'partner'){
-    include('src/HPH/views/partner.php');
+    include('src/Hph/View/partner.php');
 }else if($page == 'contact'){
-    include('src/HPH/views/contact.php');
+    include('src/Hph/View/contact.php');
 }
 ?>

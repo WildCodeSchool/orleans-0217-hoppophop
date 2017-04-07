@@ -6,7 +6,7 @@
  * Time: 11:41
  */
 
-namespace HPH\controller;
+namespace Hph\Controller;
 
 
 class PlaceController
