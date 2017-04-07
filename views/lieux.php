@@ -1,6 +1,3 @@
-<?php
-require('header.php');
-?>
 <div class="container text-center">
     <div class="row">
         <div class="col-xs-6 col-sm-4">
@@ -59,6 +56,3 @@ require('header.php');
         </div>
     </div>
 </div>
-<?php
-require('footer.php');
-?>

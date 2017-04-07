@@ -1,6 +1,3 @@
-<?php
-require('header.php');
-?>
 <div class="container text-center">
     <div class="content-div">
         <i class="fa fa-map-o venir-icon" aria-hidden="true"></i>
@@ -21,6 +18,3 @@ require('header.php');
         <p>La gare d’Orléans est située à 10 minutes à pied du jardin de l’Evêché, liaisons régulière depuis Paris, Tours, Blois, Bourges, etc… <br />Plus d’infos : <a href="http://www.voyages-sncf.com/" class="turquoise bold">SNCF</a></p>
     </div>
 </div>
-<?php
-require('footer.php');
-?>

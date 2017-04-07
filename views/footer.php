@@ -56,8 +56,8 @@
         <p class="footer-legal">Mentions Légales</p>
     </div>
 </footer>
-<script src="../../src/js/jquery-3.1.1.min.js"></script>
-<script src="../../src/bootstrap/js/bootstrap.min.js"></script>
-<script src="../../src/js/script.js"></script>
+<script src="../src/js/jquery-3.1.1.min.js"></script>
+<script src="../src/bootstrap/js/bootstrap.min.js"></script>
+<script src="../src/js/script.js"></script>
 </body>
 </html>
