@@ -1,6 +1,6 @@
 <?php
 
-namespace hph\controller;
+namespace HPH\controller;
 
 class HomeController
 {

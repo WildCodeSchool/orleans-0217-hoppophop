@@ -6,7 +6,7 @@
  * Time: 12:00
  */
 
-namespace hph\model;
+namespace HPH\model;
 
 
 class Concert

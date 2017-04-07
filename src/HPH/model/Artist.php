@@ -6,7 +6,7 @@
  * Time: 11:43
  */
 
-namespace hph\model;
+namespace HPH\model;
 
 
 class Artist
