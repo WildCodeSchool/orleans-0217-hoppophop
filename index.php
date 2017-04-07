@@ -16,12 +16,14 @@ if($page == 'home'){
 }else if($page == 'artiste'){
     include('src/Hph/View/artiste.php');
 }else if($page == 'planning'){
-    $planning = new \hph\controller\PlanningController();
+    $planning = new \Hph\Controller\PlanningController();
     $planning->render($twig);
 }else if($page == 'billetterie'){
-    include('src/Hph/View/billetterie.php');
+    $ticket = new Hph\Controller\TicketController();
+    $ticket->render($twig);
 }else if($page == 'cashless'){
-    include('src/Hph/View/cashless.php');
+    $cashless = new \Hph\Controller\CashlessController();
+    $cashless->render($twig);
 }else if($page == 'food'){
     $food = new Hph\Controller\FoodController();
     $food->render($twig);
