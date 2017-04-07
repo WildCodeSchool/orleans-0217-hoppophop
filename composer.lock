@@ -62,7 +62,7 @@
                 "polyfill",
                 "portable",
                 "shim"
-            ],
+            ]
 
         },
         {
