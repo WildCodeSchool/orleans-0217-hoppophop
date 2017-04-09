@@ -49,6 +49,7 @@ if($page == 'home'){
     $partner = new Hph\Controller\PartnerController();
     $partner->render($twig);
 }else if($page == 'contact'){
-    include('src/Hph/View/contact.php');
+    $contact = new Hph\Controller\ContactController();
+    $contact->render($twig);
 
 }
