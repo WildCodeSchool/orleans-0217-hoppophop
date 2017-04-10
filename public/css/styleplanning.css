@@ -1,0 +1,72 @@
+.header-titre {
+    font-family: 'Dokyo';
+    color: white;
+    text-align :center;
+    font-size: 70px;
+    background-color: #2baf97;
+
+}
+
+.planning {
+    background-color: #ed7a21;
+}
+.jour {
+    font-family: 'Dokyo';
+    color: white;
+    text-align :center;
+    font-size: 70px;
+    background-color: #18252e;
+}
+.salle {
+    color: white;
+    font-family: 'Dokyo';
+    font-size: x-large;
+    text-align: center;
+    vertical-align: middle;
+}
+.concertsmartphone {
+    color: white;
+    font-family: 'Circula-Medium';
+    text-align: center;
+    font-weight: 100;
+    font-size: 30px;
+}
+.sallesmartphone {
+    color: white;
+    font-family: 'Dokyo';
+    text-align: center;
+    font-size: 48px;
+}
+.concertbleu p {
+    color: #2baf97;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: white;
+    border-radius : 20px;
+    border: 5px solid #2baf97;
+    box-shadow: 3px 3px 0px #017553;
+    font-weight: bold;
+    font-family: 'Circula-Medium';
+    text-align: center;
+    font-size: 25px;
+    width: 280px;
+}
+.concertorange p {
+    color: #ed7a21;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: white;
+    border-radius : 20px;
+    border: 5px solid #ed7a21;
+    box-shadow: 3px 3px 0px #ed7a22;
+    font-weight: bold;
+    font-family: 'Circula-Medium';
+    text-align: center;
+    font-size: 25px;
+    width: 280px;
+
+}
+
+.concertsalle {
+    width: 250px;
+}

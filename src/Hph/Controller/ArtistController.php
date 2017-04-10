@@ -8,39 +8,11 @@
 
 namespace Hph\Controller;
 
-class ArtistController extends Controller
+class ArtistController
 {
-    public function listAll() {
-        //$db = new DB();
-        //$artiste = $db -> findAll('artiste');
-
-        return $this -> render('artiste/listAllartiste.php');
-    }
-
-    public function show($id)
+    public function render($twig)
     {
-        //$db = new DB();
-        //$eleve = $db -> findOne('artiste', $id);
-        return $this->render('artiste/showartiste.php', ['artiste'=>$artiste]);
-
-    }
-
-
-    public function add() {
-
-    }
-
-    /**
-     *
-     */
-    public function update() {
-
-    }
-
-    /**
-     *
-     */
-    public function delete() {
-
+        $template = $twig->load('artiste.html.twig');
+        echo $template->render();
     }
 }

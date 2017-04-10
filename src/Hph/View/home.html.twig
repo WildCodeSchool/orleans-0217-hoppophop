@@ -7,7 +7,8 @@
             {%  if breakingNews>0 %}
                 <div class="alert alert-warning alert-danger" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <strong>Attention !</strong> La Jungle est déprogrammé
+                    <strong>Attention !</strong><br />
+                    <p>La Jungle est déprogrammé</p>
                 </div>
             {% endif %}
             <div class="col-xs-6 col-xs-offset-3">
@@ -17,7 +18,7 @@
             </div>
             <h1 class="separator-title font-dokyo">PROGRAMMATION</h1>
             <hr class="hr">
-            <div class="separator-div text-justify">
+            <div class="separator-div text-justify home-progDiv">
                 {%  for i in range(0,29) %}
                     {% if i%2 == 0 and i<29 %}
                         <p class="home-prog"><a href="../../../index.php?page=artiste" class="home-link link-orange font-circula">Chuck Berry</a> <span class="orange">/</span></p>
