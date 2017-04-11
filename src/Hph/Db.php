@@ -3,6 +3,8 @@
 namespace Hph;
 
 require_once 'connect.php';
+
+
 class Db
 {
     private $db;
