@@ -1,5 +1,6 @@
 <?php
 require_once 'vendor/autoload.php';
+require_once 'src/Hph/connect.php';
 
 $loader = new Twig_Loader_Filesystem('src/Hph/View');
 $twig = new Twig_Environment($loader, array('cache' => false));
@@ -52,4 +53,10 @@ if($page == 'home') {
 }else if($page == 'contact') {
     $contact = new Hph\Controller\ContactController();
     $contact->render($twig);
+}else if($page == 'news') {
+    $news = new Hph\Controller\NewsController();
+    $news->render($twig);
+}else if($page == 'newsOne') {
+    $newsOne = new Hph\Controller\NewsOneController();
+    $newsOne->render($twig, $_GET['id']);
 }

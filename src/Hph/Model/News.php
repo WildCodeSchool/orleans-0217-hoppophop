@@ -113,4 +113,11 @@ class News
     {
         $this->link = $link;
     }
+
+    public function getBreaking()
+    {
+        $req = "SELECT * FROM $table LIMIT 0,$limit";
+        $res = $this->db->query($req);
+        return $res->fetchAll(\PDO::FETCH_CLASS, __NAMESPACE__ . '\Model\\'.ucfirst($table));
+    }
 }

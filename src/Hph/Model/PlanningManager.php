@@ -9,9 +9,7 @@
 namespace HPH\Model;
 
 
-use Hph\Db;
-
-class PlanningManager extends Db
+class PlanningManager extends \Hph\Db
 {
     public function getConcertHall ()
     {
