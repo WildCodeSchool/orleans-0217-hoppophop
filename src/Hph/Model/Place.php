@@ -3,13 +3,13 @@
  * Created by PhpStorm.
  * User: wilder9
  * Date: 11/04/17
- * Time: 16:10
+ * Time: 17:08
  */
 
 namespace HPH\Model;
 
 
-class ConcertHall
+class Place
 {
     private $id;
     private $name;
@@ -113,6 +113,7 @@ class ConcertHall
     {
         $this->end = $end;
     }
+
 
 
 }

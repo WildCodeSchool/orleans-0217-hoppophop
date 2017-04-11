@@ -8,12 +8,22 @@
 
 namespace hph\controller;
 
+use Hph\Model\Artist;
+use Hph\Model\PlanningManager;
+
 
 class PlanningController
 {
+    public function getArtistPlanning()
+    {
+        $planningManager = new PlanningManager();
+        $artist = $planningManager->getArtist();
+        return $artist;
+    }
+
     public function render($twig)
     {
-        $template = $twig->load('planning.html.twig');
-        echo $template->render();
+        $artist = $this->getArtistPlanning();
+        echo $twig->load('planning.html.twig')->render(['artistPlanning'=>$artist]);
     }
 }

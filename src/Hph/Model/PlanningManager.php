@@ -13,24 +13,24 @@ use Hph\Db;
 
 class PlanningManager extends Db
 {
-    public function getConcertHall ()
+    public function getConcertHall()
     {
         $req = "SELECT name FROM place";
-        $res = $this->db->query($req);
-        return $res->fetchAll(\PDO::FETCH_CLASS, __NAMESPACE__ . '\model\Place');
+        $res = $this->getDb()->query($req);
+        return $res->fetchAll(\PDO::FETCH_CLASS, 'HPH\Model\Place');
     }
 
-    public function getArtist ()
+    public function getArtist()
     {
         $req = "SELECT name FROM artist";
-        $res = $this->db->query($req);
-        return $res->fetchAll(\PDO::FETCH_CLASS, __NAMESPACE__ . '\model\Artist');
+        $res = $this->getDb()->query($req);
+        return $res->fetchAll(\PDO::FETCH_CLASS, 'HPH\Model\Artist');
     }
 
-    public function getConcertHour ()
+    public function getConcertHour()
     {
         $req = "SELECT concert_start,concert_end FROM concert";
-        $res = $this->db->query($req);
-        return $res->fetchAll(\PDO::FETCH_CLASS,__NAMESPACE__ . 'model\Concert');
+        $res = $this->getDb()->query($req);
+        return $res->fetchAll(\PDO::FETCH_CLASS, 'HPH\Model\Concert');
     }
 }

@@ -21,13 +21,13 @@
                 {% for i in range(0,5) %}
                     <div class="col-md-2 hidden-sm hidden-xs">
                         {% if i%2==0 %}
-                            {% for j in range(0,3) %}
-                                <div class="planning-show show-blue font-default"><p>CONCERT DE LA MORT QUI TUE<br/>18h-19h
+                            {% for artist in artistPlanning %}
+                                <div class="planning-show show-blue font-default"><p>{{ artist }}<br/>18h-19h
                                     </p></div><br/>
                             {% endfor %}
                         {% else %}
                             {% for j in range(0,3) %}
-                                <div class="planning-show show-orange font-default"><p>CONCERT DE LA MORT QUI TUE<br/>18h-19h
+                                <div class="planning-show show-orange font-default"><p>{{ artist }}<br/>18h-19h
                                     </p></div><br/>
                             {% endfor %}
                         {% endif %}

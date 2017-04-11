@@ -6,12 +6,11 @@
  * Time: 11:43
  */
 
-namespace HPH\model;
+namespace Hph\Model;
 
 
 class Artist
 {
-
     private $id;
     private $name;
     private $bio;
@@ -165,4 +164,5 @@ class Artist
     {
         $this->spotify_url = $spotify_url;
     }
+}
 
