@@ -1,24 +1,24 @@
 <?php
 
 namespace Hph\Controller;
-use Hph\Db;
+use Hph\Model\NewsManager;
 
 class HomeController
 {
     private function getNews()
     {
-        $db = new DB();
-        return $db -> findSome('news', 3);
+        $news = new NewsManager();
+        return $news -> getNews(3);
     }
-    private function getBreaking()
+    private function getBreakingNews()
     {
-        $db = new DB();
-        return $db -> findSome('news', 3);
+        $news = new NewsManager();
+        return $news -> getBreakingNews();
     }
     public function render($twig)
     {
         $news = $this->getNews();
-        $breaking = $this->getNews();
+        $breaking = $this->getBreakingNews();
         echo $twig->load('home.html.twig')->render(['newsAll'=>$news, 'newsBreaking'=>$breaking]);
     }
 }
