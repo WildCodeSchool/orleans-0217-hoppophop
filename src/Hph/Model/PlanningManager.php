@@ -10,6 +10,9 @@ namespace HPH\Model;
 
 
 use Hph\Db;
+use Hph\Model\Place;
+use Hph\Model\Artist;
+use Hph\Model\Concert;
 
 class PlanningManager extends Db
 {
@@ -20,12 +23,12 @@ class PlanningManager extends Db
         return $res->fetchAll(\PDO::FETCH_CLASS, 'HPH\Model\Place');
     }
 
-    public function getArtist()
-    {
-        $req = "SELECT name FROM artist";
-        $res = $this->getDb()->query($req);
-        return $res->fetchAll(\PDO::FETCH_CLASS, 'HPH\Model\Artist');
-    }
+    //public function getArtist()
+    //{
+    //    $req = "SELECT name FROM artist";
+    //  $res = $this->getDb()->query($req);
+    //return $res->fetchAll(\PDO::FETCH_CLASS, 'HPH\Model\Artist');
+    //}
 
     public function getConcertHour()
     {
