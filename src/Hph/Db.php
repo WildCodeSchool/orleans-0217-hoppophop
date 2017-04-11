@@ -7,6 +7,13 @@ class Db
 {
     private $db;
 
+    /**
+     * @return \PDO
+     */
+    public function getDb()
+    {
+        return $this->db;
+    }
     public function __construct()
     {
         $this->db = new \PDO(DSN, USER, PASS);

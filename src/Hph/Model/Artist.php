@@ -15,14 +15,12 @@ class Artist
     private $id;
     private $name;
     private $bio;
-    private $image_path;
+    private $img_artist;
     private $video_url;
     private $facebook_url;
     private $youtube_url;
     private $twitter_url;
     private $spotify_url;
-    private $status;
-    private $tags;
 
     /**
      * @return mixed
@@ -75,17 +73,17 @@ class Artist
     /**
      * @return mixed
      */
-    public function getImagePath()
+    public function getImgArtist()
     {
-        return $this->image_path;
+        return $this->img_artist;
     }
 
     /**
-     * @param mixed $image_path
+     * @param mixed $img_artist
      */
-    public function setImagePath($image_path)
+    public function setImgArtist($img_artist)
     {
-        $this->image_path = $image_path;
+        $this->img_artist = $img_artist;
     }
 
     /**
@@ -168,38 +166,3 @@ class Artist
         $this->spotify_url = $spotify_url;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * @param mixed $status
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTags()
-    {
-        return $this->tags;
-    }
-
-    /**
-     * @param mixed $tags
-     */
-    public function setTags($tags)
-    {
-        $this->tags = $tags;
-    }
-
-
-
-}
