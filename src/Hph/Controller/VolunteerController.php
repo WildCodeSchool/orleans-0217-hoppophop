@@ -11,7 +11,7 @@ namespace Hph\Controller;
 
 class VolunteerController
 {
-    public function render ($twig)
+    public function render($twig)
     {
         echo $twig->load('volunteer.html.twig')->render();
     }

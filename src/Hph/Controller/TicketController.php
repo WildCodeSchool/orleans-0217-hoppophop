@@ -11,7 +11,7 @@ namespace Hph\Controller;
 
 class TicketController
 {
-    public function render ($twig)
+    public function render($twig)
     {
         $template=$twig->load('ticket.html.twig');
         echo $template->render();

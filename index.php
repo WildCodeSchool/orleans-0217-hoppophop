@@ -4,52 +4,52 @@ require_once 'vendor/autoload.php';
 $loader = new Twig_Loader_Filesystem('src/Hph/View');
 $twig = new Twig_Environment($loader, array('cache' => false));
 
-if(isset($_GET['page'])){
+if(isset($_GET['page'])) {
     $page = $_GET['page'];
 }else {
     $page = 'home';
 }
 
-if($page == 'home'){
+if($page == 'home') {
     $home = new Hph\Controller\HomeController;
     $home->render($twig);
-}else if($page == 'programmation'){
+}else if($page == 'programmation') {
     $page = new Hph\Controller\ProgrammationController();
     $page->render($twig);
-}else if($page == 'artiste'){
+}else if($page == 'artiste') {
     $artiste = new Hph\Controller\ArtistController();
     $artiste->render($twig);
-}else if($page == 'planning'){
+}else if($page == 'planning') {
     $planning = new \Hph\Controller\PlanningController();
     $planning->render($twig);
-}else if($page == 'billetterie'){
+}else if($page == 'billetterie') {
     $ticket = new Hph\Controller\TicketController();
     $ticket->render($twig);
-}else if($page == 'cashless'){
+}else if($page == 'cashless') {
     $cashless = new \Hph\Controller\CashlessController();
     $cashless->render($twig);
-}else if($page == 'food'){
+}else if($page == 'food') {
     $food = new Hph\Controller\FoodController();
     $food->render($twig);
-}else if($page == 'place'){
+}else if($page == 'place') {
     $place = new Hph\Controller\PlaceController();
     $place->render($twig);
-}else if($page == 'volunteer'){
+}else if($page == 'volunteer') {
     $volunteer = new Hph\Controller\VolunteerController();
     $volunteer->render($twig);
-}else if($page == 'benevolat'){
+}else if($page == 'benevolat') {
     $benevolat = new Hph\Controller\BenevolatController();
     $benevolat->render($twig);
-}else if($page == 'transport'){
+}else if($page == 'transport') {
     $transport = new Hph\Controller\TransportController();
     $transport->render($twig);
-}else if($page == 'dimaorl'){
+}else if($page == 'dimaorl') {
     $dimaorl = new Hph\Controller\DimaorlController();
     $dimaorl->render($twig);
-}else if($page == 'partner'){
+}else if($page == 'partner') {
     $partner = new Hph\Controller\PartnerController();
     $partner->render($twig);
-}else if($page == 'contact'){
+}else if($page == 'contact') {
     $contact = new Hph\Controller\ContactController();
     $contact->render($twig);
 }

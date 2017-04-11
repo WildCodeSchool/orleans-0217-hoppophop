@@ -11,7 +11,7 @@ namespace Hph\Controller;
 
 class TransportController
 {
-    public function render ($twig)
+    public function render($twig)
     {
         echo $twig->load('transport.html.twig')->render();
     }

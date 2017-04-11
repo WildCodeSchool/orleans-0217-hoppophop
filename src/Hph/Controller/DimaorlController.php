@@ -11,7 +11,7 @@ namespace Hph\Controller;
 
 class DimaorlController
 {
-    public function render ($twig)
+    public function render($twig)
     {
         $template = $twig->load('dimaorl.html.twig');
         echo $template->render();

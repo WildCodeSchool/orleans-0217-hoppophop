@@ -11,7 +11,7 @@ namespace Hph\Controller;
 
 class BilletterieController
 {
-    public function render ($twig)
+    public function render($twig)
     {
         $template = $twig->load('billetterie.html.twig');
         echo $template->render();
