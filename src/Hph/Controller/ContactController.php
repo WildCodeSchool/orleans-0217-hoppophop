@@ -11,7 +11,7 @@ namespace Hph\Controller;
 
 class ContactController
 {
-    public function render ($twig)
+    public function render($twig)
     {
         $template = $twig->load('contact.html.twig');
         echo $template->render();

@@ -3,4 +3,5 @@
 
 /vendor/
 .idea
-/src/connect.php
+/src/Hph/connect.php
+

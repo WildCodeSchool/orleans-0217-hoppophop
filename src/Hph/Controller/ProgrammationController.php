@@ -11,7 +11,7 @@ namespace Hph\Controller;
 
 class ProgrammationController
 {
-    public function render ($twig)
+    public function render($twig)
     {
         $template = $twig->load('programmation.html.twig');
         echo $template->render();

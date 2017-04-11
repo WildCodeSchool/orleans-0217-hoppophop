@@ -11,7 +11,7 @@ namespace hph\controller;
 
 class PlanningController
 {
-    public function render ($twig)
+    public function render($twig)
     {
         $template = $twig->load('planning.html.twig');
         echo $template->render();

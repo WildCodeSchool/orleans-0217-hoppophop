@@ -12,11 +12,11 @@ namespace HPH\model;
 class Concert
 {
 
-private $id;
-private $hour;
-private $day;
-private $artist_id;
-private $concert_hall_id;
+    private $id;
+    private $hour;
+    private $day;
+    private $artist_id;
+    private $concert_hall_id;
 
     /**
      * @return mixed

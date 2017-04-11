@@ -1,17 +1,24 @@
 <?php
 
 namespace Hph\Controller;
+use Hph\Db;
 
 class HomeController
 {
-    public function render ($twig)
+    private function getNews()
     {
-        $template = $twig->load('home.html.twig');
-        echo $template->render(
-            array(
-                'title' => 'La Jungle',
-                'text' => 'Une six-cordes et un casio. Il n’en faut parfois pas plus pour faire péter le mercure et irriter les yeux de sueur après deux breaks et trois accords. Deux singes rouquins, un très grand et un plus petit, vous emmènent dans leur milieu naturel : La Jungle !',
-                'breakingNews' => 1,
-            ));
+        $db = new DB();
+        return $db -> findSome('news', 3);
+    }
+    private function getBreaking()
+    {
+        $db = new DB();
+        return $db -> findSome('news', 3);
+    }
+    public function render($twig)
+    {
+        $news = $this->getNews();
+        $breaking = $this->getNews();
+        echo $twig->load('home.html.twig')->render(['newsAll'=>$news, 'newsBreaking'=>$breaking]);
     }
 }

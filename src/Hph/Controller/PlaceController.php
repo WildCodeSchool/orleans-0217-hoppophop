@@ -11,9 +11,8 @@ namespace Hph\Controller;
 
 class PlaceController
 {
-    public function render ($twig)
+    public function render($twig)
     {
-        $template = $twig->load('place.html.twig');
-        echo $template->render();
+        echo $twig->load('place.html.twig')->render();
     }
 }

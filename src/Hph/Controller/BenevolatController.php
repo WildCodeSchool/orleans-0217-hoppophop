@@ -11,7 +11,7 @@ namespace Hph\Controller;
 
 class BenevolatController
 {
-    public function render ($twig)
+    public function render($twig)
     {
         $template = $twig->load('benevolat.html.twig');
         echo $template->render();
