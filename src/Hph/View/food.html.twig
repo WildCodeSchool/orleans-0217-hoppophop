@@ -4,13 +4,18 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            {% for i in range(0,2) %}
+            {%  for food in foods %}
                 <div class="col-xs-12 col-xs-offset-0 col-sm-4">
                     <div class="content-div text-justify">
-                        <img src="../../../web/img/chuck.png" class="img-responsive">
-                        <h2 class="font-circula">{{ title }}</h2>
+                        <img src="../../../web/img/{{ food.imgEat }}" class="img-responsive">
+                        <h2 class="font-circula">{{ food.name }}</h2>
                         <hr class="hr">
-                        <p>{{ text }}</p>
+                        <p>{{ food.content }}</p>
+                        {% if food.start|date("l")!=food.end|date("l") %}
+                            <p class="food-info">{{ food.place_name }}<span class="orange"> | </span>{{ food.start|date("l") }} et {{ food.end|date("l") }}</p>
+                        {% else %}
+                            <p class="food-info">{{ food.place_name }}<span class="orange"> | </span>{{ food.start|date("l") }}</p>
+                        {% endif %}
                     </div>
                     <br />
                 </div>
