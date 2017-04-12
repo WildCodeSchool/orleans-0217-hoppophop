@@ -17,6 +17,23 @@ class Place
     private $img;
     private $start;
     private $end;
+    private $showcase;
+
+    /**
+     * @return mixed
+     */
+    public function getShowcase()
+    {
+        return $this->showcase;
+    }
+
+    /**
+     * @param mixed $showcase
+     */
+    public function setShowcase($showcase)
+    {
+        $this->showcase = $showcase;
+    }
 
     /**
      * @return mixed

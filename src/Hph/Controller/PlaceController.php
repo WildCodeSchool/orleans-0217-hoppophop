@@ -11,14 +11,15 @@ use Hph\Model\PlaceManager;
 
 class PlaceController
 {
-    public function getPlaces()
+    public function getPlaces($showcase)
     {
         $places = new PlaceManager();
-        return $places -> getPlaces();
+        return $places -> getPlaces($showcase);
     }
     public function render($twig)
     {
-        $places = $this->getPlaces();
-        echo $twig->load('place.html.twig')->render(['places'=>$places]);
+        $places = $this->getPlaces(0);
+        $showcase = $this->getPlaces(1);
+        echo $twig->load('place.html.twig')->render(['places'=>$places, 'showcases'=>$showcase]);
     }
 }
