@@ -7,13 +7,20 @@
  */
 
 namespace Hph\Controller;
-
+use Hph\Model\ProgrammationManager;
 
 class ProgrammationController
 {
+
+    public function getArtistes()
+    {
+        $artists = new ProgrammationManager();
+        return $artists->getArtistes(100);
+    }
+
     public function render($twig)
     {
-        $template = $twig->load('programmation.html.twig');
-        echo $template->render();
+        $artists = $this->getArtistes();
+        echo $twig->load('programmation.html.twig')->render(['artistes'=>$artists]);
     }
 }

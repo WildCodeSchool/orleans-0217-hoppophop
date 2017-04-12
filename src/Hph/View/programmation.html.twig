@@ -34,31 +34,20 @@
 <br />
 <div class="container">
     <div class="row">
-        <div class="col-md-3 col-sm-6">
-            <a href="index.php?page=artiste">
-                <div class="thumbnail thumbnail-div prog-artist text-center">
-                    <img src="public/img/chuck.png" class="prog-img img-cancel">
-                    <div class="content-div prog-info text-center">
-                        <p class="info-text">CHUCK BERRY CHUCK BERRY CHUCK BERRY</p>
-                        <hr class="hr-min">
-                        <p class="info-text">Vendredi 16h</p>
-                    </div>
-                    <h1 class="prog-cancel font-dokyo">Annulé</h1>
-                </div>
-            </a>
-        </div>
 
-        {%for i in range(0,18) %}
+
+        {%for artiste in artistes %}
 
             <div class="col-md-3 col-sm-6">
                 <a href="index.php?page=artiste">
-                    <div class="thumbnail thumbnail-div prog-artist">
-                        <img src="public/img/chuck.png" class="img-responsive prog-img">
+                    <div class="thumbnail thumbnail-div prog-artist text-center">
+                        <img src="../../../web/img/{{ artiste.imagePath }}" class="img-responsive prog-img img-cancel">
                         <div class="content-div prog-info text-center">
-                            <p class="info-text">CHUCK BERRY</p>
+                            <p class="info-text">{{ artiste.name }}</p>
                             <hr class="hr-min">
                             <p class="info-text">Vendredi 16h</p>
                         </div>
+                        <h1 class="prog-cancel font-dokyo">Annulé</h1>
                     </div>
                 </a>
             </div>
