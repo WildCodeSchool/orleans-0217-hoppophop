@@ -12,7 +12,7 @@
                 </div>
             {% endfor %}
             <div class="col-xs-6 col-xs-offset-3">
-                <img src="../../../web/img/logo-only.png" alt="Logo du Festival" class="img-responsive logo-big">
+                <img src="../../../web/img/global/logo-only.png" alt="Logo du Festival" class="img-responsive logo-big">
                 <br />
                 <br />
             </div>
@@ -45,7 +45,7 @@
                         {%  for news in newsAll %}
                             <div class="col-xs-12 col-xs-offset-0 col-sm-4">
                                 <div class="content-div text-justify">
-                                    <img src="../../../web/img/{{ news.image }}" class="img-responsive">
+                                    <img src="../../../web/img/news/{{ news.imgNews }}" class="img-responsive">
                                     <a href="index.php?page=newsOne&id={{ news.id }}" class="news-link"><h2 class="font-circula">{{ news.title }}</h2></a>
                                     <hr class="hr">
                                     <p>{{ news.text }}</p>

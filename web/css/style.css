@@ -1,12 +1,11 @@
 /*General*/
 
 body {
-    background: url("../img/background.png") center center  no-repeat fixed;
+    background: url("../img/global/background.png") center center  no-repeat fixed;
     background-size: cover;
     position: relative;
     padding-top: 100px;
 }
-
 
 @font-face {
     font-family: 'Circula-Medium';
