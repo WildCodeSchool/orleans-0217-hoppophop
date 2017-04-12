@@ -7,23 +7,25 @@
             <h2 class="white font-circula">Lieux du Festival</h2>
             {%  for place in places %}
                 <div class="col-xs-6 col-sm-4">
-                    <div class="thumbnail thumbnail-div lieux-thumbnail">
+                    <div class="thumbnail thumbnail-div">
                         <a href="{{ place.url }}">
-                            <img src="../../../web/img/{{ place.img }}" class="img-responsive places-img">
+                            <img src="../../../web/img/{{ place.imgPlace }}" class="img-responsive">
                             <h3 class="thumbnail-title font-circula">{{ place.name }}</h3>
                         </a>
                     </div>
                 </div>
             {% endfor %}
         </div>
+        <br />
+        <br />
         <div class="row">
             <hr class="hr-min">
             <h2 class="white font-circula">Showcases</h2>
             {%  for showcase in showcases %}
                 <div class="col-xs-6 col-sm-4">
-                    <div class="thumbnail thumbnail-div lieux-thumbnail">
+                    <div class="thumbnail thumbnail-div">
                         <a href="{{ showcase.url }}">
-                            <img src="../../../web/img/{{ showcase.img }}" class="img-responsive places-img">
+                            <img src="../../../web/img/{{ showcase.imgPlace }}" class="img-responsive">
                             <h3 class="thumbnail-title font-circula">{{ showcase.name }}</h3>
                         </a>
                     </div>

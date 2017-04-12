@@ -14,26 +14,10 @@ class Place
     private $id;
     private $name;
     private $url;
-    private $img;
+    private $img_place;
     private $start;
     private $end;
     private $showcase;
-
-    /**
-     * @return mixed
-     */
-    public function getShowcase()
-    {
-        return $this->showcase;
-    }
-
-    /**
-     * @param mixed $showcase
-     */
-    public function setShowcase($showcase)
-    {
-        $this->showcase = $showcase;
-    }
 
     /**
      * @return mixed
@@ -86,17 +70,17 @@ class Place
     /**
      * @return mixed
      */
-    public function getImg()
+    public function getImgPlace()
     {
-        return $this->img;
+        return $this->img_place;
     }
 
     /**
-     * @param mixed $img
+     * @param mixed $img_place
      */
-    public function setImg($img)
+    public function setImgPlace($img_place)
     {
-        $this->img = $img;
+        $this->img_place = $img_place;
     }
 
     /**
@@ -129,6 +113,22 @@ class Place
     public function setEnd($end)
     {
         $this->end = $end;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShowcase()
+    {
+        return $this->showcase;
+    }
+
+    /**
+     * @param mixed $showcase
+     */
+    public function setShowcase($showcase)
+    {
+        $this->showcase = $showcase;
     }
 
 }

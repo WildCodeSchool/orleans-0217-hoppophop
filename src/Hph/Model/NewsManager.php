@@ -17,7 +17,7 @@ class NewsManager extends \Hph\Db
     }
     public function getBreakingNews()
     {
-        $req = "SELECT * FROM news WHERE status='1'";
+        $req = "SELECT * FROM news WHERE breaking_news='1'";
         return $this->render($req, 'News');
     }
 }
