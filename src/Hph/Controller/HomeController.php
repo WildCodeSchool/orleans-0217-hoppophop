@@ -2,6 +2,7 @@
 
 namespace Hph\Controller;
 use Hph\Model\NewsManager;
+use Hph\Model\ArtistManager;
 
 class HomeController
 {
@@ -15,10 +16,16 @@ class HomeController
         $news = new NewsManager();
         return $news -> getBreakingNews();
     }
+    private function getArtists()
+    {
+        $artists = new ArtistManager();
+        return $artists -> getArtists();
+    }
     public function render($twig)
     {
         $news = $this->getNews();
         $breaking = $this->getBreakingNews();
-        echo $twig->load('home.html.twig')->render(['newsAll'=>$news, 'newsBreaking'=>$breaking]);
+        $artists = $this->getArtists();
+        echo $twig->load('home.html.twig')->render(['newsAll'=>$news, 'newsBreaking'=>$breaking, 'artists'=>$artists]);
     }
 }

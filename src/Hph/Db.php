@@ -5,7 +5,6 @@ namespace Hph;
 class Db
 {
     private $db;
-
     /**
      * @return \PDO
      */
@@ -20,5 +19,7 @@ class Db
     public function __construct()
     {
         $this->db = new \PDO(DSN, USER, PASS);
+        $this->db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+        $this->db->query('SET NAMES utf8');
     }
 }

@@ -19,13 +19,15 @@
             <h1 class="separator-title font-dokyo">PROGRAMMATION</h1>
             <hr class="hr">
             <div class="separator-div text-justify home-progDiv">
-                {%  for i in range(0,29) %}
-                    {% if i%2 == 0 and i<29 %}
+                {%  for artist in artists  %}
+                    {% if loop.index%2 == 0 and loop.index<artists|length %}
                         <p class="home-prog"><a href="../../../index.php?page=artiste" class="home-link link-orange font-circula">Chuck Berry</a> <span class="orange">/</span></p>
-                    {% elseif i%2 != 0 and i<29 %}
+                    {% elseif loop.index%2 != 0 and loop.index<artists|length %}
                         <p class="home-prog"><a href="../../../index.php?page=artiste" class="home-link link-turquoise font-circula">Chuck Berry</a> <span class="turquoise">/</span></p>
-                    {% else %}
+                    {% elseif loop.index%2 != 0 %}
                         <p class="home-prog"><a href="../../../index.php?page=artiste" class="home-link link-turquoise font-circula">Chuck Berry</a></p>
+                    {% else %}
+                        <p class="home-prog"><a href="../../../index.php?page=artiste" class="home-link link-orange font-circula">Chuck Berry</a></p>
                     {% endif %}
                 {% endfor %}
             </div>
