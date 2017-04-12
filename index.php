@@ -1,9 +1,11 @@
 <?php
 require_once 'vendor/autoload.php';
+require_once 'src/Hph/connect.php';
+
 
 $loader = new Twig_Loader_Filesystem('src/Hph/View');
-$twig = new Twig_Environment($loader, array('cache' => false));
-
+$twig = new Twig_Environment($loader, array(    'debug' => true,'cache' => false));
+$twig->addExtension(new Twig_Extension_Debug());
 if(isset($_GET['page'])){
     $page = $_GET['page'];
 }else {
@@ -13,14 +15,12 @@ if(isset($_GET['page'])){
 if($page == 'home'){
     $home = new Hph\Controller\HomeController;
     $home->render($twig);
-
-
 }else if($page == 'programmation'){
     $page = new Hph\Controller\ProgrammationController();
     $page->render($twig);
 }else if($page == 'artiste'){
     $artiste = new Hph\Controller\ArtistController();
-    $artiste->render($twig);
+    $artiste->render($twig, $_GET['id']);
 }else if($page == 'planning'){
     $planning = new \Hph\Controller\PlanningController();
     $planning->render($twig);

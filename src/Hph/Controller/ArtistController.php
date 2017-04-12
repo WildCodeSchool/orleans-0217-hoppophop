@@ -7,12 +7,23 @@
  */
 
 namespace Hph\Controller;
+use Hph\Model\ArtistRequest;
 
 class ArtistController
 {
-    public function render($twig)
+    public function showArtist($id)
     {
-        $template = $twig->load('artiste.html.twig');
-        echo $template->render();
+        $artist = new ArtistRequest();
+        return $artist->showArtist($id);
+
     }
+    public function render($twig, $id)
+    {
+      $artists = $this->showArtist($id);
+      $template = $twig->load('artiste.html.twig');
+    echo $template->render(['artists' =>$artists]);
+
+    }
+
+
 }
