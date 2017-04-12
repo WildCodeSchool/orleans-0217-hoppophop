@@ -9,9 +9,9 @@
                 <h1 class="separator-title hidden-sm hidden-xs font-dokyo">JOUR</h1>
                 <hr class="hr hidden-xs hidden-sm">
                 <br />
-                {% for h in range(0,5) %}
+                {% for place in placePlanning %}
                     <div class="col-md-2 hidden-sm hidden-xs">
-                        <h3 class="planning-location font-circula">LIEU</h3>
+                        <h3 class="planning-location font-circula">{{ place.name }}</h3>
                     </div>
                 {% endfor %}
             </div>
@@ -22,12 +22,12 @@
                     <div class="col-md-2 hidden-sm hidden-xs">
                         {% if i%2==0 %}
                             {% for artist in artistPlanning %}
-                                <div class="planning-show show-blue font-default"><p>{{ artist }}<br/>18h-19h
+                                <div class="planning-show show-blue font-default"><p>{{ artist.name }}<br/>18h-19h
                                     </p></div><br/>
                             {% endfor %}
                         {% else %}
                             {% for j in range(0,3) %}
-                                <div class="planning-show show-orange font-default"><p>{{ artist }}<br/>18h-19h
+                                <div class="planning-show show-orange font-default"><p>{{ artist.name }}<br/>18h-19h
                                     </p></div><br/>
                             {% endfor %}
                         {% endif %}

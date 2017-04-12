@@ -21,9 +21,16 @@ class PlanningController
         return $artist;
     }
 
+    public function getPlacePlanning()
+    {
+        $planningManager = new PlanningManager();
+        $place = $planningManager->getPlace();
+        return $place;
+    }
     public function render($twig)
     {
         $artist = $this->getArtistPlanning();
-        echo $twig->load('planning.html.twig')->render(['artistPlanning'=>$artist]);
+        $place = $this->getPlacePlanning();
+        echo $twig->load('planning.html.twig')->render(['artistPlanning'=>$artist],'placePlanning'=>$place]);
     }
 }
