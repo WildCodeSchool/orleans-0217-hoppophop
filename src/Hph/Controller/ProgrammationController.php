@@ -9,7 +9,7 @@
 namespace Hph\Controller;
 
 
-class ProgrammationController
+class ProgrammationController extends ControllerDefault
 {
     public function render ($twig)
     {

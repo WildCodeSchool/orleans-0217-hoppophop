@@ -12,6 +12,10 @@ class Db
      * DB constructor.
      * @param $db */
 
+    public function __construct()
+    {
+        $this->db = new \PDO(DSN, USER, PASS);
+    }
 
     /**
      * @return \PDO
@@ -20,14 +24,11 @@ class Db
     {
         return $this->db;
     }
-    public function render($req, $model) {
 
+    public function dBQuery($req, $model)
+    {
         return $this->db->query($req)->fetchAll(\PDO::FETCH_CLASS, __NAMESPACE__ . '\Model\\'.ucfirst($model));
     }
-    public function __construct()
-    {
-        $this->db = new \PDO(DSN, USER, PASS);
 
-    }
 
 }

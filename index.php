@@ -3,9 +3,9 @@ require_once 'vendor/autoload.php';
 require_once 'src/Hph/connect.php';
 
 
-$loader = new Twig_Loader_Filesystem('src/Hph/View');
-$twig = new Twig_Environment($loader, array(    'debug' => true,'cache' => false));
-$twig->addExtension(new Twig_Extension_Debug());
+//$loader = new Twig_Loader_Filesystem('src/Hph/View');
+//$twig = new Twig_Environment($loader, array(    'debug' => true,'cache' => false));
+//$twig->addExtension(new Twig_Extension_Debug());
 if(isset($_GET['page'])){
     $page = $_GET['page'];
 }else {
@@ -18,9 +18,9 @@ if($page == 'home'){
 }else if($page == 'programmation'){
     $page = new Hph\Controller\ProgrammationController();
     $page->render($twig);
-}else if($page == 'artiste'){
+}else if($page == 'artist'){
     $artiste = new Hph\Controller\ArtistController();
-    $artiste->render($twig, $_GET['id']);
+    $render = $artiste->showArtist($_GET['id']);
 }else if($page == 'planning'){
     $planning = new \Hph\Controller\PlanningController();
     $planning->render($twig);
@@ -52,3 +52,5 @@ if($page == 'home'){
     include('src/Hph/View/contact.php');
 
 }
+
+echo $render;
