@@ -2,10 +2,11 @@
 require_once 'vendor/autoload.php';
 require_once 'src/Hph/connect.php';
 
-$loader = new Twig_Loader_Filesystem('src/Hph/View');
-$twig = new Twig_Environment($loader, array('cache' => false));
 
-if(isset($_GET['page'])) {
+
+
+if(isset($_GET['page'])){
+
     $page = $_GET['page'];
 }else {
     $page = 'home';
@@ -14,13 +15,16 @@ if(isset($_GET['page'])) {
 if($page == 'home') {
     $home = new Hph\Controller\HomeController;
     $home->render($twig);
-}else if($page == 'programmation') {
+
+
+}else if($page == 'programmation'){
     $page = new Hph\Controller\ProgrammationController();
     $page->render($twig);
-}else if($page == 'artiste') {
+}else if($page == 'artist'){
     $artiste = new Hph\Controller\ArtistController();
-    $artiste->render($twig);
-}else if($page == 'planning') {
+    $render = $artiste->showArtist($_GET['id']);
+}else if($page == 'planning'){
+
     $planning = new \Hph\Controller\PlanningController();
     $planning->render($twig);
 }else if($page == 'billetterie') {
@@ -50,6 +54,7 @@ if($page == 'home') {
 }else if($page == 'partner') {
     $partner = new Hph\Controller\PartnerController();
     $partner->render($twig);
+
 }else if($page == 'contact') {
     $contact = new Hph\Controller\ContactController();
     $contact->render($twig);
@@ -60,3 +65,8 @@ if($page == 'home') {
     $newsOne = new Hph\Controller\NewsOneController();
     $newsOne->render($twig, $_GET['id']);
 }
+
+
+
+echo $render;
+

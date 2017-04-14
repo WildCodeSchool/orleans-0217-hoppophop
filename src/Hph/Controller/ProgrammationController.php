@@ -9,7 +9,7 @@
 namespace Hph\Controller;
 use Hph\Model\ProgrammationManager;
 
-class ProgrammationController
+class ProgrammationController extends ControllerDefault
 {
 
     public function getArtistes()
