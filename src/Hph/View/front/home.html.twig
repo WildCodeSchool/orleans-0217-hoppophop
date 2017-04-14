@@ -12,7 +12,7 @@
                 </div>
             {% endfor %}
             <div class="col-xs-6 col-xs-offset-3">
-                <img src="../../../web/img/global/logo-only.png" alt="Logo du Festival" class="img-responsive logo-big">
+                <img src="../../../../web/img/global/logo-only.png" alt="Logo du Festival" class="img-responsive logo-big">
                 <br />
                 <br />
             </div>
@@ -21,13 +21,13 @@
             <div class="separator-div text-justify home-progDiv">
                 {%  for artist in artists  %}
                     {% if loop.index%2 == 0 and loop.index<artists|length %}
-                        <p class="home-prog"><a href="../../../web/index.php?page=artiste&id={{ artist.id }}" class="home-link link-orange font-circula">{{ artist.name }}</a> <span class="orange">/</span></p>
+                        <p class="home-prog"><a href="../../../../index.php?page=artiste&id={{ artist.id }}" class="home-link link-orange font-circula">{{ artist.name }}</a> <span class="orange">/</span></p>
                     {% elseif loop.index%2 != 0 and loop.index<artists|length %}
-                        <p class="home-prog"><a href="../../../web/index.php?page=artiste&id={{ artist.id }}" class="home-link link-turquoise font-circula">{{ artist.name }}</a> <span class="turquoise">/</span></p>
+                        <p class="home-prog"><a href="../../../../index.php?page=artiste&id={{ artist.id }}" class="home-link link-turquoise font-circula">{{ artist.name }}</a> <span class="turquoise">/</span></p>
                     {% elseif loop.index%2 != 0 %}
-                        <p class="home-prog"><a href="../../../web/index.php?page=artiste&id={{ artist.id }}" class="home-link link-turquoise font-circula">{{ artist.name }}</a></p>
+                        <p class="home-prog"><a href="../../../../index.php?page=artiste&id={{ artist.id }}" class="home-link link-turquoise font-circula">{{ artist.name }}</a></p>
                     {% else %}
-                        <p class="home-prog"><a href="../../../web/index.php?page=artiste&id={{ artist.id }}" class="home-link link-orange font-circula">{{ artist.name }}</a></p>
+                        <p class="home-prog"><a href="../../../../index.php?page=artiste&id={{ artist.id }}" class="home-link link-orange font-circula">{{ artist.name }}</a></p>
                     {% endif %}
                 {% endfor %}
             </div>
@@ -35,7 +35,7 @@
             <hr class="hr">
             <div class="separator-div home-ticket">
                 <h2 class="font-circula"><i class="fa fa-ticket" aria-hidden="true"></i> Pass 1 Journée ou 2 Jours disponibles</h2>
-                <a href="../../../web/index.php?page=billetterie" class="btn btn-primary">Accéder à la Billetterie</a>
+                <a href="../../../../index.php?page=billetterie" class="btn btn-primary">Accéder à la Billetterie</a>
             </div>
             <h1 class="separator-title font-dokyo">ACTUALITES</h1>
             <hr class="hr">

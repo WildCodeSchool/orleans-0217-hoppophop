@@ -2,7 +2,7 @@
 require_once 'vendor/autoload.php';
 require_once 'src/Hph/connect.php';
 
-$loader = new Twig_Loader_Filesystem('src/Hph/View');
+$loader = new Twig_Loader_Filesystem('src/Hph/View/front');
 $twig = new Twig_Environment($loader, array('cache' => false));
 
 if(isset($_GET['page'])) {

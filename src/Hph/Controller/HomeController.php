@@ -28,4 +28,11 @@ class HomeController
         $artists = $this->getArtists();
         echo $twig->load('home.html.twig')->render(['newsAll'=>$news, 'newsBreaking'=>$breaking, 'artists'=>$artists]);
     }
+    public function renderAdmin($twig)
+    {
+        $news = $this->getNews();
+        $breaking = $this->getBreakingNews();
+        $artists = $this->getArtists();
+        echo $twig->load('home.html.twig')->render();
+    }
 }
