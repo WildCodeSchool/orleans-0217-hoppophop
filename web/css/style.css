@@ -362,6 +362,8 @@ body {
 }
 .prog-img {
     box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+    height: 255px!important;
+    width: 255px!important;
 }
 .prog-info {
     margin-top: 5%;
