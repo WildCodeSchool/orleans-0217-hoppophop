@@ -11,7 +11,7 @@ namespace Hph\Model;
 
 class ProgrammationManager extends \Hph\Db
 {
-    public function getArtistes($limit)
+    public function getArtists($limit)
     {
         $req = "SELECT * FROM artist LIMIT 0, $limit";
         return $this->dBQuery($req, 'Artist');

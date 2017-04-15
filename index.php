@@ -14,13 +14,13 @@ if($page == 'home') {
     $render = $home->render();
 }else if($page == 'programmation'){
     $page = new Hph\Controller\ProgrammationController();
-    $render = $page->render($twig);
+    $render = $page->render();
 }else if($page == 'artist'){
     $artiste = new Hph\Controller\ArtistController();
     $render = $artiste->showArtist($_GET['id']);
 }else if($page == 'planning'){
     $planning = new \Hph\Controller\PlanningController();
-    $render = $planning->render($twig);
+    $render = $planning->render();
 }else if($page == 'ticket') {
     $ticket = new Hph\Controller\TicketController();
     $render = $ticket->render();

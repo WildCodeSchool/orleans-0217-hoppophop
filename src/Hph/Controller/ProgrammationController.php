@@ -12,15 +12,16 @@ use Hph\Model\ProgrammationManager;
 class ProgrammationController extends ControllerDefault
 {
 
-    public function getArtistes()
+    public function getArtists()
     {
         $artists = new ProgrammationManager();
-        return $artists->getArtistes(100);
+        return $artists -> getArtists(30);
     }
 
     public function render()
     {
-        $artists = $this->getArtistes();
-        echo $twig->load('programmation.html.twig')->render(['artistes'=>$artists]);
+        $artists = $this->getArtists();
+//        echo $twig->load('programmation.html.twig')->render(['artistes'=>$artists]);
+        return $this->twig->render('programmation.html.twig', ['artistes'=>$artists]);
     }
 }
