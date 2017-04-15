@@ -3,16 +3,16 @@
 namespace Hph\Controller;
 use Hph\Model\FoodManager;
 
-class FoodController
+class FoodController extends ControllerDefault
 {
     private function getFood()
     {
         $food = new FoodManager();
         return $food->getFood();
     }
-    public function render($twig)
+    public function render()
     {
         $food = $this->getFood();
-        echo $twig->load('food.html.twig')->render(['foods'=>$food]);
+        return $this->twig->render('food.html.twig', ['foods'=>$food]);
     }
 }

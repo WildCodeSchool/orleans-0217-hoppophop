@@ -9,7 +9,7 @@
 namespace Hph\Controller;
 use Hph\Model\ProgrammationManager;
 
-class ProgrammationController
+class ProgrammationController extends ControllerDefault
 {
 
     public function getArtistes()
@@ -18,7 +18,7 @@ class ProgrammationController
         return $artists->getArtistes(100);
     }
 
-    public function render($twig)
+    public function render()
     {
         $artists = $this->getArtistes();
         echo $twig->load('programmation.html.twig')->render(['artistes'=>$artists]);

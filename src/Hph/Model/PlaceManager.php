@@ -14,6 +14,6 @@ class PlaceManager extends \Hph\Db
     public function getPlaces($showcase)
     {
         $req = "SELECT * FROM place WHERE showcase=$showcase";
-        return $this->render($req, 'Place');
+        return $this->dBQuery($req, 'Place');
     }
 }

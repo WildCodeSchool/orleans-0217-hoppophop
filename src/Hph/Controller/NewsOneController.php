@@ -9,16 +9,16 @@
 namespace Hph\Controller;
 use Hph\Model\NewsManager;
 
-class NewsOneController
+class NewsOneController extends ControllerDefault
 {
     private function getNewsOne($id)
     {
         $news = new NewsManager();
         return $news -> getNewsOne($id);
     }
-    public function render($twig, $id)
+    public function render($id)
     {
         $news = $this->getNewsOne($id);
-        echo $twig->load('newsOne.html.twig')->render(['newsOne'=>$news]);
+        return $this->twig->render('newsOne.html.twig', ['newsOne'=>$news]);
     }
 }
