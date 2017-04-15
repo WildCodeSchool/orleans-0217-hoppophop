@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Bootstrap -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../web/font-awesome/css/font-awesome.min.css">
+    <link href="../../../../web/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../web/img/global/logo-min.png" rel="icon">
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header text-center">
+            <a href="admin.php"><img src="../../../../web/img/global/logo-min.png" class="navbar-brand"></a>
+            <button type="button" class="navbar-toggle collapsed navbar-burger" data-toggle="collapse" data-target="#navbar-collapsed" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-menu" id="navbar-collapsed">
+            <ul class="nav navbar-nav navbar-list">
+                <li><a href="admin.php?page=artist">Ajouter un artiste</a></li>
+                <li><a href="admin.php?page=place">Ajouter un lieu</a></li>
+                <li><a href="admin.php?page=concert">Ajouter un concert</a></li>
+                <li><a href="admin.php?page=news">Ajouter une actualité</a></li>
+                <li><a href="admin.php?page=food">Ajouter un foodtruck</a></li>
+                <li><a href="admin.php?page=partner">Ajouter un partenaire</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% block content %}
+
+{% endblock %}
+<script src="../../../../web/js/jquery-3.1.1.min.js"></script>
+<script src="../../../../web/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../../../web/js/script.js"></script>
+</body>
+</html>

@@ -9,11 +9,10 @@
 namespace Hph\Controller;
 
 
-class BenevolatController
+class BenevolatController extends ControllerDefault
 {
-    public function render($twig)
+    public function render()
     {
-        $template = $twig->load('benevolat.html.twig');
-        echo $template->render();
+        return $this->twig->render('benevolat.html.twig');
     }
 }

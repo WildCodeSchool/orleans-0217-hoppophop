@@ -18,6 +18,6 @@ FROM eat
 JOIN eat_place ON eat.id=eat_place.eat_id 
 JOIN place ON place.id=eat_place.place_id
 ";
-        return $this->render($req, 'Food');
+        return $this->dBQuery($req, 'Food');
     }
 }

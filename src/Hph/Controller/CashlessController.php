@@ -9,11 +9,10 @@
 namespace Hph\Controller;
 
 
-class CashlessController
+class CashlessController extends ControllerDefault
 {
-    public function render($twig)
+    public function render()
     {
-        $template=$twig->load('cashless.html.twig');
-        echo $template->render();
+        return $this->twig->render('cashless.html.twig');
     }
 }

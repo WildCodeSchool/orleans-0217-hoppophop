@@ -14,6 +14,6 @@ class SundayManager extends \Hph\Db
     public function getSunday()
     {
         $req = "SELECT * FROM sunday";
-        return $this->render($req, 'Sunday');
+        return $this->dBQuery($req, 'Sunday');
     }
 }

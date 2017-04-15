@@ -14,6 +14,6 @@ class ProgrammationManager extends \Hph\Db
     public function getArtistes($limit)
     {
         $req = "SELECT * FROM artist LIMIT 0, $limit";
-        return $this->render($req, 'Artist');
+        return $this->dBQuery($req, 'Artist');
     }
 }

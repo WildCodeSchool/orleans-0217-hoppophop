@@ -9,11 +9,10 @@
 namespace Hph\Controller;
 
 
-class TicketController
+class TicketController extends ControllerDefault
 {
-    public function render($twig)
+    public function render()
     {
-        $template=$twig->load('ticket.html.twig');
-        echo $template->render();
+        return $this->twig->render('ticket.html.twig');
     }
 }

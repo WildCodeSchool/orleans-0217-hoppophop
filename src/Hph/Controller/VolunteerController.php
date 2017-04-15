@@ -9,10 +9,10 @@
 namespace Hph\Controller;
 
 
-class VolunteerController
+class VolunteerController extends ControllerDefault
 {
-    public function render($twig)
+    public function render()
     {
-        echo $twig->load('volunteer.html.twig')->render();
+        return $this->twig->render('volunteer.html.twig');
     }
 }
