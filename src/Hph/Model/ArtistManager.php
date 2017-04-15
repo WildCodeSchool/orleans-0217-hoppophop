@@ -6,7 +6,7 @@
  * Time: 17:05
  */
 
-namespace HPH\Model;
+namespace Hph\Model;
 
 
 class ArtistManager extends \Hph\Db
