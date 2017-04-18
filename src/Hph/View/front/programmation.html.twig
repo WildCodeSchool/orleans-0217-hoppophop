@@ -4,7 +4,8 @@
 {% block content %}
 <div class="text-center">
     <div class="dropdown prog-dropdown">
-        <button class="btn btn-default dropdown-toggle filter-btn font-circula" type="button" id="filter-places" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Lieux <span class="caret"></span></button>
+        <button class="btn btn-default dropdown-toggle filter-btn font-circula" type="button" id="filter-places"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Lieux <span class="caret"></span></button>
         <ul class="dropdown-menu" aria-labelledby="filter-places">
             <li><a href="#" class="font-circula">JARDINS DE L'EVÊCHE</a></li>
             <li><a href="#" class="font-circula">LE 108</a></li>
@@ -15,14 +16,16 @@
         </ul>
     </div>
     <div class="dropdown prog-dropdown">
-        <button class="btn btn-default dropdown-toggle filter-btn font-circula" type="button" id="filter-days" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Soirs <span class="caret"></span></button>
+        <button class="btn btn-default dropdown-toggle filter-btn font-circula" type="button" id="filter-days"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Soirs <span class="caret"></span></button>
         <ul class="dropdown-menu" aria-labelledby="filter-days">
             <li><a href="#" class="font-circula">Vendredi Soir</a></li>
             <li><a href="#" class="font-circula">Samedi Soir</a></li>
         </ul>
     </div>
     <div class="dropdown prog-dropdown">
-        <button class="btn btn-default dropdown-toggle filter-btn font-circula" type="button" id="filter-local" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Groupes Locaux <span class="caret"></span></button>
+        <button class="btn btn-default dropdown-toggle filter-btn font-circula" type="button" id="filter-local"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Groupes Locaux <span class="caret"></span></button>
         <ul class="dropdown-menu" aria-labelledby="filter-local">
             <li><a href="#" class="font-circula">Oui</a></li>
             <li><a href="#" class="font-circula">Non</a></li>
@@ -45,7 +48,8 @@
                         <div class="content-div prog-info text-center">
                             <p class="info-text">{{ artiste.name }}</p>
                             <hr class="hr-min">
-                            <p class="info-text">Vendredi 16h</p>
+                            <p class="info-text"> {{ artiste.concertStart | date("l H", "Europe/Paris") }} h</p>
+                            {#<p class="info-text"> {{ artiste.concertStart | localizeddate('full', 'short', local) }}</p>#}
                         </div>
                         <h1 class="prog-cancel font-dokyo">Annulé</h1>
                     </div>

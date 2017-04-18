@@ -27,20 +27,12 @@ class ArtistController extends ControllerDefault
         return $this->twig->render('artist.html.twig', ['artists'=> $artist]);
     }
 
-    public function findTagArtist()
-    {
-        $artistRequesttag = new ArtistRequest();
-        $tag = $artistRequesttag->findArtistTags($artist_id);
-        return $this->twig->render('artist.html.twig', ['tags'=>$tag]);
-    }
-
-//    public function render($twig, $id)
+//    public function findTagArtist()
 //    {
-//      $artists = $this->showArtist($id);
-//      $template = $twig->load('artist.html.twig');
-//    echo $template->render(['artists' =>$artists]);
-//
+//        $artistRequesttag = new ArtistRequest();
+//        $tag = $artistRequesttag->findArtistTags($artist_id);
+//        return $this->twig->render('artist.html.twig', ['tags'=>$tag]);
 //    }
-
+//
 
 }
