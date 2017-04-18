@@ -57,6 +57,9 @@ if($page == 'home') {
 }else if($page == 'newsOne') {
     $newsOne = new Hph\Controller\NewsOneController();
     $render = $newsOne->render($_GET['id']);
+}else {
+    $home = new Hph\Controller\HomeController();
+    $render = $home->render();
 }
 echo $render;
 
