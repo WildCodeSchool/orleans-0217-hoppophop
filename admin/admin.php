@@ -4,9 +4,10 @@ require_once '../src/Hph/connect.php';
 
 if(isset($_GET['page'])) {
     $page = $_GET['page'];
-}else {
+}else{
     $page = 'home';
 }
+
 
 if($page == 'home') {
     $home = new Hph\Controller\HomeController('back');
@@ -14,5 +15,8 @@ if($page == 'home') {
 }else if($page == 'place') {
     $place = new Hph\Controller\PlaceController('back');
     $render = $place->renderAdmin();
+}else if($page == 'addPlace'){
+    $place = new Hph\Controller\PlaceForm('back');
+    $render = $place->addPlace();
 }
 echo $render;
