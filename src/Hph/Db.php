@@ -2,12 +2,20 @@
 
 namespace Hph;
 
-require_once 'connect.php';
-
 
 class Db
 {
     private $db;
+     /*
+     * DB constructor.
+     * @param $db */
+
+    public function __construct()
+    {
+        $this->db = new \PDO(DSN, USER, PASS);
+        $this->db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+        $this->db->query('SET NAMES utf8');
+    }
 
     /**
      * @return \PDO
@@ -16,9 +24,10 @@ class Db
     {
         return $this->db;
     }
-    public function __construct()
+
+    public function dBQuery($req, $model)
     {
-        $this->db = new \PDO(DSN, USER, PASS);
+        return $this->db->query($req)->fetchAll(\PDO::FETCH_CLASS, __NAMESPACE__ . '\Model\\'.ucfirst($model));
     }
 
 

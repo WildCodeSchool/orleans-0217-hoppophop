@@ -1,24 +1,35 @@
 <?php
 
 namespace Hph\Controller;
-use Hph\Db;
+use Hph\Model\NewsManager;
+use Hph\Model\ArtistManager;
 
-class HomeController
+class HomeController extends ControllerDefault
 {
     private function getNews()
     {
-        $db = new DB();
-        return '1';
+        $news = new NewsManager();
+        return $news -> getNews(3);
     }
-    private function getBreaking()
+    private function getBreakingNews()
     {
-        $db = new DB();
-        return '1';
+        $news = new NewsManager();
+        return $news -> getBreakingNews();
     }
-    public function render($twig)
+    private function getArtists()
+    {
+        $artists = new ArtistManager();
+        return $artists -> getArtists();
+    }
+    public function render()
     {
         $news = $this->getNews();
-        $breaking = $this->getNews();
-        echo $twig->load('home.html.twig')->render(['newsAll'=>$news, 'newsBreaking'=>$breaking]);
+        $breaking = $this->getBreakingNews();
+        $artists = $this->getArtists();
+        return $this->twig->render('home.html.twig', ['newsAll'=>$news, 'newsBreaking'=>$breaking, 'artists'=>$artists]);
+    }
+    public function renderAdmin()
+    {
+        return $this->twig->render('home.html.twig');
     }
 }

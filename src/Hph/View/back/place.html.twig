@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+{% block title %}Lieux{% endblock %}
+{% block titleMobile %}Lieux{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="col-md-offset-3 col-md-6">
+            <div class="form-area text-center">
+                {{ form(form) }}
+                <!--
+                <form method="POST" action="../../../../admin/admin.php?page=addPlace">
+                    <div class="form-group">
+                        <label for="placeName">Nom du lieux</label>
+                        <input type="text" class="form-control" id="placeName" name="placeName" placeholder="Entrez le nom du lieu">
+                    </div>
+                    <div class="form-group">
+                        <label for="imgPlace">Photo du lieu</label>
+                        <input type="file" id="imgPlace" name="imgPlace">
+                        <p class="help-block">Aide à la photo</p>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="showcasePlace" value="1">Showcase
+                        </label>
+                    </div>
+                    <input type="submit" name="placeSubmit" class="btn btn-default" value="Créer">
+                </form>
+                -->
+            </div>
+        </div>
+    </div>
+{% endblock %}

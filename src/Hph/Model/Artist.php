@@ -21,6 +21,7 @@ class Artist
     private $twitter_url;
     private $spotify_url;
 
+    private $tags;
     /**
      * @return mixed
      */
@@ -164,5 +165,20 @@ class Artist
     {
         $this->spotify_url = $spotify_url;
     }
-}
 
+    /**
+     * @return mixed
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * @param mixed $tags
+     */
+    public function setTags($tags)
+    {
+        $this->tags = $tags;
+    }
+}

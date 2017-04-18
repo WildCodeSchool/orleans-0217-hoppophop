@@ -7,13 +7,21 @@
  */
 
 namespace Hph\Controller;
+use Hph\Model\ProgrammationManager;
 
-
-class ProgrammationController
+class ProgrammationController extends ControllerDefault
 {
-    public function render($twig)
+
+    public function getArtists()
     {
-        $template = $twig->load('programmation.html.twig');
-        echo $template->render();
+        $artists = new ProgrammationManager();
+        return $artists -> getArtists(30);
+    }
+
+    public function render()
+    {
+        $artists = $this->getArtists();
+//        echo $twig->load('programmation.html.twig')->render(['artistes'=>$artists]);
+        return $this->twig->render('programmation.html.twig', ['artistes'=>$artists]);
     }
 }

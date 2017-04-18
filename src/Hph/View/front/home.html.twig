@@ -1,0 +1,63 @@
+{% extends "base.html.twig" %}
+{% block title %}Hop Pop Hop{% endblock %}
+{% block titleMobile %}{% endblock %}
+{% block content %}
+    <div class="container text-center">
+        <div class="row">
+            {%  for news in newsBreaking %}
+                <div class="alert alert-warning alert-danger breaking-news" role="alert">
+                    <button type="button" class="close breaking-close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <a href="index.php?page=newsOne&id={{ news.id }}" class="breaking-strong">{{ news.title }}</a><br />
+                    <p class="breaking-text">{{ news.text }}</p>
+                </div>
+            {% endfor %}
+            <div class="col-xs-6 col-xs-offset-3">
+                <img src="../../../../web/img/global/logo-only.png" alt="Logo du Festival" class="img-responsive logo-big">
+                <br />
+                <br />
+            </div>
+            <h1 class="separator-title font-dokyo">PROGRAMMATION</h1>
+            <hr class="hr">
+            <div class="separator-div text-justify home-progDiv">
+                {%  for artist in artists  %}
+                    {% if loop.index%2 == 0 and loop.index<artists|length %}
+                        <p class="home-prog"><a href="../../../../index.php?page=artiste&id={{ artist.id }}" class="home-link link-orange font-circula">{{ artist.name }}</a> <span class="orange">/</span></p>
+                    {% elseif loop.index%2 != 0 and loop.index<artists|length %}
+                        <p class="home-prog"><a href="../../../../index.php?page=artiste&id={{ artist.id }}" class="home-link link-turquoise font-circula">{{ artist.name }}</a> <span class="turquoise">/</span></p>
+                    {% elseif loop.index%2 != 0 %}
+                        <p class="home-prog"><a href="../../../../index.php?page=artiste&id={{ artist.id }}" class="home-link link-turquoise font-circula">{{ artist.name }}</a></p>
+                    {% else %}
+                        <p class="home-prog"><a href="../../../../index.php?page=artiste&id={{ artist.id }}" class="home-link link-orange font-circula">{{ artist.name }}</a></p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <h1 class="separator-title font-dokyo">BILLETTERIE</h1>
+            <hr class="hr">
+            <div class="separator-div home-ticket">
+                <h2 class="font-circula"><i class="fa fa-ticket" aria-hidden="true"></i> Pass 1 Journée ou 2 Jours disponibles</h2>
+                <a href="../../../../index.php?page=billetterie" class="btn btn-primary">Accéder à la Billetterie</a>
+            </div>
+            <h1 class="separator-title font-dokyo">ACTUALITES</h1>
+            <hr class="hr">
+            <div class="separator-div">
+                <div class="container-fluid">
+                    <div class="row">
+                        {%  for news in newsAll %}
+                            <div class="col-xs-12 col-xs-offset-0 col-sm-4">
+                                <div class="content-div text-justify">
+                                    <img src="../../../web/img/news/{{ news.imgNews }}" class="img-responsive">
+                                    <a href="index.php?page=newsOne&id={{ news.id }}" class="news-link"><h2 class="font-circula">{{ news.title }}</h2></a>
+                                    <hr class="hr">
+                                    <p>{{ news.text }}</p>
+                                </div>
+                                <br />
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <br />
+                    <a href="index.php?page=news"class="news-all">Voir plus d'actualités</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

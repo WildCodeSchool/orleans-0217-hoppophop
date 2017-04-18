@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-
+    "hash": "bd2f4ad729cfefe2ede3e0c9b5a52e53",
+    "content-hash": "8e63c8ef445ee52c20f68dbdb617865d",
     "packages": [
         {
             "name": "symfony/polyfill-mbstring",
@@ -62,8 +63,8 @@
                 "polyfill",
                 "portable",
                 "shim"
-            ]
-
+            ],
+            "time": "2016-11-14 01:06:16"
         },
         {
             "name": "twig/twig",
@@ -126,7 +127,7 @@
             "keywords": [
                 "templating"
             ],
-
+            "time": "2017-03-22 15:41:51"
         }
     ],
     "packages-dev": [],

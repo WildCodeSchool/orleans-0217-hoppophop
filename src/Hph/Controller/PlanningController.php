@@ -12,8 +12,9 @@ use Hph\Model\Artist;
 use Hph\Model\PlanningManager;
 
 
-class PlanningController
+class PlanningController extends ControllerDefault
 {
+
     public function getArtistPlanning()
     {
         $planningManager = new PlanningManager();
@@ -51,30 +52,7 @@ class PlanningController
         }
 
 
-        $count=count($planning);
-        $countplace=count($place);
-        $countartist=count($artist);
-            for ($i=0; $i<$count; $i++) {
-                if (strpos($planning[$i]['concert_start'], '2017-09-15')===FALSE) {
-                    $planning[$i]['day'] = 'SAMEDI';
-                } else {
-                    $planning[$i]['day'] = 'VENDREDI';
-                }
-            }
-            for ($j=0; $j<$count; $j++) {
-                for ($k=0; $k<$countplace;$k++){
-                    if ($planning[$j]['place_id'] == $place[$k]['id']) {
-                        $planning[$j]['place_name'] = $place[$k]['name'];
-                    }
-                }
-            }
-            for ($l=0; $l<$count;$l++){
-                for ($m=0;$m<$countartist;$m++) {
-                    if ($planning[$l]['artist_id'] == $artist[$m]['id']) {
-                        $planning[$l]['artist_name'] = $artist[$m]['name'];
-                    }
-                }
-            }
+
 
 
         var_dump($planning);
@@ -82,5 +60,6 @@ class PlanningController
                                                         'place'=>$place,
                                                         'concert'=>$concert
         ]);
+
     }
 }

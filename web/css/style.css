@@ -1,12 +1,11 @@
 /*General*/
 
 body {
-    background: url("../img/background.png") center center  no-repeat fixed;
+    background: url("../img/global/background.png") center center  no-repeat fixed;
     background-size: cover;
     position: relative;
     padding-top: 100px;
 }
-
 
 @font-face {
     font-family: 'Circula-Medium';
@@ -78,6 +77,9 @@ body {
 .orange {
     color: #ed7a21;
 }
+.white {
+    color: white;
+}
 .bold {
     font-weight: bold;
 }
@@ -95,6 +97,10 @@ body {
         color: white;
         margin-bottom: 5%;
     }
+}
+.img-255 {
+    height: 255px!important;
+    width: 255px!important;
 }
 /*Fin General*/
 
@@ -504,10 +510,44 @@ body {
 
 /*Fin Benevolat*/
 
+
+/*News*/
+
+
+.breaking-news {
+    background-color: rgba(237, 122, 33, 1);
+    border: none;
+    color: white;
+}
+.breaking-close {
+    color: #18252e;
+}
+.breaking-strong {
+    font-size: 24px;
+    color: white;
+    text-decoration: underline;
+}
+.breaking-text {
+    font-size: 18px;
+}
+.news-link {
+    color: white;
+}
+.news-all {
+    font-size: 24px;
+}
+/*Fin News*/
+
+/*Food*/
+
+.food-info {
+    font-size: 16px;
+}
+
+/*Fin Food*/
+
+
 /*Lieux*/
 
-.lieux-thumbnail {
-    height: 200px;
-}
 
 /*Fin Lieux*/

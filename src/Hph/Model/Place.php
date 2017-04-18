@@ -1,6 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
+<<<<<<< HEAD
  * User: wilder9
  * Date: 11/04/17
  * Time: 17:08
@@ -8,15 +9,66 @@
 
 namespace HPH\Model;
 
+=======
+ * User: quentin
+ * Date: 12/04/17
+ * Time: 08:59
+ */
+
+namespace Hph\Model;
+use Symfony\Component\Validator\Constraints as Assert;
+>>>>>>> 73cca48cbbf6d8615968d8eb8fc546837ed6bb28
 
 class Place
 {
     private $id;
+<<<<<<< HEAD
     private $name;
     private $url;
     private $img_place;
     private $start;
     private $end;
+=======
+    /**
+     * @var string
+     *
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 30,
+     *      minMessage = "Le nom d'un lieu doit comporter au minimum {{ limit }} caractères",
+     *      maxMessage = "Le nom d'un lieu doit comporter au maximum {{ limit }} caractères"
+     * )
+     * @Assert\NotBlank()
+     */
+    private $name;
+    /**
+     * @Assert\Url(
+     *    message = "le lien '{{ value }}' n'est pas un lien valide",
+     * )
+     */
+    private $url;
+    /**
+     * @var string
+     *
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 255,
+     *      minMessage = "Le nom d'une l'image doit comporter au minimum {{ limit }} caractères",
+     *      maxMessage = "Le nom d'une l'image doit comporter au maximum {{ limit }} caractères"
+     * )
+     * @Assert\NotBlank()
+     */
+    private $img_place;
+    /**
+     * @Assert\DateTime()
+     */
+    private $start;
+    /**
+     * @Assert\DateTime()
+     */
+    private $end;
+    private $showcase;
+>>>>>>> 73cca48cbbf6d8615968d8eb8fc546837ed6bb28
 
     /**
      * @return mixed
@@ -114,6 +166,24 @@ class Place
         $this->end = $end;
     }
 
+<<<<<<< HEAD
 
+=======
+    /**
+     * @return mixed
+     */
+    public function getShowcase()
+    {
+        return $this->showcase;
+    }
+
+    /**
+     * @param mixed $showcase
+     */
+    public function setShowcase($showcase)
+    {
+        $this->showcase = $showcase;
+    }
+>>>>>>> 73cca48cbbf6d8615968d8eb8fc546837ed6bb28
 
 }

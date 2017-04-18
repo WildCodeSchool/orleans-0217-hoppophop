@@ -1,55 +1,65 @@
 <?php
 require_once 'vendor/autoload.php';
+require_once 'src/Hph/connect.php';
 
-$loader = new Twig_Loader_Filesystem('src/Hph/View');
-$twig = new Twig_Environment($loader, array('cache' => false));
 
-if(isset($_GET['page'])) {
+if(isset($_GET['page'])){
     $page = $_GET['page'];
 }else {
     $page = 'home';
 }
 
 if($page == 'home') {
-    $home = new Hph\Controller\HomeController;
-    $home->render($twig);
-}else if($page == 'programmation') {
+    $home = new Hph\Controller\HomeController();
+    $render = $home->render();
+}else if($page == 'programmation'){
     $page = new Hph\Controller\ProgrammationController();
-    $page->render($twig);
-}else if($page == 'artiste') {
+    $render = $page->render();
+}else if($page == 'artist'){
     $artiste = new Hph\Controller\ArtistController();
-    $artiste->render($twig);
-}else if($page == 'planning') {
+    $render = $artiste->showArtist($_GET['id']);
+}else if($page == 'planning'){
     $planning = new \Hph\Controller\PlanningController();
-    $planning->render($twig);
-}else if($page == 'billetterie') {
+    $render = $planning->render();
+}else if($page == 'ticket') {
     $ticket = new Hph\Controller\TicketController();
-    $ticket->render($twig);
+    $render = $ticket->render();
 }else if($page == 'cashless') {
     $cashless = new \Hph\Controller\CashlessController();
-    $cashless->render($twig);
+    $render = $cashless->render();
 }else if($page == 'food') {
     $food = new Hph\Controller\FoodController();
-    $food->render($twig);
+    $render = $food->render();
 }else if($page == 'place') {
     $place = new Hph\Controller\PlaceController();
-    $place->render($twig);
+    $render = $place->render();
 }else if($page == 'volunteer') {
     $volunteer = new Hph\Controller\VolunteerController();
-    $volunteer->render($twig);
+    $render = $volunteer->render();
 }else if($page == 'benevolat') {
     $benevolat = new Hph\Controller\BenevolatController();
-    $benevolat->render($twig);
+    $render = $benevolat->render();
 }else if($page == 'transport') {
     $transport = new Hph\Controller\TransportController();
-    $transport->render($twig);
+    $render = $transport->render();
 }else if($page == 'dimaorl') {
     $dimaorl = new Hph\Controller\DimaorlController();
-    $dimaorl->render($twig);
+    $render = $dimaorl->render();
 }else if($page == 'partner') {
     $partner = new Hph\Controller\PartnerController();
-    $partner->render($twig);
+    $render = $partner->render();
 }else if($page == 'contact') {
     $contact = new Hph\Controller\ContactController();
-    $contact->render($twig);
+    $render = $contact->render();
+}else if($page == 'news') {
+    $news = new Hph\Controller\NewsController();
+    $render = $news->render();
+}else if($page == 'newsOne') {
+    $newsOne = new Hph\Controller\NewsOneController();
+    $render = $newsOne->render($_GET['id']);
+}else {
+    $home = new Hph\Controller\HomeController();
+    $render = $home->render();
 }
+echo $render;
+

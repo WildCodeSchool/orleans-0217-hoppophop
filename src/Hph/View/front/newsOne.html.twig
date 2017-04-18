@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+{% block title %}News{% endblock %}
+{% block titleMobile %}News{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {%  for news in newsOne %}
+                <div class="col-xs-12 col-xs-offset-0 col-sm-4 col-sm-offset-4">
+                    <div class="content-div text-justify">
+                        <img src="../../../web/img/news/{{ news.imgNews }}" class="img-responsive">
+                        <h2 class="font-circula">{{ news.title }}</h2>
+                        <hr class="hr">
+                        <p>{{ news.text }}</p>
+                    </div>
+                    <br />
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
