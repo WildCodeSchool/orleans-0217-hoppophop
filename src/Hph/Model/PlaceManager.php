@@ -16,4 +16,9 @@ class PlaceManager extends \Hph\Db
         $req = "SELECT * FROM place WHERE showcase=$showcase";
         return $this->dBQuery($req, 'Place');
     }
+    public function addPlace($place)
+    {
+        $req = "INSERT INTO place VALUES (NULL, $place->getName(), $place->getUrl(), $place->getImg_place, $place->getStart, $place->getEnd, $place->getShowcase)";
+        return $pdo->exec($req);
+    }
 }

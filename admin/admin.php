@@ -16,7 +16,10 @@ if($page == 'home') {
     $place = new Hph\Controller\PlaceController('back');
     $render = $place->renderAdmin();
 }else if($page == 'addPlace'){
-    $place = new Hph\Controller\PlaceForm('back');
+    $place = new Hph\Controller\PlaceController('back');
     $render = $place->addPlace();
+}else {
+    $home = new Hph\Controller\HomeController('back');
+    $render = $home->renderAdmin();
 }
 echo $render;

@@ -7,15 +7,48 @@
  */
 
 namespace Hph\Model;
-
+use Symfony\Component\Validator\Constraints as Assert;
 
 class Place
 {
     private $id;
+    /**
+     * @var string
+     *
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 30,
+     *      minMessage = "Le nom d'un lieu doit comporter au minimum {{ limit }} caractères",
+     *      maxMessage = "Le nom d'un lieu doit comporter au maximum {{ limit }} caractères"
+     * )
+     * @Assert\NotBlank()
+     */
     private $name;
+    /**
+     * @Assert\Url(
+     *    message = "le lien '{{ value }}' n'est pas un lien valide",
+     * )
+     */
     private $url;
+    /**
+     * @var string
+     *
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 255,
+     *      minMessage = "Le nom d'une l'image doit comporter au minimum {{ limit }} caractères",
+     *      maxMessage = "Le nom d'une l'image doit comporter au maximum {{ limit }} caractères"
+     * )
+     * @Assert\NotBlank()
+     */
     private $img_place;
+    /**
+     * @Assert\DateTime()
+     */
     private $start;
+    /**
+     * @Assert\DateTime()
+     */
     private $end;
     private $showcase;
 

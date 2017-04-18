@@ -4,7 +4,8 @@
     "type": "project",
     "require": {
         "twig/twig": "v2.3.0",
-        "symfony/form": "^3.2"
+        "symfony/form": "^3.2",
+        "symfony/http-foundation": "^3.2"
     },
     "authors": [
         {

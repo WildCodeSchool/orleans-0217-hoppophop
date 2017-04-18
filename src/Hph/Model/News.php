@@ -7,13 +7,38 @@
  */
 
 namespace HPH\Model;
-
+use Symfony\Component\Validator\Constraints as Assert;
 
 class News
 {
     private $id;
+    /**
+     * @var string
+     *
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 200,
+     *      minMessage = "Le titre d'une news doit comporter au minimum {{ limit }} caractères",
+     *      maxMessage = "Le titre d'une news doit comporter au maximum {{ limit }} caractères"
+     * )
+     * @Assert\NotBlank()
+     */
     private $title;
+    /**
+     * @var string
+     *
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 255,
+     *      minMessage = "Le nom d'une l'image doit comporter au minimum {{ limit }} caractères",
+     *      maxMessage = "Le nom d'une l'image doit comporter au maximum {{ limit }} caractères"
+     * )
+     * @Assert\NotBlank()
+     */
     private $img_news;
+    /**
+     * @Assert\NotBlank()
+     */
     private $text;
     private $breaking_news;
 
