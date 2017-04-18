@@ -9,17 +9,18 @@
 namespace hph\controller;
 
 use Hph\Model\Artist;
+use Hph\Model\ArtistRequest;
 use Hph\Model\PlanningManager;
 
 
 class PlanningController extends ControllerDefault
 {
 
-    public function getArtistPlanning()
+    public function getArtistId()
     {
         $planningManager = new PlanningManager();
-        $artist = $planningManager->getArtist();
-        return $artist;
+        $artistId = $planningManager->getArtistId();
+        return $artistId;
     }
 
     public function getPlacePlanning()
@@ -35,19 +36,22 @@ class PlanningController extends ControllerDefault
         return $concerts;
     }
 
+
     public function render($twig)
     {
-        $artist = $this->getArtistPlanning();
+        $artistId = $this->getArtistId();
         $place = $this->getPlacePlanning();
         $concerts = $this->getConcertPlanning();
         foreach ($concerts as $concert) {
            $jour = $concert->getConcertStart()->format('l');
-           $heure = ;
-           $artistId = ;
-           $artist = ;
+           $heure = $concert->getConcertStart()->format('H:i') .'-'. $concert->getConcertEnd()->format('H:i');
+
+           $bandId = $artistId->getId();
+           $artistRequest = new ArtistRequest();
+           $band = $artistRequest -> findone($bandId);
            $place = ;
 
-           $planning[$jour][$place][$heure] = $artist;
+           $planning[$jour][$place][$heure] = $band;
 
         }
 

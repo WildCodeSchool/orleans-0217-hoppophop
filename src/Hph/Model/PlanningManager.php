@@ -23,9 +23,9 @@ class PlanningManager extends Db
         return $res->fetchAll(\PDO::FETCH_BOTH);
     }
 
-    public function getArtist()
+    public function getArtistId()
     {
-        $req = "SELECT * FROM artist";
+        $req = "SELECT id FROM artist";
         $res = $this->getDb()->query($req);
         return $res->fetchAll(\PDO::FETCH_BOTH);
     }
