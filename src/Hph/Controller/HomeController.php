@@ -8,12 +8,12 @@ class HomeController
     private function getNews()
     {
         $db = new DB();
-        return $db -> findSome('news', 3);
+        return '1';
     }
     private function getBreaking()
     {
         $db = new DB();
-        return $db -> findSome('news', 3);
+        return '1';
     }
     public function render($twig)
     {

@@ -18,22 +18,22 @@ class PlanningManager extends Db
 {
     public function getPlace()
     {
-        $req = "SELECT name FROM place";
+        $req = "SELECT * FROM place";
         $res = $this->getDb()->query($req);
-        return $res->fetchAll(\PDO::FETCH_CLASS, '\Hph\Model\Place');
+        return $res->fetchAll(\PDO::FETCH_BOTH);
     }
 
     public function getArtist()
     {
-    $req = "SELECT name FROM artist";
-    $res = $this->getDb()->query($req);
-    return $res->fetchAll(\PDO::FETCH_CLASS, '\Hph\Model\Artist');
+        $req = "SELECT * FROM artist";
+        $res = $this->getDb()->query($req);
+        return $res->fetchAll(\PDO::FETCH_BOTH);
     }
 
-    public function getConcertHour()
+    public function getConcert()
     {
-        $req = "SELECT concert_start,concert_end FROM concert";
+        $req = "SELECT * FROM concert";
         $res = $this->getDb()->query($req);
-        return $res->fetchAll(\PDO::FETCH_CLASS, '\Hph\Model\Concert');
+        return $res->fetchAll(\PDO::FETCH_BOTH);
     }
 }
