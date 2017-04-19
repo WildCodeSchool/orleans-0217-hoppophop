@@ -11,9 +11,13 @@ namespace Hph\Model;
 
 class PlaceManager extends \Hph\Db
 {
-    public function getPlaces($showcase)
+    public function getPlaces($showcase = NULL)
     {
-        $req = "SELECT * FROM place WHERE showcase=$showcase";
+        if($showcase!=NULL){
+            $req = "SELECT * FROM place WHERE showcase=$showcase";
+        }else{
+            $req = "SELECT * FROM place";
+        }
         return $this->dBQuery($req, 'Place');
     }
     public function addPlace($place)

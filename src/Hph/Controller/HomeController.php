@@ -28,8 +28,4 @@ class HomeController extends ControllerDefault
         $artists = $this->getArtists();
         return $this->twig->render('home.html.twig', ['newsAll'=>$news, 'newsBreaking'=>$breaking, 'artists'=>$artists]);
     }
-    public function renderAdmin()
-    {
-        return $this->twig->render('home.html.twig');
-    }
 }
