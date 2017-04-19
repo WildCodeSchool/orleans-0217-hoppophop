@@ -5,17 +5,21 @@
         <h2 class="text-center">Ajouter un lieu</h2>
 
         {{ error }}
-        <form method="POST" action="../../../../admin/admin.php?page=addPlace">
+        <form method="POST" action="../../../../admin/admin.php?page=addPlace" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="name">Nom du lieux</label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="Entrez le nom du lieu">
             </div>
             <div class="form-group">
-                <label for="start">Heure d'ouverture du lieu</label>
+                <label for="url">Lien du lieux</label>
+                <input type="text" class="form-control" id="url" name="url" placeholder="Entrez le lien du lieu">
+            </div>
+            <div class="form-group">
+                <label for="start">Heure d'ouverture du lieu : 2017-09-15 17:41:58</label>
                 <input type="datetime" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="start" name="start">
             </div>
             <div class="form-group">
-                <label for="start">Heure de fermeture du lieu</label>
+                <label for="start">Heure de fermeture du lieu : 2017-09-17 08:01:06</label>
                 <input type="datetime" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="end" name="end">
             </div>
             <div class="form-group">
@@ -76,11 +80,23 @@
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title" id="myModalLabel">Modifier un lieux</h4>
                             </div>
-                            <form method="POST" action="../../../../admin/admin.php?page=editPlace">
+                            <form method="POST" action="../../../../admin/admin.php?page=updatePlace" enctype="multipart/form-data">
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="name">Nom du lieux</label>
                                         <input type="text" class="form-control" id="name" name="name" placeholder="Entrez le nom du lieu" value="{{ place.name }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="url">Lien du lieux</label>
+                                        <input type="text" class="form-control" id="url" name="url" placeholder="Entrez le lien du lieu" value="{{ place.url }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="start">Heure d'ouverture du lieu : 2017-09-15 17:41:58</label>
+                                        <input type="datetime" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="start" name="start" value="{{ place.start }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="start">Heure de fermeture du lieu : 2017-09-17 08:01:06</label>
+                                        <input type="datetime" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="end" name="end" value="{{ place.end }}">
                                     </div>
                                     <div class="form-group">
                                         <label for="img">Photo du lieu</label>
@@ -97,6 +113,7 @@
                                         </label>
                                     </div>
                                     <div class="modal-footer">
+                                        <input type="hidden" name="id" value="{{ place.id }}">
                                         <input type="submit" name="submit" class="btn btn-primary" value="Modifier">
                                     </div>
                                 </div>
@@ -116,6 +133,7 @@
                             </div>
                             <div class="modal-footer">
                                 <form method="POST" action="../../../../admin/admin.php?page=deletePlace">
+                                    <input type="hidden" name="id" value="{{ place.id }}">
                                     <input type="submit" name="placeSubmit" class="btn btn-danger" value="Oui">
                                 </form>
                                 <button class="btn btn-default" data-dismiss="modal">Non</button>

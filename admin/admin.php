@@ -16,8 +16,20 @@ if($page == 'home') {
     $place = new Hph\Controller\PlaceController('back');
     $render = $place->render();
 }else if($page == 'addPlace'){
-    $place = new Hph\Controller\PlaceController('back');
-    $render = $place->addPlace($_POST, $_FILES);
+    $addPlace = new Hph\Model\PlaceManager('back');
+    if($addPlace->addPlace($_POST, $_FILES)){
+        header('Location: admin.php?page=place');
+    }
+}else if($page == 'updatePlace'){
+    $addPlace = new Hph\Model\PlaceManager('back');
+    if($addPlace->updatePlace($_POST, $_FILES)){
+        header('Location: admin.php?page=place');
+    }
+}else if($page == 'deletePlace'){
+    $addPlace = new Hph\Model\PlaceManager('back');
+    if($addPlace->deletePlace($_POST['id'])){
+        header('Location: admin.php?page=place');
+    }
 }else{
     $home = new Hph\Controller\HomeController('back');
     $render = $home->render();
