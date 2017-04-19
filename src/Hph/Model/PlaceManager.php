@@ -19,6 +19,12 @@ class PlaceManager extends \Hph\Db
     public function addPlace($place)
     {
         $req = "INSERT INTO place VALUES (NULL, $place->getName(), $place->getUrl(), $place->getImg_place, $place->getStart, $place->getEnd, $place->getShowcase)";
-        return $pdo->exec($req);
+        return $this->getDb()->exec($req);
+    }
+    public function findOne($id)
+    {
+        $req = "SELECT * FROM place WHERE id=$id";
+        $places = $this->dBQuery($req, 'Place');
+        return $places[0];
     }
 }

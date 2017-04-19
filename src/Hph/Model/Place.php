@@ -9,16 +9,6 @@
 
 namespace HPH\Model;
 
-=======
- * User: quentin
- * Date: 12/04/17
- * Time: 08:59
- */
-
-namespace Hph\Model;
-use Symfony\Component\Validator\Constraints as Assert;
->>>>>>> 73cca48cbbf6d8615968d8eb8fc546837ed6bb28
-
 class Place
 {
     private $id;
