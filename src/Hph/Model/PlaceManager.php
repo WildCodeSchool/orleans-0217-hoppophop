@@ -53,4 +53,9 @@ class PlaceManager extends \Hph\Db
         $sql = "DELETE FROM place WHERE id=".$id;
         return $this->getDb()->exec($sql);
     }
+    public function listPlaces()
+    {
+        $req = "SELECT * FROM place";
+        return $this->dBQuery($req, 'Place');
+    }
 }
