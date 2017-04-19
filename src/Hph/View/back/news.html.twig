@@ -7,15 +7,15 @@
         <form method="POST" action="../../../../admin/admin.php?page=addNews" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="title">Nom de l'actualité</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Entrez le nom de l'actualité">
+                <input type="text" class="form-control" id="title" name="title" placeholder="Entrez le nom de l'actualité" required>
             </div>
             <div class="form-group">
                 <label for="text">Texte de l'actualité</label>
-                <textarea class="form-control textarea" name="text" id="text" placeholder="Entrez le texte de l'actualité" rows="10"></textarea>
+                <textarea class="form-control textarea" name="text" id="text" placeholder="Entrez le texte de l'actualité" rows="10" required></textarea>
             </div>
             <div class="form-group">
                 <label for="img">Photo de l'actualité</label>
-                <input type="file" id="img" name="img">
+                <input type="file" id="img" name="img" required>
                 <p class="help-block">Aide à la photo</p>
             </div>
             <div class="checkbox">
@@ -71,15 +71,15 @@
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="name">Titre de l'actualité</label>
-                                        <input type="text" class="form-control" id="title" name="title" placeholder="Entrez le titre de l'actualité" value="{{ news.title }}">
+                                        <input type="text" class="form-control" id="title" name="title" placeholder="Entrez le titre de l'actualité" value="{{ news.title }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="text">Texte de l'actualité</label>
-                                        <textarea class="form-control textarea" name="text" id="text" placeholder="Entrez le texte de l'actualité" rows="10">{{ news.text }}</textarea>
+                                        <textarea class="form-control textarea" name="text" id="text" placeholder="Entrez le texte de l'actualité" rows="10" required>{{ news.text }}</textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="img">Photo du lieu</label>
-                                        <input type="file" id="img" name="img">
+                                        <input type="file" id="img" name="img" required>
                                         <p class="help-block">Aide à la photo</p>
                                     </div>
                                     <div class="checkbox">

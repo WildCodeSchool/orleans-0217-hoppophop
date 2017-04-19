@@ -7,15 +7,15 @@
         <form method="POST" action="../../../../admin/admin.php?page=addSunday" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="title">Nom de l'activité</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Entrez le nom de l'activité">
+                <input type="text" class="form-control" id="title" name="title" placeholder="Entrez le nom de l'activité" required>
             </div>
             <div class="form-group">
                 <label for="text">Texte de l'activité</label>
-                <textarea class="form-control textarea" name="content" id="content" placeholder="Entrez la description de l'activité" rows="10"></textarea>
+                <textarea class="form-control textarea" name="content" id="content" placeholder="Entrez la description de l'activité" rows="10" required></textarea>
             </div>
             <div class="form-group">
                 <label for="img">Photo de l'activité</label>
-                <input type="file" id="img" name="img">
+                <input type="file" id="img" name="img" required>
                 <p class="help-block">Aide à la photo</p>
             </div>
             <div class="text-center">
@@ -58,15 +58,15 @@
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="title">Nom de l'activité</label>
-                                        <input type="text" class="form-control" id="title" name="title" placeholder="Entrez le nom de l'activité" value="{{ sunday.title }}">
+                                        <input type="text" class="form-control" id="title" name="title" placeholder="Entrez le nom de l'activité" value="{{ sunday.title }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="text">Texte de l'activité</label>
-                                        <textarea class="form-control textarea" name="content" id="content" placeholder="Entrez la description de l'activité" rows="10">{{ sunday.content }}</textarea>
+                                        <textarea class="form-control textarea" name="content" id="content" placeholder="Entrez la description de l'activité" rows="10" required>{{ sunday.content }}</textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="img">Photo de l'activité</label>
-                                        <input type="file" id="img" name="img">
+                                        <input type="file" id="img" name="img" required>
                                         <p class="help-block">Aide à la photo</p>
                                     </div>
                                 </div>
