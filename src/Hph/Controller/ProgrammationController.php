@@ -18,9 +18,6 @@ class ProgrammationController extends ControllerDefault
         return $artists -> getArtists();
     }
 
-    if isset[$_POST]
-
-
     public function render()
     {
         $artists = $this->getArtists();
