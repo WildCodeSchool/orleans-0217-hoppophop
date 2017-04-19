@@ -1,0 +1,128 @@
+{% extends "base.html.twig" %}
+{% block title %}Actualités{% endblock %}
+{% block content %}
+    <div class="container">
+        <h2 class="text-center">Ajouter une actualité</h2>
+
+        {{ error }}
+        <form method="POST" action="../../../../admin/admin.php?page=addNews" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="title">Nom de l'actualité</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Entrez le nom de l'actualité">
+            </div>
+            <div class="form-group">
+                <label for="text">Texte de l'actualité</label>
+                <textarea class="form-control textarea" name="text" id="text" placeholder="Entrez le texte de l'actualité" rows="10"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="img">Photo de l'actualité</label>
+                <input type="file" id="img" name="img">
+                <p class="help-block">Aide à la photo</p>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="breaking_news" value="1">Actualité Importante
+                </label>
+            </div>
+            <div class="text-center">
+                <input type="submit" name="submit" class="btn btn-primary" value="Créer">
+            </div>
+        </form>
+        <br />
+        <h2 class="text-center">Liste des lieux</h2>
+        <hr />
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Titre</th>
+                <th>Texte</th>
+                <th>Image</th>
+                <th>Actualité Importante</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {%  for news in newsAll %}
+                <tr>
+                    <th scope="row">{{ news.id }}</th>
+                    <td>{{ news.title }}</td>
+                    <td>{{ news.text }}</td>
+                    <td><img src="../../../../web/img/news/{{ news.imgNews }}" alt="Image de l'actualité" class="img-list"></td>
+                    <td>
+                        {% if news.breakingNews==1 %}
+                            Oui
+                        {% else %}
+                            Non
+                        {% endif %}
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit{{ news.id }}"><i class="fa fa-pencil"></i></button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{ news.id }}"><i class="fa fa-trash-o"></i></button>
+                    </td>
+                </tr>
+                <div class="modal fade" id="edit{{ news.id }}" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Modifier un lieux</h4>
+                            </div>
+                            <form method="POST" action="../../../../admin/admin.php?page=updateNews" enctype="multipart/form-data">
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="name">Titre de l'actualité</label>
+                                        <input type="text" class="form-control" id="title" name="title" placeholder="Entrez le titre de l'actualité" value="{{ news.title }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="text">Texte de l'actualité</label>
+                                        <textarea class="form-control textarea" name="text" id="text" placeholder="Entrez le texte de l'actualité" rows="10">{{ news.text }}</textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="img">Photo du lieu</label>
+                                        <input type="file" id="img" name="img" value="{{ news.imgNews }}">
+                                        <p class="help-block">Aide à la photo</p>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            {% if news.breakingNews==1 %}
+                                                <input type="checkbox" name="breaking_news" value="{{ news.breakingNews }}" checked>Actualité Importante
+                                            {% else %}
+                                                <input type="checkbox" name="breaking_news" value="{{ news.breakingNews }}">Actualité Importante
+                                            {% endif %}
+                                        </label>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="hidden" name="id" value="{{ news.id }}">
+                                        <input type="submit" name="submit" class="btn btn-primary" value="Modifier">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="delete{{ news.id }}" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Supprimer un lieu</h4>
+                            </div>
+                            <div class="modal-body">
+                                Êtes-vous sûr de vouloir supprimer l'actualité {{ news.title }} ?
+                            </div>
+                            <div class="modal-footer">
+                                <form method="POST" action="../../../../admin/admin.php?page=deleteNews">
+                                    <input type="hidden" name="id" value="{{ news.id }}">
+                                    <input type="submit" name="placeSubmit" class="btn btn-danger" value="Oui">
+                                </form>
+                                <button class="btn btn-default" data-dismiss="modal">Non</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

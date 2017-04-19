@@ -33,6 +33,8 @@ class Db
     {
         if ($type == 'place') {
             $src = realpath(dirname(getcwd())).'/web/img/place/';
+        }else if($type == 'news') {
+            $src = realpath(dirname(getcwd())).'/web/img/news/';
         }
         if ($file['img']['error'] == 0) {
             $tmp = $file['img']['tmp_name'];

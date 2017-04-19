@@ -21,14 +21,32 @@ if($page == 'home') {
         header('Location: admin.php?page=place');
     }
 }else if($page == 'updatePlace'){
-    $addPlace = new Hph\Model\PlaceManager('back');
-    if($addPlace->updatePlace($_POST, $_FILES)){
+    $updatePlace = new Hph\Model\PlaceManager('back');
+    if($updatePlace->updatePlace($_POST, $_FILES)){
         header('Location: admin.php?page=place');
     }
 }else if($page == 'deletePlace'){
-    $addPlace = new Hph\Model\PlaceManager('back');
-    if($addPlace->deletePlace($_POST['id'])){
+    $deletePlace = new Hph\Model\PlaceManager('back');
+    if($deletePlace->deletePlace($_POST['id'])){
         header('Location: admin.php?page=place');
+    }
+}else if($page == 'news') {
+    $news = new Hph\Controller\NewsController('back');
+    $render = $news->render();
+}else if($page == 'addNews'){
+    $addNews = new Hph\Model\NewsManager('back');
+    if($addNews->addNews($_POST, $_FILES)){
+        header('Location: admin.php?page=news');
+    }
+}else if($page == 'updateNews'){
+    $updateNews = new Hph\Model\NewsManager('back');
+    if($updateNews->updateNews($_POST, $_FILES)){
+        header('Location: admin.php?page=news');
+    }
+}else if($page == 'deleteNews'){
+    $deleteNews = new Hph\Model\NewsManager('back');
+    if($deleteNews->deleteNews($_POST['id'])){
+        header('Location: admin.php?page=news');
     }
 }else{
     $home = new Hph\Controller\HomeController('back');
