@@ -40,20 +40,20 @@
         <div class="row">
 
 
-            {% for artiste in artistes %}
+            {% for artist in artists %}
 
                 <div class="col-md-3 col-sm-6">
-                    <a href="index.php?page=artiste">
+                    <a href="index.php?page=artist&id={{ artist.id }}">
                         <div class="thumbnail thumbnail-div prog-artist text-center">
-                            <img src="../../../web/img/artist/{{ artiste.imgArtist }}" class="img-responsive img-255
-{% if artiste.status == 'canceled' %}img-cancel{% endif %}">
+                            <img src="../../../web/img/artist/{{ artist.imgArtist }}" class="img-responsive img-255
+{% if artist.status == 'canceled' %}img-cancel{% endif %}">
                             <div class="content-div prog-info text-center">
-                                <p class="info-text">{{ artiste.name }}</p>
+                                <p class="info-text">{{ artist.name }}</p>
                                 <hr class="hr-min">
-                                <p class="info-text"> {{ artiste.concert_start | date("l H\\hi", "Europe/Paris") }} </p>
+                                <p class="info-text"> {{ artist.concert_start | date("l H\\hi", "Europe/Paris") }} </p>
                                 {#<p class="info-text"> {{ artiste.concertStart | localizeddate('full', 'short', local) }}</p>#}
                             </div>
-                            {% if artiste.status == 'canceled' %}
+                            {% if artist.status == 'canceled' %}
                                 <h1 class="prog-cancel font-dokyo">Annulé</h1>
                             {% endif %}
                         </div>
