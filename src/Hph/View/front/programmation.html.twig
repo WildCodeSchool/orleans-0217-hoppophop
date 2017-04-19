@@ -7,11 +7,12 @@
             <button class="btn btn-default dropdown-toggle filter-btn font-circula" type="button" id="filter-places"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Lieux <span class="caret"></span>
             </button>
-                <ul class="dropdown-menu" aria-labelledby="filter-places">
-                    {% for place in places %}
-                        <li><a href="?page=programmation&place_id={{ place.id }}" class="font-circula">{{ place.name }}</a></li>
-                    {% endfor %}
-                </ul>
+            <ul class="dropdown-menu" aria-labelledby="filter-places">
+                {% for place in places %}
+                    <li><a href="?page=programmation&place_id={{ place.id }}" class="font-circula">{{ place.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
         <div class="dropdown prog-dropdown">
             <button class="btn btn-default dropdown-toggle filter-btn font-circula" type="button" id="filter-days"
