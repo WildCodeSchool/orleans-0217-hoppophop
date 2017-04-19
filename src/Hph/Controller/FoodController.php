@@ -2,6 +2,7 @@
 
 namespace Hph\Controller;
 use Hph\Model\FoodManager;
+use Hph\Model\PlaceManager;
 
 class FoodController extends ControllerDefault
 {
@@ -13,6 +14,7 @@ class FoodController extends ControllerDefault
     public function render()
     {
         $food = $this->getFood();
-        return $this->twig->render('food.html.twig', ['foods'=>$food]);
+        $places = new PlaceManager();
+        return $this->twig->render('food.html.twig', ['foods'=>$food, 'places'=>$places -> getPlaces()]);
     }
 }

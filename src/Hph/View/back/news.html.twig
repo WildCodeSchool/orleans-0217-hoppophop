@@ -3,8 +3,6 @@
 {% block content %}
     <div class="container">
         <h2 class="text-center">Ajouter une actualité</h2>
-
-        {{ error }}
         <form method="POST" action="../../../../admin/admin.php?page=addNews" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="title">Nom de l'actualité</label>
@@ -66,7 +64,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Modifier un lieux</h4>
+                                <h4 class="modal-title">Modifier une actualité</h4>
                             </div>
                             <form method="POST" action="../../../../admin/admin.php?page=updateNews" enctype="multipart/form-data">
                                 <div class="modal-body">
@@ -92,10 +90,10 @@
                                             {% endif %}
                                         </label>
                                     </div>
-                                    <div class="modal-footer">
-                                        <input type="hidden" name="id" value="{{ news.id }}">
-                                        <input type="submit" name="submit" class="btn btn-primary" value="Modifier">
-                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="hidden" name="id" value="{{ news.id }}">
+                                    <input type="submit" name="submit" class="btn btn-primary" value="Modifier">
                                 </div>
                             </form>
                         </div>
@@ -106,7 +104,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Supprimer un lieu</h4>
+                                <h4 class="modal-title">Supprimer une actualité</h4>
                             </div>
                             <div class="modal-body">
                                 Êtes-vous sûr de vouloir supprimer l'actualité {{ news.title }} ?
@@ -114,7 +112,7 @@
                             <div class="modal-footer">
                                 <form method="POST" action="../../../../admin/admin.php?page=deleteNews">
                                     <input type="hidden" name="id" value="{{ news.id }}">
-                                    <input type="submit" name="placeSubmit" class="btn btn-danger" value="Oui">
+                                    <input type="submit" name="submit" class="btn btn-danger" value="Oui">
                                 </form>
                                 <button class="btn btn-default" data-dismiss="modal">Non</button>
                             </div>
