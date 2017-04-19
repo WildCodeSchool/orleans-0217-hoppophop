@@ -2,36 +2,36 @@
 {% block title %}Foodtruck{% endblock %}
 {% block content %}
     <div class="container">
-        <h2 class="text-center">Ajouter un Foodtruck</h2>
+        <h2 class="text-center">Ajouter un foodtruck</h2>
         <hr/>
         <form method="POST" action="../../../../admin/admin.php?page=addFood" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="title">Nom du Foodtruck</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Entrez le nom du Foodtruck">
+                <label for="title">Nom du foodtruck</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Entrez le nom du Foodtruck" required>
             </div>
             <div class="form-group">
-                <label for="text">Description du Foodtruck</label>
-                <textarea class="form-control textarea" name="content" id="content" placeholder="Entrez la description du Foodtruck" rows="10"></textarea>
+                <label for="text">Description du foodtruck</label>
+                <textarea class="form-control textarea" name="content" id="content" placeholder="Entrez la description du Foodtruck" rows="10" required></textarea>
             </div>
             <div class="form-group">
-                <label for="start">Heure d'ouverture du Foodtruck : 2017-09-15 17:41:58</label>
-                <input type="datetime" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="start" name="start">
+                <label for="start">Heure d'ouverture du foodtruck</label>
+                <input type="text" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="start" name="start" required>
             </div>
             <div class="form-group">
-                <label for="start">Heure de fermeture du Foodtruck : 2017-09-17 08:01:06</label>
-                <input type="datetime" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="end" name="end">
+                <label for="start">Heure de fermeture du foodtruck</label>
+                <input type="text" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="end" name="end" required>
             </div>
             <div class="form-group">
-                <label for="place">Lieu du Foodtruck</label>
-                <select multiple class="form-control" id="place" name="place">
+                <label for="place">Lieu du foodtruck</label>
+                <select multiple class="form-control" id="place" name="place" required>
                     {%  for place in places %}
                         <option value="{{ place.id }}">{{ place.name }}</option>
                     {% endfor %}
                 </select>
             </div>
             <div class="form-group">
-                <label for="img">Photo du Foodtruck</label>
-                <input type="file" id="img" name="img">
+                <label for="img">Photo du foodtruck</label>
+                <input type="file" id="img" name="img" required>
                 <p class="help-block">Aide à la photo</p>
             </div>
             <div class="text-center">
@@ -39,7 +39,7 @@
             </div>
         </form>
         <br />
-        <h2 class="text-center">Liste des Foodtruck</h2>
+        <h2 class="text-center">Liste des foodtrucks</h2>
         <hr />
         <table class="table table-hover">
             <thead>
@@ -80,23 +80,23 @@
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="title">Nom du Foodtruck</label>
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Entrez le nom du Foodtruck" value="{{ food.name }}">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Entrez le nom du Foodtruck" value="{{ food.name }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="content">Description du Foodtruck</label>
-                                        <textarea class="form-control textarea" name="content" id="content" placeholder="Entrez la description du Foodtruck" rows="10">{{ food.content }}</textarea>
+                                        <textarea class="form-control textarea" name="content" id="content" placeholder="Entrez la description du Foodtruck" rows="10" required>{{ food.content }}</textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="start">Heure d'ouverture du Foodtruck : 2017-09-15 17:41:58</label>
-                                        <input type="datetime" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="start" name="start" value="{{ food.start }}">
+                                        <label for="start">Heure d'ouverture du Foodtruck</label>
+                                        <input type="text" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="start" name="start" value="{{ food.start }}" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="start">Heure de fermeture du Foodtruck : 2017-09-17 08:01:06</label>
-                                        <input type="datetime" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="end" name="end" value="{{ food.end }}">
+                                        <label for="start">Heure de fermeture du Foodtruck</label>
+                                        <input type="text" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="end" name="end" value="{{ food.end }}" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="place">Lieu du Foodtruck</label>
-                                        <select multiple class="form-control" id="place" name="place">
+                                        <select multiple class="form-control" id="place" name="place" required>
                                             {%  for place in places %}
                                                 <option value="{{ place.id }}">{{ place.name }}</option>
                                             {% endfor %}
@@ -104,7 +104,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="img">Photo du Foodtruck</label>
-                                        <input type="file" id="img" name="img">
+                                        <input type="file" id="img" name="img" required>
                                         <p class="help-block">Aide à la photo</p>
                                     </div>
                                 </div>
