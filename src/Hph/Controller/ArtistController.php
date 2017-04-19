@@ -19,8 +19,8 @@ class ArtistController extends ControllerDefault
         $artistRequest = new ArtistRequest();
         $artists = $artistRequest->findOne($id);
         $tags = $artistRequest->findArtistTag($id);
-        $progs = $artistRequest->findArtistHour($id);
-
+        $progs = $artistRequest->findProg($id);
+     //   var_dump($progs);
 
 
         //recupere le tags pour un artist

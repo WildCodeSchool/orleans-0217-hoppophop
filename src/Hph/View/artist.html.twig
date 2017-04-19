@@ -42,10 +42,12 @@
             <div class="content-div upper">
                 <img src="../web/img/artist/{{ artist.imgArtist }}" class="img-responsive">
                 <div class="text-center">
-                    <h2 class="font-circula">Vendredi 16 Septembre</h2>
-                    <hr class="hr-small">
-                    <h3 class="font-circula"> {{ place.name }} </h3>
-                    <h4 class="font-circula">{{ concert.concert_start | date("d / m / Y") }} <span class="turquoise bold">|</span> {{ concert.concertEnd }}</h4>
+                    {% for prog in progs %}
+                        <h2 class="font-circula">{{prog.concert_start | date(" l, F, d ")}}</h2>
+                        <hr class="hr-small">
+                        <h3 class="font-circula prog_place"><a class="white" href="{{ prog.url }}" >{{ prog.name }}</a> </h3>
+                        <h4 class="font-circula prog_hour">{{ prog.concert_start | date("H:i") }} <span class="turquoise bold">|</span> {{ prog.concert_end | date("H:i") }}</h4>
+                    {% endfor %}
                 </div>
 
 
@@ -68,13 +70,27 @@
             <h1 class="font-circula">{{ artist.name }}</h1>
           <p>{{ artist.bio }}</p>
             <div class="artiste-tag">
-                <h4 class="font-circula">France <span class="turquoise">/</span> Rouquins <span class="orange">/</span> Six-Cordes</h4>
+                {% for tag in tags %}
+
+                    {% if loop.index%2 == 0 and loop.index<tags|length %}
+                        <div class="font-circula tag_artist"> {{ tag.name }} <span class="orange">/</span></div>
+                    {% elseif loop.index%2 != 0 and loop.index<tags|length %}                                                                    <div class="font-circula tag_artist"> {{ tag.name }} <span class="turquoise">/</span></div>
+                    {% elseif loop.index%2 != 0 %}
+                        <div class="font-circula tag_artist"> {{ tag.name }}</div>
+                    {% else %}
+                        <div class="font-circula tag_artist"> {{ tag.name }}</div>
+
+
+
+                    {% endif %}
+                {% endfor %}
             </div>
             <hr class="hr">
             <div class="text-center">
-                <h2 class="font-circula">VENDREDI 16 SEPTEMBRE</h2>
-                <h3 class="font-circula">JARDIN DE L'EVECHE</h3>
-                <h4 class="font-circula">21H35 <span class="turquoise bold">|</span> 22H35</h4>
+                {% for prog in progs %}
+                <h2 class="font-circula">{{ prog.concert_start | date("l, F, d") }}</h2>                                                 <h3 class="font-circula prog_place"><a class="white" href="{{ prog.url }}" >{{ prog.name }}</a></h3>
+                    <h4 class="font-circula prog_hour">{{ prog.concert_start | date("H:i") }} <span class="turquoise bold">|</span> {{ prog.concert_end | date("H:i") }}</h4>
+                {% endfor %}
             </div>
             <hr class="hr">
             <div class="artiste-social text-center">

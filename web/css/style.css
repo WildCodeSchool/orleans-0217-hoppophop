@@ -397,9 +397,15 @@ body {
 /*Artist*/
 .tag_artist {
     display: inline;
+    font-size: 33px;
+}
+.prog_hour {
     font-size: 28px;
 }
 
+.prog_place a:hover {
+    color: #ed7a21!important;
+}
 /*Planning*/
 
 .planning {

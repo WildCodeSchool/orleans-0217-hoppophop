@@ -35,5 +35,10 @@ class Db
         return $this->db->query($req)->fetchAll(\PDO::FETCH_CLASS, __NAMESPACE__ . '\Model\\'.ucfirst($model));
     }
 
+    public function dBFetchAll($req)
+    {
+        return $this->db->query($req)->fetchAll();
+    }
+
 
 }
