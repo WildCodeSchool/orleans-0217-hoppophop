@@ -1,0 +1,163 @@
+{% extends "base.html.twig" %}
+{% block title %}Programmation{% endblock %}
+{% block content %}
+    <div class="container">
+        <h2 class="text-center">Ajouter un Artiste</h2>
+        <form method="POST" action="../../../../admin/admin.php?page=addArtist" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="title">Nom de l'artiste</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Entrez le nom de l'artiste">
+            </div>
+            <div class="form-group">
+                <label for="text">Description de l'artiste</label>
+                <textarea class="form-control textarea" name="content" id="content" placeholder="Entrez la description de l'artiste" rows="10"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="img">Photo de l'artiste</label>
+                <input type="file" id="img" name="img">
+                <p class="help-block">Aide à la photo</p>
+            </div>
+            <div class="form-group">
+                <label for="url">Lien de la vidéo</label>
+                <input type="text" class="form-control" id="url" name="video_url" placeholder="Entrez le lien de la vidéo">
+            </div>
+            <div class="form-group">
+                <label for="url">Lien Facebook</label>
+                <input type="text" class="form-control" id="url" name="facebook_url" placeholder="Entrez le lien Facebook">
+            </div>
+            <div class="form-group">
+                <label for="url">Lien Youtube</label>
+                <input type="text" class="form-control" id="url" name="youtube_url" placeholder="Entrez le lien Youtube">
+            </div>
+            <div class="form-group">
+                <label for="url">Lien Twitter</label>
+                <input type="text" class="form-control" id="url" name="twitter_url" placeholder="Entrez le lien Twitter">
+            </div>
+            <div class="form-group">
+                <label for="url">Lien Spotify</label>
+                <input type="text" class="form-control" id="url" name="spotify_url" placeholder="Entrez le lien Spotify">
+            </div>
+            <div class="text-center">
+                <input type="submit" name="submit" class="btn btn-primary" value="Créer">
+            </div>
+        </form>
+        <br />
+        <h2 class="text-center">Liste des Artistes</h2>
+        <hr />
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Image</th>
+                {#<th>Vidéo</th>#}
+                {#<th>Facebook</th>#}
+                {#<th>Youtube</th>#}
+                {#<th>Twitter</th>#}
+                {#<th>Spotify</th>#}
+                <th>Local</th>
+            </tr>
+            </thead>
+            <tbody>
+            {%  for artist in artists %}
+                <tr>
+                    <th scope="row">{{ artist.id }}</th>
+                    <td>{{ artist.name }}</td>
+                    <td>{{ artist.bio }}</td>
+                    <td><img src="../../../../web/img/artist/{{ artist.imgArtist }}" alt="Image de l'artiste" class="img-list"></td>
+                    {#<td>{{ artiste.video_url }}</td>#}
+                    {#<td>{{ artiste.facebook_url }}</td>#}
+                    {#<td>{{ artiste.youtube_url }}</td>#}
+                    {#<td>{{ artiste.twitter_url }}</td>#}
+                    {#<td>{{ artiste.spotify_url }}</td>#}
+                    <td class="text-center">{{ artist.local }}</td>
+
+                    <td>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit{{ artist.id }}"><i class="fa fa-pencil"></i></button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{ artist.id }}"><i class="fa fa-trash-o"></i></button>
+                    </td>
+                </tr>
+                <div class="modal fade" id="edit{{ artist.id }}" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Modifier un Artiste</h4>
+                            </div>
+                            <form method="POST" action="../../../../admin/admin.php?page=updateArtist" enctype="multipart/form-data">
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="title">Nom de l'artiste</label>
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Entrez le nom de l'artiste" value="{{ artist.name }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="content">Description de l'artiste</label>
+                                        <textarea class="form-control textarea" name="content" id="content" placeholder="Entrez la description de l'artiste" rows="10">{{ artist.bio }}</textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="img">Photo de l'artiste</label>
+                                        <input type="file" id="img" name="img">
+                                        <p class="help-block">Aide à la photo</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="url">Lien de la vidéo</label>
+                                        <input type="text" class="form-control" id="url" name="video_url" placeholder="Entrez le lien de la vidéo" value="{{ artist.videoUrl }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="url">Lien Facebook</label>
+                                        <input type="text" class="form-control" id="url" name="facebook_url" placeholder="Entrez le lien de la vidéo" value="{{ artist.facebookUrl }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="url">Lien Youtube</label>
+                                        <input type="text" class="form-control" id="url" name="youtube_url" placeholder="Entrez le lien de la vidéo" value="{{ artist.youtubeUrl}}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="url">Lien Twitter</label>
+                                        <input type="text" class="form-control" id="url" name="twitter_url" placeholder="Entrez le lien de la vidéo" value="{{ artist.twitterUrl }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="url">Lien Spotify</label>
+                                        <input type="text" class="form-control" id="url" name="spotify_url" placeholder="Entrez le lien de la vidéo" value="{{ artist.spotifyUrl }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="url">Groupe Local (0=non et 1=Oui)</label>
+                                        <input type="text" class="form-control" id="local" name="local" placeholder="Entrez le lien de la vidéo" value="{{ artist.local }}">
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="hidden" name="id" value="{{ artist.id }}">
+                                    <input type="submit" name="submit" class="btn btn-primary" value="Modifier">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="delete{{ artist.id }}" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Supprimer un Artiste</h4>
+                            </div>
+                            <div class="modal-body">
+                                Êtes-vous sûr de vouloir supprimer l'artiste{{ artist.name }} ?
+                            </div>
+                            <div class="modal-footer">
+                                <form method="POST" action="../../../../admin/admin.php?page=deleteArtist">
+                                    <input type="hidden" name="id" value="{{ artist.id }}">
+                                    <input type="submit" name="submit" class="btn btn-danger" value="Oui">
+                                </form>
+                                <button class="btn btn-default" data-dismiss="modal">Non</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}
