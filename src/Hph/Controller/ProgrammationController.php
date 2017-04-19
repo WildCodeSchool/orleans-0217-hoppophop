@@ -56,6 +56,6 @@ class ProgrammationController extends ControllerDefault
             $artists = $this->getArtists();
         }
 
-        return $this->twig->render('programmation.html.twig', ['artistes' => $artists, 'places' => $places]);
+        return $this->twig->render('programmation.html.twig', ['artists' => $artists, 'places' => $places]);
     }
 }

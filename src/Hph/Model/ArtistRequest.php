@@ -21,27 +21,18 @@ class ArtistRequest extends \Hph\Db
     // affichage de la page qui affiche un seul artiste 'tags'=>$tags
 
 
-
-   public function findArtistTag($artist_id)
-   {
+    public function findArtistTag($artist_id)
+    {
         $req = "SELECT tag.name FROM tag WHERE artist_id = $artist_id";
         return $this->dBQuery($req, 'Tag');
 
-   }
-   public function findProg($artist_id)
-   {
-       $req = "SELECT * FROM concert JOIN place ON place.id = concert.place_id WHERE artist_id = $artist_id";
-       return $this->dBFetchAll($req);
-   }
+    }
 
-//    public function findArtistHour($artist_id)
-//    {
-//        $req = "SELECT concert.concert_start, concert.concert_end FROM concert WHERE artist_id = $artist_id";
-//        return $this->dBQuery($req, 'Concert');
-//    }
-//    public function findArtistPlace($place_id)
-//    {
-//        $req = "SELECT place.name, place.url FROM place JOIN ON "
-//    }
+    public function findProg($artist_id)
+    {
+        $req = "SELECT * FROM concert JOIN place ON place.id = concert.place_id WHERE artist_id = $artist_id";
+        return $this->dBFetchAll($req);
+    }
+
 }
 
