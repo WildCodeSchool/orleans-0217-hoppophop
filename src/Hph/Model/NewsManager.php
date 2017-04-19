@@ -42,7 +42,12 @@ class NewsManager extends \Hph\Db
         if($upload!=true){
             return $upload;
         }
-        $sql = "UPDATE news SET title = '".$post['title']."', text = '".$post['text']."', img_news = '".$file['img']['name']."', breaking_news = '".$post['breaking_news']."' WHERE id = '".$post['id']."'";
+        if($file['img']['name']!=''){
+            $sql = "UPDATE news SET title = '".$post['title']."', text = '".$post['text']."', img_news = '".$file['img']['name']."', breaking_news = '".$post['breaking_news']."' WHERE id = '".$post['id']."'";
+        }else{
+            $sql = "UPDATE news SET title = '".$post['title']."', text = '".$post['text']."', breaking_news = '".$post['breaking_news']."' WHERE id = '".$post['id']."'";
+        }
+
         return $this->getDb()->exec($sql);
     }
     public function deleteNews($id)
