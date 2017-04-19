@@ -17,7 +17,8 @@ class Db
     {
         $this->db = new \PDO(DSN, USER, PASS);
         $this->db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-        $this->db->query('SET NAMES utf8');    }
+        $this->db->query('SET NAMES utf8');
+    }
 
 
     /**

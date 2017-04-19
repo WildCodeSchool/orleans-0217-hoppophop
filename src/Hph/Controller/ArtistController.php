@@ -17,30 +17,20 @@ class ArtistController extends ControllerDefault
     {
         // appel au modèle
         $artistRequest = new ArtistRequest();
-        $artist = $artistRequest->findOne($id);
+        $artists = $artistRequest->findOne($id);
+        $tags = $artistRequest->findArtistTag($id);
+        $progs = $artistRequest->findArtistHour($id);
+
+
 
         //recupere le tags pour un artist
         // appelle ton modèle $tags = Tag->findArtistTags($artist_id); // select * from tags where artist_id = $artist_id;
         // affichage de la page qui affiche un seul artiste 'tags'=>$tags
 
         // appel la methode render de twig
-        return $this->twig->render('artist.html.twig', ['artists'=> $artist]);
+        return $this->twig->render('artist.html.twig', ['artist'=> $artists[0], 'tags'=> $tags, 'progs'=>$progs]);
     }
 
-    public function findTagArtist()
-    {
-        $artistRequesttag = new ArtistRequest();
-        $tag = $artistRequesttag->findArtistTags($artist_id);
-        return $this->twig->render('artist.html.twig', ['tags'=>$tag]);
-    }
-
-//    public function render($twig, $id)
-//    {
-//      $artists = $this->showArtist($id);
-//      $template = $twig->load('artist.html.twig');
-//    echo $template->render(['artists' =>$artists]);
-//
-//    }
 
 
 }

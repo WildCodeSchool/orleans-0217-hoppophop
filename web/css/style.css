@@ -394,6 +394,12 @@ body {
 
 /*Fin Programmation*/
 
+/*Artist*/
+.tag_artist {
+    display: inline;
+    font-size: 28px;
+}
+
 /*Planning*/
 
 .planning {

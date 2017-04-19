@@ -14,6 +14,6 @@ class PartnerManager extends \Hph\Db
     public function getPartner()
     {
         $req = "SELECT * FROM partner";
-        return $this->render($req, 'Partner');
+        return $this->dBQuery($req, 'Partner');
     }
 }

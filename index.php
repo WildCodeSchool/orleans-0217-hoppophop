@@ -53,7 +53,7 @@ if($page == 'home') {
     $dimaorl->render($twig);
 }else if($page == 'partner') {
     $partner = new Hph\Controller\PartnerController();
-    $partner->render($twig);
+    $render = $partner->getPartner();
 
 }else if($page == 'contact') {
     $contact = new Hph\Controller\ContactController();
