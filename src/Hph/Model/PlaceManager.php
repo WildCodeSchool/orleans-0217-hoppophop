@@ -41,12 +41,21 @@ class PlaceManager extends \Hph\Db
         if($upload!=true){
             return $upload;
         }
-        $sql = "UPDATE place SET name = '".$post['name']."', url = '".$post['url']."', img_place = '".$file['img']['name']."', start = '".$post['start']."', end = '".$post['end']."', showcase = '".$post['showcase']."' WHERE id = '".$post['id']."'";
+        if($file['img']['name']!='') {
+            $sql = "UPDATE place SET name = '" . $post['name'] . "', url = '" . $post['url'] . "', img_place = '" . $file['img']['name'] . "', START = '" . $post['start'] . "', END = '" . $post['end'] . "', showcase = '" . $post['showcase'] . "' WHERE id = '" . $post['id'] . "'";
+        }else{
+            $sql = "UPDATE place SET name = '" . $post['name'] . "', url = '" . $post['url'] . "', START = '" . $post['start'] . "', END = '" . $post['end'] . "', showcase = '" . $post['showcase'] . "' WHERE id = '" . $post['id'] . "'";
+        }
         return $this->getDb()->exec($sql);
     }
     public function deletePlace($id)
     {
         $sql = "DELETE FROM place WHERE id=".$id;
         return $this->getDb()->exec($sql);
+    }
+    public function listPlaces()
+    {
+        $req = "SELECT * FROM place";
+        return $this->dBQuery($req, 'Place');
     }
 }

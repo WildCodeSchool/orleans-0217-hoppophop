@@ -14,7 +14,7 @@ if($page == 'home') {
     $render = $home->render();
 }else if($page == 'programmation'){
     $page = new Hph\Controller\ProgrammationController();
-    $render = $page->render();
+    $render = $page->listArtist();
 }else if($page == 'artist'){
     $artiste = new Hph\Controller\ArtistController();
     $render = $artiste->showArtist($_GET['id']);

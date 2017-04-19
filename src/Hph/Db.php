@@ -31,9 +31,7 @@ class Db
     }
     public function addImg($file, $type)
     {
-        if ($type == 'place') {
-            $src = realpath(dirname(getcwd())).'/web/img/place/';
-        }
+        $src = realpath(dirname(getcwd())).'/web/img/'.$type.'/';
         if ($file['img']['error'] == 0) {
             $tmp = $file['img']['tmp_name'];
             $name = $file['img']['name'];
