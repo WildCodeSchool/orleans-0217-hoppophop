@@ -15,8 +15,11 @@ class ProgrammationController extends ControllerDefault
     public function getArtists()
     {
         $artists = new ProgrammationManager();
-        return $artists -> getArtists(30);
+        return $artists -> getArtists();
     }
+
+    if isset[$_POST]
+
 
     public function render()
     {

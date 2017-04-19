@@ -22,5 +22,6 @@ class ControllerDefault
         }
         $this->twig = new \Twig_Environment($loader, array('debug' => true, 'cache' => false));
         $this->twig->addExtension(new \Twig_Extension_Debug());
+        $this->twig->addExtension(new \Twig_Extensions_Extension_Intl());
     }
 }

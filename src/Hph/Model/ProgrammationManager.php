@@ -11,9 +11,32 @@ namespace Hph\Model;
 
 class ProgrammationManager extends \Hph\Db
 {
-    public function getArtists($limit)
+    public function getArtists()
     {
-        $req = "SELECT * FROM artist LIMIT 0, $limit";
+        $req = "SELECT * FROM artist JOIN concert ON artist.id=concert.artist_id WHERE (status = 'programmed' OR status = 'canceled') AND";
         return $this->dBQuery($req, 'Artist');
     }
+
+
+    public function getArtistsPlace()
+    {
+        $req = " SELECT * FROM artist JOIN concert ON artist.id=concert.artist_id WHERE status = 'programmed' OR status = 'canceled'";
+        return $this->dBQuery($req, 'Artist');
+    }
+
+
+    public function getArtistsSoir()
+    {
+        $req = " SELECT * FROM artist JOIN concert ON artist.id=concert.artist_id WHERE status = 'programmed' OR status = 'canceled'";
+        return $this->dBQuery($req, 'Artist');
+    }
+
+
+    public function getArtistsLocal()
+    {
+        $req = " SELECT * FROM artist JOIN concert ON artist.id=concert.artist_id WHERE status = 'programmed' OR status = 'canceled'";
+        return $this->dBQuery($req, 'Artist');
+    }
+
+
 }

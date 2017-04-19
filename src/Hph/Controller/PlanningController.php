@@ -6,7 +6,7 @@
  * Time: 16:20
  */
 
-namespace hph\controller;
+namespace Hph\controller;
 
 
 class PlanningController extends ControllerDefault
