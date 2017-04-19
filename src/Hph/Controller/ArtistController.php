@@ -28,22 +28,13 @@ class ArtistController extends ControllerDefault
         // affichage de la page qui affiche un seul artiste 'tags'=>$tags
 
         // appel la methode render de twig
-<<<<<<< HEAD
+
         return $this->twig->render('artist.html.twig', ['artist'=> $artists[0], 'tags'=> $tags, 'progs'=>$progs]);
     }
 
 
-=======
-        return $this->twig->render('artist.html.twig', ['artists'=> $artist]);
-    }
 
-//    public function findTagArtist()
-//    {
-//        $artistRequesttag = new ArtistRequest();
-//        $tag = $artistRequesttag->findArtistTags($artist_id);
-//        return $this->twig->render('artist.html.twig', ['tags'=>$tag]);
-//    }
-//
->>>>>>> 847d55f7a36dea8f2dca1c7f4b0e9bb9f1da93d0
+
+
 
 }
