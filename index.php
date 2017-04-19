@@ -14,7 +14,7 @@ if($page == 'home') {
     $render = $home->render();
 }else if($page == 'programmation'){
     $page = new Hph\Controller\ProgrammationController();
-    $render = $page->render();
+    $render = $page->listArtist();
 }else if($page == 'artist'){
     $artiste = new Hph\Controller\ArtistController();
     $render = $artiste->showArtist($_GET['id']);
@@ -57,6 +57,9 @@ if($page == 'home') {
 }else if($page == 'newsOne') {
     $newsOne = new Hph\Controller\NewsOneController();
     $render = $newsOne->render($_GET['id']);
+}else if($page == 'mail'){
+    $mail = new Hph\Controller\ContactController();
+    $render = $mail->mail($_POST);
 }else {
     $home = new Hph\Controller\HomeController();
     $render = $home->render();

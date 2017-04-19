@@ -181,4 +181,10 @@ class Artist
     {
         $this->tags = $tags;
     }
+<<<<<<< HEAD
 }
+=======
+
+
+}
+>>>>>>> 9561b33985b0aeb0973f863650c81d861c3c2389

@@ -11,20 +11,66 @@ namespace Hph\Model;
 
 class PlaceManager extends \Hph\Db
 {
-    public function getPlaces($showcase)
+    public function getPlaces($showcase = NULL)
     {
-        $req = "SELECT * FROM place WHERE showcase=$showcase";
+        if ($showcase != NULL) {
+            $req = "SELECT * FROM place WHERE showcase=$showcase";
+        } else {
+            $req = "SELECT * FROM place";
+        }
         return $this->dBQuery($req, 'Place');
     }
-    public function addPlace($place)
+
+    public function addPlace($post, $file)
     {
-        $req = "INSERT INTO place VALUES (NULL, $place->getName(), $place->getUrl(), $place->getImg_place, $place->getStart, $place->getEnd, $place->getShowcase)";
-        return $this->getDb()->exec($req);
+        if (!isset($post['showcase'])) {
+            $post['showcase'] = 0;
+        }
+        $upload = $this->addImg($file, 'place');
+        if ($upload != true) {
+            return $upload;
+        }
+        $sql = "INSERT INTO place VALUES (NULL, '" . $post['name'] . "', '" . $post['url'] . "', '" . $file['img']['name'] . "', '" . $post['start'] . "', '" . $post['end'] . "', '" . $post['showcase'] . "')";
+        return $this->getDb()->exec($sql);
     }
     public function findOne($id)
     {
         $req = "SELECT * FROM place WHERE id=$id";
         $places = $this->dBQuery($req, 'Place');
         return $places[0];
+    }
+
+    public function updatePlace($post, $file)
+    {
+        if (!isset($post['showcase'])) {
+            $post['showcase'] = 0;
+        }
+        $upload = $this->addImg($file, 'place');
+        if ($upload != true) {
+            return $upload;
+        }
+        if ($file['img']['name'] != '') {
+            $sql = "UPDATE place SET name = '" . $post['name'] . "', url = '" . $post['url'] .
+                "', img_place = '" . $file['img']['name'] . "', START = '" . $post['start'] .
+                "', END = '" . $post['end'] . "', showcase = '" . $post['showcase'] .
+                "' WHERE id = '" . $post['id'] . "'";
+        } else {
+            $sql = "UPDATE place SET name = '" . $post['name'] . "', url = '" . $post['url'] .
+                "', START = '" . $post['start'] . "', END = '" . $post['end'] .
+                "', showcase = '" . $post['showcase'] . "' WHERE id = '" . $post['id'] . "'";
+        }
+        return $this->getDb()->exec($sql);
+    }
+
+    public function deletePlace($id)
+    {
+        $sql = "DELETE FROM place WHERE id=" . $id;
+        return $this->getDb()->exec($sql);
+    }
+
+    public function listPlaces()
+    {
+        $req = "SELECT * FROM place";
+        return $this->dBQuery($req, 'Place');
     }
 }

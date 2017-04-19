@@ -1,9 +1,11 @@
 {% extends "base.html.twig" %}
 {% block title %}Administration{% endblock %}
 {% block content %}
-    <div class="text-center">
-        <h1>Bienvenue sur la page d'administration du site Hop Pop Hop</h1>
-        <p>Vous pouvez administrer les artistes, lieux, concerts, actualités, foodtruck et partenaire du site</p>
-        <p>Le fichier admin.php a un système de route identique à index.php. La seul différence est que quand on appel un controller dans le fichier admin.php (par exemple HomeController), il faut lui passer en paramêtre 'back' afin qu'il sache qu'il doit afficher les vues du backfront Il faut du coup dans chaque controller créer une méthode renderAdmin (ou vous l'appelez comme vous voulez) qui se chargera d'afficher le contenu sur la page admin.</p>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Bienvenue sur la page d'administration du site Hop Pop Hop</h1>
+            <p>Vous pouvez administrer les artistes, lieux, concerts, actualités, foodtrucks, activités du dimanche et partenaires du site</p>
+            <p><a class="btn btn-primary btn-lg" href=".././../../../index.php" role="button">Retourner au site</a></p>
+        </div>
     </div>
 {% endblock %}
