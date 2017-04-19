@@ -19,7 +19,11 @@ class ArtistRequest extends \Hph\Db
     }
     // appelle ton modèle $tags = Tag->findArtistTags($artist_id); // select * from tags where artist_id = $artist_id;
     // affichage de la page qui affiche un seul artiste 'tags'=>$tags
+<<<<<<< HEAD
    public function findArtistTag($artist_id)
+=======
+   public function findArtistTags($artist_id)
+>>>>>>> 847d55f7a36dea8f2dca1c7f4b0e9bb9f1da93d0
    {
         $req = "SELECT tag.name FROM tag WHERE artist_id = $artist_id";
         return $this->dBQuery($req, 'Tag');

@@ -9,16 +9,16 @@
 namespace Hph\Controller;
 use Hph\Model\SundayManager;
 
-class DimaorlController
+class DimaorlController extends ControllerDefault
 {
     public function getSunday()
     {
         $places = new SundayManager();
         return $places -> getSunday();
     }
-    public function render($twig)
+    public function render()
     {
-        $sunday = $this->getSunday();
-        echo $twig->load('dimaorl.html.twig')->render(['sundays'=>$sunday]);
+        $sundays = $this->getSunday();
+        return $this->twig->render('dimaorl.html.twig', ['sundays'=>$sundays]);
     }
 }

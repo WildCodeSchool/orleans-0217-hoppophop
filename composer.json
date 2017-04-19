@@ -3,7 +3,10 @@
     "description": "projet festival hopophop",
     "type": "project",
     "require": {
-        "twig/twig": "v2.3.0"
+        "twig/twig": "v2.3.0",
+        "symfony/form": "^3.2",
+        "twig/extensions": "^1.4"
+
     },
     "authors": [
         {

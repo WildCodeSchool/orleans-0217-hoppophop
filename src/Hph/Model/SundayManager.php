@@ -14,6 +14,34 @@ class SundayManager extends \Hph\Db
     public function getSunday()
     {
         $req = "SELECT * FROM sunday";
-        return $this->render($req, 'Sunday');
+        return $this->dBQuery($req, 'Sunday');
+    }
+    public function addSunday($post, $file)
+    {
+        $upload = $this->addImg($file, 'sunday');
+        if($upload!=true){
+            return $upload;
+        }
+        $sql = "INSERT INTO sunday VALUES (NULL, '".$post['title']."', '".$file['img']['name']."', '".$post['content']."')";
+        return $this->getDb()->exec($sql);
+    }
+    public function updateSunday($post, $file)
+    {
+        $upload = $this->addImg($file, 'sunday');
+        if($upload!=true){
+            return $upload;
+        }
+        if($file['img']['name']!=''){
+            $sql = "UPDATE sunday SET title = '".$post['title']."', content = '".$post['content']."', img_sunday = '".$file['img']['name']."' WHERE id = '".$post['id']."'";
+        }else{
+            $sql = "UPDATE sunday SET title = '".$post['title']."', content = '".$post['content']."' WHERE id = '".$post['id']."'";
+        }
+
+        return $this->getDb()->exec($sql);
+    }
+    public function deleteSunday($id)
+    {
+        $sql = "DELETE FROM sunday WHERE id=".$id;
+        return $this->getDb()->exec($sql);
     }
 }

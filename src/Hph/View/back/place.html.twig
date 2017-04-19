@@ -1,0 +1,147 @@
+{% extends "base.html.twig" %}
+{% block title %}Lieux{% endblock %}
+{% block content %}
+    <div class="container">
+        <h2 class="text-center">Ajouter un lieu</h2>
+        <hr/>
+        <form method="POST" action="../../../../admin/admin.php?page=addPlace" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Nom du lieux</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Entrez le nom du lieu">
+            </div>
+            <div class="form-group">
+                <label for="url">Lien du lieux</label>
+                <input type="text" class="form-control" id="url" name="url" placeholder="Entrez le lien du lieu">
+            </div>
+            <div class="form-group">
+                <label for="start">Heure d'ouverture du lieu : 2017-09-15 17:41:58</label>
+                <input type="text" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="start" name="start">
+            </div>
+            <div class="form-group">
+                <label for="start">Heure de fermeture du lieu : 2017-09-17 08:01:06</label>
+                <input type="datetime" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="end" name="end">
+            </div>
+            <div class="form-group">
+                <label for="img">Photo du lieu</label>
+                <input type="file" id="img" name="img">
+                <p class="help-block">Aide à la photo</p>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="showcase" value="1">Showcase
+                </label>
+            </div>
+            <div class="text-center">
+                <input type="submit" name="submit" class="btn btn-primary" value="Créer">
+            </div>
+        </form>
+        <br />
+        <h2 class="text-center">Liste des lieux</h2>
+        <hr />
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Nom</th>
+                <th>Url</th>
+                <th>Image</th>
+                <th>Début</th>
+                <th>Fin</th>
+                <th>Showcase</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {%  for place in places %}
+                <tr>
+                    <th scope="row">{{ place.id }}</th>
+                    <td>{{ place.name }}</td>
+                    <td><a href="http://{{ place.url }}">{{ place.url }}</a></td>
+                    <td><img src="../../../../web/img/place/{{ place.imgPlace }}" alt="Image du lieux" class="img-list"></td>
+                    <td>{{ place.start|date("l") }}</td>
+                    <td>{{ place.end|date("l") }}</td>
+                    <td>
+                        {% if place.showcase==1 %}
+                            Oui
+                        {% else %}
+                            Non
+                        {% endif %}
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit{{ place.id }}"><i class="fa fa-pencil"></i></button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{ place.id }}"><i class="fa fa-trash-o"></i></button>
+                    </td>
+                </tr>
+                <div class="modal fade" id="edit{{ place.id }}" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Modifier un lieux</h4>
+                            </div>
+                            <form method="POST" action="../../../../admin/admin.php?page=updatePlace" enctype="multipart/form-data">
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="name">Nom du lieux</label>
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Entrez le nom du lieu" value="{{ place.name }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="url">Lien du lieux</label>
+                                        <input type="text" class="form-control" id="url" name="url" placeholder="Entrez le lien du lieu" value="{{ place.url }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="start">Heure d'ouverture du lieu : 2017-09-15 17:41:58</label>
+                                        <input type="datetime" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="start" name="start" value="{{ place.start }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="start">Heure de fermeture du lieu : 2017-09-17 08:01:06</label>
+                                        <input type="datetime" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="end" name="end" value="{{ place.end }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="img">Photo du lieu</label>
+                                        <input type="file" id="img" name="img">
+                                        <p class="help-block">Aide à la photo</p>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            {% if place.showcase==1 %}
+                                                <input type="checkbox" name="showcase" value="{{ place.showcase }}" checked>Showcase
+                                            {% else %}
+                                                <input type="checkbox" name="showcase" value="{{ place.showcase }}">Showcase
+                                            {% endif %}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="hidden" name="id" value="{{ place.id }}">
+                                    <input type="submit" name="submit" class="btn btn-primary" value="Modifier">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="delete{{ place.id }}" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Supprimer un lieu</h4>
+                            </div>
+                            <div class="modal-body">
+                                Êtes-vous sûr de vouloir supprimer le lieu {{ place.name }} ?
+                            </div>
+                            <div class="modal-footer">
+                                <form method="POST" action="../../../../admin/admin.php?page=deletePlace">
+                                    <input type="hidden" name="id" value="{{ place.id }}">
+                                    <input type="submit" name="submit" class="btn btn-danger" value="Oui">
+                                </form>
+                                <button class="btn btn-default" data-dismiss="modal">Non</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

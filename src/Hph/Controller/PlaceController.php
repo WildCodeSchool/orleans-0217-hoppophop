@@ -8,18 +8,20 @@
 
 namespace Hph\Controller;
 use Hph\Model\PlaceManager;
+use Hph\Model\Place;
 
-class PlaceController
+
+class PlaceController extends ControllerDefault
 {
-    public function getPlaces($showcase)
+    public function getPlaces($showcase = NULL)
     {
         $places = new PlaceManager();
         return $places -> getPlaces($showcase);
     }
-    public function render($twig)
+
+    public function render()
     {
-        $places = $this->getPlaces(0);
-        $showcase = $this->getPlaces(1);
-        echo $twig->load('place.html.twig')->render(['places'=>$places, 'showcases'=>$showcase]);
+        $places = $this->getPlaces();
+        return $this->twig->render('place.html.twig', ['places'=>$places, 'error'=>'']);
     }
 }

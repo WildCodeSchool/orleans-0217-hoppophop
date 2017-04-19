@@ -7,12 +7,28 @@
  */
 
 namespace Hph\Model;
-
+use Symfony\Component\Validator\Constraints as Assert;
 
 class Partner
 {
     private $id;
+    /**
+     * @var string
+     *
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 255,
+     *      minMessage = "Le nom d'une l'image doit comporter au minimum {{ limit }} caractères",
+     *      maxMessage = "Le nom d'une l'image doit comporter au maximum {{ limit }} caractères"
+     * )
+     * @Assert\NotBlank()
+     */
     private $img_partner;
+    /**
+     * @Assert\Url(
+     *    message = "le lien '{{ value }}' n'est pas un lien valide",
+     * )
+     */
     private $url;
     /**
      * @return mixed

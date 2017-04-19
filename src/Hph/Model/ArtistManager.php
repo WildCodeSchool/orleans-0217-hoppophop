@@ -6,7 +6,7 @@
  * Time: 17:05
  */
 
-namespace HPH\Model;
+namespace Hph\Model;
 
 
 class ArtistManager extends \Hph\Db
@@ -14,6 +14,6 @@ class ArtistManager extends \Hph\Db
     public function getArtists()
     {
         $req = "SELECT * FROM artist";
-        return $this->render($req, 'Artist');
+        return $this->dBQuery($req, 'Artist');
     }
 }

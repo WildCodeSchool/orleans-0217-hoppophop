@@ -7,13 +7,38 @@
  */
 
 namespace Hph\Model;
-
+use Symfony\Component\Validator\Constraints as Assert;
 
 class Food
 {
     private $id;
+    /**
+     * @var string
+     *
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 255,
+     *      minMessage = "Le nom d'un foodtruck doit comporter au minimum {{ limit }} caractères",
+     *      maxMessage = "Le nom d'un foodtruck doit comporter au maximum {{ limit }} caractères"
+     * )
+     * @Assert\NotBlank()
+     */
     private $name;
+    /**
+     * @var string
+     *
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 255,
+     *      minMessage = "Le nom d'une l'image doit comporter au minimum {{ limit }} caractères",
+     *      maxMessage = "Le nom d'une l'image doit comporter au maximum {{ limit }} caractères"
+     * )
+     * @Assert\NotBlank()
+     */
     private $img_eat;
+    /**
+     * @Assert\NotBlank()
+     */
     private $content;
 
     /**

@@ -9,11 +9,14 @@
 namespace Hph\Controller;
 
 
-class ContactController
+class ContactController extends ControllerDefault
 {
-    public function render($twig)
+    public function mail($post)
     {
-        $template = $twig->load('contact.html.twig');
-        echo $template->render();
+
+    }
+    public function render()
+    {
+        return $this->twig->render('contact.html.twig');
     }
 }
