@@ -7,12 +7,33 @@
  */
 
 namespace Hph\Controller;
+use Hph\Model\ArtistManager;
 
-class ArtistController
+class ArtistController extends ControllerDefault
 {
-    public function render($twig)
+
+
+    public function showArtist($id)
     {
-        $template = $twig->load('artiste.html.twig');
-        echo $template->render();
+        // appel au modèle
+        $artistManager = new ArtistManager();
+        $artists = $artistManager->findOne($id);
+        $tags = $artistManager->findArtistTag($id);
+        $progs = $artistManager->findProg($id);
+      // var_dump($artists);
+
+
+        //recupere le tags pour un artist
+        // appelle ton modèle $tags = Tag->findArtistTags($artist_id); // select * from tags where artist_id = $artist_id;
+        // affichage de la page qui affiche un seul artiste 'tags'=>$tags
+
+        // appel la methode render de twig
+        return $this->twig->render('artist.html.twig', ['artist'=> $artists[0], 'tags'=> $tags, 'progs'=>$progs]);
     }
+
+
+
+
+
+
 }

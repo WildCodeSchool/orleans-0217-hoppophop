@@ -6,12 +6,11 @@
  * Time: 11:43
  */
 
-namespace HPH\model;
+namespace Hph\Model;
 
 
 class Artist
 {
-
     private $id;
     private $name;
     private $bio;
@@ -21,7 +20,7 @@ class Artist
     private $youtube_url;
     private $twitter_url;
     private $spotify_url;
-
+    private $tags;
     /**
      * @return mixed
      */
@@ -166,3 +165,21 @@ class Artist
         $this->spotify_url = $spotify_url;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * @param mixed $tags
+     */
+    public function setTags($tags)
+    {
+        $this->tags = $tags;
+    }
+
+
+}

@@ -9,10 +9,10 @@
 namespace Hph\Controller;
 
 
-class TransportController
+class TransportController extends ControllerDefault
 {
-    public function render($twig)
+    public function render()
     {
-        echo $twig->load('transport.html.twig')->render();
+        return $this->twig->render('transport.html.twig');
     }
 }

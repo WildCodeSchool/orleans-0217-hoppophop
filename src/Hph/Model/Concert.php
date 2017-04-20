@@ -18,6 +18,7 @@ class Concert
     private $artist_id;
     private $place_id;
     private $status;
+    private $showcase;
 
     /**
      * @return mixed
@@ -113,7 +114,21 @@ class Concert
     {
         $this->status = $status;
     }
-    
 
+    /**
+     * @return mixed
+     */
+    public function getShowcase()
+    {
+        return $this->showcase;
+    }
+
+    /**
+     * @param mixed $showcase
+     */
+    public function setShowcase($showcase)
+    {
+        $this->showcase = $showcase;
+    }
 
 }

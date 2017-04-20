@@ -7,16 +7,40 @@
  */
 
 namespace HPH\Model;
-
+use Symfony\Component\Validator\Constraints as Assert;
 
 class News
 {
     private $id;
+    /**
+     * @var string
+     *
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 200,
+     *      minMessage = "Le titre d'une news doit comporter au minimum {{ limit }} caractères",
+     *      maxMessage = "Le titre d'une news doit comporter au maximum {{ limit }} caractères"
+     * )
+     * @Assert\NotBlank()
+     */
     private $title;
-    private $image;
+    /**
+     * @var string
+     *
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 255,
+     *      minMessage = "Le nom d'une l'image doit comporter au minimum {{ limit }} caractères",
+     *      maxMessage = "Le nom d'une l'image doit comporter au maximum {{ limit }} caractères"
+     * )
+     * @Assert\NotBlank()
+     */
+    private $img_news;
+    /**
+     * @Assert\NotBlank()
+     */
     private $text;
-    private $status;
-    private $link;
+    private $breaking_news;
 
     /**
      * @return mixed
@@ -53,17 +77,17 @@ class News
     /**
      * @return mixed
      */
-    public function getImage()
+    public function getImgNews()
     {
-        return $this->image;
+        return $this->img_news;
     }
 
     /**
-     * @param mixed $image
+     * @param mixed $img_news
      */
-    public function setImage($image)
+    public function setImgNews($img_news)
     {
-        $this->image = $image;
+        $this->img_news = $img_news;
     }
 
     /**
@@ -85,39 +109,17 @@ class News
     /**
      * @return mixed
      */
-    public function getStatus()
+    public function getBreakingNews()
     {
-        return $this->status;
+        return $this->breaking_news;
     }
 
     /**
-     * @param mixed $status
+     * @param mixed $breaking_news
      */
-    public function setStatus($status)
+    public function setBreakingNews($breaking_news)
     {
-        $this->status = $status;
+        $this->breaking_news = $breaking_news;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getLink()
-    {
-        return $this->link;
-    }
-
-    /**
-     * @param mixed $link
-     */
-    public function setLink($link)
-    {
-        $this->link = $link;
-    }
-
-    public function getBreaking()
-    {
-        $req = "SELECT * FROM $table LIMIT 0,$limit";
-        $res = $this->db->query($req);
-        return $res->fetchAll(\PDO::FETCH_CLASS, __NAMESPACE__ . '\Model\\'.ucfirst($table));
-    }
 }

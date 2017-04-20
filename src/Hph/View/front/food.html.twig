@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+{% block title %}Se Nourrir{% endblock %}
+{% block titleMobile %}FoodTruck{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {%  for food in foods %}
+                <div class="col-xs-12 col-xs-offset-0 col-sm-4">
+                    <div class="content-div text-justify">
+                        <div class="text-center">
+                            <img src="../../../web/img/foodtruck/{{ food.imgEat }}" class="img-255">
+                        </div>
+                        <h2 class="font-circula">{{ food.name }}</h2>
+                        <hr class="hr">
+                        <p>{{ food.content }}</p>
+                        {% if food.start|date("l")!=food.end|date("l") %}
+                            <p class="food-info">{{ food.place_name }}<span class="orange"> | </span>{{ food.start|date("l") }} et {{ food.end|date("l") }}</p>
+                        {% else %}
+                            <p class="food-info">{{ food.place_name }}<span class="orange"> | </span>{{ food.start|date("l") }}</p>
+                        {% endif %}
+                    </div>
+                    <br />
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

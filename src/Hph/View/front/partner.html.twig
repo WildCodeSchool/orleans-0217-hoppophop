@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+{% block title %}Partenaires{% endblock %}
+{% block titleMobile %}Sponsors{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row text-center">
+        {%  for partner in partners %}
+            <div class="col-md-3 col-xs-4">
+                <a href="#" class="thumbnail thumbnail-div partnair-logo">
+                    <img src="/web/img/partner/{{ partner.imgPartner }}" class="img-responsive">
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<br />
+<br />
+<div class="text-center">
+    <a href="../index.php?page=contact"><button class="btn btn-primary partnair-btn">Devenez Partenaire</button></a>
+</div>
+</div>
+{% endblock %}

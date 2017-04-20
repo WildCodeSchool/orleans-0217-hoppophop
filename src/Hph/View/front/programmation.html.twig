@@ -1,0 +1,60 @@
+{% extends "base.html.twig" %}
+{% block title %}Programmation{% endblock %}
+{% block titleMobile %}Artistes{% endblock %}
+{% block content %}
+    <div class="text-center">
+        <div class="dropdown prog-dropdown">
+            <button class="btn btn-default dropdown-toggle filter-btn font-circula" type="button" id="filter-places"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Lieux <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="filter-places">
+                {% for place in places %}
+                    <li><a href="?page=programmation&place_id={{ place.id }}" class="font-circula">{{ place.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="dropdown prog-dropdown">
+            <button class="btn btn-default dropdown-toggle filter-btn font-circula" type="button" id="filter-days"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Soirs <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="filter-days">
+                <li><a href="?page=programmation&day=15" class="font-circula">Vendredi Soir</a></li>
+                <li><a href="?page=programmation&day=16" class="font-circula">Samedi Soir</a></li>
+            </ul>
+        </div>
+        <div class="dropdown prog-dropdown">
+            <button class="btn btn-default dropdown-toggle filter-btn font-circula" type="button" id="filter-local"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Groupes Locaux <span
+                        class="caret"></span></button>
+            <ul class="dropdown-menu" aria-labelledby="filter-local">
+                <li><a href="?page=programmation&lcl=1" class="font-circula">Oui</a></li>
+                <li><a href="?page=programmation&lcl=0" class="font-circula">Non</a></li>
+            </ul>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <div class="container">
+        <div class="row">
+            {% for artist in artists %}
+                <div class="col-md-3 col-sm-6">
+                    <a href="../../../../index.php?page=artist&id={{ artist.id }}">
+                        <div class="thumbnail thumbnail-div prog-artist text-center">
+                            <img src="../../../web/img/artist/{{ artist.imgArtist }}" class="img-255 {% if artist.status == 'canceled' %}img-cancel{% endif %}">
+                            <div class="content-div prog-info text-center">
+                                <p class="info-text">{{ artist.name }}</p>
+                                <hr class="hr-min">
+                                <p class="info-text">{{ artist.concert_start | localizeddate('long', 'short', 'fr') }}</p>
+                            </div>
+                            {% if artist.status == 'canceled' %}
+                                <h1 class="prog-cancel font-dokyo">Annulé</h1>
+                            {% endif %}
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

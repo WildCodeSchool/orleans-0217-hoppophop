@@ -1,0 +1,39 @@
+{% extends "base.html.twig" %}
+{% block title %}Contact{% endblock %}
+{% block titleMobile %}Contact{% endblock %}
+{% block content %}
+    <div class="container contact-content">
+        <div class="col-md-offset-3 col-md-6">
+            <div class="form-area">
+                {% if msg == 1 %}
+                    <p class="white text-center">Message envoyé avec succès</p>
+                {% elseif msg == 0 %}
+                    <p class="white text-center">Une erreur a eu lieu lors de l'envoi de votre message</p>
+                {% endif %}
+                <form method="POST" action="../../../../index.php?page=mail">
+                    <br/>
+                    <h2 class="orange font-circula text-center">Nous contacter</h2>
+                    <div class="form-group">
+                        <label for="name" class="white">Votre nom</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Entrez votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="white">Votre e-mail</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Entrez votre e-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="white">Le sujet de votre e-mail</label>
+                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Entrez le sujet de votre e-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="text" class="white">Votre message</label>
+                        <textarea class="form-control" id="text" name="text" placeholder="Entrez le texte de votre message" rows="10" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <input type="submit" id="submit" name="submit" class="btn btn-default contact-btn" value="Envoyez votre message">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

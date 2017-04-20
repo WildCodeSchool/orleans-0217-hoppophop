@@ -7,13 +7,20 @@
  */
 
 namespace Hph\Controller;
+use Hph\Model\PartnerManager;
 
-
-class PartnerController
+class PartnerController extends ControllerDefault
 {
-    public function render($twig)
+    public function getPartner()
     {
-        $template = $twig->load('partner.html.twig');
-        echo $template->render();
+        $partner = new PartnerManager();
+        return $partner->getPartner();
     }
+    public function render()
+    {
+        $partner = $this->getPartner();
+        return $this->twig->render('partner.html.twig', ['partners'=>$partner]);
+
+    }
+
 }

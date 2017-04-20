@@ -6,14 +6,13 @@
  * Time: 16:20
  */
 
-namespace hph\controller;
+namespace Hph\controller;
 
 
-class PlanningController
+class PlanningController extends ControllerDefault
 {
-    public function render($twig)
+    public function render()
     {
-        $template = $twig->load('planning.html.twig');
-        echo $template->render();
+        return $this->twig->render('planning.html.twig', ['places'=>$places, 'showcases'=>$showcase]);
     }
 }

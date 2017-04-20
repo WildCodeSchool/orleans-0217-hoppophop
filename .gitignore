@@ -5,3 +5,6 @@
 .idea
 /src/Hph/connect.php
 
+/admin/.htaccess
+/admin/.htpasswd
+

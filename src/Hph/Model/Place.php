@@ -1,15 +1,15 @@
 <?php
 /**
  * Created by PhpStorm.
+<<<<<<< HEAD
  * User: wilder9
  * Date: 11/04/17
  * Time: 16:10
  */
 
-namespace HPH\Model;
+namespace Hph\Model;
 
-
-class ConcertHall
+class Place
 {
     private $id;
     private $name;
@@ -17,6 +17,7 @@ class ConcertHall
     private $img_place;
     private $start;
     private $end;
+    private $showcase;
 
     /**
      * @return mixed
@@ -25,7 +26,6 @@ class ConcertHall
     {
         return $this->id;
     }
-
     /**
      * @param mixed $id
      */
@@ -33,7 +33,6 @@ class ConcertHall
     {
         $this->id = $id;
     }
-
     /**
      * @return mixed
      */
@@ -41,7 +40,6 @@ class ConcertHall
     {
         return $this->name;
     }
-
     /**
      * @param mixed $name
      */
@@ -49,7 +47,6 @@ class ConcertHall
     {
         $this->name = $name;
     }
-
     /**
      * @return mixed
      */
@@ -57,7 +54,6 @@ class ConcertHall
     {
         return $this->url;
     }
-
     /**
      * @param mixed $url
      */
@@ -69,14 +65,15 @@ class ConcertHall
     /**
      * @return mixed
      */
+
     public function getImgPlace()
     {
         return $this->img_place;
     }
-
     /**
      * @param mixed $img_place
      */
+
     public function setImgPlace($img_place)
     {
         $this->img_place = $img_place;
@@ -85,6 +82,7 @@ class ConcertHall
     /**
      * @return mixed
      */
+
     public function getStart()
     {
         return $this->start;
@@ -97,7 +95,6 @@ class ConcertHall
     {
         $this->start = $start;
     }
-
     /**
      * @return mixed
      */
@@ -105,7 +102,6 @@ class ConcertHall
     {
         return $this->end;
     }
-
     /**
      * @param mixed $end
      */
@@ -114,5 +110,13 @@ class ConcertHall
         $this->end = $end;
     }
 
+    public function getShowcase()
+    {
+        return $this->showcase;
+    }
 
+    public function setShowcase($showcase)
+    {
+        $this->showcase = $showcase;
+    }
 }

@@ -1,0 +1,105 @@
+{% extends "base.html.twig" %}
+{% block title %}Activités{% endblock %}
+{% block content %}
+    <div class="container">
+        <h2 class="text-center">Ajouter une activité du dimanche</h2>
+        <hr/>
+        <form method="POST" action="../../../../admin/admin.php?page=addSunday" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="title">Nom de l'activité</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Entrez le nom de l'activité" required>
+            </div>
+            <div class="form-group">
+                <label for="text">Texte de l'activité</label>
+                <textarea class="form-control textarea" name="content" id="content" placeholder="Entrez la description de l'activité" rows="10" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="img">Photo de l'activité</label>
+                <input type="file" id="img" name="img" required>
+                <p class="help-block">Aide à la photo</p>
+            </div>
+            <div class="text-center">
+                <input type="submit" name="submit" class="btn btn-primary" value="Créer">
+            </div>
+        </form>
+        <br />
+        <h2 class="text-center">Liste des activités du dimanche</h2>
+        <hr />
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Titre</th>
+                <th>Texte</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {%  for sunday in sundays %}
+                <tr>
+                    <th scope="row">{{ sunday.id }}</th>
+                    <td>{{ sunday.title }}</td>
+                    <td>{{ sunday.content }}</td>
+                    <td><img src="../../../../web/img/sunday/{{ sunday.imgSunday }}" alt="Image de l'activité" class="img-list"></td>
+                    <td>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit{{ sunday.id }}"><i class="fa fa-pencil"></i></button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{ sunday.id }}"><i class="fa fa-trash-o"></i></button>
+                    </td>
+                </tr>
+                <div class="modal fade" id="edit{{ sunday.id }}" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Modifier une activité</h4>
+                            </div>
+                            <form method="POST" action="../../../../admin/admin.php?page=updateSunday" enctype="multipart/form-data">
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="title">Nom de l'activité</label>
+                                        <input type="text" class="form-control" id="title" name="title" placeholder="Entrez le nom de l'activité" value="{{ sunday.title }}" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="text">Texte de l'activité</label>
+                                        <textarea class="form-control textarea" name="content" id="content" placeholder="Entrez la description de l'activité" rows="10" required>{{ sunday.content }}</textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="img">Photo de l'activité</label>
+                                        <input type="file" id="img" name="img" required>
+                                        <p class="help-block">Aide à la photo</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="hidden" name="id" value="{{ sunday.id }}">
+                                    <input type="submit" name="submit" class="btn btn-primary" value="Modifier">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="delete{{ sunday.id }}" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Supprimer une activité</h4>
+                            </div>
+                            <div class="modal-body">
+                                Êtes-vous sûr de vouloir supprimer l'activité {{ sunday.title }} ?
+                            </div>
+                            <div class="modal-footer">
+                                <form method="POST" action="../../../../admin/admin.php?page=deleteSunday">
+                                    <input type="hidden" name="id" value="{{ sunday.id }}">
+                                    <input type="submit" name="submit" class="btn btn-danger" value="Oui">
+                                </form>
+                                <button class="btn btn-default" data-dismiss="modal">Non</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

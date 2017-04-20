@@ -7,12 +7,21 @@
  */
 
 namespace Hph\Controller;
+use Hph\Model\PlaceManager;
+use Hph\Model\Place;
 
 
-class PlaceController
+class PlaceController extends ControllerDefault
 {
-    public function render($twig)
+    public function getPlaces($showcase = NULL)
     {
-        echo $twig->load('place.html.twig')->render();
+        $places = new PlaceManager();
+        return $places -> getPlaces($showcase);
+    }
+
+    public function render()
+    {
+        $places = $this->getPlaces();
+        return $this->twig->render('place.html.twig', ['places'=>$places, 'error'=>'']);
     }
 }
