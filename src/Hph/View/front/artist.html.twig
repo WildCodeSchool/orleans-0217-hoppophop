@@ -85,6 +85,47 @@
                     {% endfor %}
                 </div>
                 <hr class="hr">
+
+                {% else %}
+                {% endif %}
+                {% endfor %}
+
+            </div>
+            <div class="artiste-social text-center">
+                <a href="{{ artist.facebookUrl }}"><i class="fa fa-facebook-square social-logo" aria-hidden="true"></i></a>
+                <a href="{{ artist.twitterUrl }}"><i class="fa fa-twitter-square social-logo" aria-hidden="true"></i></a>
+
+                <a href="{{ artist.spotifyUrl }}"><i class="fa fa-spotify social-logo" aria-hidden="true"></i></a>
+                <a href="{{ artist.youtubeUrl }}"><i class="fa fa-youtube-square social-logo" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="visible-xs container">
+    <div class="col-xs-12">
+        <div class="content-div">
+            <img src="../web/img/artist/{{ artist.imgArtist }}" class="img-responsive">
+            <h1 class="font-circula">{{ artist.name }}</h1>
+          <p>{{ artist.bio }}</p>
+            <div class="artiste-tag">
+                {% for tag in tags %}
+
+                    {% if loop.index%2 == 0 and loop.index<tags|length %}
+                        <div class="font-circula tag_artist"> {{ tag.name }} <span class="orange">/</span></div>
+                    {% elseif loop.index%2 != 0 and loop.index<tags|length %}                                                                    <div class="font-circula tag_artist"> {{ tag.name }} <span class="turquoise">/</span></div>
+                    {% elseif loop.index%2 != 0 %}
+                        <div class="font-circula tag_artist"> {{ tag.name }}</div>
+                    {% else %}
+                        <div class="font-circula tag_artist"> {{ tag.name }}</div>
+
+
+
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <hr class="hr">
+            <div class="text-center">
+
                 {% for prog in progs %}
                     <div class="text-center">
                         <h2 class="font-circula">{{ prog.concert_start | date("l, F, d") }}</h2>
