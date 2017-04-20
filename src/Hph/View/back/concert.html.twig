@@ -1,0 +1,177 @@
+{% extends "base.html.twig" %}
+{% block title %}Concert{% endblock %}
+{% block content %}
+    <div class="container">
+        <h2 class="text-center">Ajouter un concert</h2>
+        <hr/>
+        <form method="POST" action="../../../../admin/admin.php?page=addConcert" enctype="multipart/form-data">
+
+            <div class="form-group">
+                <label for="start">Heure d'ouverture du concert</label>
+                <input type="text" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="start"
+                       name="start" required>
+            </div>
+            <div class="form-group">
+                <label for="start">Heure de fermeture du concert</label>
+                <input type="text" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="end" name="end"
+                       required>
+            </div>
+            <div class="form-group">
+                <label for="place">Artistes du concert</label>
+                <select multiple class="form-control" id="artist" name="artist" required>
+                    {% for artist in artists %}
+                        <option value="{{ artist.id }}">{{ artist.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="place">Lieu du concert</label>
+                <select multiple class="form-control" id="place" name="place" required>
+                    {% for place in places %}
+                        <option value="{{ place.id }}">{{ place.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <p><strong>Statut du concert</strong></p>
+                <label for="status-0">Programmé</label>
+                <input type="radio" name="status" value="programmed" id="status-0" checked>
+                <label for="status-1">Déprogrammé</label>
+                <input type="radio" name="status" value="canceled" id="status-1">
+                <label for="status-2">Supprimé</label>
+                <input type="radio" name="status" value="deleted" id="status-2">
+            </div>
+            <div class="form-group">
+                <p><strong>Showcase</strong></p>
+                <label for="showcase-0">Oui</label>
+                <input type="radio" name="showcase" value="1" id="showcase-0" checked>
+                <label for="showcase-1">Non</label>
+                <input type="radio" name="showcase" value="0" id="showcase-1"><br>
+            </div>
+
+            <div class="text-center">
+                <input type="submit" name="submit" class="btn btn-primary" value="Créer">
+            </div>
+        </form>
+        <br/>
+        <h2 class="text-center">Liste des concerts</h2>
+        <hr/>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Début</th>
+                <th>Fin</th>
+                <th>Artistes</th>
+                <th>Lieux</th>
+                <th>Status</th>
+                <th>Showcase</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for concert in concerts %}
+                <tr>
+                    <th scope="row">{{ concert.id }}</th>
+                    <td>{{ concert.concert_start | date("l H\\hi", "Europe/Paris") }}</td>
+                    <td>{{ concert.concert_end | date("l H\\hi", "Europe/Paris") }}</td>
+                    <td>{{ concert.artist_name }}</td>
+                    <td>{{ concert.place_name }}</td>
+                    <td>{{ concert.status }}</td>
+                    <td>{{ concert.showcase }}</td>
+                    <td>
+                        <button type="button" class="btn btn-success" data-toggle="modal"
+                                data-target="#edit{{ concert.id }}"><i class="fa fa-pencil"></i></button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal"
+                                data-target="#delete{{ concert.id }}"><i class="fa fa-trash-o"></i></button>
+                    </td>
+                </tr>
+                <div class="modal fade" id="edit{{ concert.id }}" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Modifier un Concert</h4>
+                            </div>
+                            <form method="POST" action="../../../../admin/admin.php?page=updateConcert"
+                                  enctype="multipart/form-data">
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="start">Heure d'ouverture du Concert</label>
+                                        <input type="text" class="form-control"
+                                               placeholder="Format : YYYY-MM-DD HH:MM:SS" id="start" name="start"
+                                               value="{{ concert.concert_start }}" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="start">Heure de fermeture du Concert</label>
+                                        <input type="text" class="form-control"
+                                               placeholder="Format : YYYY-MM-DD HH:MM:SS" id="end" name="end"
+                                               value="{{ concert.concert_end }}" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="place">Artistes du concert</label>
+                                        <select multiple class="form-control" id="artist" name="artist" required>
+                                            {% for artist in artists %}
+                                                <option value="{{ artist.id }}">{{ artist.name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="place">Lieu du Concert</label>
+                                        <select multiple class="form-control" id="place" name="place" required>
+                                            {% for place in places %}
+                                                <option value="{{ place.id }}">{{ place.name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <p><strong>Statut du concert</strong></p>
+                                        <label for="status-0">Programmé</label>
+                                        <input type="radio" name="status" value="programmed" id="status-0" checked>
+                                        <label for="status-1">Déprogrammé</label>
+                                        <input type="radio" name="status" value="canceled" id="status-1">
+                                        <label for="status-2">Supprimé</label>
+                                        <input type="radio" name="status" value="deleted" id="status-2">
+                                    </div>
+                                    <div class="form-group">
+                                        <p><strong>Showcase</strong></p>
+                                        <label for="showcase-0">Oui</label>
+                                        <input type="radio" name="showcase" value="1" id="showcase-0" checked>
+                                        <label for="showcase-1">Non</label>
+                                        <input type="radio" name="showcase" value="0" id="showcase-1"><br>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="hidden" name="id" value="{{ concert.id }}">
+                                    <input type="submit" name="submit" class="btn btn-primary" value="Modifier">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="delete{{ concert.id }}" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Supprimer un Concert</h4>
+                            </div>
+                            <div class="modal-body">
+                                Êtes-vous sûr de vouloir supprimer le Concert {{ concert.id }} ?
+                            </div>
+                            <div class="modal-footer">
+                                <form method="POST" action="../../../../admin/admin.php?page=deleteConcert">
+                                    <input type="hidden" name="id" value="{{ concert.id }}">
+                                    <input type="submit" name="submit" class="btn btn-danger" value="Oui">
+                                </form>
+                                <button class="btn btn-default" data-dismiss="modal">Non</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

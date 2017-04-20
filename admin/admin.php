@@ -32,7 +32,33 @@ if ($page == 'home') {
     if ($deleteArtist->deleteArtist($_POST['id'])) {
         header('Location: admin.php?page=artist');
     }
-} else if ($page == 'place') {
+}
+
+else if ($page == 'concert') {
+    $concert = new Hph\Controller\ConcertController('back');
+    $render = $concert->listConcert();
+} else if ($page == 'addConcert') {
+    $addConcert = new Hph\Model\ConcertManager();
+    if ($addConcert->addConcert($_POST, $_FILES)) {
+        header('Location: admin.php?page=concert');
+    }
+} else if ($page == 'updateConcert') {
+    $updateConcert = new Hph\Model\ConcertManager();
+    if ($updateConcert->updateConcert($_POST, $_FILES)) {
+        header('Location: admin.php?page=concert');
+    }
+} else if ($page == 'deleteConcert') {
+    $deleteConcert = new Hph\Model\ConcertManager();
+    if ($deleteConcert->deleteConcert($_POST['id'])) {
+        header('Location: admin.php?page=concert');
+    }
+}
+
+
+
+
+
+else if ($page == 'place') {
     $place = new Hph\Controller\PlaceController('back');
     $render = $place->render();
 } else if ($page == 'addPlace') {
