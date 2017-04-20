@@ -67,7 +67,6 @@ class Concert
     {
         $this->concert_end = $concert_end;
     }
-
     /**
      * @return mixed
      */
@@ -114,6 +113,21 @@ class Concert
     public function setStatus($status)
     {
         $this->status = $status;
+    }
+    /**
+     * @return mixed
+     */
+    public function getShowcase()
+    {
+        return $this->showcase;
+    }
+
+    /**
+     * @param mixed $showcase
+     */
+    public function setShowcase($showcase)
+    {
+        $this->showcase = $showcase;
     }
 
     /**

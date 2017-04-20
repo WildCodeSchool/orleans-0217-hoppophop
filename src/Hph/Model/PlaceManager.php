@@ -33,6 +33,12 @@ class PlaceManager extends \Hph\Db
         $sql = "INSERT INTO place VALUES (NULL, '" . $post['name'] . "', '" . $post['url'] . "', '" . $file['img']['name'] . "', '" . $post['start'] . "', '" . $post['end'] . "', '" . $post['showcase'] . "')";
         return $this->getDb()->exec($sql);
     }
+    public function findOne($id)
+    {
+        $req = "SELECT * FROM place WHERE id=$id";
+        $places = $this->dBQuery($req, 'Place');
+        return $places[0];
+    }
 
     public function updatePlace($post, $file)
     {

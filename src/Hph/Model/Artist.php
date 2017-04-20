@@ -180,6 +180,4 @@ class Artist
     {
         $this->tags = $tags;
     }
-
-
 }
