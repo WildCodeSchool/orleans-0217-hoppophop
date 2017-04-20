@@ -67,7 +67,6 @@ class ProgrammationController extends ControllerDefault
         } else {
             $artists = $this->getArtists();
         }
-
         return $this->twig->render('programmation.html.twig', ['artists' => $artists, 'places' => $places]);
     }
 }
