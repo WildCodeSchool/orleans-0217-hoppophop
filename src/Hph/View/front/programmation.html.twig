@@ -38,15 +38,11 @@
     <br/>
     <div class="container">
         <div class="row">
-
-
             {% for artist in artists %}
-
                 <div class="col-md-3 col-sm-6">
-                    <a href="index.php?page=artist&id={{ artist.id }}">
+                    <a href="../../../../index.php?page=artist&id={{ artist.id }}">
                         <div class="thumbnail thumbnail-div prog-artist text-center">
-                            <img src="../../../web/img/artist/{{ artist.imgArtist }}" class="img-responsive img-255
-{% if artist.status == 'canceled' %}img-cancel{% endif %}">
+                            <img src="../../../web/img/artist/{{ artist.img_artist }}" class="img-responsive img-255 {% if artist.status == 'canceled' %}img-cancel{% endif %}">
                             <div class="content-div prog-info text-center">
                                 <p class="info-text">{{ artist.name }}</p>
                                 <hr class="hr-min">

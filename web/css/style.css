@@ -210,6 +210,7 @@ body {
 .partnair-btn{
     background-color: rgba(43, 175, 151, 1);
     border: none;
+
 }
 @media (max-width: 1110px) {
     .partnair-logo {
@@ -380,6 +381,32 @@ body {
 
 /*Fin Programmation*/
 
+/*Artist*/
+.tag_artist {
+    display: inline;
+    font-size: 33px;
+}
+.prog_hour {
+    font-size: 28px;
+}
+
+.prog_place a:hover {
+    color: #ed7a21!important;
+}
+.showcase {
+    font-size: 25px;
+}
+.social-logo{
+    font-size: 40px;
+    margin: 3%;
+    color: white;
+}
+.upper {
+    text-transform: capitalize;
+}
+/*Fin Artiste*/
+
+
 /*Planning*/
 
 .planning {
@@ -455,18 +482,15 @@ body {
 }
 /*Fin Planning*/
 
-/*Artiste*/
-
-.social-logo{
-    font-size: 40px;
-    margin: 3%;
-    color: white;
-}
-.upper {
-    text-transform: capitalize;
+/*Volunteer*/
+.volunteer_btn {
+    text-align: center;
+    display: inline-block;
 }
 
-/*Fin Artiste*/
+
+
+
 
 /*Venir*/
 

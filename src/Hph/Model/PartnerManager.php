@@ -15,6 +15,7 @@ class PartnerManager extends \Hph\Db
     {
         $req = "SELECT * FROM partner";
         return $this->dBQuery($req, 'Partner');
+
     }
     public function addPartner($post, $file)
     {
@@ -32,5 +33,6 @@ class PartnerManager extends \Hph\Db
     {
         $sql = "DELETE FROM partner WHERE id=".$id;
         return $this->getDb()->exec($sql);
+
     }
 }

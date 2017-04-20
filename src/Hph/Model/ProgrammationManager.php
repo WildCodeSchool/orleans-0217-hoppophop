@@ -22,7 +22,7 @@ class ProgrammationManager extends \Hph\Db
     public function getArtists()
     {
         $req = "SELECT * FROM artist JOIN concert ON artist.id=concert.artist_id WHERE status = 'programmed' OR status = 'canceled'";
-        return $this->dBQuery($req, 'Artist');
+        return $this->dBFetchAll($req, 'Artist');
     }
 
 
