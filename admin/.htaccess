@@ -1,4 +1,0 @@
-AuthName "Administration : Indentification"
-AuthType Basic
-AuthUserFile "/home/quentin/projets/projet/admin/.htpasswd"
-Require valid-user
