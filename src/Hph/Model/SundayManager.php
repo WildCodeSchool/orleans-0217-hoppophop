@@ -7,7 +7,7 @@
  */
 
 namespace Hph\Model;
-
+use Valitron;
 
 class SundayManager extends \Hph\Db
 {
@@ -18,12 +18,18 @@ class SundayManager extends \Hph\Db
     }
     public function addSunday($post, $file)
     {
-        $upload = $this->addImg($file, 'sunday');
-        if($upload!=true){
-            return $upload;
+        $p = new Valitron\Validator($post);
+        $p->rule('required', ['title', 'content']);
+        if($p->validate()) {
+            $upload = $this->addImg($file, 'sunday');
+            if($upload!=true){
+                return $upload;
+            }
+            $sql = "INSERT INTO sunday VALUES (NULL, '".$post['title']."', '".$file['img']['name']."', '".$post['content']."')";
+            return $this->getDb()->exec($sql);
+        } else {
+            return $p->errors();
         }
-        $sql = "INSERT INTO sunday VALUES (NULL, '".$post['title']."', '".$file['img']['name']."', '".$post['content']."')";
-        return $this->getDb()->exec($sql);
     }
     public function updateSunday($post, $file)
     {

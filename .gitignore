@@ -3,6 +3,8 @@
 
 /vendor/
 .idea
+/admin/.htaccess
+/admin/.htpasswd
 
 /src/Hph/connect.php
 

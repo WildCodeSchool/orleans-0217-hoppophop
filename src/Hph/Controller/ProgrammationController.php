@@ -14,6 +14,12 @@ use Hph\Model\ProgrammationManager;
 class ProgrammationController extends ControllerDefault
 {
 
+    public function allArtist()
+    {
+        $artists = new ProgrammationManager();
+        return $artists->allArtist();
+
+    }
     public function getArtists()
     {
         $artists = new ProgrammationManager();
@@ -41,6 +47,12 @@ class ProgrammationController extends ControllerDefault
         return $artist->getArtistsLocal($local);
     }
 
+    public function listAllArtist()
+    {
+        $artists = $this->allArtist();
+        return $this->twig->render('programmation.html.twig', ['artists' => $artists]);
+    }
+
     public function listArtist()
 >>>>>>> 3f9de7bb2ffb66e4c42c49a29b782a9fb6797e7e
     {
@@ -60,6 +72,6 @@ class ProgrammationController extends ControllerDefault
             $artists = $this->getArtists();
         }
 
-        return $this->twig->render('programmation.html.twig', ['artistes' => $artists, 'places' => $places]);
+        return $this->twig->render('programmation.html.twig', ['artists' => $artists, 'places' => $places]);
     }
 }
