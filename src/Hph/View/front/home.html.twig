@@ -35,7 +35,7 @@
             <hr class="hr">
             <div class="separator-div home-ticket">
                 <h2 class="font-circula"><i class="fa fa-ticket" aria-hidden="true"></i> Pass 1 Journée ou 2 Jours disponibles</h2>
-                <a href="../../../../index.php?page=billetterie" class="btn btn-primary">Accéder à la Billetterie</a>
+                <a href="../../../../index.php?page=ticket" class="btn btn-primary">Accéder à la Billetterie</a>
             </div>
             <h1 class="separator-title font-dokyo">ACTUALITES</h1>
             <hr class="hr">
@@ -44,8 +44,8 @@
                     <div class="row">
                         {%  for news in newsAll %}
                             <div class="col-xs-12 col-xs-offset-0 col-sm-4">
-                                <div class="content-div text-justify">
-                                    <img src="../../../web/img/news/{{ news.imgNews }}" class="img-responsive">
+                                <div class="content-div text-justify ">
+                                    <img src="../../../web/img/news/{{ news.imgNews }}" class="img-responsive" style="margin-left: auto; margin-right: auto">
                                     <a href="index.php?page=newsOne&id={{ news.id }}" class="news-link"><h2 class="font-circula">{{ news.title }}</h2></a>
                                     <hr class="hr">
                                     <p>{{ news.text }}</p>
@@ -55,7 +55,7 @@
                         {% endfor %}
                     </div>
                     <br />
-                    <a href="../../../../index.php?page=news"class="news-all">Voir plus d'actualités</a>
+                    <a href="../../../../index.php?page=news"class="btn btn-primary">Voir plus d'actualités</a>
                 </div>
             </div>
         </div>
