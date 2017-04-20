@@ -23,7 +23,7 @@
             </div>
             <div class="form-group">
                 <label for="place">Lieu du foodtruck</label>
-                <select multiple class="form-control" id="place" name="place" required>
+                <select class="form-control" id="place" name="place" required>
                     {%  for place in places %}
                         <option value="{{ place.id }}">{{ place.name }}</option>
                     {% endfor %}
@@ -62,8 +62,8 @@
                     <td>{{ food.content }}</td>
                     <td><img src="../../../../web/img/foodtruck/{{ food.imgEat }}" alt="Image du Foodtruck" class="img-list"></td>
                     <td>{{ food.place_name }}</td>
-                    <td>{{ food.start|date('l') }}</td>
-                    <td>{{ food.end|date('l') }}</td>
+                    <td>{{ food.start|localizeddate('long', 'short', 'fr') }}</td>
+                    <td>{{ food.end|localizeddate('long', 'short', 'fr') }}</td>
                     <td>
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit{{ food.id }}"><i class="fa fa-pencil"></i></button>
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{ food.id }}"><i class="fa fa-trash-o"></i></button>
@@ -96,7 +96,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="place">Lieu du Foodtruck</label>
-                                        <select multiple class="form-control" id="place" name="place" required>
+                                        <select class="form-control" id="place" name="place" required>
                                             {%  for place in places %}
                                                 <option value="{{ place.id }}">{{ place.name }}</option>
                                             {% endfor %}

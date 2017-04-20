@@ -8,17 +8,15 @@
 
             <div class="form-group">
                 <label for="start">Heure d'ouverture du concert</label>
-                <input type="text" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="start"
-                       name="start" required>
+                <input type="text" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="start" name="start" required>
             </div>
             <div class="form-group">
                 <label for="start">Heure de fermeture du concert</label>
-                <input type="text" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="end" name="end"
-                       required>
+                <input type="text" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="end" name="end" required>
             </div>
             <div class="form-group">
                 <label for="place">Artistes du concert</label>
-                <select multiple class="form-control" id="artist" name="artist" required>
+                <select  class="form-control" id="artist" name="artist" required>
                     {% for artist in artists %}
                         <option value="{{ artist.id }}">{{ artist.name }}</option>
                     {% endfor %}
@@ -26,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label for="place">Lieu du concert</label>
-                <select multiple class="form-control" id="place" name="place" required>
+                <select  class="form-control" id="place" name="place" required>
                     {% for place in places %}
                         <option value="{{ place.id }}">{{ place.name }}</option>
                     {% endfor %}
@@ -72,12 +70,18 @@
             {% for concert in concerts %}
                 <tr>
                     <th scope="row">{{ concert.id }}</th>
-                    <td>{{ concert.concert_start | date("l H\\hi", "Europe/Paris") }}</td>
-                    <td>{{ concert.concert_end | date("l H\\hi", "Europe/Paris") }}</td>
+                    <td>{{ concert.concert_start | localizeddate('long', 'short', 'fr') }}</td>
+                    <td>{{ concert.concert_end | localizeddate('long', 'short', 'fr') }}</td>
                     <td>{{ concert.artist_name }}</td>
                     <td>{{ concert.place_name }}</td>
                     <td>{{ concert.status }}</td>
-                    <td>{{ concert.showcase }}</td>
+                    <td>
+                        {% if concert.showcase==1 %}
+                            Oui
+                        {% else %}
+                            Non
+                        {% endif %}
+                    </td>
                     <td>
                         <button type="button" class="btn btn-success" data-toggle="modal"
                                 data-target="#edit{{ concert.id }}"><i class="fa fa-pencil"></i></button>
@@ -110,7 +114,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="place">Artistes du concert</label>
-                                        <select multiple class="form-control" id="artist" name="artist" required>
+                                        <select class="form-control" id="artist" name="artist" required>
                                             {% for artist in artists %}
                                                 <option value="{{ artist.id }}">{{ artist.name }}</option>
                                             {% endfor %}
@@ -118,7 +122,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="place">Lieu du Concert</label>
-                                        <select multiple class="form-control" id="place" name="place" required>
+                                        <select class="form-control" id="place" name="place" required>
                                             {% for place in places %}
                                                 <option value="{{ place.id }}">{{ place.name }}</option>
                                             {% endfor %}

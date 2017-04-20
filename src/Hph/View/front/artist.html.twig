@@ -32,10 +32,10 @@
                     <div class="content-div upper text-center">
                         <img src="../web/img/artist/{{ artist.imgArtist }}" class="img-255">
                         <div class="text-center">
-                            <h2 class="font-circula">{{prog.concert_start | date(" l, F, d ")}}</h2>
+                            <h2 class="font-circula">{{prog.concert_start |  localizeddate('long', 'none', 'fr')}}</h2>
                             <hr class="hr-small">
                             <h3 class="font-circula prog_place"><a class="white" href="{{ prog.url }}" >{{ prog.name }}</a> </h3>
-                            <h4 class="font-circula prog_hour">{{ prog.concert_start | date("H:i") }} <span class="turquoise bold">|</span> {{ prog.concert_end | date("H:i") }}</h4>
+                            <h4 class="font-circula prog_hour">{{ prog.concert_start  | localizeddate('none', 'short', 'fr') }} <span class="turquoise bold">|</span> {{ prog.concert_end | localizeddate('none', 'short', 'fr') }}</h4>
                         </div>
                     </div>
                     {% if not prog.showcase ==0  %}
@@ -48,9 +48,9 @@
                                 {{ prog.name }}
                             </h5>
                             <h6 class="font-circula white text-center prog_hour">
-                                {{ prog.concert_start | date("H:i") }}
+                                {{ prog.concert_start | localizeddate('none', 'short', 'fr') }}
                                 <span class="turquoise bold">|</span>
-                                {{ prog.concert_end | date("H:i") }}
+                                {{ prog.concert_end | localizeddate('none', 'short', 'fr') }}
                             </h6>
                         </div>
                     {% endif %}
@@ -87,9 +87,9 @@
                 <hr class="hr">
                 {% for prog in progs %}
                     <div class="text-center">
-                        <h2 class="font-circula">{{ prog.concert_start | date("l, F, d") }}</h2>
+                        <h2 class="font-circula">{{ prog.concert_start | localizeddate('long', 'none', 'fr') }}</h2>
                         <h3 class="font-circula prog_place"><a class="white" href="{{ prog.url }}" >{{ prog.name }}</a></h3>
-                        <h4 class="font-circula prog_hour">{{ prog.concert_start | date("H:i") }} <span class="turquoise bold">|</span> {{ prog.concert_end | date("H:i") }}</h4>
+                        <h4 class="font-circula prog_hour">{{ prog.concert_start | localizeddate('none', 'short', 'fr') }} <span class="turquoise bold">|</span> {{ prog.concert_end | localizeddate('none', 'short', 'fr') }}</h4>
                         {% if not prog.showcase ==0  %}
                             <hr class="hr-small">
                             <div class="showcase">
@@ -100,9 +100,9 @@
                                     {{ prog.name }}
                                 </h5>
                                 <h6 class="font-circula white text-center prog_hour">
-                                    {{ prog.concert_start | date("H:i") }}
+                                    {{ prog.concert_start | localizeddate('none', 'short', 'fr') }}
                                     <span class="turquoise bold">|</span>
-                                    {{ prog.concert_end | date("H:i") }}
+                                    {{ prog.concert_end | localizeddate('none', 'short', 'fr') }}
                                 </h6>
                             </div>
                         {% endif %}
