@@ -4,15 +4,23 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            {%  for news in newsAll %}
+            {% for news in newsAll %}
                 <div class="col-xs-12 col-xs-offset-0 col-sm-4">
                     <div class="content-div text-justify">
-                        <img src="../../../web/img/news/{{ news.imgNews }}" class="img-responsive" style="margin-right: auto; margin-left: auto">
-                        <a href="index.php?page=newsOne&id={{ news.id }}" class="news-link"><h2 class="font-circula">{{ news.title }}</h2></a>
+
+                        <img src="../../../web/img/news/{{ news.imgNews }}" class="img-responsive"
+                             style="margin-right: auto; margin-left: auto">
+
+                        <div class="text-center">
+                            <img src="../../../web/img/news/{{ news.imgNews }}" class="img-255">
+                        </div>
+
+                        <a href="index.php?page=newsOne&id={{ news.id }}" class="news-link"><h2
+                                    class="font-circula">{{ news.title }}</h2></a>
                         <hr class="hr">
                         <p>{{ news.text }}</p>
                     </div>
-                    <br />
+                    <br/>
                 </div>
             {% endfor %}
         </div>

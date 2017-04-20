@@ -13,11 +13,6 @@ class PartnerController extends ControllerDefault
 {
     public function getPartner()
     {
-        $partnerRequest = new PartnerManager();
-        $partner = $partnerRequest->getPartner();
-        return $this->twig->render('partner.html.twig', ['partners' => $partner]);
-
-
         $partner = new PartnerManager();
         return $partner->getPartner();
     }

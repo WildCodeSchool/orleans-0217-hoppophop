@@ -7,7 +7,7 @@
  */
 
 namespace Hph\Controller;
-use Hph\Model\ArtistRequest;
+use Hph\Model\ArtistManager;
 
 class ArtistController extends ControllerDefault
 {
@@ -16,10 +16,10 @@ class ArtistController extends ControllerDefault
     public function showArtist($id)
     {
         // appel au modèle
-        $artistRequest = new ArtistRequest();
-        $artists = $artistRequest->findOne($id);
-        $tags = $artistRequest->findArtistTag($id);
-        $progs = $artistRequest->findProg($id);
+        $artistManager = new ArtistManager();
+        $artists = $artistManager->findOne($id);
+        $tags = $artistManager->findArtistTag($id);
+        $progs = $artistManager->findProg($id);
       // var_dump($artists);
 
 
