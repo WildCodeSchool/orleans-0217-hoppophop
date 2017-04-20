@@ -106,8 +106,8 @@
                     <h6 class="font-circula white text-center prog_hour">{{ prog.concert_start | date("H:i") }} <span class="turquoise bold">|</span> {{ prog.concert_end | date("H:i") }}
                     {% else %}
                     {% endif %}
+                </div>
                 {% endfor %}
-            </div>
             <hr class="hr">
             <div class="artiste-social text-center">
                 <a href="{{ artist.facebookUrl }}"><i class="fa fa-facebook-square social-logo" aria-hidden="true"></i></a>
