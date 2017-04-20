@@ -11,6 +11,10 @@ namespace Hph\Model;
 
 class ArtistManager extends \Hph\Db
 {
+    public function getArtists()
+    {
+        $req = "SELECT * FROM artist"; return $this->dBQuery($req, 'Artist');
+    }
     public function findOne($id)
     {
         $req = "SELECT * FROM artist WHERE id = $id";
