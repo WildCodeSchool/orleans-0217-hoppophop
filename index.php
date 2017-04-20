@@ -36,9 +36,6 @@ if($page == 'home') {
 }else if($page == 'volunteer') {
     $volunteer = new Hph\Controller\VolunteerController();
     $render = $volunteer->render();
-}else if($page == 'benevolat') {
-    $benevolat = new Hph\Controller\BenevolatController();
-    $render = $benevolat->render();
 }else if($page == 'transport') {
     $transport = new Hph\Controller\TransportController();
     $render = $transport->render();
