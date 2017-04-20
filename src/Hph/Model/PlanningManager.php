@@ -6,29 +6,58 @@
  * Time: 14:24
  */
 
-namespace HPH\Model;
 
 
 class PlanningManager extends \Hph\Db
+
 {
-    public function getConcertHall ()
+    const STATUS_PROGRAMMED = 'programmed';
+    const STATUS_CANCELED = 'canceled';
+
+    public function getPlace()
     {
-        $req = "SELECT name FROM place";
-        $res = $this->db->query($req);
-        return $res->fetchAll(\PDO::FETCH_CLASS, __NAMESPACE__ . '\model\Place');
+        $req = "SELECT * FROM place";
+        $res = $this->getDb()->query($req);
+        return $res->fetchAll(\PDO::FETCH_BOTH);
     }
 
-    public function getArtist ()
+    public function getArtist()
     {
-        $req = "SELECT name FROM artist";
-        $res = $this->db->query($req);
-        return $res->fetchAll(\PDO::FETCH_CLASS, __NAMESPACE__ . '\model\Artist');
+        $req = "SELECT * FROM artist";
+        $res = $this->getDb()->query($req);
+        return $res->fetchAll(\PDO::FETCH_BOTH);
     }
 
-    public function getConcertHour ()
+    public function getConcert()
     {
-        $req = "SELECT concert_start,concert_end FROM concert";
-        $res = $this->db->query($req);
-        return $res->fetchAll(\PDO::FETCH_CLASS,__NAMESPACE__ . 'model\Concert');
+        $req = "SELECT * FROM concert";
+        $res = $this->getDb()->query($req);
+        return $res->fetchAll(\PDO::FETCH_BOTH);
+    }
+
+    public function getConcertsToShowWoShowCase() : array
+    {
+        $req = "SELECT * FROM concert WHERE status IN (:prog , :cancel) AND showcase=0";
+         $stmt = $this->getDb()->prepare($req);
+         $stmt->bindValue(':prog', self::STATUS_PROGRAMMED);
+         $stmt->bindValue(':cancel', self::STATUS_CANCELED);
+         if(!$stmt->execute()) {
+             throw new \Exception("Impossible d executer la requete SQL.");
+         }
+         $concerts = $stmt->fetchAll();
+        return $concerts;
+    }
+
+    public function getShowCases() : array
+    {
+        $req = "SELECT * FROM concert WHERE status IN (:prog , :cancel) AND showcase=1";
+        $stmt = $this->getDb()->prepare($req);
+        $stmt->bindValue(':prog', self::STATUS_PROGRAMMED);
+        $stmt->bindValue(':cancel', self::STATUS_CANCELED);
+        if(!$stmt->execute()) {
+            throw new \Exception("Impossible d executer la requete SQL.");
+        }
+        $showcases = $stmt->fetchAll();
+        return $showcases;
     }
 }

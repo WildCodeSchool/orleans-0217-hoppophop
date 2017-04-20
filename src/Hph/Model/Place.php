@@ -4,7 +4,11 @@
 <<<<<<< HEAD
  * User: wilder9
  * Date: 11/04/17
+<<<<<<< HEAD
  * Time: 16:10
+=======
+ * Time: 17:08
+>>>>>>> planning
  */
 
 namespace Hph\Model;
@@ -29,6 +33,7 @@ class Place
     /**
      * @param mixed $id
      */
+
     public function setId($id)
     {
         $this->id = $id;
@@ -36,6 +41,7 @@ class Place
     /**
      * @return mixed
      */
+
     public function getName()
     {
         return $this->name;
@@ -50,13 +56,16 @@ class Place
     /**
      * @return mixed
      */
+
     public function getUrl()
     {
         return $this->url;
     }
+
     /**
      * @param mixed $url
      */
+
     public function setUrl($url)
     {
         $this->url = $url;
@@ -87,10 +96,10 @@ class Place
     {
         return $this->start;
     }
-
     /**
      * @param mixed $start
      */
+
     public function setStart($start)
     {
         $this->start = $start;
@@ -98,6 +107,7 @@ class Place
     /**
      * @return mixed
      */
+
     public function getEnd()
     {
         return $this->end;
@@ -105,6 +115,7 @@ class Place
     /**
      * @param mixed $end
      */
+
     public function setEnd($end)
     {
         $this->end = $end;
