@@ -7,7 +7,9 @@
             {%  for food in foods %}
                 <div class="col-xs-12 col-xs-offset-0 col-sm-4">
                     <div class="content-div text-justify">
-                        <img src="../../../web/img/foodtruck/{{ food.imgEat }}" class="img-responsive">
+                        <div class="text-center">
+                            <img src="../../../web/img/foodtruck/{{ food.imgEat }}" class="img-255">
+                        </div>
                         <h2 class="font-circula">{{ food.name }}</h2>
                         <hr class="hr">
                         <p>{{ food.content }}</p>

@@ -21,6 +21,8 @@ class ControllerDefault
             $loader = new \Twig_Loader_Filesystem('../src/Hph/View/back/');
         }
         $this->twig = new \Twig_Environment($loader, array('debug' => true, 'cache' => false));
+        $this->twig->getExtension('Twig_Extension_Core')->setTimezone('Europe/Paris');
+        $this->twig->addExtension(new \Twig_Extensions_Extension_Intl());
         $this->twig->addExtension(new \Twig_Extension_Debug());
     }
 }

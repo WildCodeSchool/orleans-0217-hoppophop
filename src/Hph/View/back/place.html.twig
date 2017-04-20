@@ -58,8 +58,8 @@
                     <td>{{ place.name }}</td>
                     <td><a href="http://{{ place.url }}">{{ place.url }}</a></td>
                     <td><img src="../../../../web/img/place/{{ place.imgPlace }}" alt="Image du lieux" class="img-list"></td>
-                    <td>{{ place.start|date("l") }}</td>
-                    <td>{{ place.end|date("l") }}</td>
+                    <td>{{ place.start|localizeddate('long', 'short', 'fr') }}</td>
+                    <td>{{ place.end|localizeddate('long', 'short', 'fr') }}</td>
                     <td>
                         {% if place.showcase==1 %}
                             Oui

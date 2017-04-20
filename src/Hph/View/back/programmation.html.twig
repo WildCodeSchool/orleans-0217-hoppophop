@@ -56,7 +56,7 @@
             <tr>
                 <th>#</th>
                 <th>Nom</th>
-                <th>Description</th>
+                <!--<th>Description</th>-->
                 <th>Image</th>
                 {#<th>Vidéo</th>#}
                 {#<th>Facebook</th>#}
@@ -71,15 +71,15 @@
                 <tr>
                     <th scope="row">{{ artist.id }}</th>
                     <td>{{ artist.name }}</td>
-                    <td>{{ artist.bio }}</td>
+                    {#<td>{{ artist.bio }}</td>#}
                     <td><img src="../../../../web/img/artist/{{ artist.imgArtist }}" alt="Image de l'artiste" class="img-list"></td>
-                    {#<td>{{ artiste.video_url }}</td>#}
-                    {#<td>{{ artiste.facebook_url }}</td>#}
-                    {#<td>{{ artiste.youtube_url }}</td>#}
-                    {#<td>{{ artiste.twitter_url }}</td>#}
-                    {#<td>{{ artiste.spotify_url }}</td>#}
-                    <td class="text-center">{{ artist.local }}</td>
-
+                    <td>
+                        {% if artist.local==1 %}
+                            Oui
+                        {% else %}
+                            Non
+                        {% endif %}
+                    </td>
                     <td>
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit{{ artist.id }}"><i class="fa fa-pencil"></i></button>
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{ artist.id }}"><i class="fa fa-trash-o"></i></button>
