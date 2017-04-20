@@ -4,9 +4,13 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            {%  for news in newsOne %}
+            {% for news in newsOne %}
                 <div class="col-xs-12 col-xs-offset-0 col-sm-4 col-sm-offset-4">
                     <div class="content-div text-justify">
+
+                        <img src="../../../web/img/news/{{ news.imgNews }}" class="img-responsive"
+                             style="margin-right: auto;margin-left: auto">
+
                         <div class="text-center">
                             <img src="../../../web/img/news/{{ news.imgNews }}" class="img-255">
                         </div>
@@ -14,7 +18,7 @@
                         <hr class="hr">
                         <p>{{ news.text }}</p>
                     </div>
-                    <br />
+                    <br/>
                 </div>
             {% endfor %}
         </div>

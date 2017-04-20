@@ -1,7 +1,7 @@
 /*General*/
 
 body {
-    background: url("../img/global/background.png") center center  no-repeat fixed;
+    background: url("../img/global/background.png") center center no-repeat fixed;
     background-size: cover;
     position: relative;
     padding-top: 100px;
@@ -11,86 +11,108 @@ body {
     font-family: 'Circula-Medium';
     src: url('../fonts/circula-medium.otf');
 }
+
 @font-face {
     font-family: 'Dokyo';
     src: url('../fonts/Dokyo.ttf');
 }
+
 @font-face {
     font-family: 'Roboto', sans-serif;
     src: url('https://fonts.googleapis.com/css?family=Roboto');
 }
+
 .font-circula {
     font-family: 'Circula-Medium', sans-serif;
 }
+
 .font-dokyo {
     font-family: 'Dokyo', sans-serif;
 }
+
 * {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
+
 .content-div {
     background-color: transparent;
     color: white;
 }
+
 .hr {
     border: 2.5px solid rgba(237, 122, 33, 1);
 }
+
 .hr-min {
     border: 2.5px solid rgba(237, 122, 33, 1);
     width: 80%;
-    margin-top: 0!important;
-    margin-bottom: 0!important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
 }
-.hr-small{
+
+.hr-small {
     border: 2.5px solid rgba(237, 122, 33, 1);
     width: 50%;
 }
+
 @media (max-width: 1110px) {
     .separator-title {
         font-size: 11vw;
         color: white;
     }
 }
+
 @media (min-width: 1110px) {
     .separator-title {
         font-size: 7.5vw;
         color: white;
     }
 }
+
 .title {
     color: white;
 }
+
 .separator-div {
     padding: 1%;
 }
+
 .thumbnail-div {
     background-color: transparent;
     border: none;
 }
+
 .thumbnail-title {
     color: white;
 }
+
 .turquoise {
     color: #2baf97;
 }
+
 .orange {
     color: #ed7a21;
 }
+
 .white {
     color: white;
 }
+
 .bold {
     font-weight: bold;
 }
+
 @media (max-width: 1110px) {
     .header {
         display: none;
     }
+
     body {
         padding-top: 100px;
     }
 }
+
 @media (min-width: 1110px) {
     .header {
         margin-top: 5%;
@@ -98,132 +120,164 @@ body {
         margin-bottom: 5%;
     }
 }
+
 .img-255 {
-    height: 255px!important;
-    width: 255px!important;
+    height: 255px !important;
+    width: 255px !important;
 }
+
+a:hover {
+    color: rgba(43, 175, 151, 1);
+}
+
 /*Fin General*/
 
 /*Navbar*/
 
 .navbar {
     border: none;
-    -webkit-border-radius:0;
-    -moz-border-radius:0;
-    border-radius:0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
     background-color: #18252e;
 }
+
 .dropdown-menu {
     background-color: #18252e;
     border: none;
     border-radius: 0;
 }
+
 .navbar-brand {
     max-height: 100%;
-    height:80%;
+    height: 80%;
     padding-left: 20px !important;
     padding-top: 10px !important;
 
 }
+
 .navbar-burger {
     border: none;
     position: relative;
-    top:10px;
+    top: 10px;
 }
+
 .navbar-toggle {
     border: none;
 }
-.navbar-collapse{
+
+.navbar-collapse {
     border-top: none;
 }
+
 .navbar-nav > li:hover {
     background-color: transparent;
 }
+
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-    color: #ed7a21!important;
+    color: #ed7a21 !important;
 }
+
 .navbar-nav > li > a {
     position: relative;
-    top:10px;
+    top: 10px;
     font-size: 20px;
-    color: white!important;
+    color: white !important;
 }
+
 .navbar-nav > li > a:focus {
-    background-color: transparent!important;
+    background-color: transparent !important;
 }
+
 .dropdown-menu > li > a {
-    color: white!important;
+    color: white !important;
 }
+
 .dropdown-menu > li > a:hover {
     background-color: transparent;
-    color: #ed7a21!important;
+    color: #ed7a21 !important;
 }
+
 .navbar-active {
-    color: #ed7a21!important;
+    color: #ed7a21 !important;
 }
+
 @media (max-width: 1110px) {
     .navbar-header {
         float: none;
     }
+
     .navbar-toggle {
         display: block;
     }
+
     .navbar-collapse.collapse {
-        display: none!important;
+        display: none !important;
     }
+
     .navbar-nav {
-        float: none!important;
+        float: none !important;
         margin: 7.5px -15px;
     }
-    .navbar-nav>li {
+
+    .navbar-nav > li {
         float: none;
     }
-    .navbar-nav>li>a {
+
+    .navbar-nav > li > a {
         padding-top: 10px;
         padding-bottom: 10px;
     }
-    .collapse.in{
-        display:block !important;
+
+    .collapse.in {
+        display: block !important;
     }
+
     .mobile-title {
         font-family: 'Dokyo', sans-serif;
-        color: white!important;
+        color: white !important;
     }
 }
+
 @media (min-width: 1110px) {
     .mobile-title {
         display: none;
     }
 }
+
 .navbar-nav > li > a {
-    font-family: 'Circula-Medium', sans-serif!important;
+    font-family: 'Circula-Medium', sans-serif !important;
 }
-.navbar-nav>.active>a, .navbar-nav>.active>a:hover, .navbar-nav>.active>a:focus {
-    color: #ed7a21!important;
-    background-color: transparent!important;
+
+.navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #ed7a21 !important;
+    background-color: transparent !important;
 }
 
 /*Fin Navbar */
 
 /*Partenaire*/
 
-.partnair-btn{
+.partnair-btn {
     background-color: rgba(43, 175, 151, 1);
     border: none;
 
 }
+
 @media (max-width: 1110px) {
     .partnair-logo {
         width: 100%;
         height: 75px;
     }
 }
+
 @media (min-width: 1110px) {
     .partnair-logo {
         width: 100%;
         height: 200px;
     }
 }
+
 /*Fin Partenaire*/
 
 /*Accueil*/
@@ -234,32 +288,39 @@ body {
         font-size: 22px;
         text-decoration: none;
     }
+
     .home-progDiv {
         padding: 5%;
     }
 }
+
 @media (min-width: 1110px) {
     .home-prog {
         display: inline;
         font-size: 36px;
     }
 }
+
 .home-link {
     color: white;
     text-decoration: none;
 }
+
 .link-orange:hover {
     text-decoration: none;
     color: #ed7a21;
 }
+
 .link-turquoise:hover {
     text-decoration: none;
     color: #2baf97;
 }
+
 .home-ticket {
     color: white;
     font-size: 36px;
 }
+
 .logo-big {
     margin-left: auto;
     margin-right: auto;
@@ -274,43 +335,51 @@ body {
     background-color: #18252e;
     padding-top: 5%;
 }
+
 .footer-top {
     padding: 1%;
 }
+
 .footer-bottom {
     padding: 1%;
 }
+
 .footer-legal {
     color: white;
     margin-bottom: 0;
 }
+
 .footer-last {
     padding-bottom: 1%;
 }
+
 @media (max-width: 1110px) {
     .footer-sponsor {
         background-color: white;
-        border-radius : 20px;
+        border-radius: 20px;
         color: #004e57;
         border: 2px solid #2baf97;
         box-shadow: 2px 2px 0 #017553;
         width: 100%;
         height: 75px;
     }
+
     #ecole-logo {
         margin-top: 30%;
     }
 }
+
 @media (min-width: 1110px) {
     .footer-sponsor {
         background-color: white;
-        border-radius : 20px;
+        border-radius: 20px;
         color: #004e57;
         border: 2px solid #2baf97;
         box-shadow: 3px 3px 0 #017553;
         width: 100%;
         height: 200px;
     }
+
     #ecole-logo {
         margin-top: 17.5%;
     }
@@ -326,6 +395,7 @@ body {
         margin: 0;
     }
 }
+
 @media (min-width: 1110px) {
     .prog-dropdown {
         display: inline;
@@ -341,40 +411,48 @@ body {
     border-radius: 5px;
     border: none;
 }
+
 .filter-list {
     background-color: #18252e;
     box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
     color: #18252e;
 }
+
 .prog-artist {
     height: 350px;
 }
+
 .prog-img {
     box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
 }
+
 .prog-info {
     margin-top: 5%;
 }
+
 .info-text {
     font-family: 'Circula-Medium', sans-serif;
     font-size: 24px;
     color: white;
-    margin: 0!important;
-    padding: 0!important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
+
 .prog-filter a:hover {
-    color: #ed7a21!important;
+    color: #ed7a21 !important;
 }
+
 .prog-cancel {
     position: absolute;
     margin: auto;
     top: 0;
-    left:0;
-    right:0;
-    bottom:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     margin-top: 10%;
     color: #ed7a21;
 }
+
 .img-cancel {
     opacity: 0.25;
 }
@@ -386,26 +464,30 @@ body {
     display: inline;
     font-size: 33px;
 }
+
 .prog_hour {
     font-size: 28px;
 }
 
 .prog_place a:hover {
-    color: #ed7a21!important;
+    color: #ed7a21 !important;
 }
+
 .showcase {
     font-size: 25px;
 }
-.social-logo{
+
+.social-logo {
     font-size: 40px;
     margin: 3%;
     color: white;
 }
+
 .upper {
     text-transform: capitalize;
 }
-/*Fin Artiste*/
 
+/*Fin Artiste*/
 
 /*Planning*/
 
@@ -420,44 +502,52 @@ body {
     vertical-align: middle;
     font-weight: bold;
 }
+
 .planning-show {
     display: table-cell;
     vertical-align: middle;
     background-color: white;
-    border-radius : 20px;
+    border-radius: 20px;
     font-weight: bold;
     text-align: center;
     font-size: 18px;
     width: 280px;
 }
+
 .show-blue {
     padding-top: 3%;
     color: #004e57;
     border: 2px solid #2baf97;
     box-shadow: 3px 3px 0 #017553;
 }
+
 .show-orange {
     padding-top: 3%;
     color: #a54d1e;
     border: 2px solid #ed7a21;
     box-shadow: 3px 3px 0 #ed7a22;
 }
+
 .planning-showSmall {
     color: white;
     text-align: center;
     font-size: 24px;
 }
+
 .planning-locationSmall {
     color: white;
     text-align: center;
     font-size: 36px;
 }
+
 .planning-collapse {
     background-color: transparent;
 }
+
 .collapse-content {
     background-color: transparent;
 }
+
 @media (max-width: 1110px) {
     .planning-link {
         font-size: 11vw;
@@ -465,6 +555,7 @@ body {
         text-decoration: none;
     }
 }
+
 @media (min-width: 1110px) {
     .planning-link {
         font-size: 7.5vw;
@@ -472,14 +563,17 @@ body {
         text-decoration: none;
     }
 }
+
 .planning-link:hover {
     text-decoration: none;
     color: #ed7a21;
 }
+
 .planning-link:focus {
     text-decoration: none;
     color: #ed7a21;
 }
+
 /*Fin Planning*/
 
 /*Volunteer*/
@@ -487,10 +581,6 @@ body {
     text-align: center;
     display: inline-block;
 }
-
-
-
-
 
 /*Venir*/
 
@@ -518,32 +608,36 @@ body {
 
 /*Fin Benevolat*/
 
-
 /*News*/
-
 
 .breaking-news {
     background-color: rgba(237, 122, 33, 1);
     border: none;
     color: white;
 }
+
 .breaking-close {
     color: #18252e;
 }
+
 .breaking-strong {
     font-size: 24px;
     color: white;
     text-decoration: underline;
 }
+
 .breaking-text {
     font-size: 18px;
 }
+
 .news-link {
     color: white;
 }
+
 .news-all {
     font-size: 24px;
 }
+
 /*Fin News*/
 
 /*Food*/
@@ -554,8 +648,6 @@ body {
 
 /*Fin Food*/
 
-
 /*Lieux*/
-
 
 /*Fin Lieux*/
