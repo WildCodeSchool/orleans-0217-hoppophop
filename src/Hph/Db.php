@@ -2,10 +2,10 @@
 
 namespace Hph;
 
+
 class Db
 {
     private $db;
-
     /**
      * DB constructor.
      * @param $db */

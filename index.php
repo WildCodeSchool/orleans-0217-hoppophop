@@ -20,7 +20,7 @@ if($page == 'home') {
     $render = $artiste->showArtist($_GET['id']);
 }else if($page == 'planning'){
     $planning = new \Hph\Controller\PlanningController();
-    $render = $planning->render();
+    $render = $planning->showPlanning();
 }else if($page == 'ticket') {
     $ticket = new Hph\Controller\TicketController();
     $render = $ticket->render();
