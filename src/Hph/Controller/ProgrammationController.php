@@ -61,8 +61,8 @@ class ProgrammationController extends ControllerDefault
         } elseif (isset($_GET["day"])) {
             $jour = $_GET['day'];
             $artists = $this->getArtistsSoir($jour);
-        } elseif (isset($_GET['soir'])) {
-            $local = $_GET['soir'];
+        } elseif (isset($_GET['lcl'])) {
+            $local = $_GET['lcl'];
             $artists = $this->getArtistsLocal($local);
         } else {
             $artists = $this->getArtists();
