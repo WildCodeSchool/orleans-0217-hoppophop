@@ -44,7 +44,7 @@ if($page == 'home') {
     $render = $dimaorl->render();
 }else if($page == 'partner') {
     $partner = new Hph\Controller\PartnerController();
-    $render = $partner->render();
+    $render = $partner->getPartner();
 }else if($page == 'contact') {
     $contact = new Hph\Controller\ContactController();
     $render = $contact->render();

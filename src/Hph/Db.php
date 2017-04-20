@@ -17,6 +17,7 @@ class Db
         $this->db->query('SET NAMES utf8');
     }
 
+
     /**
      * @return \PDO
      */
@@ -25,10 +26,22 @@ class Db
         return $this->db;
     }
 
+    public function dBQueryOne($req)
+    {
+        return $this->db->query($req)->fetch();
+    }
+
     public function dBQuery($req, $model)
     {
         return $this->db->query($req)->fetchAll(\PDO::FETCH_CLASS, __NAMESPACE__ . '\Model\\'.ucfirst($model));
     }
+
+    public function dBFetchAll($req)
+    {
+        return $this->db->query($req)->fetchAll();
+    }
+
+
     public function addImg($file, $type)
     {
         $src = realpath(dirname(getcwd())).'/web/img/'.$type.'/';
@@ -44,5 +57,6 @@ class Db
             return "Erreur : L'image n'a pas été uploadé";
         }
     }
+
 
 }
