@@ -26,6 +26,9 @@ class ProgrammationController extends ControllerDefault
         return $artists->getArtists();
     }
 
+<<<<<<< HEAD
+    public function render()
+=======
     public function getArtistsPlace($idLieux)
     {
         $artist = new ProgrammationManager();
@@ -51,6 +54,7 @@ class ProgrammationController extends ControllerDefault
     }
 
     public function listArtist()
+>>>>>>> 3f9de7bb2ffb66e4c42c49a29b782a9fb6797e7e
     {
         $placeManager = new PlaceManager();
         $places = $placeManager->listPlaces();
