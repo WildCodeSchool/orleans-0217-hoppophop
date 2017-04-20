@@ -9,7 +9,7 @@
 namespace Hph\Controller;
 
 use Hph\Model\Artist;
-use Hph\Model\ArtistRequest;
+use Hph\Model\ArtistManager;
 use Hph\Model\PlaceManager;
 use Hph\Model\PlanningManager;
 use Hph\Model\Concert;
@@ -66,8 +66,8 @@ class PlanningController extends ControllerDefault
 
             // recupération de l'artiste correspondant à $artistId
             $artistId = $concert['artist_id'];
-            $artistRequest = new ArtistRequest();
-            $artists = $artistRequest->findOne($artistId);
+            $artistManager = new ArtistManager();
+            $artists = $artistManager->findOne($artistId);
             $artist = $artists[0];
             // recupération du lieu correspondant à $placeId
             $placeId = $concert['place_id'];
@@ -93,8 +93,8 @@ class PlanningController extends ControllerDefault
 
             // recupération de l'artiste correspondant à $artistId
             $artistId = $showcase['artist_id'];
-            $artistRequest = new ArtistRequest();
-            $artists = $artistRequest->findOne($artistId);
+            $artistManager = new ArtistManager();
+            $artists = $artistManager->findOne($artistId);
             $artist = $artists[0];
             // recupération du lieu correspondant à $placeId
             $placeId = $showcase['place_id'];

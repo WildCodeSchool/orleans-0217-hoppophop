@@ -6,6 +6,7 @@
  * Time: 14:24
  */
 
+namespace Hph\Model;
 
 
 class PlanningManager extends \Hph\Db

@@ -513,12 +513,6 @@ a:hover {
     text-align: center;
     font-size: 18px;
     width: 280px;
-<<<<<<< HEAD
-}
-
-.show-blue {
-=======
->>>>>>> planning
     padding-top: 3%;
     color: #004e57;
     border: 2px solid #2baf97;
@@ -527,7 +521,6 @@ a:hover {
 
 }
 
-<<<<<<< HEAD
 .show-orange {
     padding-top: 3%;
     color: #a54d1e;
@@ -535,8 +528,7 @@ a:hover {
     box-shadow: 3px 3px 0 #ed7a22;
 }
 
-=======
->>>>>>> planning
+
 .planning-showSmall {
     color: white;
     text-align: center;
@@ -582,8 +574,6 @@ a:hover {
     text-decoration: none;
     color: #ed7a21;
 }
-<<<<<<< HEAD
-=======
 
 .col-lieu:nth-child(even) .planning-show {
     padding-top: 3%;
@@ -615,8 +605,6 @@ a:hover {
 .artist {
     margin-bottom: 0;
 }
-/*Fin Planning*/
->>>>>>> planning
 
 /*Fin Planning*/
 
