@@ -9,37 +9,65 @@
     <div class="row">
         <div class="col-xs-8">
             <div class="content-div">
-                <h1 class="font-circula upper">La Jungle</h1>
-                <p>Une six-cordes et un casio. Il n’en faut parfois pas plus pour faire péter le mercure et irriter les yeux de sueur après deux breaks et trois accords. Deux singes rouquins, un très grand et un plus petit, vous emmènent dans leur milieu naturel : La Jungle !</p>
+                <h1 class="font-circula upper">{{ artist.name }}</h1>
+
+                <p>{{ artist.bio }}</p>
+
                 <div class="artiste-tag upper">
-                    <h3 class="font-circula">France <span class="turquoise">/</span> Rouquins <span class="orange">/</span> Six-Cordes</h3>
-                </div>
+                    {% for tag in tags %}
+
+                        {% if loop.index%2 == 0 and loop.index<tags|length %}
+                          <div class="font-circula tag_artist"> {{ tag.name }} <span class="orange">/</span></div>
+                        {% elseif loop.index%2 != 0 and loop.index<tags|length %}                                                                    <div class="font-circula tag_artist"> {{ tag.name }} <span class="turquoise">/</span></div>
+                        {% elseif loop.index%2 != 0 %}
+                          <div class="font-circula tag_artist"> {{ tag.name }}</div>
+                        {% else %}
+                          <div class="font-circula tag_artist"> {{ tag.name }}</div>
+
+
+
+                        {% endif %}
+                    {% endfor %}
+                </div><br>
                 <hr class="hr">
-                <iframe width="100%" height="480" src="https://www.youtube.com/embed/wHylQRVN2Qs" frameborder="0" allowfullscreen></iframe>
+
+
             </div>
             <br />
 
+          <iframe width="100%" height="480" src="{{ artist.videoUrl }}" frameborder="0" allowfullscreen></iframe>
 
         </div>
         <div class="col-xs-4">
             <div class="content-div upper">
-                <img src="../public/img/chuck.png" class="img-responsive">
+                <img src="../web/img/artist/{{ artist.imgArtist }}" class="img-responsive">
                 <div class="text-center">
-                    <h2 class="font-circula">Vendredi 16 Septembre</h2>
-                    <hr class="hr-small">
-                    <h3 class="font-circula">Jardin de l'évêché</h3>
-                    <h4 class="font-circula">21H35 <span class="turquoise bold">|</span> 22H35</h4>
+                    {% for prog in progs %}
+                        <h2 class="font-circula">{{prog.concert_start | date(" l, F, d ")}}</h2>
+                        <hr class="hr-small">
+                        <h3 class="font-circula prog_place"><a class="white" href="{{ prog.url }}" >{{ prog.name }}</a> </h3>
+                        <h4 class="font-circula prog_hour">{{ prog.concert_start | date("H:i") }} <span class="turquoise bold">|</span> {{ prog.concert_end | date("H:i") }}</h4>
                 </div>
-                <hr class="hr-small">
-                <a href="#">Site Web</a>
+
+
             </div>
             <hr class="hr">
+            <div class="showcase">
+                {% if not prog.showcase ==0  %}
+                <h5 class="font-circula white text-center showcase">SHOWCASE : {{ prog.name }}</h5>
+                <h6 class="font-circula white text-center prog_hour">{{ prog.concert_start | date("H:i") }} <span class="turquoise bold">|</span> {{ prog.concert_end | date("H:i") }}
+                <hr class="hr">
+                {% else %}
+                {% endif %}
+                {% endfor %}
+
+            </div>
             <div class="artiste-social text-center">
-                <i class="fa fa-facebook-square social-logo" aria-hidden="true"></i>
-                <i class="fa fa-twitter-square social-logo" aria-hidden="true"></i>
-                <i class="fa fa-instagram social-logo" aria-hidden="true"></i>
-                <i class="fa fa-spotify social-logo" aria-hidden="true"></i>
-                <i class="fa fa-youtube-square social-logo" aria-hidden="true"></i>
+                <a href="{{ artist.facebookUrl }}"><i class="fa fa-facebook-square social-logo" aria-hidden="true"></i></a>
+                <a href="{{ artist.twitterUrl }}"><i class="fa fa-twitter-square social-logo" aria-hidden="true"></i></a>
+
+                <a href="#"><i class="fa fa-spotify social-logo" aria-hidden="true"></i></a>
+                <a href="{{ artist.youtubeUrl }}"><i class="fa fa-youtube-square social-logo" aria-hidden="true"></i></a>
             </div>
         </div>
     </div>
@@ -47,27 +75,48 @@
 <div class="visible-xs container">
     <div class="col-xs-12">
         <div class="content-div">
-            <img src="../public/img/chuck.png" class="img-responsive">
-            <h1 class="font-circula">La Jungle</h1>
-            <p>Une six-cordes et un casio. Il n’en faut parfois pas plus pour faire péter le mercure et irriter les yeux de sueur après deux breaks et trois accords. Deux singes rouquins, un très grand et un plus petit, vous emmènent dans leur milieu naturel : La Jungle !</p>
+            <img src="../web/img/artist/{{ artist.imgArtist }}" class="img-responsive">
+            <h1 class="font-circula">{{ artist.name }}</h1>
+          <p>{{ artist.bio }}</p>
             <div class="artiste-tag">
-                <h4 class="font-circula">France <span class="turquoise">/</span> Rouquins <span class="orange">/</span> Six-Cordes</h4>
+                {% for tag in tags %}
+
+                    {% if loop.index%2 == 0 and loop.index<tags|length %}
+                        <div class="font-circula tag_artist"> {{ tag.name }} <span class="orange">/</span></div>
+                    {% elseif loop.index%2 != 0 and loop.index<tags|length %}                                                                    <div class="font-circula tag_artist"> {{ tag.name }} <span class="turquoise">/</span></div>
+                    {% elseif loop.index%2 != 0 %}
+                        <div class="font-circula tag_artist"> {{ tag.name }}</div>
+                    {% else %}
+                        <div class="font-circula tag_artist"> {{ tag.name }}</div>
+
+
+
+                    {% endif %}
+                {% endfor %}
             </div>
             <hr class="hr">
             <div class="text-center">
-                <h2 class="font-circula">VENDREDI 16 SEPTEMBRE</h2>
-                <h3 class="font-circula">JARDIN DE L'EVECHE</h3>
-                <h4 class="font-circula">21H35 <span class="turquoise bold">|</span> 22H35</h4>
+                {% for prog in progs %}
+                <h2 class="font-circula">{{ prog.concert_start | date("l, F, d") }}</h2>                                                 <h3 class="font-circula prog_place"><a class="white" href="{{ prog.url }}" >{{ prog.name }}</a></h3>
+                    <h4 class="font-circula prog_hour">{{ prog.concert_start | date("H:i") }} <span class="turquoise bold">|</span> {{ prog.concert_end | date("H:i") }}</h4>
+                <div class="showcase">
+                    {% if not prog.showcase ==0  %}
+                    <hr class="hr">
+                    <h5 class="font-circula white text-center showcase">SHOWCASE : {{ prog.name }}</h5>
+                    <h6 class="font-circula white text-center prog_hour">{{ prog.concert_start | date("H:i") }} <span class="turquoise bold">|</span> {{ prog.concert_end | date("H:i") }}
+                    {% else %}
+                    {% endif %}
+                {% endfor %}
             </div>
             <hr class="hr">
             <div class="artiste-social text-center">
-                <i class="fa fa-facebook-square social-logo" aria-hidden="true"></i>
-                <i class="fa fa-twitter-square social-logo" aria-hidden="true"></i>
-                <i class="fa fa-instagram social-logo" aria-hidden="true"></i>
-                <i class="fa fa-spotify social-logo" aria-hidden="true"></i>
-                <i class="fa fa-youtube-square social-logo" aria-hidden="true"></i>
+                <a href="{{ artist.facebookUrl }}"><i class="fa fa-facebook-square social-logo" aria-hidden="true"></i></a>
+                <a href="{{ artist.twitterUrl }}"><i class="fa fa-twitter-square social-logo" aria-hidden="true"></i></a>
+
+                <a href="#"><i class="fa fa-spotify social-logo" aria-hidden="true"></i></a>
+                <a href="{{ artist.youtubeUrl }}"><i class="fa fa-youtube-square social-logo" aria-hidden="true"></i></a>
             </div>
-            <iframe width="100%" height="200" src="https://www.youtube.com/embed/wHylQRVN2Qs" frameborder="0" allowfullscreen></iframe>
+            <iframe width="100%" height="200" src="{{ artist.videoUrl }}" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
 </div>
