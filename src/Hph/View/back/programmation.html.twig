@@ -37,6 +37,13 @@
                 <label for="url">Lien Spotify</label>
                 <input type="text" class="form-control" id="url" name="spotify_url" placeholder="Entrez le lien Spotify">
             </div>
+            <div class="form-group">
+                <p><strong>Groupe Local</strong></p>
+                <label for="local-1">Oui</label>
+                <input type="radio" name="local" value="1" id="local-1" checked><br>
+                <label for="local-0">Non</label>
+                <input type="radio" name="local" value="0" id="local-0"><br>
+            </div>
             <div class="text-center">
                 <input type="submit" name="submit" class="btn btn-primary" value="Créer">
             </div>
@@ -121,8 +128,11 @@
                                         <input type="text" class="form-control" id="url" name="spotify_url" placeholder="Entrez le lien de la vidéo" value="{{ artist.spotifyUrl }}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="url">Groupe Local (0=non et 1=Oui)</label>
-                                        <input type="text" class="form-control" id="local" name="local" placeholder="Entrez le lien de la vidéo" value="{{ artist.local }}">
+                                        <p><strong>Groupe Local</strong></p>
+                                        <label for="local-1">Oui</label>
+                                        <input type="radio" name="local" value="1" id="local-1" checked><br>
+                                        <label for="local-0">Non</label>
+                                        <input type="radio" name="local" value="0" id="local-0"><br>
                                     </div>
 
                                 </div>
