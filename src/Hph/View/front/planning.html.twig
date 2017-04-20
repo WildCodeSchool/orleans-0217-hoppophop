@@ -3,61 +3,182 @@
 {% block titleMobile %}Planning{% endblock %}
 {% block content %}
     <div class="container text-center">
-        {% for jourfr,progLieu in prog %}
-            <h1 class="separator-title hidden-sm hidden-xs font-dokyo">{{ jourfr }}</h1>
-            <hr class="hr hidden-xs hidden-sm">
-            <div class="row hidden-sm hidden-xs ">
-            {% for lieu, progHeure in progLieu %}
+
+        <h2 class="separator-title hidden-sm hidden-xs font-dokyo">VENDREDI</h2>
+        <hr class="hr hidden-xs hidden-sm">
+        <div class="row hidden-sm hidden-xs ">
+            {% for lieu, progHeure in prog.VENDREDI %}
+                <div class="col-md-2 hidden-sm hidden-xs">
+                    <h3 class="planning-location font-circula">{{ lieu }}</h3>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row hidden-sm hidden-xs ">
+            {% for lieu, progLieu in prog.VENDREDI %}
+                <div class="col-md-2 hidden-sm hidden-xs col-lieu">
+                    {% for heure, values in progLieu %}
+                        <div class=" hidden-sm hidden-xs">
+                            <div class="planning-show show-blue font-default {% if values.concert.status == 'canceled' %}planning-cancel{%endif%}"><p class="artist">{{ values.artiste.name }}<br/><span class="{% if values.concert.status == 'canceled' %}cancel-hidden{% endif %}">{{ heure }}</span></p>
+                                {% if values.concert.status == 'canceled' %}
+                                    <p class="plan-cancel font-dokyo">Annulé</p>
+                                {% endif %}
+                            </div><br/>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+
+        {% if progShow is not empty %}
+        <h2 class="separator-title hidden-sm hidden-xs font-dokyo">SHOWCASES DU SAMEDI</h2>
+        <hr class="hr hidden-xs hidden-sm">
+        <div class="row hidden-sm hidden-xs ">
+            {% for lieu, progLieu in progShow %}
+                <div class="col-md-2 hidden-sm hidden-xs">
+                    <h3 class="planning-location font-circula">{{ lieu }}</h3>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row hidden-sm hidden-xs ">
+            {% for lieu, progLieu in progShow %}
+                <div class="col-md-2 hidden-sm hidden-xs col-lieu">
+                {% for heure,values in progLieu %}
+                        <div class=" hidden-sm hidden-xs">
+                            <div class="planning-show show-blue font-default {% if values.showcase.status == 'canceled' %}planning-cancel{%endif%}"><p class="artist">{{ values.artiste.name }}<br/><span class="{% if values.showcase.status == 'canceled' %}cancel-hidden{% endif %}">{{ heure }}</span></p>
+                                {% if values.showcase.status == 'canceled' %}
+                                    <p class="plan-cancel font-dokyo">Annulé</p>
+                                {% endif %}
+                            </div><br/>
+                        </div>
+
+                {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <h2 class="separator-title hidden-sm hidden-xs font-dokyo">SAMEDI</h2>
+        <hr class="hr hidden-xs hidden-sm">
+        <div class="row hidden-sm hidden-xs ">
+            {% for lieu, progHeure in prog.SAMEDI %}
                 <div class="col-md-2 hidden-sm hidden-xs">
                     <h3 class="planning-location font-circula">{{ lieu }}</h3>
                 </div>
 
             {% endfor %}
 
-            </div>
-            <div class="row hidden-sm hidden-xs ">
-            {% for lieu, progHeure in progLieu %}
-
-                    <div class="col-md-2 hidden-sm hidden-xs col-lieu">
-
-                        {% for heure, artist in progHeure %}
-                            <div class=" hidden-sm hidden-xs">
-                                <div class="planning-show show-blue font-default "><p>{{ artist.name }}<br/>{{ heure }}
-                                    </p></div>
-                                <br/>
-                            </div>
-
-                        {% endfor %}
-                    </div>
+        </div>
+        <div class="row hidden-sm hidden-xs ">
+            {% for lieu, progLieu in prog.SAMEDI %}
+                <div class="col-md-2 hidden-sm hidden-xs col-lieu">
+                    {% for heure, values in progLieu %}
+                        <div class=" hidden-sm hidden-xs">
+                            <div class="planning-show show-blue font-default {% if values.concert.status == 'canceled' %}planning-cancel{%endif%}"><p class="artist">{{ values.artiste.name }}<br/><span class="{% if values.concert.status == 'canceled' %}cancel-hidden{% endif %}">{{ heure }}</span></p>
+                                {% if values.concert.status == 'canceled' %}
+                                    <p class="plan-cancel font-dokyo">Annulé</p>
+                                {% endif %}
+                            </div><br/>
+                        </div>
+                    {% endfor %}
+                </div>
             {% endfor %}
-            </div>
+        </div>
 
-        {% endfor %}
-    <div class="row">
+
+
+        <div class="row">
+            <div class="visible-xs visible-sm">
+                    <h2 class="separator-title">
+                        <a class="planning-link font-dokyo" data-toggle="collapse" href="#collapseVENDREDI"
+                           aria-expanded="false" aria-controls="collapseVENDREDI">VENDREDI</a>
+                    </h2>
+                    <hr class="hr-min">
+                    <div class="collapse planning-collapse" id="collapseVENDREDI">
+                        <div class="collapse-content">
+                            {% for lieu, progLieu in prog.VENDREDI %}
+                                <h4 class="planning-locationSmall font-dokyo">{{ lieu|upper }}</h4>
+                                {% for heure, values in progLieu %}
+                                    <p class="planning-showSmall font-circula">
+                                        <span class="turquoise font-circula bold
+                                            {% if values.concert.status == 'canceled' %}cancel-hidden{% endif %}"
+                                        >
+                                            {{ heure }} :
+                                        </span>
+                                        {% if values.concert.status == 'canceled' %}
+                                            <span class = "plan-cancel-xs font-dokyo">Annulé</span>
+                                        {% endif %}
+                                        <br/>
+                                        {{ values.artiste.name }}
+                                    </p>
+
+                                    <br/>
+                                {% endfor %}
+                            {% endfor %}
+                        </div>
+                    </div>
+            </div>
+        {% if progShow is not empty %}
         <div class="visible-xs visible-sm">
-            {% for jourfr,progLieu in prog %}
-                <h1 class="separator-title">
-                    <a class="planning-link font-dokyo" data-toggle="collapse" href="#collapse{{ jourfr }}"
-                       aria-expanded="false" aria-controls="collapseVendredi{{ jourfr }}">{{ jourfr }}</a>
-                </h1>
+                <h2 class="separator-title">
+                    <a class="planning-link font-dokyo" data-toggle="collapse" href="#collapseSHOWCASE"
+                       aria-expanded="false" aria-controls="collapseSHOWCASE">SHOWCASES DU SAMEDI</a>
+                </h2>
                 <hr class="hr-min">
-                <div class="collapse planning-collapse" id="collapse{{ jourfr }}">
+                <div class="collapse planning-collapse" id="collapseSHOWCASE">
                     <div class="collapse-content">
-                        {% for lieu, progHeure in progLieu %}
+                        {% for lieu, progLieu in progShow %}
                             <h3 class="planning-locationSmall font-dokyo">{{ lieu|upper }}</h3>
-                            {% for heure, artist in progHeure %}
+                            {% for heure, values in progLieu %}
                                 <p class="planning-showSmall font-circula">
-                                    <span class="turquoise font-circula bold">{{ heure }} :</span><br/>{{ artist.name }}
+                                        <span class="turquoise font-circula bold
+                                            {% if values.showcase.status == 'canceled' %}cancel-hidden{% endif %}"
+                                        >
+                                            {{ heure }} :
+                                        </span>
+                                    {% if values.showcase.status == 'canceled' %}
+                                        <span class = "plan-cancel font-dokyo">Annulé</span>
+                                    {% endif %}
+                                    <br/>
+                                    {{ values.artiste.name }}
                                 </p>
                                 <br/>
                             {% endfor %}
                         {% endfor %}
                     </div>
                 </div>
-            {% endfor %}
+            </div>
+            {% endif %}
+            <div class="visible-xs visible-sm">
+                <h2 class="separator-title">
+                    <a class="planning-link font-dokyo" data-toggle="collapse" href="#collapseSAMEDI"
+                       aria-expanded="false" aria-controls="collapseSAMEDI">SAMEDI</a>
+                </h2>
+                <hr class="hr-min">
+                <div class="collapse planning-collapse" id="collapseSAMEDI">
+                    <div class="collapse-content">
+                        {% for lieu, progLieu in prog.SAMEDI %}
+                            <h3 class="planning-locationSmall font-dokyo">{{ lieu|upper }}</h3>
+                            {% for heure, values in progLieu %}
+                                <p class="planning-showSmall font-circula">
+                                        <span class="turquoise font-circula bold
+                                            {% if values.concert.status == 'canceled' %}cancel-hidden{% endif %}"
+                                        >
+                                            {{ heure }} :
+                                        </span>
+                                    {% if values.concert.status == 'canceled' %}
+                                        <span class = "plan-cancel font-dokyo">Annulé</span>
+                                    {% endif %}
+                                    <br/>
+                                    {{ values.artiste.name }}
+                                </p>
+                                <br/>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
 
-        {% endblock %}
+{% endblock %}

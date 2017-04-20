@@ -16,6 +16,9 @@ use Hph\Model\Concert;
 
 class PlanningManager extends Db
 {
+    const STATUS_PROGRAMMED = 'programmed';
+    const STATUS_CANCELED = 'canceled';
+
     public function getPlace()
     {
         $req = "SELECT * FROM place";
@@ -35,5 +38,31 @@ class PlanningManager extends Db
         $req = "SELECT * FROM concert";
         $res = $this->getDb()->query($req);
         return $res->fetchAll(\PDO::FETCH_BOTH);
+    }
+
+    public function getConcertsToShowWoShowCase() : array
+    {
+        $req = "SELECT * FROM concert WHERE status IN (:prog , :cancel) AND showcase=0";
+         $stmt = $this->getDb()->prepare($req);
+         $stmt->bindValue(':prog', self::STATUS_PROGRAMMED);
+         $stmt->bindValue(':cancel', self::STATUS_CANCELED);
+         if(!$stmt->execute()) {
+             throw new \Exception("Impossible d executer la requete SQL.");
+         }
+         $concerts = $stmt->fetchAll();
+        return $concerts;
+    }
+
+    public function getShowCases() : array
+    {
+        $req = "SELECT * FROM concert WHERE status IN (:prog , :cancel) AND showcase=1";
+        $stmt = $this->getDb()->prepare($req);
+        $stmt->bindValue(':prog', self::STATUS_PROGRAMMED);
+        $stmt->bindValue(':cancel', self::STATUS_CANCELED);
+        if(!$stmt->execute()) {
+            throw new \Exception("Impossible d executer la requete SQL.");
+        }
+        $showcases = $stmt->fetchAll();
+        return $showcases;
     }
 }

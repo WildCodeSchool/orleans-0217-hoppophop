@@ -42,25 +42,25 @@ class PlanningController extends ControllerDefault
 
     public function showPlanning()
     {
-        //   $artistId = $this->getArtistId();
-        //   $place = $this->getPlacePlanning();
+        $planningManager = new PlanningManager();
 
         // recupération de tous les concerts
-        $concerts = $this->getConcertPlanning();
+        $concerts = $planningManager->getConcertsToShowWoShowCase();
+        $showcases = $planningManager->getShowCases();
 
         foreach ($concerts as $concert) {
             $date = new \DateTime($concert['concert_start']);
             $jour = $date->format('l');
-                if ($jour == 'Friday') {
-                    $jourfr = str_replace('Friday','VENDREDI',$jour);
-                }
-                else {
-                    $jourfr= str_replace('Saturday','SAMEDI',$jour);
-                }
+            if ($jour == 'Friday') {
+                $jourfr = str_replace('Friday','VENDREDI',$jour);
+            }
+            else {
+                $jourfr= str_replace('Saturday','SAMEDI',$jour);
+            }
 
             $heurestart = new \DateTime($concert['concert_start']);
             $heurestart->format('H:i');
-            $heureend = new \DateTime($concert['concert_start']);
+            $heureend = new \DateTime($concert['concert_end']);
             $heureend->format('H:i');
             $heure = $heurestart->format('H:i') . '-' . $heureend->format('H:i');
 
@@ -75,9 +75,40 @@ class PlanningController extends ControllerDefault
             $place = $placeManager->findOne($placeId);
             $lieu = $place->getName();
 
-            $prog[$jourfr][$lieu][$heure] = $artist;
+            $status = $concert['status'];
+
+            $prog[$jourfr][$lieu][$heure]= array('artiste' => $artist,
+                                                 'concert' => $concert);
         }
-        return $this->twig->render('planning.html.twig', ['prog' => $prog,
+
+        $progShow = [];
+        foreach ($showcases as $showcase) {
+            $date = new \DateTime($showcase['concert_start']);
+
+            $heurestart = new \DateTime($showcase['concert_start']);
+            $heurestart->format('H:i');
+            $heureend = new \DateTime($showcase['concert_end']);
+            $heureend->format('H:i');
+            $heure = $heurestart->format('H:i') . '-' . $heureend->format('H:i');
+
+            // recupération de l'artiste correspondant à $artistId
+            $artistId = $showcase['artist_id'];
+            $artistRequest = new ArtistRequest();
+            $artists = $artistRequest->findOne($artistId);
+            $artist = $artists[0];
+            // recupération du lieu correspondant à $placeId
+            $placeId = $showcase['place_id'];
+            $placeManager = new PlaceManager();
+            $place = $placeManager->findOne($placeId);
+            $lieu = $place->getName();
+
+
+            $progShow[$lieu][$heure] = array('artiste' => $artist,
+                                             'showcase' => $showcase);
+        }
+        return $this->twig->render('planning.html.twig', [
+            'prog' => $prog,
+            'progShow' => $progShow,
         ]);
 
     }
