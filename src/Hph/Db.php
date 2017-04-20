@@ -46,7 +46,7 @@ class Db
     {
         return $this->db->query($req)->fetchAll();
     }
-    
+
     public function addImg($file, $type)
     {
         $src = realpath(dirname(getcwd())).'/web/img/'.$type.'/';

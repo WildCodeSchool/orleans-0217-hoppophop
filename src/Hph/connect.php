@@ -5,7 +5,7 @@
 
 define("DSN","mysql:host=localhost;dbname=hph");
 define("USER","root");
-define("PASS","jessie");
+define("PASS","grenouille");
 
 
 
