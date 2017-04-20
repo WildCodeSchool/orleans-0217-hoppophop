@@ -7,24 +7,28 @@
  */
 
 namespace Hph\Controller;
+use Swift_SmtpTransport;
+use Swift_Mailer;
+use Swift_Message;
 class ContactController extends ControllerDefault
 {
     public function mail($post)
     {
-        /*
-        $transport = \Swift_MailTransport::newInstance();
-        $mailer = \Swift_Mailer::newInstance($transport);
-        $message = \Swift_Message::newInstance()
-            ->setSubject('Your subject')
-            ->setFrom(array('test@gmail.com' => 'John Doe'))
-            ->setTo(array('quentin.riandiere@gmail.com'))
-            ->setBody('Here is the message itself');
+        $transport = Swift_SmtpTransport::newInstance('smtp.googlemail.com', 465, 'ssl')
+            ->setUsername('contact.hoppophop@gmail.com')
+            ->setPassword('wcsorleanshoppophop');
+        $mailer = Swift_Mailer::newInstance($transport);
+        $message = Swift_Message::newInstance($post['subject'])
+            ->setSubject($post['subject'])
+            ->setFrom(array($post['email'] => $post['name']))
+            ->setReplyTo($post['email'])
+            ->setTo(array('quentin.riandiere@gmail.com'))//A remplacer par l'adresse mail du client
+            ->setBody($post['text']);
         $result = $mailer->send($message);
-        return $result;
-        */
+        return $this->render($result);
     }
-    public function render()
+    public function render($msg = '3')
     {
-        return $this->twig->render('contact.html.twig');
+        return $this->twig->render('contact.html.twig', ['msg'=>$msg]);
     }
 }
