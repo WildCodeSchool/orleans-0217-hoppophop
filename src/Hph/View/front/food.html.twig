@@ -14,9 +14,9 @@
                         <hr class="hr">
                         <p>{{ food.content }}</p>
                         {% if food.start|date("l")!=food.end|date("l") %}
-                            <p class="food-info">{{ food.place_name }}<span class="orange"> | </span>{{ food.start|date("l") }} et {{ food.end|date("l") }}</p>
+                            <p class="food-info">{{ food.place_name }}<span class="orange"> | </span>{{ food.start|localizeddate('long', 'none', 'fr') }} et {{ food.end|localizeddate('long', 'none', 'fr') }}</p>
                         {% else %}
-                            <p class="food-info">{{ food.place_name }}<span class="orange"> | </span>{{ food.start|date("l") }}</p>
+                            <p class="food-info">{{ food.place_name }}<span class="orange"> | </span>{{ food.start|localizeddate('long', 'none', 'fr') }}</p>
                         {% endif %}
                     </div>
                     <br />
