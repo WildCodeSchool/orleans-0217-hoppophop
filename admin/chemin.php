@@ -1,6 +1,6 @@
 <?php 
 
-//echo realpath('.htpasswd'); 
+//echo realpath('.htpasswd');
 echo crypt('pass');
 
 
