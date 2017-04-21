@@ -20,7 +20,6 @@ class ArtistController extends ControllerDefault
         $artists = $artistManager->findOne($id);
         $tags = $artistManager->findArtistTag($id);
         $progs = $artistManager->findProg($id);
-      // var_dump($artists);
 
 
         //recupere le tags pour un artist
