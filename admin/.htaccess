@@ -1,4 +1,5 @@
 AuthName "Administration : Indentification"
 AuthType Basic
 AuthUserFile "/home/wilder9/PhpstormProjects/orleans-0217-hoppophop/admin/.htpasswd"
+
 Require valid-user
