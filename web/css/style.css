@@ -518,16 +518,15 @@ a:hover {
     border: 2px solid #2baf97;
     box-shadow: 3px 3px 0 #017553;
     margin-bottom:0;
-
 }
 
-.show-orange {
+
+.col-lieu:nth-child(even) .planning-show {
     padding-top: 3%;
     color: #a54d1e;
     border: 2px solid #ed7a21;
     box-shadow: 3px 3px 0 #ed7a22;
 }
-
 
 .planning-showSmall {
     color: white;
@@ -573,13 +572,6 @@ a:hover {
 .planning-link:focus {
     text-decoration: none;
     color: #ed7a21;
-}
-
-.col-lieu:nth-child(even) .planning-show {
-    padding-top: 3%;
-    color: #a54d1e;
-    border: 2px solid #ed7a21;
-    box-shadow: 3px 3px 0 #ed7a22;
 }
 
 .planning-cancel{

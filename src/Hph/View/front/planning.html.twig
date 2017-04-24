@@ -15,11 +15,11 @@
         </div>
         <div class="row hidden-sm hidden-xs ">
             {% for lieu, progLieu in prog.VENDREDI %}
-                <div class="col-md-2 hidden-sm hidden-xs col-lieu">
+                <div class="col-md-2 hidden-sm hidden-xs">
                     {% for heure, values in progLieu %}
-                        <div class=" hidden-sm hidden-xs">
+                        <div class=" hidden-sm hidden-xs col-lieu">
                             <a href="../../../../index.php?page=artist&id={{ values.artiste.id }}">
-                            <div class="planning-show show-blue font-default {% if values.concert.status == 'canceled' %}planning-cancel{%endif%}"><p class="artist">{{ values.artiste.name }}<br/><span class="{% if values.concert.status == 'canceled' %}cancel-hidden{% endif %}">{{ heure }}</span></p>
+                            <div class="planning-show font-default {% if values.concert.status == 'canceled' %}planning-cancel{%endif%}"><p class="artist">{{ values.artiste.name }}<br/><span class="{% if values.concert.status == 'canceled' %}cancel-hidden{% endif %}">{{ heure }}</span></p>
                                 {% if values.concert.status == 'canceled' %}
                                     <p class="plan-cancel font-dokyo">Annulé</p>
                                 {% endif %}
