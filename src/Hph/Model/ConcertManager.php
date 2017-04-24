@@ -9,8 +9,6 @@
 namespace Hph\Model;
 
 use Hph\DateValidator;
-use Hph\ImgValidator;
-use Hph\TextValidator;
 
 
 class ConcertManager extends \Hph\Db
@@ -24,7 +22,7 @@ JOIN place ON concert.place_id=place.id";
         return $this->dBQueryWoFetchStyle($req);
     }
 
-    public function addConcert($post, $file)
+    public function addConcert($post)
     {
         if (!isset($post['showcase'])) {
             $post['showcase'] = 0;
@@ -41,15 +39,25 @@ JOIN place ON concert.place_id=place.id";
         }
 
         $sql = "INSERT INTO concert VALUES (NULL, '" . $post['start'] . "', '" . $post['end'] . "', '" . $post['artist'] . "', '" . $post['place'] . "', '" . $post['status'] . "', '" . $post['showcase'] . "')";
-        $result = $this->getDb()->exec($sql);
-        return $result;
+        return $this->getDb()->exec($sql);
     }
 
-    public function updateConcert($post, $file)
+    public function updateConcert($post)
     {
         if (!isset($post['showcase'])) {
             $post['showcase'] = 0;
         }
+        $vStart = new DateValidator($post['start']);
+        $rStart = $vStart->validate();
+        if($rStart!==true){
+            return $rStart;
+        }
+        $vEnd = new DateValidator($post['start']);
+        $rEnd = $vEnd->validate();
+        if($rEnd!==true){
+            return $rEnd;
+        }
+
         $sql = "UPDATE concert SET concert_start = '" . $post['start'] . "', concert_end = '" . $post['end'] . "', artist_id = '" . $post['artist'] . "', place_id = '" . $post['place'] . "', status = '" . $post['status'] .
                 "', showcase = '" . $post['showcase'] . "' WHERE id = '" . $post['id'] . "'";
 

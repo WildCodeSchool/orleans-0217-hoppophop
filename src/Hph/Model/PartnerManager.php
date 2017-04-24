@@ -7,7 +7,8 @@
  */
 
 namespace Hph\Model;
-
+use Hph\ImgValidator;
+use Hph\TextValidator;
 
 class PartnerManager extends \Hph\Db
 {
@@ -19,15 +20,22 @@ class PartnerManager extends \Hph\Db
     }
     public function addPartner($post, $file)
     {
-        if(!isset($post['showcase'])){
-            $post['showcase'] = 0;
+        $vImg = new ImgValidator($file);
+        $rImg = $vImg->validator();
+        if($rImg!==true){
+            return $rImg;
         }
-        $upload = $this->addImg($file, 'partner');
-        if($upload!=true){
-            return $upload;
+        $vTitle = new TextValidator($post['url']);
+        $rTitle = $vTitle->validate();
+        if($rTitle!==true){
+            return $rTitle;
         }
         $sql = "INSERT INTO partner VALUES (NULL, '".$file['img']['name']."', '".$post['url']."')";
-        return $this->getDb()->exec($sql);
+        $result = $this->getDb()->exec($sql);
+        if($result){
+            return $this->addImg($file, 'partner');
+        }
+        return $result;
     }
     public function deletePartner($id)
     {

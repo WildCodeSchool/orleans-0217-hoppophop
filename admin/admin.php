@@ -43,7 +43,7 @@ if ($page == 'home') {
     $render = $concert->listConcert();
 } else if ($page == 'addConcert') {
     $addConcert = new Hph\Model\ConcertManager();
-    $result = $addConcert->addConcert($_POST, $_FILES);
+    $result = $addConcert->addConcert($_POST);
     if($result==1){
         header('Location: admin.php?page=concert');
     }else {
@@ -51,7 +51,7 @@ if ($page == 'home') {
     }
 } else if ($page == 'updateConcert') {
     $updateConcert = new Hph\Model\ConcertManager();
-    $result = $updateConcert->updateConcert($_POST, $_FILES);
+    $result = $updateConcert->updateConcert($_POST);
     if($result==1){
         header('Location: admin.php?page=concert');
     }else {

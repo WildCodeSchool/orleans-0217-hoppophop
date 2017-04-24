@@ -22,6 +22,11 @@ class PlaceController extends ControllerDefault
     public function render()
     {
         $places = $this->getPlaces();
-        return $this->twig->render('place.html.twig', ['places'=>$places, 'error'=>'']);
+        if(isset($_GET['error'])){
+            $error = $_GET['error'];
+        }else{
+            $error = 1;
+        }
+        return $this->twig->render('place.html.twig', ['places'=>$places, 'error'=>$error]);
     }
 }

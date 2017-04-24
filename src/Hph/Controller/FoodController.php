@@ -15,6 +15,11 @@ class FoodController extends ControllerDefault
     {
         $food = $this->getFood();
         $places = new PlaceManager();
-        return $this->twig->render('food.html.twig', ['foods'=>$food, 'places'=>$places -> getPlaces()]);
+        if(isset($_GET['error'])){
+            $error = $_GET['error'];
+        }else{
+            $error = 1;
+        }
+        return $this->twig->render('food.html.twig', ['foods'=>$food, 'places'=>$places -> getPlaces(), 'error'=>$error]);
     }
 }

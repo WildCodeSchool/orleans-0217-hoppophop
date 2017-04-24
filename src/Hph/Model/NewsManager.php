@@ -1,7 +1,8 @@
 <?php
 
 namespace Hph\Model;
-
+use Hph\ImgValidator;
+use Hph\TextValidator;
 
 class NewsManager extends \Hph\Db
 {
@@ -26,29 +27,58 @@ class NewsManager extends \Hph\Db
         if(!isset($post['breaking_news'])){
             $post['breaking_news'] = 0;
         }
-        $upload = $this->addImg($file, 'news');
-        if($upload!=true){
-            return $upload;
+        $vImg = new ImgValidator($file);
+        $rImg = $vImg->validator();
+        if($rImg!==true){
+            return $rImg;
+        }
+        $vTitle = new TextValidator($post['title'], 200);
+        $rTitle = $vTitle->validate();
+        if($rTitle!==true){
+            return $rTitle;
+        }
+        $vText = new TextValidator($post['text']);
+        $rText = $vText->validate();
+        if($rText!==true){
+            return $rText;
         }
         $sql = "INSERT INTO news VALUES (NULL, '".$post['title']."', '".$file['img']['name']."', '".$post['text']."', '".$post['breaking_news']."')";
-        return $this->getDb()->exec($sql);
+        $result = $this->getDb()->exec($sql);
+        if($result){
+            return $this->addImg($file, 'news');
+        }
+        return $result;
     }
     public function updateNews($post, $file)
     {
         if(!isset($post['breaking_news'])){
             $post['breaking_news'] = 0;
         }
-        $upload = $this->addImg($file, 'news');
-        if($upload!=true){
-            return $upload;
+        $vImg = new ImgValidator($file);
+        $rImg = $vImg->validator();
+        if($rImg!==true){
+            return $rImg;
+        }
+        $vTitle = new TextValidator($post['title'], 200);
+        $rTitle = $vTitle->validate();
+        if($rTitle!==true){
+            return $rTitle;
+        }
+        $vText = new TextValidator($post['text']);
+        $rText = $vText->validate();
+        if($rText!==true){
+            return $rText;
         }
         if($file['img']['name']!=''){
             $sql = "UPDATE news SET title = '".$post['title']."', text = '".$post['text']."', img_news = '".$file['img']['name']."', breaking_news = '".$post['breaking_news']."' WHERE id = '".$post['id']."'";
         }else{
             $sql = "UPDATE news SET title = '".$post['title']."', text = '".$post['text']."', breaking_news = '".$post['breaking_news']."' WHERE id = '".$post['id']."'";
         }
-
-        return $this->getDb()->exec($sql);
+        $result = $this->getDb()->exec($sql);
+        if($result){
+            return $this->addImg($file, 'news');
+        }
+        return $result;
     }
     public function deleteNews($id)
     {

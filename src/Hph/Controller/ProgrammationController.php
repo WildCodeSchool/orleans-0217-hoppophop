@@ -47,7 +47,12 @@ class ProgrammationController extends ControllerDefault
     public function listAllArtist()
     {
         $artists = $this->allArtist();
-        return $this->twig->render('programmation.html.twig', ['artists' => $artists]);
+        if(isset($_GET['error'])){
+            $error = $_GET['error'];
+        }else{
+            $error = 1;
+        }
+        return $this->twig->render('programmation.html.twig', ['artists' => $artists, 'error'=>$error]);
     }
 
     public function listArtist()

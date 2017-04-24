@@ -4,6 +4,11 @@
     <div class="container">
         <h2 class="text-center">Ajouter un partenaire</h2>
         <hr/>
+    {% if error==2 %}
+        <div class="alert alert-danger" role="alert">Le lien d'un partenaire doit être une chaîne de caractères</div>
+    {% elseif error==0 %}
+        <div class="alert alert-danger" role="alert">Une erreur s'est produite lors de l'insertion dans la base de données</div>
+    {% endif %}
         <form method="POST" action="../../../../admin/admin.php?page=addPartner" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="url">Lien du partenaire</label>

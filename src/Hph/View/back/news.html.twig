@@ -4,6 +4,19 @@
     <div class="container">
         <h2 class="text-center">Ajouter une actualité</h2>
         <hr/>
+        {% if error==2 %}
+            <div class="alert alert-danger" role="alert">Le titre et le contenu d'une actualité doit être du texte</div>
+        {% elseif error==3 %}
+            <div class="alert alert-danger" role="alert">La taille du titre ne peut pas dépasser 255 caractères</div>
+        {% elseif error==0 %}
+            <div class="alert alert-danger" role="alert">Une erreur s'est produite lors de l'insertion dans la base de données</div>
+        {% elseif error==4 %}
+            <div class="alert alert-danger" role="alert">L'extension n'est pas valide</div>
+        {% elseif error==5 %}
+            <div class="alert alert-danger" role="alert">La taille de l'image est trop élevé</div>
+        {% elseif error==6 %}
+            <div class="alert alert-danger" role="alert">Le poids de l'image est trop élevé</div>
+        {% endif %}
         <form method="POST" action="../../../../admin/admin.php?page=addNews" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="title">Nom de l'actualité</label>
