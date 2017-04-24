@@ -1,12 +1,22 @@
 /*General*/
-
 body {
     background: url("../img/global/background.png") center center no-repeat fixed;
     background-size: cover;
     position: relative;
     padding-top: 100px;
 }
-
+.routes {
+    background-image: url("../img/global/labyrinthe-dossiers.png");
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+    margin-top: -25px;
+}
+@media (max-width: 1110px) {
+    .routes {
+        background: none;
+    }
+}
 @font-face {
     font-family: 'Circula-Medium';
     src: url('../fonts/circula-medium.otf');
@@ -76,7 +86,7 @@ body {
 }
 
 .separator-div {
-    padding: 1%;
+    padding: 5%;
 }
 
 .thumbnail-div {
@@ -141,6 +151,7 @@ a:hover {
     -moz-border-radius: 0;
     border-radius: 0;
     background-color: #18252e;
+    margin-bottom: 0;
 }
 
 .dropdown-menu {
@@ -334,7 +345,8 @@ a:hover {
 .footer {
     margin-top: 5%;
     background-color: #18252e;
-    padding-top: 5%;
+    padding-top:0;
+    margin-top: 0;
 }
 
 .footer-top {
