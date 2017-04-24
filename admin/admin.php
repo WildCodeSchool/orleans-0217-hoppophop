@@ -130,8 +130,11 @@ else if ($page == 'place') {
     $render = $sunday->render();
 } else if ($page == 'addSunday') {
     $addSunday = new Hph\Model\SundayManager();
-    if ($addSunday->addSunday($_POST, $_FILES)) {
+    $result = $addSunday->addSunday($_POST, $_FILES);
+    if($result==1){
         header('Location: admin.php?page=sunday');
+    }else {
+        header('Location: admin.php?page=sunday&error='.$result.'');
     }
 } else if ($page == 'updateSunday') {
     $updateSunday = new Hph\Model\SundayManager();

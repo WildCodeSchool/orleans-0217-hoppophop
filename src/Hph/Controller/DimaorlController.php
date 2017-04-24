@@ -19,6 +19,11 @@ class DimaorlController extends ControllerDefault
     public function render()
     {
         $sundays = $this->getSunday();
-        return $this->twig->render('dimaorl.html.twig', ['sundays'=>$sundays]);
+        if(isset($_GET['error'])){
+            $error = $_GET['error'];
+        }else{
+            $error = 1;
+        }
+        return $this->twig->render('dimaorl.html.twig', ['sundays'=>$sundays, 'error'=>$error]);
     }
 }
