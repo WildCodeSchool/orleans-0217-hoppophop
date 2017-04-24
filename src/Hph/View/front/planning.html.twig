@@ -15,15 +15,16 @@
         </div>
         <div class="row hidden-sm hidden-xs ">
             {% for lieu, progLieu in prog.VENDREDI %}
-                <div class="col-md-2 hidden-sm hidden-xs">
+                <div class="col-md-2 hidden-sm hidden-xs col-lieu">
                     {% for heure, values in progLieu %}
-                        <div class=" hidden-sm hidden-xs col-lieu">
+                        <div class=" hidden-sm hidden-xs">
                             <a href="../../../../index.php?page=artist&id={{ values.artiste.id }}">
                             <div class="planning-show font-default {% if values.concert.status == 'canceled' %}planning-cancel{%endif%}"><p class="artist">{{ values.artiste.name }}<br/><span class="{% if values.concert.status == 'canceled' %}cancel-hidden{% endif %}">{{ heure }}</span></p>
                                 {% if values.concert.status == 'canceled' %}
                                     <p class="plan-cancel font-dokyo">Annulé</p>
                                 {% endif %}
-                            </div><br/>
+                            </div>
+                            </a>
                         </div>
                     {% endfor %}
                 </div>
@@ -50,7 +51,8 @@
                                 {% if values.showcase.status == 'canceled' %}
                                     <p class="plan-cancel font-dokyo">Annulé</p>
                                 {% endif %}
-                            </div><br/>
+                            </div>
+                            </a>
                         </div>
 
                 {% endfor %}
@@ -80,7 +82,8 @@
                                 {% if values.concert.status == 'canceled' %}
                                     <p class="plan-cancel font-dokyo">Annulé</p>
                                 {% endif %}
-                            </div><br/>
+                            </div>
+                            </a>
                         </div>
                     {% endfor %}
                 </div>
