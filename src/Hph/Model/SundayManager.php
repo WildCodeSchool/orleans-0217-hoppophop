@@ -22,6 +22,9 @@ class SundayManager extends \Hph\Db
     {
         $vImg = new ImgValidator($file);
         $rImg = $vImg->validator();
+        if($rImg!==true){
+            return $rImg;
+        }
         $vTitle = new TextValidator($post['title'], 'string', 200);
         $rTitle = $vTitle->validate();
         if($rTitle!==true){
@@ -31,9 +34,6 @@ class SundayManager extends \Hph\Db
         $rText = $vText->validate();
         if($rText!==true){
             return $rText;
-        }
-        if($rImg!==true){
-            return $rImg;
         }
         $sql = "INSERT INTO sunday VALUES (NULL, '".$post['title']."', '".$file['img']['name']."', '".$post['content']."')";
         $result = $this->getDb()->exec($sql);

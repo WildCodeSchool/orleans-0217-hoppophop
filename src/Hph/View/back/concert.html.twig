@@ -4,6 +4,11 @@
     <div class="container">
         <h2 class="text-center">Ajouter un concert</h2>
         <hr/>
+        {% if error==0 %}
+            <div class="alert alert-danger" role="alert">Une erreur s'est produite lors de l'insertion dans la base de données</div>
+        {% elseif error==7 %}
+            <div class="alert alert-danger" role="alert">Le format de la date est incorrect</div>
+        {% endif %}
         <form method="POST" action="../../../../admin/admin.php?page=addConcert" enctype="multipart/form-data">
 
             <div class="form-group">
@@ -42,9 +47,9 @@
             <div class="form-group">
                 <p><strong>Showcase</strong></p>
                 <label for="showcase-0">Oui</label>
-                <input type="radio" name="showcase" value="1" id="showcase-0" checked>
+                <input type="radio" name="showcase" value="1" id="showcase-0">
                 <label for="showcase-1">Non</label>
-                <input type="radio" name="showcase" value="0" id="showcase-1"><br>
+                <input type="radio" name="showcase" value="0" id="showcase-1" checked><br>
             </div>
 
             <div class="text-center">

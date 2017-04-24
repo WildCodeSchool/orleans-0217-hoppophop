@@ -8,11 +8,13 @@
 
 namespace Hph\Model;
 
+use Hph\DateValidator;
+use Hph\ImgValidator;
+use Hph\TextValidator;
+
 
 class ConcertManager extends \Hph\Db
 {
-
-
     public function getConcerts()
     {
         $req = "SELECT concert.id, concert.concert_start, concert.concert_end, concert.artist_id, concert.place_id, 
@@ -27,8 +29,20 @@ JOIN place ON concert.place_id=place.id";
         if (!isset($post['showcase'])) {
             $post['showcase'] = 0;
         }
+        $vStart = new DateValidator($post['start']);
+        $rStart = $vStart->validate();
+        if($rStart!==true){
+            return $rStart;
+        }
+        $vEnd = new DateValidator($post['start']);
+        $rEnd = $vEnd->validate();
+        if($rEnd!==true){
+            return $rEnd;
+        }
+
         $sql = "INSERT INTO concert VALUES (NULL, '" . $post['start'] . "', '" . $post['end'] . "', '" . $post['artist'] . "', '" . $post['place'] . "', '" . $post['status'] . "', '" . $post['showcase'] . "')";
-        return $this->getDb()->exec($sql);
+        $result = $this->getDb()->exec($sql);
+        return $result;
     }
 
     public function updateConcert($post, $file)
