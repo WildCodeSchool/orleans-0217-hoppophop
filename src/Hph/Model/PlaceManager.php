@@ -8,6 +8,9 @@
 
 namespace Hph\Model;
 
+use Hph\DateValidator;
+use Hph\ImgValidator;
+use Hph\TextValidator;
 
 class PlaceManager extends \Hph\Db
 {
@@ -26,12 +29,43 @@ class PlaceManager extends \Hph\Db
         if (!isset($post['showcase'])) {
             $post['showcase'] = 0;
         }
-        $upload = $this->addImg($file, 'place');
-        if ($upload != true) {
-            return $upload;
+        $vImg = new ImgValidator($file);
+        $rImg = $vImg->validate();
+        if($rImg!==true){
+            return $rImg;
         }
+        $vTitle = new TextValidator($post['name'], 150);
+        $rTitle = $vTitle->validate();
+        if($rTitle!==true){
+            return $rTitle;
+        }
+        $vUrl = new TextValidator($post['url']);
+        $rUrl = $vUrl->validate();
+        if($rUrl!==true){
+            return $rUrl;
+        }
+        $vStart = new DateValidator($post['start']);
+        $rStart = $vStart->validate();
+        if($rStart!==true){
+            return $rStart;
+        }
+        $vEnd = new DateValidator($post['start']);
+        $rEnd = $vEnd->validate();
+        if($rEnd!==true){
+            return $rEnd;
+        }
+        $vUrl = new TextValidator($post['url'], 0, 'url');
+        $rUrl = $vUrl->validate();
+        if($rUrl!==true){
+            return $rUrl;
+        }
+
         $sql = "INSERT INTO place VALUES (NULL, '" . $post['name'] . "', '" . $post['url'] . "', '" . $file['img']['name'] . "', '" . $post['start'] . "', '" . $post['end'] . "', '" . $post['showcase'] . "')";
-        return $this->getDb()->exec($sql);
+        $result = $this->getDb()->exec($sql);
+        if($result){
+            return $this->addImg($file, 'place');
+        }
+        return $result;
     }
     public function findOne($id)
     {
@@ -45,10 +79,37 @@ class PlaceManager extends \Hph\Db
         if (!isset($post['showcase'])) {
             $post['showcase'] = 0;
         }
-        $upload = $this->addImg($file, 'place');
-        if ($upload != true) {
-            return $upload;
+        $vImg = new ImgValidator($file);
+        $rImg = $vImg->validate();
+        if($rImg!==true){
+            return $rImg;
         }
+        $vTitle = new TextValidator($post['name'], 150);
+        $rTitle = $vTitle->validate();
+        if($rTitle!==true){
+            return $rTitle;
+        }
+        $vUrl = new TextValidator($post['url']);
+        $rUrl = $vUrl->validate();
+        if($rUrl!==true){
+            return $rUrl;
+        }
+        $vStart = new DateValidator($post['start']);
+        $rStart = $vStart->validate();
+        if($rStart!==true){
+            return $rStart;
+        }
+        $vEnd = new DateValidator($post['start']);
+        $rEnd = $vEnd->validate();
+        if($rEnd!==true){
+            return $rEnd;
+        }
+        $vUrl = new TextValidator($post['url'], 0, 'url');
+        $rUrl = $vUrl->validate();
+        if($rUrl!==true){
+            return $rUrl;
+        }
+
         if ($file['img']['name'] != '') {
             $sql = "UPDATE place SET name = '" . $post['name'] . "', url = '" . $post['url'] .
                 "', img_place = '" . $file['img']['name'] . "', START = '" . $post['start'] .
@@ -59,7 +120,11 @@ class PlaceManager extends \Hph\Db
                 "', START = '" . $post['start'] . "', END = '" . $post['end'] .
                 "', showcase = '" . $post['showcase'] . "' WHERE id = '" . $post['id'] . "'";
         }
-        return $this->getDb()->exec($sql);
+        $result = $this->getDb()->exec($sql);
+        if($result){
+            return $this->addImg($file, 'place');
+        }
+        return $result;
     }
 
     public function deletePlace($id)

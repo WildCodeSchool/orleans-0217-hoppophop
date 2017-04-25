@@ -7,7 +7,9 @@
  */
 
 namespace Hph\Model;
-
+use Hph\ImgValidator;
+use Hph\TextValidator;
+use Hph\DateValidator;
 
 class FoodManager extends \Hph\Db
 {
@@ -22,21 +24,66 @@ JOIN place ON place.id=eat_place.place_id
     }
     public function addFood($post, $file)
     {
-        $upload = $this->addImg($file, 'foodtruck');
-        if($upload!=true){
-            return $upload;
+        $vImg = new ImgValidator($file);
+        $rImg = $vImg->validate();
+        if($rImg!==true){
+            return $rImg;
+        }
+        $vTitle = new TextValidator($post['name'], 255);
+        $rTitle = $vTitle->validate();
+        if($rTitle!==true){
+            return $rTitle;
+        }
+        $vText = new TextValidator($post['content']);
+        $rText = $vText->validate();
+        if($rText!==true){
+            return $rText;
+        }
+        $vStart = new DateValidator($post['start']);
+        $rStart = $vStart->validate();
+        if($rStart!==true){
+            return $rStart;
+        }
+        $vEnd = new DateValidator($post['start']);
+        $rEnd = $vEnd->validate();
+        if($rEnd!==true){
+            return $rEnd;
         }
         $sql = "INSERT INTO eat VALUES (NULL, '".$post['name']."', '".$file['img']['name']."', '".$post['content']."');";
         $sql2 = "INSERT INTO eat_place VALUES (LAST_INSERT_ID(), '".$post['place']."', '".$post['start']."', '".$post['end']."')";
-        $this->getDb()->exec($sql);
-        return $this->getDb()->exec($sql2);
+        $result = $this->getDb()->exec($sql);
+        if($result){
+            return $this->addImg($file, 'foodtruck');
+        }
+        return $result;
 
     }
     public function updateFood($post, $file)
     {
-        $upload = $this->addImg($file, 'foodtruck');
-        if($upload!=true){
-            return $upload;
+        $vImg = new ImgValidator($file);
+        $rImg = $vImg->validate();
+        if($rImg!==true){
+            return $rImg;
+        }
+        $vTitle = new TextValidator($post['name'], 255);
+        $rTitle = $vTitle->validate();
+        if($rTitle!==true){
+            return $rTitle;
+        }
+        $vText = new TextValidator($post['content']);
+        $rText = $vText->validate();
+        if($rText!==true){
+            return $rText;
+        }
+        $vStart = new DateValidator($post['start']);
+        $rStart = $vStart->validate();
+        if($rStart!==true){
+            return $rStart;
+        }
+        $vEnd = new DateValidator($post['start']);
+        $rEnd = $vEnd->validate();
+        if($rEnd!==true){
+            return $rEnd;
         }
         if($file['img']['name']!=''){
             $sql = "UPDATE eat SET name = '".$post['name']."', content = '".$post['content']."', img_eat = '".$file['img']['name']."' WHERE id = '".$post['id']."'";
@@ -44,8 +91,11 @@ JOIN place ON place.id=eat_place.place_id
             $sql = "UPDATE eat SET name = '".$post['name']."', content = '".$post['content']."' WHERE id = '".$post['id']."'";
         }
         $sql2 = "UPDATE eat_place SET place_id = '".$post['place']."', start = '".$post['start']."', end = '".$post['end']."' WHERE eat_id = '".$post['id']."'";
-        $this->getDb()->exec($sql);
-        return $this->getDb()->exec($sql2);
+        $result = $this->getDb()->exec($sql);
+        if($result){
+            return $this->addImg($file, 'foodtruck');
+        }
+        return $result;
     }
     public function deleteFood($id)
     {

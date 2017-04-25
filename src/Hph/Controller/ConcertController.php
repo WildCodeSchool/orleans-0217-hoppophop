@@ -31,6 +31,6 @@ class ConcertController extends ControllerDefault
         $artists = $this->allArtist();
         $concerts = $this->getConcerts();
         $places = $this->getPlaces();
-        return $this->twig->render('concert.html.twig', ['artists'=>$artists, 'places'=>$places, 'concerts'=>$concerts]);
+        return $this->twig->render('concert.html.twig', ['artists'=>$artists, 'places'=>$places, 'concerts'=>$concerts, 'error'=>$_GET['error'], 'partners'=>$partner]);
     }
 }

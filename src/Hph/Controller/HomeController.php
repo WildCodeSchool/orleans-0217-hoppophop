@@ -26,6 +26,7 @@ class HomeController extends ControllerDefault
         $news = $this->getNews();
         $breaking = $this->getBreakingNews();
         $artists = $this->getArtists();
-        return $this->twig->render('home.html.twig', ['newsAll'=>$news, 'newsBreaking'=>$breaking, 'artists'=>$artists]);
+        $partner = $this->getPartner();
+        return $this->twig->render('home.html.twig', ['newsAll'=>$news, 'newsBreaking'=>$breaking, 'artists'=>$artists, 'partners'=>$partner]);
     }
 }

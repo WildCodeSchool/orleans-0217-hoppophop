@@ -7,7 +7,9 @@
  */
 
 namespace Hph\Model;
-use Valitron;
+
+use Hph\ImgValidator;
+use Hph\TextValidator;
 
 class SundayManager extends \Hph\Db
 {
@@ -18,32 +20,55 @@ class SundayManager extends \Hph\Db
     }
     public function addSunday($post, $file)
     {
-        $p = new Valitron\Validator($post);
-        $p->rule('required', ['title', 'content']);
-        if($p->validate()) {
-            $upload = $this->addImg($file, 'sunday');
-            if($upload!=true){
-                return $upload;
-            }
-            $sql = "INSERT INTO sunday VALUES (NULL, '".$post['title']."', '".$file['img']['name']."', '".$post['content']."')";
-            return $this->getDb()->exec($sql);
-        } else {
-            return $p->errors();
+        $vImg = new ImgValidator($file);
+        $rImg = $vImg->validate();
+        if($rImg!==true){
+            return $rImg;
         }
+        $vTitle = new TextValidator($post['title'], 200);
+        $rTitle = $vTitle->validate();
+        if($rTitle!==true){
+            return $rTitle;
+        }
+        $vText = new TextValidator($post['content']);
+        $rText = $vText->validate();
+        if($rText!==true){
+            return $rText;
+        }
+        $sql = "INSERT INTO sunday VALUES (NULL, '".$post['title']."', '".$file['img']['name']."', '".$post['content']."')";
+        $result = $this->getDb()->exec($sql);
+        if($result){
+            return $this->addImg($file, 'sunday');
+        }
+        return $result;
     }
     public function updateSunday($post, $file)
     {
-        $upload = $this->addImg($file, 'sunday');
-        if($upload!=true){
-            return $upload;
+        $vImg = new ImgValidator($file);
+        $rImg = $vImg->validate();
+        if($rImg!==true){
+            return $rImg;
+        }
+        $vTitle = new TextValidator($post['title'], 200);
+        $rTitle = $vTitle->validate();
+        if($rTitle!==true){
+            return $rTitle;
+        }
+        $vText = new TextValidator($post['content']);
+        $rText = $vText->validate();
+        if($rText!==true){
+            return $rText;
         }
         if($file['img']['name']!=''){
             $sql = "UPDATE sunday SET title = '".$post['title']."', content = '".$post['content']."', img_sunday = '".$file['img']['name']."' WHERE id = '".$post['id']."'";
         }else{
             $sql = "UPDATE sunday SET title = '".$post['title']."', content = '".$post['content']."' WHERE id = '".$post['id']."'";
         }
-
-        return $this->getDb()->exec($sql);
+        $result = $this->getDb()->exec($sql);
+        if($result){
+            return $this->addImg($file, 'sunday');
+        }
+        return $result;
     }
     public function deleteSunday($id)
     {

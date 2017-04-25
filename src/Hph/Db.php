@@ -100,6 +100,4 @@ class Db
             return "Erreur : L'image n'a pas été uploadé";
         }
     }
-
-
 }

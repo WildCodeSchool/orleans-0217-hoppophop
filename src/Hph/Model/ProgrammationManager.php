@@ -8,6 +8,8 @@
 
 namespace Hph\Model;
 
+use Hph\ImgValidator;
+use Hph\TextValidator;
 
 class ProgrammationManager extends \Hph\Db
 {
@@ -48,19 +50,58 @@ class ProgrammationManager extends \Hph\Db
 
     public function addArtist($post, $file)
     {
-
         if (!isset($post['local'])) {
             $post['local'] = 0;
         }
-        $upload = $this->addImg($file, 'artist');
-        if ($upload != true) {
-            return $upload;
+        $vImg = new ImgValidator($file);
+        $rImg = $vImg->validate();
+        if($rImg!==true){
+            return $rImg;
         }
-        $sql = "INSERT INTO artist VALUES (NULL, '" . $post['name'] . "', '" . $post['bio'] .
+        $vTitle = new TextValidator($post['name'], 150);
+        $rTitle = $vTitle->validate();
+        if($rTitle!==true){
+            return $rTitle;
+        }
+        $vText = new TextValidator($post['content']);
+        $rText = $vText->validate();
+        if($rText!==true){
+            return $rText;
+        }
+        $vVideo = new TextValidator($post['video_url'], 0, 'url');
+        $rVideo = $vVideo->validate();
+        if($rVideo!==true){
+            return $rVideo;
+        }
+        $vFB = new TextValidator($post['facebook_url'], 0, 'url');
+        $rFB = $vFB->validate();
+        if($rFB!==true){
+            return $rFB;
+        }
+        $vYT = new TextValidator($post['youtube_url'], 0, 'url');
+        $rYT = $vYT->validate();
+        if($rYT!==true){
+            return $rYT;
+        }
+        $vTwitter = new TextValidator($post['twitter_url'], 0, 'url');
+        $rTwitter = $vTwitter->validate();
+        if($rTwitter!==true){
+            return $rTwitter;
+        }
+        $vSpotify = new TextValidator($post['spotify_url'], 0, 'url');
+        $rSpotify = $vSpotify->validate();
+        if($rSpotify!==true){
+            return $rSpotify;
+        }
+        $sql = "INSERT INTO artist VALUES (NULL, '" . $post['name'] . "', '" . $post['content'] .
             "', '" . $file['img']['name'] . "', '" . $post['video_url'] . "', '" . $post['facebook_url'] .
             "', '" . $post['youtube_url'] . "', '" . $post['twitter_url'] . "', '" . $post['spotify_url'] .
             "', '" . $post['local'] . "')";
-        return $this->getDb()->exec($sql);
+        $result = $this->getDb()->exec($sql);
+        if($result){
+            return $this->addImg($file, 'artist');
+        }
+        return $result;
     }
 
     public function updateArtist($post, $file)
@@ -68,9 +109,51 @@ class ProgrammationManager extends \Hph\Db
         if (!isset($post['local'])) {
             $post['local'] = 0;
         }
+<<<<<<< HEAD
         $upload = $this->addImg($file, 'artist', $post['id']);
         if ($upload != true) {
             return $upload;
+=======
+        $vImg = new ImgValidator($file);
+        $rImg = $vImg->validate();
+        if($rImg!==true){
+            return $rImg;
+        }
+        $vTitle = new TextValidator($post['name'], 150);
+        $rTitle = $vTitle->validate();
+        if($rTitle!==true){
+            return $rTitle;
+        }
+        $vText = new TextValidator($post['content']);
+        $rText = $vText->validate();
+        if($rText!==true){
+            return $rText;
+        }
+        $vVideo = new TextValidator($post['video_url'], 0, 'url');
+        $rVideo = $vVideo->validate();
+        if($rVideo!==true){
+            return $rVideo;
+        }
+        $vFB = new TextValidator($post['facebook_url'], 0, 'url');
+        $rFB = $vFB->validate();
+        if($rFB!==true){
+            return $rFB;
+        }
+        $vYT = new TextValidator($post['youtube_url'], 0, 'url');
+        $rYT = $vYT->validate();
+        if($rYT!==true){
+            return $rYT;
+        }
+        $vTwitter = new TextValidator($post['twitter_url'], 0, 'url');
+        $rTwitter = $vTwitter->validate();
+        if($rTwitter!==true){
+            return $rTwitter;
+        }
+        $vSpotify = new TextValidator($post['spotify_url'], 0, 'url');
+        $rSpotify = $vSpotify->validate();
+        if($rSpotify!==true){
+            return $rSpotify;
+>>>>>>> 33cd1186cae4ec0c795d32a816233aedb1f36937
         }
         if ($file['img']['name'] != '') {
             $sql = "UPDATE artist SET name = '" . $post['name'] . "', bio = '" . $post['bio'] .
@@ -84,7 +167,11 @@ class ProgrammationManager extends \Hph\Db
                 "', twitter_url = '" . $post['twitter_url'] . "', spotify_url = '" . $post['spotify_url'] .
                 "', local = '" . $post['local'] . "' WHERE id = '" . $post['id'] . "'";
         }
-        return $this->getDb()->exec($sql);
+        $result = $this->getDb()->exec($sql);
+        if($result){
+            return $this->addImg($file, 'artist');
+        }
+        return $result;
     }
 
     public function deleteArtist($id)

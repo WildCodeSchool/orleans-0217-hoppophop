@@ -15,6 +15,7 @@ class FoodController extends ControllerDefault
     {
         $food = $this->getFood();
         $places = new PlaceManager();
-        return $this->twig->render('food.html.twig', ['foods'=>$food, 'places'=>$places -> getPlaces()]);
+        $partner = $this->getPartner();
+        return $this->twig->render('food.html.twig', ['foods'=>$food, 'places'=>$places -> getPlaces(), 'error'=>$_GET['error'], 'partners'=>$partner]);
     }
 }
