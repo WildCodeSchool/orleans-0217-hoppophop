@@ -4,6 +4,19 @@
     <div class="container">
         <h2 class="text-center">Ajouter une actualité</h2>
         <hr/>
+        {% if error==2 %}
+            <div class="alert alert-danger" role="alert">Le titre et le contenu d'une actualité doit être du texte</div>
+        {% elseif error==3 %}
+            <div class="alert alert-danger" role="alert">La taille du titre ne peut pas dépasser 255 caractères</div>
+        {% elseif error==0 %}
+            <div class="alert alert-danger" role="alert">Une erreur s'est produite lors de l'insertion dans la base de données</div>
+        {% elseif error==4 %}
+            <div class="alert alert-danger" role="alert">L'extension n'est pas valide</div>
+        {% elseif error==5 %}
+            <div class="alert alert-danger" role="alert">La taille de l'image est trop élevé</div>
+        {% elseif error==6 %}
+            <div class="alert alert-danger" role="alert">Le poids de l'image est trop élevé</div>
+        {% endif %}
         <form method="POST" action="../../../../admin/admin.php?page=addNews" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="title">Nom de l'actualité</label>
@@ -16,7 +29,7 @@
             <div class="form-group">
                 <label for="img">Photo de l'actualité</label>
                 <input type="file" id="img" name="img" required>
-                <p class="help-block">Aide à la photo</p>
+                {% include 'imgInfo.html.twig' %}
             </div>
             <div class="checkbox">
                 <label>
@@ -35,7 +48,6 @@
             <tr>
                 <th>#</th>
                 <th>Titre</th>
-                <th>Texte</th>
                 <th>Image</th>
                 <th>Actualité Importante</th>
                 <th>Actions</th>
@@ -46,7 +58,6 @@
                 <tr>
                     <th scope="row">{{ news.id }}</th>
                     <td>{{ news.title }}</td>
-                    <td>{{ news.text }}</td>
                     <td><img src="../../../../web/img/news/{{ news.imgNews }}" alt="Image de l'actualité" class="img-list"></td>
                     <td>
                         {% if news.breakingNews==1 %}
@@ -80,7 +91,7 @@
                                     <div class="form-group">
                                         <label for="img">Photo de l'actualité</label>
                                         <input type="file" id="img" name="img" required>
-                                        <p class="help-block">Aide à la photo</p>
+                                        {% include 'imgInfo.html.twig' %}
                                     </div>
                                     <div class="checkbox">
                                         <label>

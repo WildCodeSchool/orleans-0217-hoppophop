@@ -1,7 +1,9 @@
 <?php
 
 namespace Hph\Model;
-
+use Hph\ImgValidator;
+use Hph\TextValidator;
+use PDO;
 
 class NewsManager extends \Hph\Db
 {
@@ -26,33 +28,74 @@ class NewsManager extends \Hph\Db
         if(!isset($post['breaking_news'])){
             $post['breaking_news'] = 0;
         }
-        $upload = $this->addImg($file, 'news');
-        if($upload!=true){
-            return $upload;
+        $vImg = new ImgValidator($file);
+        $rImg = $vImg->validate();
+        if($rImg!==true){
+            return $rImg;
         }
-        $sql = "INSERT INTO news VALUES (NULL, '".$post['title']."', '".$file['img']['name']."', '".$post['text']."', '".$post['breaking_news']."')";
-        return $this->getDb()->exec($sql);
+        $file['img']['name'] = $this->nameImg($file['img']['name']);
+        $vTitle = new TextValidator($post['title'], 200);
+        $rTitle = $vTitle->validate();
+        if($rTitle!==true){
+            return $rTitle;
+        }
+        $vText = new TextValidator($post['text']);
+        $rText = $vText->validate();
+        if($rText!==true){
+            return $rText;
+        }
+        $query = "INSERT INTO news VALUES (NULL, :title, :img, :about, :breaking_news)";
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':title', $post['title'], PDO::PARAM_STR);
+        $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
+        $prep->bindValue(':about', $post['text'], PDO::PARAM_STR);
+        $prep->bindValue(':breaking_news', $post['breaking_news'], PDO::PARAM_INT);
+        $this->addImg($file, 'news');
+        return $prep->execute();
     }
     public function updateNews($post, $file)
     {
         if(!isset($post['breaking_news'])){
             $post['breaking_news'] = 0;
         }
-        $upload = $this->addImg($file, 'news');
-        if($upload!=true){
-            return $upload;
+        $vImg = new ImgValidator($file);
+        $rImg = $vImg->validate();
+        if($rImg!==true){
+            return $rImg;
+        }
+        $vTitle = new TextValidator($post['title'], 200);
+        $rTitle = $vTitle->validate();
+        if($rTitle!==true){
+            return $rTitle;
+        }
+        $vText = new TextValidator($post['text']);
+        $rText = $vText->validate();
+        if($rText!==true){
+            return $rText;
         }
         if($file['img']['name']!=''){
-            $sql = "UPDATE news SET title = '".$post['title']."', text = '".$post['text']."', img_news = '".$file['img']['name']."', breaking_news = '".$post['breaking_news']."' WHERE id = '".$post['id']."'";
+            $file['img']['name'] = $this->nameImg($file['img']['name']);
+            $query = "UPDATE news SET title = :title, img_news = :img, text = :about, breaking_news = :breaking_news WHERE id = :id";
         }else{
-            $sql = "UPDATE news SET title = '".$post['title']."', text = '".$post['text']."', breaking_news = '".$post['breaking_news']."' WHERE id = '".$post['id']."'";
+            $query = "UPDATE news SET title = :title, text = :about, breaking_news = :breaking_news WHERE id = :id";
         }
-
-        return $this->getDb()->exec($sql);
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':id', $post['id'], PDO::PARAM_INT);
+        $prep->bindValue(':title', $post['title'], PDO::PARAM_STR);
+        $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
+        $prep->bindValue(':about', $post['text'], PDO::PARAM_STR);
+        $prep->bindValue(':breaking_news', $post['breaking_news'], PDO::PARAM_INT);
+        if($file['img']['name']!=''){
+            $this->addImg($file, 'news', $post['id']);
+        }
+        return $prep->execute();
     }
     public function deleteNews($id)
     {
-        $sql = "DELETE FROM news WHERE id=".$id;
-        return $this->getDb()->exec($sql);
+        $query = "DELETE FROM news WHERE id = :id";
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':id', $id, PDO::PARAM_INT);
+        $this->supprImg($id, 'news');
+        return $prep->execute();
     }
 }

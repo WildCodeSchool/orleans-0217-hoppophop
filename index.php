@@ -2,6 +2,9 @@
 require_once 'vendor/autoload.php';
 require_once 'src/Hph/connect.php';
 
+if(!isset($_GET['error'])){
+    $_GET['error'] = 1;
+}
 
 if(isset($_GET['page'])){
     $page = $_GET['page'];

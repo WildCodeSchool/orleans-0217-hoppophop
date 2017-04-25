@@ -47,21 +47,58 @@ class Db
         return $this->db->query($req)->fetchAll();
     }
 
-    public function addImg($file, $type)
+    public function supprImg($id, $type)
     {
+        if ($type == 'artist')
+        {
+            $req = "SELECT img_artist FROM artist WHERE id=$id";
+        }
+        elseif ($type == 'foodtruck')
+        {
+            $req = "SELECT img_eat FROM eat WHERE id=$id";
+        }
+        elseif ($type == 'news')
+        {
+            $req = "SELECT img_news FROM news WHERE id=$id";
+        }
+        elseif ($type == 'partner')
+        {
+            $req = "SELECT img_partner FROM partner WHERE id=$id";
+        }
+        elseif ($type == 'place')
+        {
+            $req = "SELECT img_place FROM place WHERE id=$id";
+        }
+        elseif ($type == 'sunday')
+        {
+            $req = "SELECT img_sunday FROM sunday WHERE id=$id";
+        }
+        $reqDone = $this->dBQueryWoFetchStyle($req);
         $src = realpath(dirname(getcwd())).'/web/img/'.$type.'/';
+        if(unlink($src.$reqDone['0']['0'])){
+            return true;
+        }
+        return false;
+    }
+
+    public function addImg($file, $type, $delete = 0)
+    {
+        $src = realpath(dirname(getcwd())) . '/web/img/' . $type . '/';
         if ($file['img']['error'] == 0) {
             $tmp = $file['img']['tmp_name'];
             $name = $file['img']['name'];
-            if (move_uploaded_file($tmp, $src.$name)) {
-                return true;
-            } else {
-                return "Erreur : L'upload de l'image a échoué";
+            if ($delete > 0) {
+                $this->supprImg($delete, $type);
             }
-        } else {
-            return "Erreur : L'image n'a pas été uploadé";
+            if (move_uploaded_file($tmp, $src . $name)) {
+                return true;
+            }
+            return false;
         }
+        return false;
     }
-
-
+    public function nameImg($name)
+    {
+        return rand(0,9999999).'_'.$name;
+    }
 }

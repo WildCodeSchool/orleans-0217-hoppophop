@@ -7,6 +7,9 @@ if (isset($_GET['page'])) {
 } else {
     $page = 'home';
 }
+if (!isset($_GET['error'])||$_GET['error']=='') {
+    $_GET['error'] = 1;
+}
 
 
 if ($page == 'home') {

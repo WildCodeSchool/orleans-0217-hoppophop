@@ -7,7 +7,10 @@
  */
 
 namespace Hph\Model;
-use Valitron;
+
+use Hph\ImgValidator;
+use Hph\TextValidator;
+use PDO;
 
 class SundayManager extends \Hph\Db
 {
@@ -18,36 +21,69 @@ class SundayManager extends \Hph\Db
     }
     public function addSunday($post, $file)
     {
-        $p = new Valitron\Validator($post);
-        $p->rule('required', ['title', 'content']);
-        if($p->validate()) {
-            $upload = $this->addImg($file, 'sunday');
-            if($upload!=true){
-                return $upload;
-            }
-            $sql = "INSERT INTO sunday VALUES (NULL, '".$post['title']."', '".$file['img']['name']."', '".$post['content']."')";
-            return $this->getDb()->exec($sql);
-        } else {
-            return $p->errors();
+        $vImg = new ImgValidator($file);
+        $rImg = $vImg->validate();
+        if($rImg!==true){
+            return $rImg;
         }
+        $file['img']['name'] = $this->nameImg($file['img']['name']);
+        $vTitle = new TextValidator($post['title'], 200);
+        $rTitle = $vTitle->validate();
+        if($rTitle!==true){
+            return $rTitle;
+        }
+        $vText = new TextValidator($post['content']);
+        $rText = $vText->validate();
+        if($rText!==true){
+            return $rText;
+        }
+        $query = "INSERT INTO sunday VALUES (NULL, :title, :img, :content)";
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':title', $post['title'], PDO::PARAM_STR);
+        $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
+        $prep->bindValue(':content', $post['content'], PDO::PARAM_STR);
+        $this->addImg($file, 'sunday');
+        return $prep->execute();
     }
     public function updateSunday($post, $file)
     {
-        $upload = $this->addImg($file, 'sunday');
-        if($upload!=true){
-            return $upload;
+        $vImg = new ImgValidator($file);
+        $rImg = $vImg->validate();
+        if($rImg!==true){
+            return $rImg;
+        }
+        $vTitle = new TextValidator($post['title'], 200);
+        $rTitle = $vTitle->validate();
+        if($rTitle!==true){
+            return $rTitle;
+        }
+        $vText = new TextValidator($post['content']);
+        $rText = $vText->validate();
+        if($rText!==true){
+            return $rText;
         }
         if($file['img']['name']!=''){
-            $sql = "UPDATE sunday SET title = '".$post['title']."', content = '".$post['content']."', img_sunday = '".$file['img']['name']."' WHERE id = '".$post['id']."'";
+            $file['img']['name'] = $this->nameImg($file['img']['name']);
+            $query = "UPDATE sunday SET title = :title, content = :content, img_sunday = :img WHERE id = :id";
         }else{
-            $sql = "UPDATE sunday SET title = '".$post['title']."', content = '".$post['content']."' WHERE id = '".$post['id']."'";
+            $query = "UPDATE sunday SET title = :title, content = :content WHERE id = :id";
         }
-
-        return $this->getDb()->exec($sql);
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':title', $post['title'], PDO::PARAM_STR);
+        $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
+        $prep->bindValue(':content', $post['content'], PDO::PARAM_STR);
+        $prep->bindValue(':id', $post['id'], PDO::PARAM_INT);
+        if($file['img']['name']!=''){
+            $this->addImg($file, 'sunday', $post['id']);
+        }
+        return $prep->execute();
     }
     public function deleteSunday($id)
     {
-        $sql = "DELETE FROM sunday WHERE id=".$id;
-        return $this->getDb()->exec($sql);
+        $query = "DELETE FROM sunday WHERE id = :id";
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':id', $id, PDO::PARAM_INT);
+        $this->supprImg($id, 'sunday');
+        return $prep->execute();
     }
 }

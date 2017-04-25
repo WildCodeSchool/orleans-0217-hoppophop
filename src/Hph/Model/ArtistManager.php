@@ -35,7 +35,7 @@ class ArtistManager extends \Hph\Db
 
     public function findProg($artist_id)
     {
-        $req = "SELECT * FROM concert JOIN place ON place.id = concert.place_id WHERE artist_id = $artist_id";
+        $req = "SELECT * FROM concert JOIN place ON place.id = concert.place_id WHERE artist_id = $artist_id ORDER BY concert.concert_start ASC";
         return $this->dBFetchAll($req);
     }
 

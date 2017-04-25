@@ -16,7 +16,7 @@
                 <br />
                 <br />
             </div>
-            <h1 class="separator-title font-dokyo">PROGRAMMATION</h1>
+            <h1 class="separator-title font-dokyo"><a href="index.php?page=programmation" class="white font-dokyo">PROGRAMMATION</a></h1>
             <hr class="hr">
             <div class="separator-div text-justify home-progDiv">
                 {%  for artist in artists  %}
@@ -34,8 +34,32 @@
             <h1 class="separator-title font-dokyo">BILLETTERIE</h1>
             <hr class="hr">
             <div class="separator-div home-ticket">
-                <h2 class="font-circula"><i class="fa fa-ticket" aria-hidden="true"></i> Pass 1 Journée ou 2 Jours disponibles</h2>
-                <a href="../../../../index.php?page=ticket" class="btn btn-primary">Accéder à la Billetterie</a>
+                <div class="container-fluid">
+                    <div class="row ticket hidden-xs hidden-sm">
+                        <div class="col-md-offset-1 col-md-5 hidden-xs hidden-sm col-ticket span-ticket">
+                            <a href="../../../../index.php?page=ticket">
+                            <div class="panneau col-ticket">
+                                <span class="left-text font-bebas">PASS</span>
+                                <span class="right-text font-bebas">1 JOUR</span>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-md-5 hidden-xs hidden-sm col-ticket span-ticket">
+                            <a href="../../../../index.php?page=ticket">
+                            <div class="panneau col-ticket">
+                                    <span class="left-text font-bebas">PASS</span>
+                                    <span class="right-text font-bebas">2 JOURS</span>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row visible-sm visible-xs">
+                        <div class="col-md-12">
+                            <h2 class="font-circula"><i class="fa fa-ticket" aria-hidden="true"></i> Pass 1 Journée ou 2 Jours disponibles</h2>
+                            <a href="../../../../index.php?page=ticket" class="btn btn-primary">Accéder à la Billetterie</a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <h1 class="separator-title font-dokyo">ACTUALITES</h1>
             <hr class="hr">
