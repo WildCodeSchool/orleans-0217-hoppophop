@@ -50,11 +50,8 @@ class NewsManager extends \Hph\Db
         $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
         $prep->bindValue(':about', $post['text'], PDO::PARAM_STR);
         $prep->bindValue(':breaking_news', $post['breaking_news'], PDO::PARAM_INT);
-        $result = $prep->execute();
-        if($result){
-            return $this->addImg($file, 'news');
-        }
-        return $result;
+        $this->addImg($file, 'news');
+        return $prep->execute();
     }
     public function updateNews($post, $file)
     {
@@ -88,21 +85,17 @@ class NewsManager extends \Hph\Db
         $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
         $prep->bindValue(':about', $post['text'], PDO::PARAM_STR);
         $prep->bindValue(':breaking_news', $post['breaking_news'], PDO::PARAM_INT);
-        $result = $prep->execute();
-        if($result){
-            if($file['img']['name']!=''){
-                return $this->addImg($file, 'news', $post['id']);
-            }
-            return true;
+        if($file['img']['name']!=''){
+            $this->addImg($file, 'news', $post['id']);
         }
-        return $result;
+        return $prep->execute();
     }
     public function deleteNews($id)
     {
-        $sql = "DELETE FROM news WHERE id=".$id;
-        if($this->getDb()->exec($sql)){
-            return $this->supprImg($id, 'news');
-        }
-        return false;
+        $query = "DELETE FROM news WHERE id = :id";
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':id', $id, PDO::PARAM_INT);
+        $this->supprImg($id, 'news');
+        return $prep->execute();
     }
 }

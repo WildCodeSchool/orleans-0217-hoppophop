@@ -42,11 +42,8 @@ class SundayManager extends \Hph\Db
         $prep->bindValue(':title', $post['title'], PDO::PARAM_STR);
         $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
         $prep->bindValue(':content', $post['content'], PDO::PARAM_STR);
-        $result = $prep->execute();
-        if($result){
-            return $this->addImg($file, 'sunday');
-        }
-        return $result;
+        $this->addImg($file, 'sunday');
+        return $prep->execute();
     }
     public function updateSunday($post, $file)
     {
@@ -76,18 +73,17 @@ class SundayManager extends \Hph\Db
         $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
         $prep->bindValue(':content', $post['content'], PDO::PARAM_STR);
         $prep->bindValue(':id', $post['id'], PDO::PARAM_INT);
-        $result = $prep->execute();
-        if($result){
-            if($file['img']['name']!=''){
-                return $this->addImg($file, 'sunday', $post['id']);
-            }
-            return true;
+        if($file['img']['name']!=''){
+            $this->addImg($file, 'sunday', $post['id']);
         }
-        return $result;
+        return $prep->execute();
     }
     public function deleteSunday($id)
     {
-        $sql = "DELETE FROM sunday WHERE id=".$id;
-        return $this->getDb()->exec($sql);
+        $query = "DELETE FROM sunday WHERE id = :id";
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':id', $id, PDO::PARAM_INT);
+        $this->supprImg($id, 'sunday');
+        return $prep->execute();
     }
 }

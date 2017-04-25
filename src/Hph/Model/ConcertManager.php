@@ -49,8 +49,7 @@ JOIN place ON concert.place_id=place.id";
         $prep->bindValue(':artist', $post['artist'], PDO::PARAM_INT);
         $prep->bindValue(':place', $post['place'], PDO::PARAM_INT);
         $prep->bindValue(':showcase', $post['showcase'], PDO::PARAM_INT);
-        $result = $prep->execute();
-        return $result;
+        return $prep->execute();
     }
 
     public function updateConcert($post)
@@ -78,14 +77,15 @@ JOIN place ON concert.place_id=place.id";
         $prep->bindValue(':artist', $post['artist'], PDO::PARAM_INT);
         $prep->bindValue(':place', $post['place'], PDO::PARAM_INT);
         $prep->bindValue(':showcase', $post['showcase'], PDO::PARAM_INT);
-        $result = $prep->execute();
-        return $result;
+        return $prep->execute();
     }
 
     public function deleteConcert($id)
     {
-        $sql = "DELETE FROM concert WHERE id=" . $id;
-        return $this->getDb()->exec($sql);
+        $query = "DELETE FROM concert WHERE id = :id";
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':id', $post['id'], PDO::PARAM_INT);
+        return $prep->execute();
     }
 
 }

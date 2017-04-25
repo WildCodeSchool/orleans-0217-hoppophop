@@ -106,21 +106,14 @@ class ProgrammationManager extends \Hph\Db
         $prep->bindValue(':twitter_url', $post['twitter_url'], PDO::PARAM_STR);
         $prep->bindValue(':spotify_url', $post['spotify_url'], PDO::PARAM_STR);
         $prep->bindValue(':local', $post['local'], PDO::PARAM_INT);
-        $result = $prep->execute();
-        if($result){
-            return $this->addImg($file, 'artist');
-        }
-        return $result;
+        $this->addImg($file, 'artist');
+        return $prep->execute();
     }
 
     public function updateArtist($post, $file)
     {
         if (!isset($post['local'])) {
             $post['local'] = 0;
-        }
-        $upload = $this->addImg($file, 'artist', $post['id']);
-        if ($upload != true) {
-            return $upload;
         }
         $vImg = new ImgValidator($file);
         $rImg = $vImg->validate();
@@ -179,21 +172,17 @@ class ProgrammationManager extends \Hph\Db
         $prep->bindValue(':spotify_url', $post['spotify_url'], PDO::PARAM_STR);
         $prep->bindValue(':local', $post['local'], PDO::PARAM_INT);
         $prep->bindValue(':id', $post['id'], PDO::PARAM_INT);
-        $result = $prep->execute();
-        if($result){
-            if($file['img']['name']!=''){
-                return $this->addImg($file, 'artist', $post['id']);
-            }
-            return true;
+        if($file['img']['name']!=''){
+            $this->addImg($file, 'artist', $post['id']);
         }
-        return $result;
+        return $prep->execute();
     }
     public function deleteArtist($id)
     {
-        $sql = "DELETE FROM artist WHERE id=" . $id;
-        if($this->getDb()->exec($sql)){
-            return $this->supprImg($id, 'artist');
-        }
-        return false;
+        $query = "DELETE FROM artist WHERE id = :id";
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':id', $id, PDO::PARAM_INT);
+        $this->supprImg($id, 'artist');
+        return $prep->execute();
     }
 }

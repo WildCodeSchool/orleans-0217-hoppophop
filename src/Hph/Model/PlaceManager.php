@@ -71,11 +71,8 @@ class PlaceManager extends \Hph\Db
         $prep->bindValue(':start', $post['start'], PDO::PARAM_STR);
         $prep->bindValue(':end', $post['end'], PDO::PARAM_STR);
         $prep->bindValue(':showcase', $post['showcase'], PDO::PARAM_INT);
-        $result = $prep->execute();
-        if($result){
-            return $this->addImg($file, 'place');
-        }
-        return $result;
+        $this->addImg($file, 'place');
+        return $prep->execute();
     }
     public function findOne($id)
     {
@@ -122,7 +119,7 @@ class PlaceManager extends \Hph\Db
 
         if ($file['img']['name'] != '') {
             $file['img']['name'] = $this->nameImg($file['img']['name']);
-            $query = "UPDATE place SET name = :name, url = :url, img_place = img, start = :start, end = :end, showcase = :showcase WHERE id = :id";
+            $query = "UPDATE place SET name = :name, url = :url, img_place = :img, start = :start, end = :end, showcase = :showcase WHERE id = :id";
         } else {
             $query = "UPDATE place SET name = :name, url = :url, start = :start, end = :end, showcase = :showcase WHERE id = :id";
         }
@@ -134,23 +131,19 @@ class PlaceManager extends \Hph\Db
         $prep->bindValue(':end', $post['end'], PDO::PARAM_STR);
         $prep->bindValue(':showcase', $post['showcase'], PDO::PARAM_INT);
         $prep->bindValue(':id', $post['id'], PDO::PARAM_INT);
-        $result = $prep->execute();
-        if($result){
-            if($file['img']['name']!=''){
-                return $this->addImg($file, 'place', $post['id']);
-            }
-            return true;
+        if($file['img']['name']!=''){
+            $this->addImg($file, 'place', $post['id']);
         }
-        return $result;
+        return $prep->execute();
     }
 
     public function deletePlace($id)
     {
-        $sql = "DELETE FROM place WHERE id=" . $id;
-        if($this->getDb()->exec($sql)){
-            return $this->supprImg($id, 'place');
-        }
-        return false;
+        $query = "DELETE FROM place WHERE id = :id";
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':id', $id, PDO::PARAM_INT);
+        $this->supprImg($id, 'place');
+        return $prep->execute();
     }
 
     public function listPlaces()

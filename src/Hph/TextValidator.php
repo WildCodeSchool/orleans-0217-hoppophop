@@ -38,12 +38,13 @@ class TextValidator
                 return 3;
             }
             return 2;
-        }else{
+        }else if($this->content!=''){
             if (filter_var($this->content, FILTER_VALIDATE_URL) === FALSE) {
                 return 8;
             }
             return true;
         }
+        return true;
     }
 
     /**

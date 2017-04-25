@@ -51,7 +51,7 @@ JOIN place ON place.id=eat_place.place_id
         if($rEnd!==true){
             return $rEnd;
         }
-        $query = "INSERT INTO eat VALUES (NULL, :name, :img, :content);";
+        $query = "INSERT INTO eat VALUES (NULL, :name, :img, :content)";
         $query2 = "INSERT INTO eat_place VALUES (LAST_INSERT_ID(), :place, :start, :end)";
         $prep = $this->getDb()->prepare($query);
         $prep2 = $this->getDb()->prepare($query2);
@@ -61,13 +61,10 @@ JOIN place ON place.id=eat_place.place_id
         $prep->bindValue(':place', $post['place'], PDO::PARAM_INT);
         $prep->bindValue(':start', $post['start'], PDO::PARAM_STR);
         $prep->bindValue(':end', $post['end'], PDO::PARAM_STR);
+        $this->addImg($file, 'foodtruck');
         $result = $prep->execute();
-        $result2 = $prep2->execute();
         if($result){
-            if($result2){
-                return $this->addImg($file, 'foodtruck');
-            }
-            return $result2;
+            return $prep2->execute();
         }
         return $result;
     }
@@ -114,30 +111,26 @@ JOIN place ON place.id=eat_place.place_id
         $prep->bindValue(':place', $post['place'], PDO::PARAM_INT);
         $prep->bindValue(':start', $post['start'], PDO::PARAM_STR);
         $prep->bindValue(':end', $post['end'], PDO::PARAM_STR);
+        if($file['img']['name']!=''){
+            $this->addImg($file, 'foodtruck', $post['id']);
+        }
         $result = $prep->execute();
-        $result2 = $prep2->execute();
         if($result){
-            if($result2){
-                if($file['img']['name']!=''){
-                    return $this->addImg($file, 'foodtruck', $post['id']);
-                }
-                return true;
-            }
-            return $result2;
+            return $prep2->execute();
         }
         return $result;
     }
     public function deleteFood($id)
     {
-        $sql = "DELETE FROM eat_place WHERE eat_id=".$id;
-        $sql2 = "DELETE FROM eat WHERE id=".$id;
-        $result = $this->getDb()->exec($sql);
-        $result2 = $this->getDb()->exec($sql2);
+        $query = "DELETE FROM eat_place WHERE id = :id";
+        $query2 = "DELETE FROM eat WHERE id = :id";
+        $prep = $this->getDb()->prepare($query);
+        $prep2 = $this->getDb()->prepare($query2);
+        $prep->bindValue(':id', $id, PDO::PARAM_INT);
+        $this->supprImg($id, 'foodtruck');
+        $result = $prep->execute();
         if($result){
-            if($result2){
-                return $this->supprImg($id, 'foodtruck');
-            }
-            return $result2;
+            return $prep2->execute();
         }
         return $result;
     }

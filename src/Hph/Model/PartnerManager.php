@@ -40,18 +40,15 @@ class PartnerManager extends \Hph\Db
         $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
         $prep->bindValue(':url', $post['url'], PDO::PARAM_STR);
         $prep->bindValue(':footer', $post['footer'], PDO::PARAM_INT);
-        $result = $prep->execute();
-        if($result){
-            return $this->addImg($file, 'partner');
-        }
-        return $result;
+        $this->addImg($file, 'partner');
+        return $prep->execute();
     }
     public function deletePartner($id)
     {
-        $sql = "DELETE FROM partner WHERE id=".$id;
-        if($this->getDb()->exec($sql)){
-            return $this->supprImg($id, 'partner');
-        }
-        return false;
+        $query = "DELETE FROM partner WHERE id = :id";
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':id', $id, PDO::PARAM_INT);
+        $this->supprImg($id, 'partner');
+        return $prep->execute();
     }
 }
