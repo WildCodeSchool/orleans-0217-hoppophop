@@ -7,12 +7,17 @@
  */
 
 namespace Hph\Controller;
-
+use Hph\Model\PartnerManager;
 
 class ControllerDefault
 {
     protected $twig;
 
+    public function getPartner()
+    {
+        $partner = new PartnerManager();
+        return $partner->getPartner();
+    }
     public function __construct($type = 'front')
     {
         if ($type == 'front') {

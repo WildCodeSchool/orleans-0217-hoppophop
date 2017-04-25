@@ -19,11 +19,6 @@ class NewsController extends ControllerDefault
     public function render()
     {
         $news = $this->getNews();
-        if(isset($_GET['error'])){
-            $error = $_GET['error'];
-        }else{
-            $error = 1;
-        }
-        return $this->twig->render('news.html.twig', ['newsAll'=>$news, 'error'=>$error]);
+        return $this->twig->render('news.html.twig', ['newsAll'=>$news, 'error'=>$_GET['error'], 'partners'=>$partner]);
     }
 }

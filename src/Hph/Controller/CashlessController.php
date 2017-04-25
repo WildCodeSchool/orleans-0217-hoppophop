@@ -13,6 +13,6 @@ class CashlessController extends ControllerDefault
 {
     public function render()
     {
-        return $this->twig->render('cashless.html.twig');
+        return $this->twig->render('cashless.html.twig', ['partners'=>$partner]);
     }
 }

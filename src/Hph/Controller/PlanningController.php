@@ -109,6 +109,7 @@ class PlanningController extends ControllerDefault
         return $this->twig->render('planning.html.twig', [
             'prog' => $prog,
             'progShow' => $progShow,
+            'partners'=>$partner
         ]);
 
     }

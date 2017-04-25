@@ -25,7 +25,8 @@ class ArtistController extends ControllerDefault
         // affichage de la page qui affiche un seul artiste 'tags'=>$tags
 
         // appel la methode render de twig
-        return $this->twig->render('artist.html.twig', ['artist'=> $artists[0], 'tags'=> $tags, 'progs'=>$progs]);
+        $partner = $this->getPartner();
+        return $this->twig->render('artist.html.twig', ['artist'=> $artists[0], 'tags'=> $tags, 'progs'=>$progs, 'partners'=>$partner]);
     }
 
 

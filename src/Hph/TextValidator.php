@@ -42,8 +42,8 @@ class TextValidator
             if (filter_var($this->content, FILTER_VALIDATE_URL) === FALSE) {
                 return 8;
             }
+            return true;
         }
-
     }
 
     /**

@@ -13,6 +13,6 @@ class VolunteerController extends ControllerDefault
 {
     public function render()
     {
-        return $this->twig->render('volunteer.html.twig');
+        return $this->twig->render('volunteer.html.twig', ['partners'=>$partner]);
     }
 }

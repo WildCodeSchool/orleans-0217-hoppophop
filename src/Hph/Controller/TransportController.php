@@ -13,6 +13,6 @@ class TransportController extends ControllerDefault
 {
     public function render()
     {
-        return $this->twig->render('transport.html.twig');
+        return $this->twig->render('transport.html.twig', ['partners'=>$partner]);
     }
 }

@@ -10,6 +10,12 @@
         <div class="alert alert-danger" role="alert">Une erreur s'est produite lors de l'insertion dans la base de données</div>
     {% elseif error==8 %}
         <div class="alert alert-danger" role="alert">Le format du lien du partenaire est invalide</div>
+    {% elseif error==4 %}
+        <div class="alert alert-danger" role="alert">L'extension n'est pas valide</div>
+    {% elseif error==5 %}
+        <div class="alert alert-danger" role="alert">La taille de l'image est trop élevé</div>
+    {% elseif error==6 %}
+        <div class="alert alert-danger" role="alert">Le poids de l'image est trop élevé</div>
     {% endif %}
         <form method="POST" action="../../../../admin/admin.php?page=addPartner" enctype="multipart/form-data">
             <div class="form-group">
@@ -17,9 +23,23 @@
                 <input type="text" class="form-control" id="url" name="url" placeholder="Entrez le lien du partenaire" required>
             </div>
             <div class="form-group">
+                <label for="type">Catégorie du partenaire</label>
+                <select  class="form-control" id="type" name="type" required>
+                    <option value="institutionnels">Institutionnel</option>
+                    <option value="culturel">Culturel</option>
+                    <option value="média">Média</option>
+                    <option value="privé">Privé</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label for="img">Photo du partenaire</label>
                 <input type="file" id="img" name="img" required>
                 {% include 'imgInfo.html.twig' %}
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="footer" value="1">Partenaire présent dans le bas de page
+                </label>
             </div>
             <div class="text-center">
                 <input type="submit" name="submit" class="btn btn-primary" value="Créer">
@@ -33,6 +53,8 @@
             <tr>
                 <th>#</th>
                 <th>Lien</th>
+                <th>Type</th>
+                <th>Présent en bas de page</th>
                 <th>Image</th>
                 <th>Actions</th>
             </tr>
@@ -42,6 +64,14 @@
                 <tr>
                     <th scope="row">{{ partner.id }}</th>
                     <td>{{ partner.url }}</td>
+                    <td>{{ partner.type|title }}</td>
+                    <td>
+                        {% if partner.footer==1 %}
+                            Oui
+                        {% else %}
+                            Non
+                        {% endif %}
+                    </td>
                     <td><img src="../../../../web/img/partner/{{ partner.imgPartner }}" alt="Image du Partenaire" class="img-list"></td>
                     <td>
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{ partner.id }}"><i class="fa fa-trash-o"></i></button>
