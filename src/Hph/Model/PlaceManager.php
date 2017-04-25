@@ -36,6 +36,7 @@ class PlaceManager extends \Hph\Db
         if($rImg!==true){
             return $rImg;
         }
+        $file['img']['name'] = $this->nameImg($file['img']['name']);
         $vTitle = new TextValidator($post['name'], 150);
         $rTitle = $vTitle->validate();
         if($rTitle!==true){
@@ -120,6 +121,7 @@ class PlaceManager extends \Hph\Db
         }
 
         if ($file['img']['name'] != '') {
+            $file['img']['name'] = $this->nameImg($file['img']['name']);
             $query = "UPDATE place SET name = :name, url = :url, img_place = img, start = :start, end = :end, showcase = :showcase WHERE id = :id";
         } else {
             $query = "UPDATE place SET name = :name, url = :url, start = :start, end = :end, showcase = :showcase WHERE id = :id";
@@ -134,7 +136,10 @@ class PlaceManager extends \Hph\Db
         $prep->bindValue(':id', $post['id'], PDO::PARAM_INT);
         $result = $prep->execute();
         if($result){
-            return $this->addImg($file, 'place');
+            if($file['img']['name']!=''){
+                return $this->addImg($file, 'place', $post['id']);
+            }
+            return true;
         }
         return $result;
     }
@@ -142,7 +147,10 @@ class PlaceManager extends \Hph\Db
     public function deletePlace($id)
     {
         $sql = "DELETE FROM place WHERE id=" . $id;
-        return $this->getDb()->exec($sql);
+        if($this->getDb()->exec($sql)){
+            return $this->supprImg($id, 'place');
+        }
+        return false;
     }
 
     public function listPlaces()

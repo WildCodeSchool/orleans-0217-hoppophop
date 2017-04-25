@@ -33,6 +33,7 @@ class NewsManager extends \Hph\Db
         if($rImg!==true){
             return $rImg;
         }
+        $file['img']['name'] = $this->nameImg($file['img']['name']);
         $vTitle = new TextValidator($post['title'], 200);
         $rTitle = $vTitle->validate();
         if($rTitle!==true){
@@ -76,9 +77,10 @@ class NewsManager extends \Hph\Db
             return $rText;
         }
         if($file['img']['name']!=''){
-            $query = "UPDATE news VALUES SET title = :title, img_news = :img, text = :about, breaking_news = :breaking_news WHERE id = :id)";
+            $file['img']['name'] = $this->nameImg($file['img']['name']);
+            $query = "UPDATE news SET title = :title, img_news = :img, text = :about, breaking_news = :breaking_news WHERE id = :id";
         }else{
-            $query = "UPDATE news VALUES SET title = :title, text = :about, breaking_news = :breaking_news WHERE id = :id)";
+            $query = "UPDATE news SET title = :title, text = :about, breaking_news = :breaking_news WHERE id = :id";
         }
         $prep = $this->getDb()->prepare($query);
         $prep->bindValue(':id', $post['id'], PDO::PARAM_INT);
@@ -88,13 +90,19 @@ class NewsManager extends \Hph\Db
         $prep->bindValue(':breaking_news', $post['breaking_news'], PDO::PARAM_INT);
         $result = $prep->execute();
         if($result){
-            return $this->addImg($file, 'news');
+            if($file['img']['name']!=''){
+                return $this->addImg($file, 'news', $post['id']);
+            }
+            return true;
         }
         return $result;
     }
     public function deleteNews($id)
     {
         $sql = "DELETE FROM news WHERE id=".$id;
-        return $this->getDb()->exec($sql);
+        if($this->getDb()->exec($sql)){
+            return $this->supprImg($id, 'news');
+        }
+        return false;
     }
 }

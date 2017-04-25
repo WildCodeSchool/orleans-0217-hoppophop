@@ -74,34 +74,31 @@ class Db
             $req = "SELECT img_sunday FROM sunday WHERE id=$id";
         }
         $reqDone = $this->dBQueryWoFetchStyle($req);
-        var_dump($reqDone);
         $src = realpath(dirname(getcwd())).'/web/img/'.$type.'/';
-        unlink($src.$reqDone['0']['0']);
+        if(unlink($src.$reqDone['0']['0'])){
+            return true;
+        }
+        return false;
     }
 
     public function addImg($file, $type, $delete = 0)
     {
-        $src = realpath(dirname(getcwd())).'/web/img/'.$type.'/';
+        $src = realpath(dirname(getcwd())) . '/web/img/' . $type . '/';
         if ($file['img']['error'] == 0) {
             $tmp = $file['img']['tmp_name'];
-//            $rand = rand(0,1000000);
-//            $imgType = $file['img']['type'];
             $name = $file['img']['name'];
-            if ($delete > 0)
-            {
+            if ($delete > 0) {
                 $this->supprImg($delete, $type);
             }
-            if (move_uploaded_file($tmp, $src.$name)) {
+            if (move_uploaded_file($tmp, $src . $name)) {
                 return true;
-            } else {
-                return "Erreur : L'upload de l'image a échoué";
             }
-        } else {
-            return "Erreur : L'image n'a pas été uploadé";
+            return false;
         }
+        return false;
     }
-    public function secure ($text)
+    public function nameImg($name)
     {
-        return trim(htmlentities(mysqli_real_escape_string($bdd, $text)));
+        return rand(0,9999999).'_'.$name;
     }
 }

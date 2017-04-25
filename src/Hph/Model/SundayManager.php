@@ -26,6 +26,7 @@ class SundayManager extends \Hph\Db
         if($rImg!==true){
             return $rImg;
         }
+        $file['img']['name'] = $this->nameImg($file['img']['name']);
         $vTitle = new TextValidator($post['title'], 200);
         $rTitle = $vTitle->validate();
         if($rTitle!==true){
@@ -65,6 +66,7 @@ class SundayManager extends \Hph\Db
             return $rText;
         }
         if($file['img']['name']!=''){
+            $file['img']['name'] = $this->nameImg($file['img']['name']);
             $query = "UPDATE sunday SET title = :title, content = :content, img_sunday = :img WHERE id = :id";
         }else{
             $query = "UPDATE sunday SET title = :title, content = :content WHERE id = :id";
@@ -76,7 +78,10 @@ class SundayManager extends \Hph\Db
         $prep->bindValue(':id', $post['id'], PDO::PARAM_INT);
         $result = $prep->execute();
         if($result){
-            return $this->addImg($file, 'sunday');
+            if($file['img']['name']!=''){
+                return $this->addImg($file, 'sunday', $post['id']);
+            }
+            return true;
         }
         return $result;
     }

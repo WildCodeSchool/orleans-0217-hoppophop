@@ -28,6 +28,7 @@ class PartnerManager extends \Hph\Db
         if($rImg!==true){
             return $rImg;
         }
+        $file['img']['name'] = $this->nameImg($file['img']['name']);
         $vUrl = new TextValidator($post['url'], 0, 'url');
         $rUrl = $vUrl->validate();
         if($rUrl!==true){
@@ -48,7 +49,9 @@ class PartnerManager extends \Hph\Db
     public function deletePartner($id)
     {
         $sql = "DELETE FROM partner WHERE id=".$id;
-        return $this->getDb()->exec($sql);
-
+        if($this->getDb()->exec($sql)){
+            return $this->supprImg($id, 'partner');
+        }
+        return false;
     }
 }

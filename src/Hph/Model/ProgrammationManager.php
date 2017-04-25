@@ -59,6 +59,7 @@ class ProgrammationManager extends \Hph\Db
         if($rImg!==true){
             return $rImg;
         }
+        $file['img']['name'] = $this->nameImg($file['img']['name']);
         $vTitle = new TextValidator($post['name'], 150);
         $rTitle = $vTitle->validate();
         if($rTitle!==true){
@@ -117,11 +118,10 @@ class ProgrammationManager extends \Hph\Db
         if (!isset($post['local'])) {
             $post['local'] = 0;
         }
-<<<<<<< HEAD
         $upload = $this->addImg($file, 'artist', $post['id']);
         if ($upload != true) {
             return $upload;
-=======
+        }
         $vImg = new ImgValidator($file);
         $rImg = $vImg->validate();
         if($rImg!==true){
@@ -161,9 +161,9 @@ class ProgrammationManager extends \Hph\Db
         $rSpotify = $vSpotify->validate();
         if($rSpotify!==true){
             return $rSpotify;
->>>>>>> 33cd1186cae4ec0c795d32a816233aedb1f36937
         }
         if ($file['img']['name'] != '') {
+            $file['img']['name'] = $this->nameImg($file['img']['name']);
             $query = "UPDATE artist SET name = :name, bio = :content, img_artist = :img, video_url = :video_url, facebook_url = :facebook_url, youtube_url = :youtube_url, twitter_url = :twitter_url, spotify_url = :spotify_url, local = :local WHERE id = :id";
         } else {
             $query = "UPDATE artist SET name = :name, bio = :content, video_url = :video_url, facebook_url = :facebook_url, youtube_url = :youtube_url, twitter_url = :twitter_url, spotify_url = :spotify_url, local = :local WHERE id = :id";
@@ -181,16 +181,19 @@ class ProgrammationManager extends \Hph\Db
         $prep->bindValue(':id', $post['id'], PDO::PARAM_INT);
         $result = $prep->execute();
         if($result){
-            return $this->addImg($file, 'artist');
+            if($file['img']['name']!=''){
+                return $this->addImg($file, 'artist', $post['id']);
+            }
+            return true;
         }
         return $result;
     }
-
     public function deleteArtist($id)
     {
         $sql = "DELETE FROM artist WHERE id=" . $id;
-        return $this->getDb()->exec($sql);
+        if($this->getDb()->exec($sql)){
+            return $this->supprImg($id, 'artist');
+        }
+        return false;
     }
-
-
 }

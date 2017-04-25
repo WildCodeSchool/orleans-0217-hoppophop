@@ -30,6 +30,7 @@ JOIN place ON place.id=eat_place.place_id
         if($rImg!==true){
             return $rImg;
         }
+        $file['img']['name'] = $this->nameImg($file['img']['name']);
         $vTitle = new TextValidator($post['name'], 255);
         $rTitle = $vTitle->validate();
         if($rTitle!==true){
@@ -98,6 +99,7 @@ JOIN place ON place.id=eat_place.place_id
             return $rEnd;
         }
         if($file['img']['name']!=''){
+            $file['img']['name'] = $this->nameImg($file['img']['name']);
             $query = "UPDATE eat SET name = :name, content = :content, img_eat = :img WHERE id = :id";
         }else{
             $query = "UPDATE eat SET name = :name, content = :content WHERE id = :id";
@@ -116,7 +118,10 @@ JOIN place ON place.id=eat_place.place_id
         $result2 = $prep2->execute();
         if($result){
             if($result2){
-                return $this->addImg($file, 'foodtruck');
+                if($file['img']['name']!=''){
+                    return $this->addImg($file, 'foodtruck', $post['id']);
+                }
+                return true;
             }
             return $result2;
         }
@@ -127,10 +132,10 @@ JOIN place ON place.id=eat_place.place_id
         $sql = "DELETE FROM eat_place WHERE eat_id=".$id;
         $sql2 = "DELETE FROM eat WHERE id=".$id;
         $result = $this->getDb()->exec($sql);
-        $result2 = $this->getDb()->exec($sql)2;
+        $result2 = $this->getDb()->exec($sql2);
         if($result){
             if($result2){
-                return true;
+                return $this->supprImg($id, 'foodtruck');
             }
             return $result2;
         }
