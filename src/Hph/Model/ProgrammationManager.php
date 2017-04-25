@@ -117,6 +117,11 @@ class ProgrammationManager extends \Hph\Db
         if (!isset($post['local'])) {
             $post['local'] = 0;
         }
+<<<<<<< HEAD
+        $upload = $this->addImg($file, 'artist', $post['id']);
+        if ($upload != true) {
+            return $upload;
+=======
         $vImg = new ImgValidator($file);
         $rImg = $vImg->validate();
         if($rImg!==true){
@@ -156,6 +161,7 @@ class ProgrammationManager extends \Hph\Db
         $rSpotify = $vSpotify->validate();
         if($rSpotify!==true){
             return $rSpotify;
+>>>>>>> 33cd1186cae4ec0c795d32a816233aedb1f36937
         }
         if ($file['img']['name'] != '') {
             $query = "UPDATE artist SET name = :name, bio = :content, img_artist = :img, video_url = :video_url, facebook_url = :facebook_url, youtube_url = :youtube_url, twitter_url = :twitter_url, spotify_url = :spotify_url, local = :local WHERE id = :id";
