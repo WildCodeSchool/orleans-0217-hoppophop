@@ -19,7 +19,14 @@ if ($page == 'home') {
     $render = $artist->listAllArtist();
 } else if ($page == 'addArtist') {
     $addArtist = new Hph\Model\ProgrammationManager();
+    $tagManager = new Hph\Model\TagManager();
     if ($addArtist->addArtist($_POST, $_FILES)) {
+        $id = $addArtist->getDb()->lastInsertId();
+        $tags = trim($_POST['tags']);
+        $tags = explode(',', $tags);
+        foreach ($tags as $tag) {
+            $tagManager->insertTag($tag, $id);
+        }
         header('Location: admin.php?page=artist');
     }
 } else if ($page == 'updateArtist') {

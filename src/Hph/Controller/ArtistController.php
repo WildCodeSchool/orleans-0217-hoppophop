@@ -21,15 +21,14 @@ class ArtistController extends ControllerDefault
         $tags = $artistManager->findArtistTag($id);
         $progs = $artistManager->findProg($id);
 
-        //recupere le tags pour un artist
-        // appelle ton modèle $tags = Tag->findArtistTags($artist_id); // select * from tags where artist_id = $artist_id;
         // affichage de la page qui affiche un seul artiste 'tags'=>$tags
 
         // appel la methode render de twig
-        return $this->twig->render('artist.html.twig', ['artist'=> $artists[0], 'tags'=> $tags, 'progs'=>$progs]);
+        return $this->twig->render('artist.html.twig',
+                                    ['artist'=> $artists[0],
+                                        'tags'=> $tags,
+                                        'progs'=>$progs]);
     }
-
-
 
 
 

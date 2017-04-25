@@ -18,6 +18,11 @@ class ProgrammationManager extends \Hph\Db
         return $this->dBQuery($req, 'Artist');
     }
 
+    public function plugArtist()
+    {
+        $req = "SELECT * FROM hph.artist a LEFT JOIN hph.tag t ON a.id = t.artist_id";
+        return $this->dBQuery($req, 'Artist');
+    }
 
     public function getArtists()
     {
@@ -60,8 +65,10 @@ class ProgrammationManager extends \Hph\Db
             "', '" . $file['img']['name'] . "', '" . $post['video_url'] . "', '" . $post['facebook_url'] .
             "', '" . $post['youtube_url'] . "', '" . $post['twitter_url'] . "', '" . $post['spotify_url'] .
             "', '" . $post['local'] . "')";
+
         return $this->getDb()->exec($sql);
     }
+
 
     public function updateArtist($post, $file)
     {
@@ -83,6 +90,11 @@ class ProgrammationManager extends \Hph\Db
                 "', facebook_url = '" . $post['facebook_url'] . "', youtube_url = '" . $post['youtube_url'] .
                 "', twitter_url = '" . $post['twitter_url'] . "', spotify_url = '" . $post['spotify_url'] .
                 "', local = '" . $post['local'] . "' WHERE id = '" . $post['id'] . "'";
+        }
+        if (!isset($post['tag'])) {
+            $post['tag'] = 0;
+            $req = "UPDATE artist SET tag = '" . $post['tag']['name'] . "', '" . $post['tag']['name'] .
+            "', '" . $post['tag']['name'] . "')";
         }
         return $this->getDb()->exec($sql);
     }
