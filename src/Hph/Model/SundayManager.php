@@ -21,7 +21,7 @@ class SundayManager extends \Hph\Db
     public function addSunday($post, $file)
     {
         $vImg = new ImgValidator($file);
-        $rImg = $vImg->validator();
+        $rImg = $vImg->validate();
         if($rImg!==true){
             return $rImg;
         }
@@ -45,7 +45,7 @@ class SundayManager extends \Hph\Db
     public function updateSunday($post, $file)
     {
         $vImg = new ImgValidator($file);
-        $rImg = $vImg->validator();
+        $rImg = $vImg->validate();
         if($rImg!==true){
             return $rImg;
         }

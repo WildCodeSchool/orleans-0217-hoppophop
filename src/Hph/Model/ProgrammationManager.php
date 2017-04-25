@@ -54,7 +54,7 @@ class ProgrammationManager extends \Hph\Db
             $post['local'] = 0;
         }
         $vImg = new ImgValidator($file);
-        $rImg = $vImg->validator();
+        $rImg = $vImg->validate();
         if($rImg!==true){
             return $rImg;
         }
@@ -68,27 +68,27 @@ class ProgrammationManager extends \Hph\Db
         if($rText!==true){
             return $rText;
         }
-        $vVideo = new TextValidator($post['video_url']);
+        $vVideo = new TextValidator($post['video_url'], 0, 'url');
         $rVideo = $vVideo->validate();
         if($rVideo!==true){
             return $rVideo;
         }
-        $vFB = new TextValidator($post['facebook_url']);
+        $vFB = new TextValidator($post['facebook_url'], 0, 'url');
         $rFB = $vFB->validate();
         if($rFB!==true){
             return $rFB;
         }
-        $vYT = new TextValidator($post['youtube_url']);
+        $vYT = new TextValidator($post['youtube_url'], 0, 'url');
         $rYT = $vYT->validate();
         if($rYT!==true){
             return $rYT;
         }
-        $vTwitter = new TextValidator($post['twitter_url']);
+        $vTwitter = new TextValidator($post['twitter_url'], 0, 'url');
         $rTwitter = $vTwitter->validate();
         if($rTwitter!==true){
             return $rTwitter;
         }
-        $vSpotify = new TextValidator($post['spotify_url']);
+        $vSpotify = new TextValidator($post['spotify_url'], 0, 'url');
         $rSpotify = $vSpotify->validate();
         if($rSpotify!==true){
             return $rSpotify;
@@ -110,7 +110,7 @@ class ProgrammationManager extends \Hph\Db
             $post['local'] = 0;
         }
         $vImg = new ImgValidator($file);
-        $rImg = $vImg->validator();
+        $rImg = $vImg->validate();
         if($rImg!==true){
             return $rImg;
         }
@@ -124,27 +124,27 @@ class ProgrammationManager extends \Hph\Db
         if($rText!==true){
             return $rText;
         }
-        $vVideo = new TextValidator($post['video_url']);
+        $vVideo = new TextValidator($post['video_url'], 0, 'url');
         $rVideo = $vVideo->validate();
         if($rVideo!==true){
             return $rVideo;
         }
-        $vFB = new TextValidator($post['facebook_url']);
+        $vFB = new TextValidator($post['facebook_url'], 0, 'url');
         $rFB = $vFB->validate();
         if($rFB!==true){
             return $rFB;
         }
-        $vYT = new TextValidator($post['youtube_url']);
+        $vYT = new TextValidator($post['youtube_url'], 0, 'url');
         $rYT = $vYT->validate();
         if($rYT!==true){
             return $rYT;
         }
-        $vTwitter = new TextValidator($post['twitter_url']);
+        $vTwitter = new TextValidator($post['twitter_url'], 0, 'url');
         $rTwitter = $vTwitter->validate();
         if($rTwitter!==true){
             return $rTwitter;
         }
-        $vSpotify = new TextValidator($post['spotify_url']);
+        $vSpotify = new TextValidator($post['spotify_url'], 0, 'url');
         $rSpotify = $vSpotify->validate();
         if($rSpotify!==true){
             return $rSpotify;

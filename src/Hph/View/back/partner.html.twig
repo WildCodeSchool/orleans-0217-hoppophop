@@ -8,6 +8,8 @@
         <div class="alert alert-danger" role="alert">Le lien d'un partenaire doit être une chaîne de caractères</div>
     {% elseif error==0 %}
         <div class="alert alert-danger" role="alert">Une erreur s'est produite lors de l'insertion dans la base de données</div>
+    {% elseif error==8 %}
+        <div class="alert alert-danger" role="alert">Le format du lien du partenaire est invalide</div>
     {% endif %}
         <form method="POST" action="../../../../admin/admin.php?page=addPartner" enctype="multipart/form-data">
             <div class="form-group">
@@ -17,7 +19,7 @@
             <div class="form-group">
                 <label for="img">Photo du partenaire</label>
                 <input type="file" id="img" name="img" required>
-                <p class="help-block">Aide à la photo</p>
+                {% include 'imgInfo.html.twig' %}
             </div>
             <div class="text-center">
                 <input type="submit" name="submit" class="btn btn-primary" value="Créer">

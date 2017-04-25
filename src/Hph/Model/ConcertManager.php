@@ -37,6 +37,9 @@ JOIN place ON concert.place_id=place.id";
         if($rEnd!==true){
             return $rEnd;
         }
+        if (filter_var($post['url'], FILTER_VALIDATE_URL) === FALSE) {
+            return 8;
+        }
 
         $sql = "INSERT INTO concert VALUES (NULL, '" . $post['start'] . "', '" . $post['end'] . "', '" . $post['artist'] . "', '" . $post['place'] . "', '" . $post['status'] . "', '" . $post['showcase'] . "')";
         return $this->getDb()->exec($sql);

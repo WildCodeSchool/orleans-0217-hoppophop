@@ -30,7 +30,7 @@ class PlaceManager extends \Hph\Db
             $post['showcase'] = 0;
         }
         $vImg = new ImgValidator($file);
-        $rImg = $vImg->validator();
+        $rImg = $vImg->validate();
         if($rImg!==true){
             return $rImg;
         }
@@ -53,6 +53,11 @@ class PlaceManager extends \Hph\Db
         $rEnd = $vEnd->validate();
         if($rEnd!==true){
             return $rEnd;
+        }
+        $vUrl = new TextValidator($post['url'], 0, 'url');
+        $rUrl = $vUrl->validate();
+        if($rUrl!==true){
+            return $rUrl;
         }
 
         $sql = "INSERT INTO place VALUES (NULL, '" . $post['name'] . "', '" . $post['url'] . "', '" . $file['img']['name'] . "', '" . $post['start'] . "', '" . $post['end'] . "', '" . $post['showcase'] . "')";
@@ -75,7 +80,7 @@ class PlaceManager extends \Hph\Db
             $post['showcase'] = 0;
         }
         $vImg = new ImgValidator($file);
-        $rImg = $vImg->validator();
+        $rImg = $vImg->validate();
         if($rImg!==true){
             return $rImg;
         }
@@ -99,6 +104,12 @@ class PlaceManager extends \Hph\Db
         if($rEnd!==true){
             return $rEnd;
         }
+        $vUrl = new TextValidator($post['url'], 0, 'url');
+        $rUrl = $vUrl->validate();
+        if($rUrl!==true){
+            return $rUrl;
+        }
+
         if ($file['img']['name'] != '') {
             $sql = "UPDATE place SET name = '" . $post['name'] . "', url = '" . $post['url'] .
                 "', img_place = '" . $file['img']['name'] . "', START = '" . $post['start'] .

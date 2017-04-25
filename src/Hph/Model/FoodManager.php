@@ -25,7 +25,7 @@ JOIN place ON place.id=eat_place.place_id
     public function addFood($post, $file)
     {
         $vImg = new ImgValidator($file);
-        $rImg = $vImg->validator();
+        $rImg = $vImg->validate();
         if($rImg!==true){
             return $rImg;
         }
@@ -61,7 +61,7 @@ JOIN place ON place.id=eat_place.place_id
     public function updateFood($post, $file)
     {
         $vImg = new ImgValidator($file);
-        $rImg = $vImg->validator();
+        $rImg = $vImg->validate();
         if($rImg!==true){
             return $rImg;
         }

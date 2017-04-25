@@ -29,13 +29,7 @@
             <div class="form-group">
                 <label for="img">Photo de l'activité</label>
                 <input type="file" id="img" name="img" required>
-                <p class="help-block">
-                    Informations : <br />
-                    Hauteur maximale : 450px, <br />
-                    Largeur maximale : 500px, <br />
-                    Poids maximal :  x, <br />
-                    Extensions authorisées : jpg, jpeg, png, gif
-                </p>
+                {% include 'imgInfo.html.twig' %}
             </div>
             <div class="text-center">
                 <input type="submit" name="submit" class="btn btn-primary" value="Créer">

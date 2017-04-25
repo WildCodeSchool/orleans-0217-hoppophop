@@ -16,6 +16,8 @@
             <div class="alert alert-danger" role="alert">La taille de l'image est trop élevé</div>
         {% elseif error==6 %}
             <div class="alert alert-danger" role="alert">Le poids de l'image est trop élevé</div>
+        {% elseif error==8 %}
+            <div class="alert alert-danger" role="alert">Le format d'un des liens est invalide</div>
         {% endif %}
         <form method="POST" action="../../../../admin/admin.php?page=addArtist" enctype="multipart/form-data">
             <div class="form-group">
@@ -29,7 +31,7 @@
             <div class="form-group">
                 <label for="img">Photo de l'artiste</label>
                 <input type="file" id="img" name="img">
-                <p class="help-block">Aide à la photo</p>
+                {% include 'imgInfo.html.twig' %}
             </div>
             <div class="form-group">
                 <label for="url">Lien de la vidéo</label>

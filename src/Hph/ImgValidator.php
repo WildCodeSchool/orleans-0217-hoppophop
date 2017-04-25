@@ -21,7 +21,7 @@ class ImgValidator
     const HEIGHT = 500;
     const SIZE = 1000000;
 
-    public function validator()
+    public function validate()
     {
         if(in_array($this->ext, self::EXT)){
             if($this->width<=self::WIDTH&&$this->height<=self::HEIGHT){

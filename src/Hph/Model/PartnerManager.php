@@ -21,7 +21,7 @@ class PartnerManager extends \Hph\Db
     public function addPartner($post, $file)
     {
         $vImg = new ImgValidator($file);
-        $rImg = $vImg->validator();
+        $rImg = $vImg->validate();
         if($rImg!==true){
             return $rImg;
         }
@@ -30,6 +30,12 @@ class PartnerManager extends \Hph\Db
         if($rTitle!==true){
             return $rTitle;
         }
+        $vUrl = new TextValidator($post['url'], 0, 'url');
+        $rUrl = $vUrl->validate();
+        if($rUrl!==true){
+            return $rUrl;
+        }
+
         $sql = "INSERT INTO partner VALUES (NULL, '".$file['img']['name']."', '".$post['url']."')";
         $result = $this->getDb()->exec($sql);
         if($result){

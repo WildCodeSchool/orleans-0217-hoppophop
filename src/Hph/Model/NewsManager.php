@@ -28,7 +28,7 @@ class NewsManager extends \Hph\Db
             $post['breaking_news'] = 0;
         }
         $vImg = new ImgValidator($file);
-        $rImg = $vImg->validator();
+        $rImg = $vImg->validate();
         if($rImg!==true){
             return $rImg;
         }
@@ -55,7 +55,7 @@ class NewsManager extends \Hph\Db
             $post['breaking_news'] = 0;
         }
         $vImg = new ImgValidator($file);
-        $rImg = $vImg->validator();
+        $rImg = $vImg->validate();
         if($rImg!==true){
             return $rImg;
         }
