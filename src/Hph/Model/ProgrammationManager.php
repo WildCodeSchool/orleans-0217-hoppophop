@@ -21,7 +21,7 @@ class ProgrammationManager extends \Hph\Db
         return $this->dBQuery($req, 'Artist');
     }
 
-    public function plugArtist()
+    public function profileArtist()
     {
         $req = "SELECT * FROM hph.artist a LEFT JOIN hph.tag t ON a.id = t.artist_id";
         return $this->dBQuery($req, 'Artist');
