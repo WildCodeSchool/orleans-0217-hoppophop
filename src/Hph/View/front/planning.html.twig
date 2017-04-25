@@ -15,17 +15,18 @@
         </div>
         <div class="row hidden-sm hidden-xs ">
             {% for lieu, progLieu in prog.VENDREDI %}
-                <div class="col-md-2 hidden-sm hidden-xs col-lieu">
+                <div class="col-md-2 hidden-sm hidden-xs col-lieu bordercolor">
                     {% for heure, values in progLieu %}
                         <div class=" hidden-sm hidden-xs">
                             <a href="../../../../index.php?page=artist&id={{ values.artiste.id }}">
-                            <div class="planning-show font-default {% if values.concert.status == 'canceled' %}planning-cancel{%endif%}"><p class="artist">{{ values.artiste.name }}<br/><span class="{% if values.concert.status == 'canceled' %}cancel-hidden{% endif %}">{{ heure }}</span></p>
+                            <div class="planning-show font-bebas {% if values.concert.status == 'canceled' %}planning-cancel{%endif%}"><p class="artist font-bebas">{{ values.artiste.name|upper }}<br/><span class="{% if values.concert.status == 'canceled' %}cancel-hidden{% endif %} heure font-bebas">{{ heure|upper  }}</span></p>
                                 {% if values.concert.status == 'canceled' %}
                                     <p class="plan-cancel font-dokyo">Annulé</p>
                                 {% endif %}
                             </div>
                             </a>
                         </div>
+                        <br/>
                     {% endfor %}
                 </div>
             {% endfor %}
@@ -43,18 +44,18 @@
         </div>
         <div class="row hidden-sm hidden-xs ">
             {% for lieu, progLieu in progShow %}
-                <div class="col-md-2 hidden-sm hidden-xs col-lieu">
+                <div class="col-md-2 hidden-sm hidden-xs col-lieu bordercolor">
                 {% for heure,values in progLieu %}
                         <div class=" hidden-sm hidden-xs">
                             <a href="../../../../index.php?page=artist&id={{ values.artiste.id }}">
-                            <div class="planning-show show-blue font-default {% if values.showcase.status == 'canceled' %}planning-cancel{%endif%}"><p class="artist">{{ values.artiste.name }}<br/><span class="{% if values.showcase.status == 'canceled' %}cancel-hidden{% endif %}">{{ heure }}</span></p>
+                            <div class="planning-show show-blue font-bebas {% if values.showcase.status == 'canceled' %}planning-cancel{%endif%}"><p class="artist font-bebas">{{ values.artiste.name|upper }}<br/><span class="{% if values.showcase.status == 'canceled' %}cancel-hidden{% endif %} heure font-bebas">{{ heure }}</span></p>
                                 {% if values.showcase.status == 'canceled' %}
                                     <p class="plan-cancel font-dokyo">Annulé</p>
                                 {% endif %}
                             </div>
                             </a>
                         </div>
-
+                        <br/>
                 {% endfor %}
                 </div>
             {% endfor %}
@@ -74,11 +75,11 @@
         </div>
         <div class="row hidden-sm hidden-xs ">
             {% for lieu, progLieu in prog.SAMEDI %}
-                <div class="col-md-2 hidden-sm hidden-xs col-lieu">
+                <div class="col-md-2 hidden-sm hidden-xs col-lieu bordercolor">
                     {% for heure, values in progLieu %}
                         <div class=" hidden-sm hidden-xs">
                             <a href="../../../../index.php?page=artist&id={{ values.artiste.id }}">
-                            <div class="planning-show show-blue font-default {% if values.concert.status == 'canceled' %}planning-cancel{%endif%}"><p class="artist">{{ values.artiste.name }}<br/><span class="{% if values.concert.status == 'canceled' %}cancel-hidden{% endif %}">{{ heure }}</span></p>
+                            <div class="planning-show show-blue font-bebas {% if values.concert.status == 'canceled' %}planning-cancel{%endif%}"><p class="artist font-bebas">{{ values.artiste.name }}<br/><span class="{% if values.concert.status == 'canceled' %}cancel-hidden{% endif %} heure font-bebas">{{ heure }}</span></p>
                                 {% if values.concert.status == 'canceled' %}
                                     <p class="plan-cancel font-dokyo">Annulé</p>
                                 {% endif %}
@@ -86,6 +87,8 @@
                             </a>
                         </div>
                     {% endfor %}
+                    <br/>
+                    <br/>
                 </div>
             {% endfor %}
         </div>
