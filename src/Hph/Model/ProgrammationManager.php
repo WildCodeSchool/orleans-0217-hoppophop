@@ -68,7 +68,7 @@ class ProgrammationManager extends \Hph\Db
         if (!isset($post['local'])) {
             $post['local'] = 0;
         }
-        $upload = $this->addImg($file, 'place');
+        $upload = $this->addImg($file, 'artist', $post['id']);
         if ($upload != true) {
             return $upload;
         }
