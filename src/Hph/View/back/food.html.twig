@@ -71,7 +71,6 @@
             <tr>
                 <th>#</th>
                 <th>Nom</th>
-                <th>Description</th>
                 <th>Image</th>
                 <th>Lieux</th>
                 <th>Début</th>
@@ -84,7 +83,6 @@
                 <tr>
                     <th scope="row">{{ food.id }}</th>
                     <td>{{ food.name }}</td>
-                    <td>{{ food.content }}</td>
                     <td><img src="../../../../web/img/foodtruck/{{ food.imgEat }}" alt="Image du Foodtruck" class="img-list"></td>
                     <td>{{ food.place_name }}</td>
                     <td>{{ food.start|localizeddate('long', 'short', 'fr') }}</td>
@@ -130,7 +128,7 @@
                                     <div class="form-group">
                                         <label for="img">Photo du Foodtruck</label>
                                         <input type="file" id="img" name="img" required>
-                                        <p class="help-block">Aide à la photo</p>
+                                        {% include 'imgInfo.html.twig' %}
                                     </div>
                                 </div>
                                 <div class="modal-footer">

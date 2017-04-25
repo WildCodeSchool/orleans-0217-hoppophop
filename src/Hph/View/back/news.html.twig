@@ -48,7 +48,6 @@
             <tr>
                 <th>#</th>
                 <th>Titre</th>
-                <th>Texte</th>
                 <th>Image</th>
                 <th>Actualité Importante</th>
                 <th>Actions</th>
@@ -59,7 +58,6 @@
                 <tr>
                     <th scope="row">{{ news.id }}</th>
                     <td>{{ news.title }}</td>
-                    <td>{{ news.text }}</td>
                     <td><img src="../../../../web/img/news/{{ news.imgNews }}" alt="Image de l'actualité" class="img-list"></td>
                     <td>
                         {% if news.breakingNews==1 %}
@@ -93,7 +91,7 @@
                                     <div class="form-group">
                                         <label for="img">Photo de l'actualité</label>
                                         <input type="file" id="img" name="img" required>
-                                        <p class="help-block">Aide à la photo</p>
+                                        {% include 'imgInfo.html.twig' %}
                                     </div>
                                     <div class="checkbox">
                                         <label>
