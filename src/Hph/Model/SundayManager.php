@@ -10,6 +10,7 @@ namespace Hph\Model;
 
 use Hph\ImgValidator;
 use Hph\TextValidator;
+use PDO;
 
 class SundayManager extends \Hph\Db
 {
@@ -35,8 +36,12 @@ class SundayManager extends \Hph\Db
         if($rText!==true){
             return $rText;
         }
-        $sql = "INSERT INTO sunday VALUES (NULL, '".$post['title']."', '".$file['img']['name']."', '".$post['content']."')";
-        $result = $this->getDb()->exec($sql);
+        $query = "INSERT INTO sunday VALUES (NULL, :title, :img, :content)";
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':title', $post['title'], PDO::PARAM_STR);
+        $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
+        $prep->bindValue(':content', $post['content'], PDO::PARAM_STR);
+        $result = $prep->execute();
         if($result){
             return $this->addImg($file, 'sunday');
         }
@@ -60,11 +65,16 @@ class SundayManager extends \Hph\Db
             return $rText;
         }
         if($file['img']['name']!=''){
-            $sql = "UPDATE sunday SET title = '".$post['title']."', content = '".$post['content']."', img_sunday = '".$file['img']['name']."' WHERE id = '".$post['id']."'";
+            $query = "UPDATE sunday SET title = :title, content = :content, img_sunday = :img WHERE id = :id";
         }else{
-            $sql = "UPDATE sunday SET title = '".$post['title']."', content = '".$post['content']."' WHERE id = '".$post['id']."'";
+            $query = "UPDATE sunday SET title = :title, content = :content WHERE id = :id";
         }
-        $result = $this->getDb()->exec($sql);
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':title', $post['title'], PDO::PARAM_STR);
+        $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
+        $prep->bindValue(':content', $post['content'], PDO::PARAM_STR);
+        $prep->bindValue(':id', $post['id'], PDO::PARAM_INT);
+        $result = $prep->execute();
         if($result){
             return $this->addImg($file, 'sunday');
         }

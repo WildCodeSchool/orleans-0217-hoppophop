@@ -9,7 +9,7 @@
 namespace Hph\Model;
 
 use Hph\DateValidator;
-
+use PDO;
 
 class ConcertManager extends \Hph\Db
 {
@@ -41,8 +41,16 @@ JOIN place ON concert.place_id=place.id";
             return 8;
         }
 
-        $sql = "INSERT INTO concert VALUES (NULL, '" . $post['start'] . "', '" . $post['end'] . "', '" . $post['artist'] . "', '" . $post['place'] . "', '" . $post['status'] . "', '" . $post['showcase'] . "')";
-        return $this->getDb()->exec($sql);
+        $query = "INSERT INTO concert VALUES (NULL, :start, :end, :artist, :place, :status, :showcase)";
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':start', $post['start'], PDO::PARAM_STR);
+        $prep->bindValue(':end', $post['end'], PDO::PARAM_STR);
+        $prep->bindValue(':status', $post['status'], PDO::PARAM_STR);
+        $prep->bindValue(':artist', $post['artist'], PDO::PARAM_INT);
+        $prep->bindValue(':place', $post['place'], PDO::PARAM_INT);
+        $prep->bindValue(':showcase', $post['showcase'], PDO::PARAM_INT);
+        $result = $prep->execute();
+        return $result;
     }
 
     public function updateConcert($post)
@@ -61,10 +69,17 @@ JOIN place ON concert.place_id=place.id";
             return $rEnd;
         }
 
-        $sql = "UPDATE concert SET concert_start = '" . $post['start'] . "', concert_end = '" . $post['end'] . "', artist_id = '" . $post['artist'] . "', place_id = '" . $post['place'] . "', status = '" . $post['status'] .
-                "', showcase = '" . $post['showcase'] . "' WHERE id = '" . $post['id'] . "'";
-
-        return $this->getDb()->exec($sql);
+        $query = "UPDATE concert SET concert_start = :start, concert_end = :end, artist_id = :artist, place_id = :place, status = :status, showcase = :showcase WHERE id = :id";
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':id', $post['id'], PDO::PARAM_INT);
+        $prep->bindValue(':start', $post['start'], PDO::PARAM_STR);
+        $prep->bindValue(':end', $post['end'], PDO::PARAM_STR);
+        $prep->bindValue(':status', $post['status'], PDO::PARAM_STR);
+        $prep->bindValue(':artist', $post['artist'], PDO::PARAM_INT);
+        $prep->bindValue(':place', $post['place'], PDO::PARAM_INT);
+        $prep->bindValue(':showcase', $post['showcase'], PDO::PARAM_INT);
+        $result = $prep->execute();
+        return $result;
     }
 
     public function deleteConcert($id)

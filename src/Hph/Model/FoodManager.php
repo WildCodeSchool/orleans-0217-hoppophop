@@ -10,6 +10,7 @@ namespace Hph\Model;
 use Hph\ImgValidator;
 use Hph\TextValidator;
 use Hph\DateValidator;
+use PDO;
 
 class FoodManager extends \Hph\Db
 {
@@ -49,14 +50,25 @@ JOIN place ON place.id=eat_place.place_id
         if($rEnd!==true){
             return $rEnd;
         }
-        $sql = "INSERT INTO eat VALUES (NULL, '".$post['name']."', '".$file['img']['name']."', '".$post['content']."');";
-        $sql2 = "INSERT INTO eat_place VALUES (LAST_INSERT_ID(), '".$post['place']."', '".$post['start']."', '".$post['end']."')";
-        $result = $this->getDb()->exec($sql);
+        $query = "INSERT INTO eat VALUES (NULL, :name, :img, :content);";
+        $query2 = "INSERT INTO eat_place VALUES (LAST_INSERT_ID(), :place, :start, :end)";
+        $prep = $this->getDb()->prepare($query);
+        $prep2 = $this->getDb()->prepare($query2);
+        $prep->bindValue(':name', $post['name'], PDO::PARAM_STR);
+        $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
+        $prep->bindValue(':content', $post['content'], PDO::PARAM_STR);
+        $prep->bindValue(':place', $post['place'], PDO::PARAM_INT);
+        $prep->bindValue(':start', $post['start'], PDO::PARAM_STR);
+        $prep->bindValue(':end', $post['end'], PDO::PARAM_STR);
+        $result = $prep->execute();
+        $result2 = $prep2->execute();
         if($result){
-            return $this->addImg($file, 'foodtruck');
+            if($result2){
+                return $this->addImg($file, 'foodtruck');
+            }
+            return $result2;
         }
         return $result;
-
     }
     public function updateFood($post, $file)
     {
@@ -86,14 +98,27 @@ JOIN place ON place.id=eat_place.place_id
             return $rEnd;
         }
         if($file['img']['name']!=''){
-            $sql = "UPDATE eat SET name = '".$post['name']."', content = '".$post['content']."', img_eat = '".$file['img']['name']."' WHERE id = '".$post['id']."'";
+            $query = "UPDATE eat SET name = :name, content = :content, img_eat = :img WHERE id = :id";
         }else{
-            $sql = "UPDATE eat SET name = '".$post['name']."', content = '".$post['content']."' WHERE id = '".$post['id']."'";
+            $query = "UPDATE eat SET name = :name, content = :content WHERE id = :id";
         }
-        $sql2 = "UPDATE eat_place SET place_id = '".$post['place']."', start = '".$post['start']."', end = '".$post['end']."' WHERE eat_id = '".$post['id']."'";
-        $result = $this->getDb()->exec($sql);
+        $query2 = "UPDATE eat_place SET place_id = :place, start = :start, end = :end WHERE eat_id = :id";
+        $prep = $this->getDb()->prepare($query);
+        $prep2 = $this->getDb()->prepare($query2);
+        $prep->bindValue(':id', $post['id'], PDO::PARAM_INT);
+        $prep->bindValue(':name', $post['name'], PDO::PARAM_STR);
+        $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
+        $prep->bindValue(':content', $post['content'], PDO::PARAM_STR);
+        $prep->bindValue(':place', $post['place'], PDO::PARAM_INT);
+        $prep->bindValue(':start', $post['start'], PDO::PARAM_STR);
+        $prep->bindValue(':end', $post['end'], PDO::PARAM_STR);
+        $result = $prep->execute();
+        $result2 = $prep2->execute();
         if($result){
-            return $this->addImg($file, 'foodtruck');
+            if($result2){
+                return $this->addImg($file, 'foodtruck');
+            }
+            return $result2;
         }
         return $result;
     }
@@ -101,6 +126,14 @@ JOIN place ON place.id=eat_place.place_id
     {
         $sql = "DELETE FROM eat_place WHERE eat_id=".$id;
         $sql2 = "DELETE FROM eat WHERE id=".$id;
-        return $this->getDb()->exec($sql);
+        $result = $this->getDb()->exec($sql);
+        $result2 = $this->getDb()->exec($sql)2;
+        if($result){
+            if($result2){
+                return true;
+            }
+            return $result2;
+        }
+        return $result;
     }
 }

@@ -62,4 +62,8 @@ class Db
             return "Erreur : L'image n'a pas été uploadé";
         }
     }
+    public function secure ($text)
+    {
+        return trim(htmlentities(mysqli_real_escape_string($bdd, $text)));
+    }
 }

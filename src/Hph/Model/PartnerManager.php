@@ -9,7 +9,7 @@
 namespace Hph\Model;
 use Hph\ImgValidator;
 use Hph\TextValidator;
-
+use PDO;
 class PartnerManager extends \Hph\Db
 {
     public function getPartner()
@@ -33,8 +33,13 @@ class PartnerManager extends \Hph\Db
         if($rUrl!==true){
             return $rUrl;
         }
-        $sql = "INSERT INTO partner VALUES (NULL, '".$file['img']['name']."', '".$post['url']."', '".$post['footer']."', '".$post['type']."')";
-        $result = $this->getDb()->exec($sql);
+        $query = "INSERT INTO partner VALUES (NULL, :img, :url, :footer, :type)";
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':type', $post['type'], PDO::PARAM_STR);
+        $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
+        $prep->bindValue(':url', $post['url'], PDO::PARAM_STR);
+        $prep->bindValue(':footer', $post['footer'], PDO::PARAM_INT);
+        $result = $prep->execute();
         if($result){
             return $this->addImg($file, 'partner');
         }

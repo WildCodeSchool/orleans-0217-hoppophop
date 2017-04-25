@@ -11,6 +11,8 @@ namespace Hph\Model;
 use Hph\DateValidator;
 use Hph\ImgValidator;
 use Hph\TextValidator;
+use PDO;
+
 
 class PlaceManager extends \Hph\Db
 {
@@ -60,8 +62,15 @@ class PlaceManager extends \Hph\Db
             return $rUrl;
         }
 
-        $sql = "INSERT INTO place VALUES (NULL, '" . $post['name'] . "', '" . $post['url'] . "', '" . $file['img']['name'] . "', '" . $post['start'] . "', '" . $post['end'] . "', '" . $post['showcase'] . "')";
-        $result = $this->getDb()->exec($sql);
+        $query = "INSERT INTO place VALUES (NULL, :name, :url, :img, :start, :end, :showcase)";
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':name', $post['name'], PDO::PARAM_STR);
+        $prep->bindValue(':url', $post['url'], PDO::PARAM_STR);
+        $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
+        $prep->bindValue(':start', $post['start'], PDO::PARAM_STR);
+        $prep->bindValue(':end', $post['end'], PDO::PARAM_STR);
+        $prep->bindValue(':showcase', $post['showcase'], PDO::PARAM_INT);
+        $result = $prep->execute();
         if($result){
             return $this->addImg($file, 'place');
         }
@@ -111,16 +120,19 @@ class PlaceManager extends \Hph\Db
         }
 
         if ($file['img']['name'] != '') {
-            $sql = "UPDATE place SET name = '" . $post['name'] . "', url = '" . $post['url'] .
-                "', img_place = '" . $file['img']['name'] . "', START = '" . $post['start'] .
-                "', END = '" . $post['end'] . "', showcase = '" . $post['showcase'] .
-                "' WHERE id = '" . $post['id'] . "'";
+            $query = "UPDATE place SET name = :name, url = :url, img_place = img, start = :start, end = :end, showcase = :showcase WHERE id = :id";
         } else {
-            $sql = "UPDATE place SET name = '" . $post['name'] . "', url = '" . $post['url'] .
-                "', START = '" . $post['start'] . "', END = '" . $post['end'] .
-                "', showcase = '" . $post['showcase'] . "' WHERE id = '" . $post['id'] . "'";
+            $query = "UPDATE place SET name = :name, url = :url, start = :start, end = :end, showcase = :showcase WHERE id = :id";
         }
-        $result = $this->getDb()->exec($sql);
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':name', $post['name'], PDO::PARAM_STR);
+        $prep->bindValue(':url', $post['url'], PDO::PARAM_STR);
+        $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
+        $prep->bindValue(':start', $post['start'], PDO::PARAM_STR);
+        $prep->bindValue(':end', $post['end'], PDO::PARAM_STR);
+        $prep->bindValue(':showcase', $post['showcase'], PDO::PARAM_INT);
+        $prep->bindValue(':id', $post['id'], PDO::PARAM_INT);
+        $result = $prep->execute();
         if($result){
             return $this->addImg($file, 'place');
         }

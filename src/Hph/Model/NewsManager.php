@@ -3,6 +3,7 @@
 namespace Hph\Model;
 use Hph\ImgValidator;
 use Hph\TextValidator;
+use PDO;
 
 class NewsManager extends \Hph\Db
 {
@@ -42,8 +43,13 @@ class NewsManager extends \Hph\Db
         if($rText!==true){
             return $rText;
         }
-        $sql = "INSERT INTO news VALUES (NULL, '".$post['title']."', '".$file['img']['name']."', '".$post['text']."', '".$post['breaking_news']."')";
-        $result = $this->getDb()->exec($sql);
+        $query = "INSERT INTO news VALUES (NULL, :title, :img, :about, :breaking_news)";
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':title', $post['title'], PDO::PARAM_STR);
+        $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
+        $prep->bindValue(':about', $post['text'], PDO::PARAM_STR);
+        $prep->bindValue(':breaking_news', $post['breaking_news'], PDO::PARAM_INT);
+        $result = $prep->execute();
         if($result){
             return $this->addImg($file, 'news');
         }
@@ -70,11 +76,17 @@ class NewsManager extends \Hph\Db
             return $rText;
         }
         if($file['img']['name']!=''){
-            $sql = "UPDATE news SET title = '".$post['title']."', text = '".$post['text']."', img_news = '".$file['img']['name']."', breaking_news = '".$post['breaking_news']."' WHERE id = '".$post['id']."'";
+            $query = "UPDATE news VALUES SET title = :title, img_news = :img, text = :about, breaking_news = :breaking_news WHERE id = :id)";
         }else{
-            $sql = "UPDATE news SET title = '".$post['title']."', text = '".$post['text']."', breaking_news = '".$post['breaking_news']."' WHERE id = '".$post['id']."'";
+            $query = "UPDATE news VALUES SET title = :title, text = :about, breaking_news = :breaking_news WHERE id = :id)";
         }
-        $result = $this->getDb()->exec($sql);
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':id', $post['id'], PDO::PARAM_INT);
+        $prep->bindValue(':title', $post['title'], PDO::PARAM_STR);
+        $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
+        $prep->bindValue(':about', $post['text'], PDO::PARAM_STR);
+        $prep->bindValue(':breaking_news', $post['breaking_news'], PDO::PARAM_INT);
+        $result = $prep->execute();
         if($result){
             return $this->addImg($file, 'news');
         }
