@@ -29,6 +29,7 @@ class ContactController extends ControllerDefault
     }
     public function render($msg = '3')
     {
+        $partner = $this->getPartner();
         return $this->twig->render('contact.html.twig', ['msg'=>$msg, 'partners'=>$partner]);
     }
 }

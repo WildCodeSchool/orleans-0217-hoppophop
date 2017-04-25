@@ -47,6 +47,7 @@ class ProgrammationController extends ControllerDefault
     public function listAllArtist()
     {
         $artists = $this->allArtist();
+        $partner = $this->getPartner();
         return $this->twig->render('programmation.html.twig', ['artists' => $artists, 'error'=>$_GET['error'], 'partners'=>$partner]);
     }
 
@@ -67,6 +68,7 @@ class ProgrammationController extends ControllerDefault
         } else {
             $artists = $this->getArtists();
         }
+        $partner = $this->getPartner();
         return $this->twig->render('programmation.html.twig', ['artists' => $artists, 'places' => $places, 'partners'=>$partner, 'error'=>$_GET['error']]);
     }
 }

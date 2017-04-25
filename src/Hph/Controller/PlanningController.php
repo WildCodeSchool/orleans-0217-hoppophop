@@ -106,6 +106,7 @@ class PlanningController extends ControllerDefault
             $progShow[$lieu][$heure] = array('artiste' => $artist,
                                              'showcase' => $showcase);
         }
+        $partner = $this->getPartner();
         return $this->twig->render('planning.html.twig', [
             'prog' => $prog,
             'progShow' => $progShow,
