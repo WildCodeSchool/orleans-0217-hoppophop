@@ -8,6 +8,9 @@
 
 namespace Hph\Model;
 
+use Hph\ImgValidator;
+use Hph\TextValidator;
+use PDO;
 
 class ProgrammationManager extends \Hph\Db
 {
@@ -48,19 +51,63 @@ class ProgrammationManager extends \Hph\Db
 
     public function addArtist($post, $file)
     {
-
         if (!isset($post['local'])) {
             $post['local'] = 0;
         }
-        $upload = $this->addImg($file, 'artist');
-        if ($upload != true) {
-            return $upload;
+        $vImg = new ImgValidator($file);
+        $rImg = $vImg->validate();
+        if($rImg!==true){
+            return $rImg;
         }
-        $sql = "INSERT INTO artist VALUES (NULL, '" . $post['name'] . "', '" . $post['bio'] .
-            "', '" . $file['img']['name'] . "', '" . $post['video_url'] . "', '" . $post['facebook_url'] .
-            "', '" . $post['youtube_url'] . "', '" . $post['twitter_url'] . "', '" . $post['spotify_url'] .
-            "', '" . $post['local'] . "')";
-        return $this->getDb()->exec($sql);
+        $file['img']['name'] = $this->nameImg($file['img']['name']);
+        $vTitle = new TextValidator($post['name'], 150);
+        $rTitle = $vTitle->validate();
+        if($rTitle!==true){
+            return $rTitle;
+        }
+        $vText = new TextValidator($post['content']);
+        $rText = $vText->validate();
+        if($rText!==true){
+            return $rText;
+        }
+        $vVideo = new TextValidator($post['video_url'], 0, 'url');
+        $rVideo = $vVideo->validate();
+        if($rVideo!==true){
+            return $rVideo;
+        }
+        $vFB = new TextValidator($post['facebook_url'], 0, 'url');
+        $rFB = $vFB->validate();
+        if($rFB!==true){
+            return $rFB;
+        }
+        $vYT = new TextValidator($post['youtube_url'], 0, 'url');
+        $rYT = $vYT->validate();
+        if($rYT!==true){
+            return $rYT;
+        }
+        $vTwitter = new TextValidator($post['twitter_url'], 0, 'url');
+        $rTwitter = $vTwitter->validate();
+        if($rTwitter!==true){
+            return $rTwitter;
+        }
+        $vSpotify = new TextValidator($post['spotify_url'], 0, 'url');
+        $rSpotify = $vSpotify->validate();
+        if($rSpotify!==true){
+            return $rSpotify;
+        }
+        $query = "INSERT INTO artist VALUES (NULL, :name, :content, :img, :video_url, :facebook_url, :youtube_url, :twitter_url, :spotify_url, :local)";
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':name', $post['name'], PDO::PARAM_STR);
+        $prep->bindValue(':content', $post['content'], PDO::PARAM_STR);
+        $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
+        $prep->bindValue(':video_url', $post['video_url'], PDO::PARAM_STR);
+        $prep->bindValue(':facebook_url', $post['facebook_url'], PDO::PARAM_STR);
+        $prep->bindValue(':youtube_url', $post['youtube_url'], PDO::PARAM_STR);
+        $prep->bindValue(':twitter_url', $post['twitter_url'], PDO::PARAM_STR);
+        $prep->bindValue(':spotify_url', $post['spotify_url'], PDO::PARAM_STR);
+        $prep->bindValue(':local', $post['local'], PDO::PARAM_INT);
+        $this->addImg($file, 'artist');
+        return $prep->execute();
     }
 
     public function updateArtist($post, $file)
@@ -68,30 +115,74 @@ class ProgrammationManager extends \Hph\Db
         if (!isset($post['local'])) {
             $post['local'] = 0;
         }
-        $upload = $this->addImg($file, 'place');
-        if ($upload != true) {
-            return $upload;
+        $vImg = new ImgValidator($file);
+        $rImg = $vImg->validate();
+        if($rImg!==true){
+            return $rImg;
+        }
+        $vTitle = new TextValidator($post['name'], 150);
+        $rTitle = $vTitle->validate();
+        if($rTitle!==true){
+            return $rTitle;
+        }
+        $vText = new TextValidator($post['content']);
+        $rText = $vText->validate();
+        if($rText!==true){
+            return $rText;
+        }
+        $vVideo = new TextValidator($post['video_url'], 0, 'url');
+        $rVideo = $vVideo->validate();
+        if($rVideo!==true){
+            return $rVideo;
+        }
+        $vFB = new TextValidator($post['facebook_url'], 0, 'url');
+        $rFB = $vFB->validate();
+        if($rFB!==true){
+            return $rFB;
+        }
+        $vYT = new TextValidator($post['youtube_url'], 0, 'url');
+        $rYT = $vYT->validate();
+        if($rYT!==true){
+            return $rYT;
+        }
+        $vTwitter = new TextValidator($post['twitter_url'], 0, 'url');
+        $rTwitter = $vTwitter->validate();
+        if($rTwitter!==true){
+            return $rTwitter;
+        }
+        $vSpotify = new TextValidator($post['spotify_url'], 0, 'url');
+        $rSpotify = $vSpotify->validate();
+        if($rSpotify!==true){
+            return $rSpotify;
         }
         if ($file['img']['name'] != '') {
-            $sql = "UPDATE artist SET name = '" . $post['name'] . "', bio = '" . $post['bio'] .
-                "', img_artist = '" . $file['img']['name'] . "', video_url = '" . $post['video_url'] .
-                "', facebook_url = '" . $post['facebook_url'] . "', youtube_url = '" . $post['youtube_url'] .
-                "', twitter_url = '" . $post['twitter_url'] . "', spotify_url = '" . $post['spotify_url'] .
-                "', local = '" . $post['local'] . "' WHERE id = '" . $post['id'] . "'";
+            $file['img']['name'] = $this->nameImg($file['img']['name']);
+            $query = "UPDATE artist SET name = :name, bio = :content, img_artist = :img, video_url = :video_url, facebook_url = :facebook_url, youtube_url = :youtube_url, twitter_url = :twitter_url, spotify_url = :spotify_url, local = :local WHERE id = :id";
         } else {
-            $sql = "UPDATE artist SET name = '" . $post['name'] . "', bio = '" . $post['bio'] . "', video_url = '" . $post['video_url'] .
-                "', facebook_url = '" . $post['facebook_url'] . "', youtube_url = '" . $post['youtube_url'] .
-                "', twitter_url = '" . $post['twitter_url'] . "', spotify_url = '" . $post['spotify_url'] .
-                "', local = '" . $post['local'] . "' WHERE id = '" . $post['id'] . "'";
+            $query = "UPDATE artist SET name = :name, bio = :content, video_url = :video_url, facebook_url = :facebook_url, youtube_url = :youtube_url, twitter_url = :twitter_url, spotify_url = :spotify_url, local = :local WHERE id = :id";
         }
-        return $this->getDb()->exec($sql);
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':name', $post['name'], PDO::PARAM_STR);
+        $prep->bindValue(':content', $post['content'], PDO::PARAM_STR);
+        $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
+        $prep->bindValue(':video_url', $post['video_url'], PDO::PARAM_STR);
+        $prep->bindValue(':facebook_url', $post['facebook_url'], PDO::PARAM_STR);
+        $prep->bindValue(':youtube_url', $post['youtube_url'], PDO::PARAM_STR);
+        $prep->bindValue(':twitter_url', $post['twitter_url'], PDO::PARAM_STR);
+        $prep->bindValue(':spotify_url', $post['spotify_url'], PDO::PARAM_STR);
+        $prep->bindValue(':local', $post['local'], PDO::PARAM_INT);
+        $prep->bindValue(':id', $post['id'], PDO::PARAM_INT);
+        if($file['img']['name']!=''){
+            $this->addImg($file, 'artist', $post['id']);
+        }
+        return $prep->execute();
     }
-
     public function deleteArtist($id)
     {
-        $sql = "DELETE FROM artist WHERE id=" . $id;
-        return $this->getDb()->exec($sql);
+        $query = "DELETE FROM artist WHERE id = :id";
+        $prep = $this->getDb()->prepare($query);
+        $prep->bindValue(':id', $id, PDO::PARAM_INT);
+        $this->supprImg($id, 'artist');
+        return $prep->execute();
     }
-
-
 }

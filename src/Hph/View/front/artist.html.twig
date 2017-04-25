@@ -60,10 +60,18 @@
                     {% endfor %}
                 </div>
                 <div class="artiste-social text-center">
-                    <a href="{{ artist.facebookUrl }}"><i class="fa fa-facebook-square social-logo" aria-hidden="true"></i></a>
-                    <a href="{{ artist.twitterUrl }}"><i class="fa fa-twitter-square social-logo" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-spotify social-logo" aria-hidden="true"></i></a>
-                    <a href="{{ artist.youtubeUrl }}"><i class="fa fa-youtube-square social-logo" aria-hidden="true"></i></a>
+                    {% if not artist.facebookUrl is empty  %}
+                        <a href="{{ artist.facebookUrl }}"><i class="fa fa-facebook-square social-logo" aria-hidden="true"></i></a>
+                    {% endif %}
+                    {% if not artist.twitterUrl is empty   %}
+                        <a href="{{ artist.twitterUrl }}"><i class="fa fa-twitter-square social-logo" aria-hidden="true"></i></a>
+                    {% endif %}
+                    {% if not artist.spotifyUrl is empty   %}
+                        <a href="{{ artist.spotifyUrl }}"><i class="fa fa-spotify social-logo" aria-hidden="true"></i></a>
+                    {% endif %}
+                    {% if not artist.youtubeUrl is empty   %}
+                        <a href="{{ artist.youtubeUrl }}"><i class="fa fa-youtube-square social-logo" aria-hidden="true"></i></a>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -114,10 +122,18 @@
                 {% endfor %}
                 <br />
                 <div class="artiste-social text-center">
-                    <a href="{{ artist.facebookUrl }}"><i class="fa fa-facebook-square social-logo" aria-hidden="true"></i></a>
-                    <a href="{{ artist.twitterUrl }}"><i class="fa fa-twitter-square social-logo" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-spotify social-logo" aria-hidden="true"></i></a>
-                    <a href="{{ artist.youtubeUrl }}"><i class="fa fa-youtube-square social-logo" aria-hidden="true"></i></a>
+                    {% if not artist.facebookUrl is empty  %}
+                        <a href="{{ artist.facebookUrl }}"><i class="fa fa-facebook-square social-logo" aria-hidden="true"></i></a>
+                    {% endif %}
+                    {% if not artist.twitterUrl is empty   %}
+                        <a href="{{ artist.twitterUrl }}"><i class="fa fa-twitter-square social-logo" aria-hidden="true"></i></a>
+                    {% endif %}
+                    {% if not artist.spotifyUrl is empty   %}
+                        <a href="{{ artist.spotifyUrl }}"><i class="fa fa-spotify social-logo" aria-hidden="true"></i></a>
+                    {% endif %}
+                    {% if not artist.youtubeUrl is empty   %}
+                        <a href="{{ artist.youtubeUrl }}"><i class="fa fa-youtube-square social-logo" aria-hidden="true"></i></a>
+                    {% endif %}
                 </div>
                 <hr class="hr">
                 <br />

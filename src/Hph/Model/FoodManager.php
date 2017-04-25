@@ -7,7 +7,10 @@
  */
 
 namespace Hph\Model;
-
+use Hph\ImgValidator;
+use Hph\TextValidator;
+use Hph\DateValidator;
+use PDO;
 
 class FoodManager extends \Hph\Db
 {
@@ -22,35 +25,113 @@ JOIN place ON place.id=eat_place.place_id
     }
     public function addFood($post, $file)
     {
-        $upload = $this->addImg($file, 'foodtruck');
-        if($upload!=true){
-            return $upload;
+        $vImg = new ImgValidator($file);
+        $rImg = $vImg->validate();
+        if($rImg!==true){
+            return $rImg;
         }
-        $sql = "INSERT INTO eat VALUES (NULL, '".$post['name']."', '".$file['img']['name']."', '".$post['content']."');";
-        $sql2 = "INSERT INTO eat_place VALUES (LAST_INSERT_ID(), '".$post['place']."', '".$post['start']."', '".$post['end']."')";
-        $this->getDb()->exec($sql);
-        return $this->getDb()->exec($sql2);
-
+        $file['img']['name'] = $this->nameImg($file['img']['name']);
+        $vTitle = new TextValidator($post['name'], 255);
+        $rTitle = $vTitle->validate();
+        if($rTitle!==true){
+            return $rTitle;
+        }
+        $vText = new TextValidator($post['content']);
+        $rText = $vText->validate();
+        if($rText!==true){
+            return $rText;
+        }
+        $vStart = new DateValidator($post['start']);
+        $rStart = $vStart->validate();
+        if($rStart!==true){
+            return $rStart;
+        }
+        $vEnd = new DateValidator($post['start']);
+        $rEnd = $vEnd->validate();
+        if($rEnd!==true){
+            return $rEnd;
+        }
+        $query = "INSERT INTO eat VALUES (NULL, :name, :img, :content)";
+        $query2 = "INSERT INTO eat_place VALUES (LAST_INSERT_ID(), :place, :start, :end)";
+        $prep = $this->getDb()->prepare($query);
+        $prep2 = $this->getDb()->prepare($query2);
+        $prep->bindValue(':name', $post['name'], PDO::PARAM_STR);
+        $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
+        $prep->bindValue(':content', $post['content'], PDO::PARAM_STR);
+        $prep->bindValue(':place', $post['place'], PDO::PARAM_INT);
+        $prep->bindValue(':start', $post['start'], PDO::PARAM_STR);
+        $prep->bindValue(':end', $post['end'], PDO::PARAM_STR);
+        $this->addImg($file, 'foodtruck');
+        $result = $prep->execute();
+        if($result){
+            return $prep2->execute();
+        }
+        return $result;
     }
     public function updateFood($post, $file)
     {
-        $upload = $this->addImg($file, 'foodtruck');
-        if($upload!=true){
-            return $upload;
+        $vImg = new ImgValidator($file);
+        $rImg = $vImg->validate();
+        if($rImg!==true){
+            return $rImg;
+        }
+        $vTitle = new TextValidator($post['name'], 255);
+        $rTitle = $vTitle->validate();
+        if($rTitle!==true){
+            return $rTitle;
+        }
+        $vText = new TextValidator($post['content']);
+        $rText = $vText->validate();
+        if($rText!==true){
+            return $rText;
+        }
+        $vStart = new DateValidator($post['start']);
+        $rStart = $vStart->validate();
+        if($rStart!==true){
+            return $rStart;
+        }
+        $vEnd = new DateValidator($post['start']);
+        $rEnd = $vEnd->validate();
+        if($rEnd!==true){
+            return $rEnd;
         }
         if($file['img']['name']!=''){
-            $sql = "UPDATE eat SET name = '".$post['name']."', content = '".$post['content']."', img_eat = '".$file['img']['name']."' WHERE id = '".$post['id']."'";
+            $file['img']['name'] = $this->nameImg($file['img']['name']);
+            $query = "UPDATE eat SET name = :name, content = :content, img_eat = :img WHERE id = :id";
         }else{
-            $sql = "UPDATE eat SET name = '".$post['name']."', content = '".$post['content']."' WHERE id = '".$post['id']."'";
+            $query = "UPDATE eat SET name = :name, content = :content WHERE id = :id";
         }
-        $sql2 = "UPDATE eat_place SET place_id = '".$post['place']."', start = '".$post['start']."', end = '".$post['end']."' WHERE eat_id = '".$post['id']."'";
-        $this->getDb()->exec($sql);
-        return $this->getDb()->exec($sql2);
+        $query2 = "UPDATE eat_place SET place_id = :place, start = :start, end = :end WHERE eat_id = :id";
+        $prep = $this->getDb()->prepare($query);
+        $prep2 = $this->getDb()->prepare($query2);
+        $prep->bindValue(':id', $post['id'], PDO::PARAM_INT);
+        $prep->bindValue(':name', $post['name'], PDO::PARAM_STR);
+        $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
+        $prep->bindValue(':content', $post['content'], PDO::PARAM_STR);
+        $prep->bindValue(':place', $post['place'], PDO::PARAM_INT);
+        $prep->bindValue(':start', $post['start'], PDO::PARAM_STR);
+        $prep->bindValue(':end', $post['end'], PDO::PARAM_STR);
+        if($file['img']['name']!=''){
+            $this->addImg($file, 'foodtruck', $post['id']);
+        }
+        $result = $prep->execute();
+        if($result){
+            return $prep2->execute();
+        }
+        return $result;
     }
     public function deleteFood($id)
     {
-        $sql = "DELETE FROM eat_place WHERE eat_id=".$id;
-        $sql2 = "DELETE FROM eat WHERE id=".$id;
-        return $this->getDb()->exec($sql);
+        $query = "DELETE FROM eat_place WHERE id = :id";
+        $query2 = "DELETE FROM eat WHERE id = :id";
+        $prep = $this->getDb()->prepare($query);
+        $prep2 = $this->getDb()->prepare($query2);
+        $prep->bindValue(':id', $id, PDO::PARAM_INT);
+        $this->supprImg($id, 'foodtruck');
+        $result = $prep->execute();
+        if($result){
+            return $prep2->execute();
+        }
+        return $result;
     }
 }
