@@ -40,24 +40,28 @@
                         {% include 'imgInfo.html.twig' %}
                     </div>
                     <div class="form-group">
+                        <label for="tags">Tags de l'artiste</label>
+                        <input type="text" class="form-control" id="tags" name="tags" placeholder="Entrez tag1, tag2, tag3">
+                    </div>
+                    <div class="form-group">
                         <label for="url">Lien de la vidéo</label>
-                        <input type="text" class="form-control" id="url" name="video_url" placeholder="Entrez le lien de la vidéo">
+                        <input type="text" class="form-control" id="url" name="video_url" placeholder="Entrez le lien de la vidéo (le lien doit débuter par http://)">
                     </div>
                     <div class="form-group">
                         <label for="url">Lien Facebook</label>
-                        <input type="text" class="form-control" id="url" name="facebook_url" placeholder="Entrez le lien Facebook">
+                        <input type="text" class="form-control" id="url" name="facebook_url" placeholder="Entrez le lien Facebook (le lien doit débuter par http://)">
                     </div>
                     <div class="form-group">
                         <label for="url">Lien Youtube</label>
-                        <input type="text" class="form-control" id="url" name="youtube_url" placeholder="Entrez le lien Youtube">
+                        <input type="text" class="form-control" id="url" name="youtube_url" placeholder="Entrez le lien Youtube (le lien doit débuter par http://)">
                     </div>
                     <div class="form-group">
                         <label for="url">Lien Twitter</label>
-                        <input type="text" class="form-control" id="url" name="twitter_url" placeholder="Entrez le lien Twitter">
+                        <input type="text" class="form-control" id="url" name="twitter_url" placeholder="Entrez le lien Twitter (le lien doit débuter par http://)">
                     </div>
                     <div class="form-group">
                         <label for="url">Lien Spotify</label>
-                        <input type="text" class="form-control" id="url" name="spotify_url" placeholder="Entrez le lien Spotify">
+                        <input type="text" class="form-control" id="url" name="spotify_url" placeholder="Entrez le lien Spotify (le lien doit débuter par http://)">
                     </div>
                     <div class="form-group">
                         <p><strong>Groupe Local</strong></p>
@@ -70,6 +74,7 @@
                         <input type="submit" name="submit" class="btn btn-primary" value="Créer">
                     </div>
                 </form>
+
             </div>
         </div>
         <br />
@@ -127,29 +132,33 @@
                                         <textarea class="form-control textarea" name="content" id="content" placeholder="Entrez la description de l'artiste" rows="10">{{ artist.bio }}</textarea>
                                     </div>
                                     <div class="form-group">
+                                        <label for="tags">Tags de l'artiste</label>
+                                        <input type="text" class="form-control" id="tags" name="tags" placeholder="Entrez tag1, tag2, tag3" value="{{ artist.tags|join(', ') }}">
+                                    </div>
+                                    <div class="form-group">
                                         <label for="img">Photo de l'artiste</label>
                                         <input type="file" id="img" name="img">
                                         {% include 'imgInfo.html.twig' %}
                                     </div>
                                     <div class="form-group">
                                         <label for="url">Lien de la vidéo</label>
-                                        <input type="text" class="form-control" id="url" name="video_url" placeholder="Entrez le lien de la vidéo" value="{{ artist.videoUrl }}">
+                                        <input type="text" class="form-control" id="url" name="video_url" placeholder="Entrez le lien de la vidéo (le lien doit débuter par http://)" value="{{ artist.videoUrl }}">
                                     </div>
                                     <div class="form-group">
                                         <label for="url">Lien Facebook</label>
-                                        <input type="text" class="form-control" id="url" name="facebook_url" placeholder="Entrez le lien de la vidéo" value="{{ artist.facebookUrl }}">
+                                        <input type="text" class="form-control" id="url" name="facebook_url" placeholder="Entrez le lien Facebook (le lien doit débuter par http://)" value="{{ artist.facebookUrl }}">
                                     </div>
                                     <div class="form-group">
                                         <label for="url">Lien Youtube</label>
-                                        <input type="text" class="form-control" id="url" name="youtube_url" placeholder="Entrez le lien de la vidéo" value="{{ artist.youtubeUrl}}">
+                                        <input type="text" class="form-control" id="url" name="youtube_url" placeholder="Entrez le lien Youtube (le lien doit débuter par http://)" value="{{ artist.youtubeUrl}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="url">Lien Twitter</label>
-                                        <input type="text" class="form-control" id="url" name="twitter_url" placeholder="Entrez le lien de la vidéo" value="{{ artist.twitterUrl }}">
+                                        <input type="text" class="form-control" id="url" name="twitter_url" placeholder="Entrez le lien Twitter (le lien doit débuter par http://)" value="{{ artist.twitterUrl }}">
                                     </div>
                                     <div class="form-group">
                                         <label for="url">Lien Spotify</label>
-                                        <input type="text" class="form-control" id="url" name="spotify_url" placeholder="Entrez le lien de la vidéo" value="{{ artist.spotifyUrl }}">
+                                        <input type="text" class="form-control" id="url" name="spotify_url" placeholder="Entrez le lien Spotify (le lien doit débuter par http://)" value="{{ artist.spotifyUrl }}">
                                     </div>
                                     <div class="form-group">
                                         <p><strong>Groupe Local</strong></p>

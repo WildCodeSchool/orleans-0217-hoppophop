@@ -23,6 +23,17 @@ else if ($page == 'artist') {
 } else if ($page == 'addArtist') {
     $addArtist = new Hph\Model\ProgrammationManager();
     $result = $addArtist->addArtist($_POST, $_FILES);
+    $tagManager = new Hph\Model\TagManager();
+    $id = $addArtist->getDb()->lastInsertId();
+    $tags = trim($_POST['tags']);
+    $tags = explode(',', $tags);
+    foreach ($tags as $tag) {
+        $tagManager->insertTag($tag, $id);
+    }
+    header('Location: admin.php?page=artist&error='.$result.'');
+} else if ($page == 'updateArtist') {
+    $updateArtist = new Hph\Model\ProgrammationManager();
+    $result = $updateArtist->updateArtist($_POST, $_FILES);
     header('Location: admin.php?page=artist&error='.$result.'');
 } else if ($page == 'updateArtist') {
     $updateArtist = new Hph\Model\ProgrammationManager();
