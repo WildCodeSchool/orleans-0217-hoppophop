@@ -10,6 +10,7 @@ namespace Hph\Model;
 use Hph\ImgValidator;
 use Hph\TextValidator;
 use PDO;
+
 class PartnerManager extends \Hph\Db
 {
     public function getPartner()
