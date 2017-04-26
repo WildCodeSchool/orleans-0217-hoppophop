@@ -2,8 +2,6 @@
 {% block title %}Lieux{% endblock %}
 {% block content %}
     <div class="container">
-        <h2 class="text-center">Ajouter un lieu</h2>
-        <hr/>
         {% if error==2 %}
             <div class="alert alert-danger" role="alert">Le nom ou le lien d'un lieu doit être une chaîne de caractères</div>
         {% elseif error==3 %}
@@ -23,37 +21,47 @@
         {% elseif error==8 %}
             <div class="alert alert-danger" role="alert">Le format du lien du lieu est invalide</div>
         {% endif %}
-        <form method="POST" action="../../../../admin/admin.php?page=addPlace" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="name">Nom du lieux</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Entrez le nom du lieu" required>
+        <div class="text-center">
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#form" aria-expanded="false">Ajouter un lieu</button>
+        </div>
+        <br />
+        <div class="collapse" id="form">
+            <div class="well">
+                <h2 class="text-center">Ajouter un lieu</h2>
+                <hr/>
+                <form method="POST" action="../../../../admin/admin.php?page=addPlace" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="name">Nom du lieux</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Entrez le nom du lieu" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="url">Lien du lieux</label>
+                        <input type="text" class="form-control" id="url" name="url" placeholder="Entrez le lien du lieu" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="start">Heure d'ouverture du lieu</label>
+                        <input type="text" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="start" name="start" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="start">Heure de fermeture du lieu</label>
+                        <input type="text" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="end" name="end" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="img">Photo du lieu</label>
+                        <input type="file" id="img" name="img" required>
+                        {% include 'imgInfo.html.twig' %}
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="showcase" value="1">Showcase
+                        </label>
+                    </div>
+                    <div class="text-center">
+                        <input type="submit" name="submit" class="btn btn-primary" value="Créer">
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="url">Lien du lieux</label>
-                <input type="text" class="form-control" id="url" name="url" placeholder="Entrez le lien du lieu" required>
-            </div>
-            <div class="form-group">
-                <label for="start">Heure d'ouverture du lieu</label>
-                <input type="text" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="start" name="start" required>
-            </div>
-            <div class="form-group">
-                <label for="start">Heure de fermeture du lieu</label>
-                <input type="text" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="end" name="end" required>
-            </div>
-            <div class="form-group">
-                <label for="img">Photo du lieu</label>
-                <input type="file" id="img" name="img" required>
-                {% include 'imgInfo.html.twig' %}
-            </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" name="showcase" value="1">Showcase
-                </label>
-            </div>
-            <div class="text-center">
-                <input type="submit" name="submit" class="btn btn-primary" value="Créer">
-            </div>
-        </form>
+        </div>
         <br />
         <h2 class="text-center">Liste des lieux</h2>
         <hr />

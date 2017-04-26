@@ -11,6 +11,11 @@ body {
     background-size: cover;
     position: relative;
     margin-top: -25px;
+    padding: 25px;
+}
+.container {
+    padding-left: 10%;
+    padding-right: 10%;
 }
 @media (max-width: 1110px) {
     .routes {
@@ -140,11 +145,6 @@ body {
     }
 }
 
-.img-255 {
-    height: 255px !important;
-    width: 255px !important;
-}
-
 a:hover {
     color: rgba(43, 175, 151, 1);
     text-decoration: none;
@@ -160,7 +160,6 @@ a:hover {
     -moz-border-radius: 0;
     border-radius: 0;
     background-color: #18252e;
-    margin-bottom: 0;
 }
 
 .dropdown-menu {
@@ -395,7 +394,7 @@ a:hover {
     border-radius: 20px;
     font-weight: bold;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1em;
     width: 280px;
     padding-top: 3%;
     color: #2baf97;
@@ -408,7 +407,6 @@ a:hover {
     animation-timing-function: ease-in;
     animation-duration: 0.8s;
     animation-play-state: paused;
-
 }
 .panneau:hover{
     animation-play-state: running;
@@ -490,10 +488,9 @@ a:hover {
 /*Footer*/
 
 .footer {
-    margin-top: 5%;
+    margin-top: 0;
     background-color: #18252e;
     padding-top:0;
-    margin-top: 0;
 }
 
 .footer-top {
@@ -622,7 +619,6 @@ a:hover {
 /*Artist*/
 .tag_artist {
     display: inline;
-    font-size: 33px;
 }
 
 .prog_hour {

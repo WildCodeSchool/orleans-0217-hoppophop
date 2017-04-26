@@ -13,7 +13,8 @@ class ArtistManager extends \Hph\Db
 {
     public function getArtists()
     {
-        $req = "SELECT * FROM artist"; return $this->dBQuery($req, 'Artist');
+        $req = "SELECT * FROM artist";
+        return $this->dBQuery($req, 'Artist');
     }
     public function findOne($id)
     {
