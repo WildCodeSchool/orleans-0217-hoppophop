@@ -2,8 +2,6 @@
 {% block title %}Activités{% endblock %}
 {% block content %}
     <div class="container">
-        <h2 class="text-center">Ajouter une activité du dimanche</h2>
-        <hr/>
         {% if error==2 %}
             <div class="alert alert-danger" role="alert">Le titre et le contenu d'une activité doit être du texte</div>
         {% elseif error==3 %}
@@ -17,24 +15,34 @@
         {% elseif error==6 %}
             <div class="alert alert-danger" role="alert">Le poids de l'image est trop élevé</div>
         {% endif %}
-        <form method="POST" action="../../../../admin/admin.php?page=addSunday" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="title">Nom de l'activité</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Entrez le nom de l'activité" required>
+        <div class="text-center">
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#form" aria-expanded="false">Ajouter une activité</button>
+        </div>
+        <br />
+        <div class="collapse" id="form">
+            <div class="well">
+                <h2 class="text-center">Ajouter une activité du dimanche</h2>
+                <hr/>
+                <form method="POST" action="../../../../admin/admin.php?page=addSunday" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="title">Nom de l'activité</label>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Entrez le nom de l'activité" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Texte de l'activité</label>
+                        <textarea class="form-control textarea" name="content" id="content" placeholder="Entrez la description de l'activité" rows="10" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="img">Photo de l'activité</label>
+                        <input type="file" id="img" name="img" required>
+                        {% include 'imgInfo.html.twig' %}
+                    </div>
+                    <div class="text-center">
+                        <input type="submit" name="submit" class="btn btn-primary" value="Créer">
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="text">Texte de l'activité</label>
-                <textarea class="form-control textarea" name="content" id="content" placeholder="Entrez la description de l'activité" rows="10" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="img">Photo de l'activité</label>
-                <input type="file" id="img" name="img" required>
-                {% include 'imgInfo.html.twig' %}
-            </div>
-            <div class="text-center">
-                <input type="submit" name="submit" class="btn btn-primary" value="Créer">
-            </div>
-        </form>
+        </div>
         <br />
         <h2 class="text-center">Liste des activités du dimanche</h2>
         <hr />

@@ -2,8 +2,6 @@
 {% block title %}Patenaires{% endblock %}
 {% block content %}
     <div class="container">
-        <h2 class="text-center">Ajouter un partenaire</h2>
-        <hr/>
     {% if error==2 %}
         <div class="alert alert-danger" role="alert">Le lien d'un partenaire doit être une chaîne de caractères</div>
     {% elseif error==0 %}
@@ -17,34 +15,44 @@
     {% elseif error==6 %}
         <div class="alert alert-danger" role="alert">Le poids de l'image est trop élevé</div>
     {% endif %}
-        <form method="POST" action="../../../../admin/admin.php?page=addPartner" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="url">Lien du partenaire</label>
-                <input type="text" class="form-control" id="url" name="url" placeholder="Entrez le lien du partenaire" required>
+        <div class="text-center">
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#form" aria-expanded="false">Ajouter un partenaire</button>
+        </div>
+        <br />
+        <div class="collapse" id="form">
+            <div class="well">
+                <h2 class="text-center">Ajouter un partenaire</h2>
+                <hr/>
+                <form method="POST" action="../../../../admin/admin.php?page=addPartner" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="url">Lien du partenaire</label>
+                        <input type="text" class="form-control" id="url" name="url" placeholder="Entrez le lien du partenaire" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Catégorie du partenaire</label>
+                        <select  class="form-control" id="type" name="type" required>
+                            <option value="institutionnels">Institutionnel</option>
+                            <option value="culturel">Culturel</option>
+                            <option value="média">Média</option>
+                            <option value="privé">Privé</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="img">Photo du partenaire</label>
+                        <input type="file" id="img" name="img" required>
+                        {% include 'imgInfo.html.twig' %}
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="footer" value="1">Partenaire présent dans le bas de page
+                        </label>
+                    </div>
+                    <div class="text-center">
+                        <input type="submit" name="submit" class="btn btn-primary" value="Créer">
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="type">Catégorie du partenaire</label>
-                <select  class="form-control" id="type" name="type" required>
-                    <option value="institutionnels">Institutionnel</option>
-                    <option value="culturel">Culturel</option>
-                    <option value="média">Média</option>
-                    <option value="privé">Privé</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="img">Photo du partenaire</label>
-                <input type="file" id="img" name="img" required>
-                {% include 'imgInfo.html.twig' %}
-            </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" name="footer" value="1">Partenaire présent dans le bas de page
-                </label>
-            </div>
-            <div class="text-center">
-                <input type="submit" name="submit" class="btn btn-primary" value="Créer">
-            </div>
-        </form>
+        </div>
         <br />
         <h2 class="text-center">Liste des partenaires</h2>
         <hr />

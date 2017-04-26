@@ -11,49 +11,46 @@
                     <div class="artiste-tag upper">
                         {% for tag in tags %}
                             {% if loop.index%2 == 0 and loop.index<tags|length %}
-                                <div class="font-circula tag_artist"> {{ tag.name }} <span class="orange">/</span></div>
+                                <h2 class="font-circula tag_artist"> {{ tag.name }} <span class="orange">/</span></h2>
                             {% elseif loop.index%2 != 0 and loop.index<tags|length %}
-                                <div class="font-circula tag_artist"> {{ tag.name }} <span class="turquoise">/</span></div>
+                                <h2 class="font-circula tag_artist"> {{ tag.name }} <span class="turquoise">/</span></h2>
                             {% elseif loop.index%2 != 0 %}
-                                <div class="font-circula tag_artist"> {{ tag.name }}</div>
+                                <h2 class="font-circula tag_artist"> {{ tag.name }}</h2>
                             {% else %}
-                                <div class="font-circula tag_artist"> {{ tag.name }}</div>
+                                <h2 class="font-circula tag_artist"> {{ tag.name }}</h2>
                             {% endif %}
                         {% endfor %}
                     </div>
-                    <br />
                     <hr class="hr">
                 </div>
-                <br />
                 <iframe width="100%" height="480" src="{{ artist.videoUrl }}" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="col-xs-4">
                 <div class="content-div upper text-center">
-                    <img src="../../../web/img/artist/{{ artist.imgArtist }}" class="img-255">
+                    <img src="../../../web/img/artist/{{ artist.imgArtist }}" class="img-responsive">
                     <hr class="hr">
                     {% for prog in progs %}
                         {% if prog.showcase == 0  %}
                             <div class="text-center">
-                                <h2 class="font-circula">{{prog.concert_start |  localizeddate('long', 'none', 'fr')}}</h2>
+                                <h3 class="font-circula">{{prog.concert_start |  localizeddate('long', 'none', 'fr')}}</h3>
                                 <hr class="hr-small">
                                 <h3 class="font-circula prog_place"><a class="white" href="{{ prog.url }}" >{{ prog.name }}</a> </h3>
-                                <h4 class="font-circula prog_hour">{{ prog.concert_start  | localizeddate('none', 'short', 'fr') }} <span class="turquoise bold">|</span> {{ prog.concert_end | localizeddate('none', 'short', 'fr') }}</h4>
+                                <h3 class="font-circula prog_hour">{{ prog.concert_start  | localizeddate('none', 'short', 'fr') }} <span class="turquoise bold">|</span> {{ prog.concert_end | localizeddate('none', 'short', 'fr') }}</h3>
                             </div>
-
                         {% endif %}
                         {% if prog.showcase == 1  %}
                             <div class="showcase">
                                 <h2 class="font-circula">{{prog.concert_start |  localizeddate('long', 'none', 'fr')}}</h2>
                                 <hr class="hr-small">
-                                <h5 class="font-circula white text-center showcase">SHOWCASE :</h5>
-                                <h5 class="white text-center showcase">
+                                <h3 class="font-circula white text-center showcase">SHOWCASE :</h3>
+                                <h3 class="white text-center showcase">
                                     {{ prog.name }}
-                                </h5>
-                                <h6 class="font-circula white text-center prog_hour">
+                                </h3>
+                                <h3 class="font-circula white text-center prog_hour">
                                     {{ prog.concert_start | localizeddate('none', 'short', 'fr') }}
                                     <span class="turquoise bold">|</span>
                                     {{ prog.concert_end | localizeddate('none', 'short', 'fr') }}
-                                </h6>
+                                </h3>
                             </div>
                         {% endif %}
                         <hr class="hr">
@@ -79,48 +76,47 @@
     <div class="visible-xs container">
         <div class="col-xs-12">
             <div class="content-div text-center">
-                <img src="../../../web/img/artist/{{ artist.imgArtist }}" class="img-255">
+                <img src="../../../web/img/artist/{{ artist.imgArtist }}" class="img-responsive">
                 <h1 class="font-circula">{{ artist.name }}</h1>
                 <p>{{ artist.bio }}</p>
                 <div class="artiste-tag">
                     {% for tag in tags %}
                         {% if loop.index%2 == 0 and loop.index<tags|length %}
-                            <div class="font-circula tag_artist"> {{ tag.name }} <span class="orange">/</span></div>
+                            <h2 class="font-circula tag_artist"> {{ tag.name }} <span class="orange">/</span></h2>
                         {% elseif loop.index%2 != 0 and loop.index<tags|length %}
-                            <div class="font-circula tag_artist"> {{ tag.name }} <span class="turquoise">/</span></div>
+                            <h2 class="font-circula tag_artist"> {{ tag.name }} <span class="turquoise">/</span></h2>
                         {% elseif loop.index%2 != 0 %}
-                            <div class="font-circula tag_artist"> {{ tag.name }}</div>
+                            <h2 class="font-circula tag_artist"> {{ tag.name }}</h2>
                         {% else %}
-                            <div class="font-circula tag_artist"> {{ tag.name }}</div>
+                            <h2 class="font-circula tag_artist"> {{ tag.name }}</h2>
                         {% endif %}
                     {% endfor %}
                 </div>
                 <hr class="hr">
                 {% for prog in progs %}
                     <div class="text-center">
-                        <h2 class="font-circula">{{ prog.concert_start | localizeddate('long', 'none', 'fr') }}</h2>
+                        <h3 class="font-circula">{{ prog.concert_start | localizeddate('long', 'none', 'fr') }}</h3>
                         <h3 class="font-circula prog_place"><a class="white" href="{{ prog.url }}" >{{ prog.name }}</a></h3>
-                        <h4 class="font-circula prog_hour">{{ prog.concert_start | localizeddate('none', 'short', 'fr') }} <span class="turquoise bold">|</span> {{ prog.concert_end | localizeddate('none', 'short', 'fr') }}</h4>
+                        <h3 class="font-circula prog_hour">{{ prog.concert_start | localizeddate('none', 'short', 'fr') }} <span class="turquoise bold">|</span> {{ prog.concert_end | localizeddate('none', 'short', 'fr') }}</h3>
                         {% if not prog.showcase ==0  %}
                             <hr class="hr-small">
                             <div class="showcase">
-                                <h5 class="font-circula white text-center showcase">
+                                <h3 class="font-circula white text-center showcase">
                                     SHOWCASE :
-                                </h5>
-                                <h5 class="white text-center showcase">
+                                </h3>
+                                <h3 class="white text-center showcase">
                                     {{ prog.name }}
-                                </h5>
-                                <h6 class="font-circula white text-center prog_hour">
+                                </h3>
+                                <h3 class="font-circula white text-center prog_hour">
                                     {{ prog.concert_start | localizeddate('none', 'short', 'fr') }}
                                     <span class="turquoise bold">|</span>
                                     {{ prog.concert_end | localizeddate('none', 'short', 'fr') }}
-                                </h6>
+                                </h3>
                             </div>
                         {% endif %}
-<hr class="hr-min">
+                        <hr class="hr-min">
                     </div>
                 {% endfor %}
-                <br />
                 <div class="artiste-social text-center">
                     {% if not artist.facebookUrl is empty  %}
                         <a href="{{ artist.facebookUrl }}"><i class="fa fa-facebook-square social-logo" aria-hidden="true"></i></a>
@@ -136,7 +132,6 @@
                     {% endif %}
                 </div>
                 <hr class="hr">
-                <br />
                 <iframe width="100%" height="200" src="{{ artist.videoUrl }}" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>

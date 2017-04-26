@@ -7,16 +7,14 @@
             {%  for news in newsBreaking %}
                 <div class="alert alert-warning alert-danger breaking-news" role="alert">
                     <button type="button" class="close breaking-close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <a href="index.php?page=newsOne&id={{ news.id }}" class="breaking-strong">{{ news.title }}</a><br />
+                    <a href="../../../../index.php?page=newsOne&id={{ news.id }}" class="breaking-strong">{{ news.title }}</a><br />
                     <p class="breaking-text">{{ news.text }}</p>
                 </div>
             {% endfor %}
             <div class="col-xs-6 col-xs-offset-3">
                 <img src="../../../../web/img/global/logo-only.png" alt="Logo du Festival" class="img-responsive logo-big">
-                <br />
-                <br />
             </div>
-            <h1 class="separator-title font-dokyo"><a href="index.php?page=programmation" class="white font-dokyo">PROGRAMMATION</a></h1>
+            <h2 class="separator-title font-dokyo"><a href="../../../../index.php?page=programmation" class="white font-dokyo">PROGRAMMATION</a></h2>
             <hr class="hr">
             <div class="separator-div text-justify home-progDiv">
                 {%  for artist in artists  %}
@@ -31,37 +29,37 @@
                     {% endif %}
                 {% endfor %}
             </div>
-            <h1 class="separator-title font-dokyo">BILLETTERIE</h1>
+            <h2 class="separator-title font-dokyo">BILLETTERIE</h2>
             <hr class="hr">
             <div class="separator-div home-ticket">
                 <div class="container-fluid">
                     <div class="row ticket hidden-xs hidden-sm">
                         <div class="col-md-offset-1 col-md-5 hidden-xs hidden-sm col-ticket span-ticket">
                             <a href="../../../../index.php?page=ticket">
-                            <div class="panneau col-ticket">
-                                <span class="left-text font-bebas">PASS</span>
-                                <span class="right-text font-bebas">1 JOUR</span>
-                            </div>
+                                <div class="panneau col-ticket">
+                                    <span class="left-text font-bebas">PASS</span>
+                                    <span class="right-text font-bebas">1 JOUR</span>
+                                </div>
                             </a>
                         </div>
                         <div class="col-md-5 hidden-xs hidden-sm col-ticket span-ticket">
                             <a href="../../../../index.php?page=ticket">
-                            <div class="panneau col-ticket">
+                                <div class="panneau col-ticket">
                                     <span class="left-text font-bebas">PASS</span>
                                     <span class="right-text font-bebas">2 JOURS</span>
-                            </div>
+                                </div>
                             </a>
                         </div>
                     </div>
                     <div class="row visible-sm visible-xs">
                         <div class="col-md-12">
-                            <h2 class="font-circula"><i class="fa fa-ticket" aria-hidden="true"></i> Pass 1 Journée ou 2 Jours disponibles</h2>
+                            <h3 class="font-circula"><i class="fa fa-ticket" aria-hidden="true"></i> Pass 1 Journée ou 2 Jours disponibles</h3>
                             <a href="../../../../index.php?page=ticket" class="btn btn-primary">Accéder à la Billetterie</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <h1 class="separator-title font-dokyo">ACTUALITES</h1>
+            <h2 class="separator-title font-dokyo">ACTUALITES</h2>
             <hr class="hr">
             <div class="separator-div">
                 <div class="container-fluid">
@@ -70,18 +68,16 @@
                             <div class="col-xs-12 col-xs-offset-0 col-sm-4">
                                 <div class="content-div text-justify ">
                                     <div class="text-center">
-                                        <img src="../../../web/img/news/{{ news.imgNews }}" class="img-255">
+                                        <img src="../../../web/img/news/{{ news.imgNews }}" class="img-responsive">
                                     </div>
-                                    <a href="index.php?page=newsOne&id={{ news.id }}" class="news-link"><h2 class="font-circula">{{ news.title }}</h2></a>
+                                    <a href="../../../../index.php?page=newsOne&id={{ news.id }}" class="news-link"><h3 class="font-circula">{{ news.title }}</h3></a>
                                     <hr class="hr">
                                     <p>{{ news.text }}</p>
                                 </div>
-                                <br />
                             </div>
                         {% endfor %}
                     </div>
-                    <br />
-                    <a href="../../../../index.php?page=news"class="btn btn-primary">Voir plus d'actualités</a>
+                    <a href="../../../../index.php?page=news" class="btn btn-primary">Voir plus d'actualités</a>
                 </div>
             </div>
         </div>

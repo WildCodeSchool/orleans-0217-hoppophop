@@ -2,8 +2,6 @@
 {% block title %}Actualités{% endblock %}
 {% block content %}
     <div class="container">
-        <h2 class="text-center">Ajouter une actualité</h2>
-        <hr/>
         {% if error==2 %}
             <div class="alert alert-danger" role="alert">Le titre et le contenu d'une actualité doit être du texte</div>
         {% elseif error==3 %}
@@ -17,29 +15,39 @@
         {% elseif error==6 %}
             <div class="alert alert-danger" role="alert">Le poids de l'image est trop élevé</div>
         {% endif %}
-        <form method="POST" action="../../../../admin/admin.php?page=addNews" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="title">Nom de l'actualité</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Entrez le nom de l'actualité" required>
+        <div class="text-center">
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#form" aria-expanded="false">Ajouter une actualité</button>
+        </div>
+        <br />
+        <div class="collapse" id="form">
+            <div class="well">
+                <h2 class="text-center">Ajouter une actualité</h2>
+                <hr/>
+                <form method="POST" action="../../../../admin/admin.php?page=addNews" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="title">Nom de l'actualité</label>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Entrez le nom de l'actualité" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Texte de l'actualité</label>
+                        <textarea class="form-control textarea" name="text" id="text" placeholder="Entrez le texte de l'actualité" rows="10" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="img">Photo de l'actualité</label>
+                        <input type="file" id="img" name="img" required>
+                        {% include 'imgInfo.html.twig' %}
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="breaking_news" value="1">Actualité Importante
+                        </label>
+                    </div>
+                    <div class="text-center">
+                        <input type="submit" name="submit" class="btn btn-primary" value="Créer">
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="text">Texte de l'actualité</label>
-                <textarea class="form-control textarea" name="text" id="text" placeholder="Entrez le texte de l'actualité" rows="10" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="img">Photo de l'actualité</label>
-                <input type="file" id="img" name="img" required>
-                {% include 'imgInfo.html.twig' %}
-            </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" name="breaking_news" value="1">Actualité Importante
-                </label>
-            </div>
-            <div class="text-center">
-                <input type="submit" name="submit" class="btn btn-primary" value="Créer">
-            </div>
-        </form>
+        </div>
         <br />
         <h2 class="text-center">Liste des actualités</h2>
         <hr />
