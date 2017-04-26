@@ -2,31 +2,7 @@
 {% block title %}Foodtruck{% endblock %}
 {% block content %}
     <div class="container">
-        {% if error==2 %}
-            <div class="alert alert-danger" role="alert">Le nom ou la description d'un foodtruck doit être une chaîne de caractères</div>
-        {% elseif error==3 %}
-            <div class="alert alert-danger" role="alert">La taille du nom d'un foodtruck ne peut pas dépasser 255 caractères</div>
-        {% elseif error==0 %}
-            <div class="alert alert-danger" role="alert">Une erreur s'est produite lors de l'insertion dans la base de données</div>
-        {% elseif error==4 %}
-            <div class="alert alert-danger" role="alert">L'extension n'est pas valide</div>
-        {% elseif error==5 %}
-            <div class="alert alert-danger" role="alert">La taille de l'image est trop élevé</div>
-        {% elseif error==6 %}
-            <div class="alert alert-danger" role="alert">Le poids de l'image est trop élevé</div>
-        {% elseif error==0 %}
-            <div class="alert alert-danger" role="alert">Une erreur s'est produite lors de l'insertion dans la base de données</div>
-        {% elseif error==7 %}
-            <div class="alert alert-danger" role="alert">Le format de la date est incorrect</div>
-        {% elseif error==4 %}
-            <div class="alert alert-danger" role="alert">L'extension n'est pas valide</div>
-        {% elseif error==5 %}
-            <div class="alert alert-danger" role="alert">La taille de l'image est trop élevé</div>
-        {% elseif error==6 %}
-            <div class="alert alert-danger" role="alert">Le poids de l'image est trop élevé</div>
-        {% elseif error==7 %}
-            <div class="alert alert-danger" role="alert">Le format de la date est incorrect</div>
-        {% endif %}
+        {% include 'error.html.twig' %}
         <div class="text-center">
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#form" aria-expanded="false">Ajouter un foodtruck</button>
         </div>
@@ -35,25 +11,26 @@
             <div class="well">
                 <h2 class="text-center">Ajouter un foodtruck</h2>
                 <hr/>
+                {% include 'formInfo.html.twig' %}
                 <form method="POST" action="../../../../admin/admin.php?page=addFood" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="title">Nom du foodtruck</label>
+                        <label for="title">Nom du foodtruck <span class="red">*</span></label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Entrez le nom du Foodtruck" required>
                     </div>
                     <div class="form-group">
-                        <label for="text">Description du foodtruck</label>
+                        <label for="text">Description du foodtruck <span class="red">*</span></label>
                         <textarea class="form-control textarea" name="content" id="content" placeholder="Entrez la description du Foodtruck" rows="10" required></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="start">Heure d'ouverture du foodtruck</label>
+                        <label for="start">Heure d'ouverture du foodtruck <span class="red">*</span></label>
                         <input type="text" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="start" name="start" required>
                     </div>
                     <div class="form-group">
-                        <label for="start">Heure de fermeture du foodtruck</label>
+                        <label for="start">Heure de fermeture du foodtruck <span class="red">*</span></label>
                         <input type="text" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="end" name="end" required>
                     </div>
                     <div class="form-group">
-                        <label for="place">Lieu du foodtruck</label>
+                        <label for="place">Lieu du foodtruck <span class="red">*</span></label>
                         <select class="form-control" id="place" name="place" required>
                             {%  for place in places %}
                                 <option value="{{ place.id }}">{{ place.name }}</option>
@@ -61,7 +38,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="img">Photo du foodtruck</label>
+                        <label for="img">Photo du foodtruck <span class="red">*</span></label>
                         <input type="file" id="img" name="img" required>
                         {% include 'imgInfo.html.twig' %}
                     </div>
@@ -107,6 +84,7 @@
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title">Modifier un Foodtruck</h4>
                             </div>
+                            {% include 'formInfo.html.twig' %}
                             <form method="POST" action="../../../../admin/admin.php?page=updateFood" enctype="multipart/form-data">
                                 <div class="modal-body">
                                     <div class="form-group">

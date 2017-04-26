@@ -2,11 +2,7 @@
 {% block title %}Concert{% endblock %}
 {% block content %}
     <div class="container">
-        {% if error==0 %}
-            <div class="alert alert-danger" role="alert">Une erreur s'est produite lors de l'insertion dans la base de données</div>
-        {% elseif error==7 %}
-            <div class="alert alert-danger" role="alert">Le format de la date est incorrect</div>
-        {% endif %}
+        {% include 'error.html.twig' %}
         <div class="text-center">
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#form" aria-expanded="false">Ajouter un concert</button>
         </div>
@@ -15,33 +11,34 @@
             <div class="well">
                 <h2 class="text-center">Ajouter un concert</h2>
                 <hr/>
+                {% include 'formInfo.html.twig' %}
                 <form method="POST" action="../../../../admin/admin.php?page=addConcert" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="start">Heure d'ouverture du concert</label>
+                        <label for="start">Heure d'ouverture du concert <span class="red">*</span></label>
                         <input type="text" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="start" name="start" required>
                     </div>
                     <div class="form-group">
-                        <label for="start">Heure de fermeture du concert</label>
+                        <label for="start">Heure de fermeture du concert <span class="red">*</span></label>
                         <input type="text" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="end" name="end" required>
                     </div>
                     <div class="form-group">
-                        <label for="place">Artistes du concert</label>
-                        <select  class="form-control" id="artist" name="artist" required>
+                        <label for="place">Artistes du concert <span class="red">*</span></label>
+                        <select class="form-control" id="artist" name="artist" required>
                             {% for artist in artists %}
                                 <option value="{{ artist.id }}">{{ artist.name }}</option>
                             {% endfor %}
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="place">Lieu du concert</label>
-                        <select  class="form-control" id="place" name="place" required>
+                        <label for="place">Lieu du concert <span class="red">*</span></label>
+                        <select class="form-control" id="place" name="place" required>
                             {% for place in places %}
                                 <option value="{{ place.id }}">{{ place.name }}</option>
                             {% endfor %}
                         </select>
                     </div>
                     <div class="form-group">
-                        <p><strong>Statut du concert</strong></p>
+                        <p><strong>Statut du concert <span class="red">*</span></strong></p>
                         <label for="status-0">Programmé</label>
                         <input type="radio" name="status" value="programmed" id="status-0" checked>
                         <label for="status-1">Déprogrammé</label>
@@ -50,7 +47,7 @@
                         <input type="radio" name="status" value="deleted" id="status-2">
                     </div>
                     <div class="form-group">
-                        <p><strong>Showcase</strong></p>
+                        <p><strong>Showcase <span class="red">*</span></strong></p>
                         <label for="showcase-0">Oui</label>
                         <input type="radio" name="showcase" value="1" id="showcase-0">
                         <label for="showcase-1">Non</label>
@@ -117,23 +114,20 @@
                                             aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title">Modifier un Concert</h4>
                             </div>
+                            {% include 'formInfo.html.twig' %}
                             <form method="POST" action="../../../../admin/admin.php?page=updateConcert"
                                   enctype="multipart/form-data">
                                 <div class="modal-body">
                                     <div class="form-group">
-                                        <label for="start">Heure d'ouverture du Concert</label>
-                                        <input type="text" class="form-control"
-                                               placeholder="Format : YYYY-MM-DD HH:MM:SS" id="start" name="start"
-                                               value="{{ concert.concert_start }}" required>
+                                        <label for="start">Heure d'ouverture du Concert <span class="red">*</span></label>
+                                        <input type="text" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="start" name="start" value="{{ concert.concert_start }}" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="start">Heure de fermeture du Concert</label>
-                                        <input type="text" class="form-control"
-                                               placeholder="Format : YYYY-MM-DD HH:MM:SS" id="end" name="end"
-                                               value="{{ concert.concert_end }}" required>
+                                        <label for="start">Heure de fermeture du Concert <span class="red">*</span></label>
+                                        <input type="text" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="end" name="end" value="{{ concert.concert_end }}" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="place">Artistes du concert</label>
+                                        <label for="place">Artistes du concert <span class="red">*</span></label>
                                         <select class="form-control" id="artist" name="artist" required>
                                             {% for artist in artists %}
                                                 <option value="{{ artist.id }}">{{ artist.name }}</option>
@@ -141,7 +135,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="place">Lieu du Concert</label>
+                                        <label for="place">Lieu du Concert <span class="red">*</span></label>
                                         <select class="form-control" id="place" name="place" required>
                                             {% for place in places %}
                                                 <option value="{{ place.id }}">{{ place.name }}</option>
@@ -149,7 +143,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <p><strong>Statut du concert</strong></p>
+                                        <p><strong>Statut du concert <span class="red">*</span></strong></p>
                                         <label for="status-0">Programmé</label>
                                         <input type="radio" name="status" value="programmed" id="status-0" checked>
                                         <label for="status-1">Déprogrammé</label>
@@ -158,7 +152,7 @@
                                         <input type="radio" name="status" value="deleted" id="status-2">
                                     </div>
                                     <div class="form-group">
-                                        <p><strong>Showcase</strong></p>
+                                        <p><strong>Showcase <span class="red">*</span></strong></p>
                                         <label for="showcase-0">Oui</label>
                                         <input type="radio" name="showcase" value="1" id="showcase-0" checked>
                                         <label for="showcase-1">Non</label>

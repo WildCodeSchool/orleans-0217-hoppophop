@@ -45,22 +45,17 @@ class PlaceManager extends \Hph\Db
         if($rTitle!==true){
             return $rTitle;
         }
-        $vUrl = new TextValidator($post['url']);
-        $rUrl = $vUrl->validate();
-        if($rUrl!==true){
-            return $rUrl;
-        }
-        $vStart = new DateValidator($post['start']);
+        $vStart = new DateValidator($post['start'], 1);
         $rStart = $vStart->validate();
         if($rStart!==true){
             return $rStart;
         }
-        $vEnd = new DateValidator($post['start']);
+        $vEnd = new DateValidator($post['start'], 1);
         $rEnd = $vEnd->validate();
         if($rEnd!==true){
             return $rEnd;
         }
-        $vUrl = new TextValidator($post['url'], 0, 'url');
+        $vUrl = new TextValidator($post['url'], 1, 'url');
         $rUrl = $vUrl->validate();
         if($rUrl!==true){
             return $rUrl;
@@ -89,32 +84,29 @@ class PlaceManager extends \Hph\Db
         if (!isset($post['showcase'])) {
             $post['showcase'] = 0;
         }
-        $vImg = new ImgValidator($file);
-        $rImg = $vImg->validate();
-        if($rImg!==true){
-            return $rImg;
+        if ($file['img']['name'] != '') {
+            $vImg = new ImgValidator($file);
+            $rImg = $vImg->validate();
+            if($rImg!==true){
+                return $rImg;
+            }
         }
-        $vTitle = new TextValidator($post['name'], 150);
+        $vTitle = new TextValidator($post['name'], 1, 150);
         $rTitle = $vTitle->validate();
         if($rTitle!==true){
             return $rTitle;
         }
-        $vUrl = new TextValidator($post['url']);
-        $rUrl = $vUrl->validate();
-        if($rUrl!==true){
-            return $rUrl;
-        }
-        $vStart = new DateValidator($post['start']);
+        $vStart = new DateValidator($post['start'], 1);
         $rStart = $vStart->validate();
         if($rStart!==true){
             return $rStart;
         }
-        $vEnd = new DateValidator($post['start']);
+        $vEnd = new DateValidator($post['start'], 1);
         $rEnd = $vEnd->validate();
         if($rEnd!==true){
             return $rEnd;
         }
-        $vUrl = new TextValidator($post['url'], 0, 'url');
+        $vUrl = new TextValidator($post['url'], 1, 'url');
         $rUrl = $vUrl->validate();
         if($rUrl!==true){
             return $rUrl;

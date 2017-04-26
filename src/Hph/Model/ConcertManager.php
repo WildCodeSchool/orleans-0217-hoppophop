@@ -9,6 +9,7 @@
 namespace Hph\Model;
 
 use Hph\DateValidator;
+use Hph\TextValidator;
 use PDO;
 
 class ConcertManager extends \Hph\Db
@@ -27,18 +28,15 @@ JOIN place ON concert.place_id=place.id";
         if (!isset($post['showcase'])) {
             $post['showcase'] = 0;
         }
-        $vStart = new DateValidator($post['start']);
+        $vStart = new DateValidator($post['start'], 1);
         $rStart = $vStart->validate();
         if($rStart!==true){
             return $rStart;
         }
-        $vEnd = new DateValidator($post['start']);
+        $vEnd = new DateValidator($post['end'], 1);
         $rEnd = $vEnd->validate();
         if($rEnd!==true){
             return $rEnd;
-        }
-        if (filter_var($post['url'], FILTER_VALIDATE_URL) === FALSE) {
-            return 8;
         }
 
         $query = "INSERT INTO concert VALUES (NULL, :start, :end, :artist, :place, :status, :showcase)";
@@ -57,12 +55,12 @@ JOIN place ON concert.place_id=place.id";
         if (!isset($post['showcase'])) {
             $post['showcase'] = 0;
         }
-        $vStart = new DateValidator($post['start']);
+        $vStart = new DateValidator($post['start'], 1);
         $rStart = $vStart->validate();
         if($rStart!==true){
             return $rStart;
         }
-        $vEnd = new DateValidator($post['start']);
+        $vEnd = new DateValidator($post['end'], 1);
         $rEnd = $vEnd->validate();
         if($rEnd!==true){
             return $rEnd;
@@ -84,7 +82,7 @@ JOIN place ON concert.place_id=place.id";
     {
         $query = "DELETE FROM concert WHERE id = :id";
         $prep = $this->getDb()->prepare($query);
-        $prep->bindValue(':id', $post['id'], PDO::PARAM_INT);
+        $prep->bindValue(':id', $id, PDO::PARAM_INT);
         return $prep->execute();
     }
 

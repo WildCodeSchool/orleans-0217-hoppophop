@@ -28,18 +28,21 @@ class NewsManager extends \Hph\Db
         if(!isset($post['breaking_news'])){
             $post['breaking_news'] = 0;
         }
+        if($file['img']['name']=='') {
+            return 10;
+        }
         $vImg = new ImgValidator($file);
         $rImg = $vImg->validate();
         if($rImg!==true){
             return $rImg;
         }
         $file['img']['name'] = $this->nameImg($file['img']['name']);
-        $vTitle = new TextValidator($post['title'], 200);
+        $vTitle = new TextValidator($post['title'], 1,200);
         $rTitle = $vTitle->validate();
         if($rTitle!==true){
             return $rTitle;
         }
-        $vText = new TextValidator($post['text']);
+        $vText = new TextValidator($post['text'], 1);
         $rText = $vText->validate();
         if($rText!==true){
             return $rText;
@@ -58,17 +61,19 @@ class NewsManager extends \Hph\Db
         if(!isset($post['breaking_news'])){
             $post['breaking_news'] = 0;
         }
-        $vImg = new ImgValidator($file);
-        $rImg = $vImg->validate();
-        if($rImg!==true){
-            return $rImg;
+        if ($file['img']['name'] != '') {
+            $vImg = new ImgValidator($file);
+            $rImg = $vImg->validate();
+            if($rImg!==true){
+                return $rImg;
+            }
         }
-        $vTitle = new TextValidator($post['title'], 200);
+        $vTitle = new TextValidator($post['title'], 1, 200);
         $rTitle = $vTitle->validate();
         if($rTitle!==true){
             return $rTitle;
         }
-        $vText = new TextValidator($post['text']);
+        $vText = new TextValidator($post['text'], 1);
         $rText = $vText->validate();
         if($rText!==true){
             return $rText;
