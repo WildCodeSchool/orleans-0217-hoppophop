@@ -837,6 +837,30 @@ a:hover {
     color: white;
     font-size: 18px;
 }
+
+.benevolat-div {
+    margin-top: 5%;
+    color: white;
+    font-size: 1.7em;
+}
+.intro {
+    margin-top: 7%;
+    margin-bottom: 7%;
+}
+.font {
+    font-size: 3em;
+}
+.titre{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.titre2 {
+    font-size: 2em;
+}
+.activites {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
 /* ~~~~~> End Volunteer <~~~~~ */
 
 
@@ -859,8 +883,8 @@ a:hover {
 /* ~~~~~> End Contact <~~~~~ */
 
 
-/* =====> News <===== */
 
+/* =====> News <===== */
 .breaking-news {
     background-color: rgba(237, 122, 33, 1);
     border: none;
