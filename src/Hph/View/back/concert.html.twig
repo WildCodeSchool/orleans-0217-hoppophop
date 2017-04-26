@@ -79,7 +79,15 @@
                     <td>{{ concert.concert_end | localizeddate('long', 'short', 'fr') }}</td>
                     <td>{{ concert.artist_name }}</td>
                     <td>{{ concert.place_name }}</td>
-                    <td>{{ concert.status }}</td>
+                    <td>
+                        {% if concert.status=='programmed' %}
+                            Programmé
+                        {% elseif concert.status=='canceled' %}
+                            Déprogrammé
+                        {% else %}
+                            Supprimé
+                        {% endif %}
+                    </td>
                     <td>
                         {% if concert.showcase==1 %}
                             Oui
