@@ -38,28 +38,28 @@ class ProgrammationManager extends \Hph\Db
 
     public function getArtists()
     {
-        $req = "SELECT * FROM artist JOIN concert ON artist.id=concert.artist_id WHERE status = 'programmed' OR status = 'canceled'";
+        $req = "SELECT * FROM artist JOIN concert ON artist.id=concert.artist_id WHERE status = 'programmed' OR status = 'canceled' ORDER BY artist.name ASC";
         return $this->dBQuery($req, 'Artist');
     }
 
 
     public function getArtistsPlace($idLieux)
     {
-        $req = " SELECT * FROM artist JOIN concert ON artist.id=concert.artist_id WHERE (status = 'programmed' OR status = 'canceled') AND concert.place_id=$idLieux";
+        $req = " SELECT * FROM artist JOIN concert ON artist.id=concert.artist_id WHERE (status = 'programmed' OR status = 'canceled') AND concert.place_id=$idLieux ORDER BY artist.name ASC";
         return $this->dBQuery($req, 'Artist');
     }
 
 
     public function getArtistsSoir($jour)
     {
-        $req = " SELECT * FROM artist JOIN concert ON artist.id=concert.artist_id WHERE (status = 'programmed' OR status = 'canceled') AND concert.concert_start LIKE '2017-09-$jour%'";
+        $req = " SELECT * FROM artist JOIN concert ON artist.id=concert.artist_id WHERE (status = 'programmed' OR status = 'canceled') AND concert.concert_start LIKE '2017-09-$jour%' ORDER BY artist.name ASC";
         return $this->dBQuery($req, 'Artist');
     }
 
 
     public function getArtistsLocal($local)
     {
-        $req = " SELECT * FROM artist JOIN concert ON artist.id=concert.artist_id WHERE (status = 'programmed' OR status = 'canceled') AND artist.local=$local";
+        $req = " SELECT * FROM artist JOIN concert ON artist.id=concert.artist_id WHERE (status = 'programmed' OR status = 'canceled') AND artist.local=$local ORDER BY artist.name ASC";
         return $this->dBQuery($req, 'Artist');
     }
 
@@ -68,51 +68,47 @@ class ProgrammationManager extends \Hph\Db
         if (!isset($post['local'])) {
             $post['local'] = 0;
         }
+        if($file['img']['name']=='') {
+            return 10;
+        }
         $vImg = new ImgValidator($file);
         $rImg = $vImg->validate();
         if($rImg!==true){
             return $rImg;
         }
         $file['img']['name'] = $this->nameImg($file['img']['name']);
-        $vTitle = new TextValidator($post['name'], 150);
+        $vTitle = new TextValidator($post['name'], 1, 150);
         $rTitle = $vTitle->validate();
         if($rTitle!==true){
             return $rTitle;
         }
-        $vText = new TextValidator($post['content']);
+        $vText = new TextValidator($post['content'], 1);
         $rText = $vText->validate();
         if($rText!==true){
             return $rText;
         }
-        $vVideo = new TextValidator($post['video_url'], 0, 'url');
+        $vVideo = new TextValidator($post['video_url'], 0, 0, 'url');
         $rVideo = $vVideo->validate();
         if($rVideo!==true){
             return $rVideo;
         }
-        $vFB = new TextValidator($post['facebook_url'], 0, 'url');
+        $vFB = new TextValidator($post['facebook_url'], 0, 0, 'url');
         $rFB = $vFB->validate();
         if($rFB!==true){
             return $rFB;
         }
 
-        $sql = "INSERT INTO artist VALUES (NULL, '" . $post['name'] . "', '" . $post['bio'] .
-            "', '" . $file['img']['name'] . "', '" . $post['video_url'] . "', '" . $post['facebook_url'] .
-            "', '" . $post['youtube_url'] . "', '" . $post['twitter_url'] . "', '" . $post['spotify_url'] .
-            "', '" . $post['local'] . "')";
-
-        return $this->getDb()->exec($sql);
-
-        $vYT = new TextValidator($post['youtube_url'], 0, 'url');
+        $vYT = new TextValidator($post['youtube_url'], 0, 0, 'url');
         $rYT = $vYT->validate();
         if($rYT!==true){
             return $rYT;
         }
-        $vTwitter = new TextValidator($post['twitter_url'], 0, 'url');
+        $vTwitter = new TextValidator($post['twitter_url'], 0, 0, 'url');
         $rTwitter = $vTwitter->validate();
         if($rTwitter!==true){
             return $rTwitter;
         }
-        $vSpotify = new TextValidator($post['spotify_url'], 0, 'url');
+        $vSpotify = new TextValidator($post['spotify_url'], 0, 0, 'url');
         $rSpotify = $vSpotify->validate();
         if($rSpotify!==true){
             return $rSpotify;
@@ -130,7 +126,6 @@ class ProgrammationManager extends \Hph\Db
         $prep->bindValue(':local', $post['local'], PDO::PARAM_INT);
         $this->addImg($file, 'artist');
         return $prep->execute();
-
     }
 
 
@@ -146,37 +141,37 @@ class ProgrammationManager extends \Hph\Db
                 return $rImg;
             }
         }
-        $vTitle = new TextValidator($post['name'], 150);
+        $vTitle = new TextValidator($post['name'], 1, 150);
         $rTitle = $vTitle->validate();
         if($rTitle!==true){
             return $rTitle;
         }
-        $vText = new TextValidator($post['content']);
+        $vText = new TextValidator($post['content'], 1);
         $rText = $vText->validate();
         if($rText!==true){
             return $rText;
         }
-        $vVideo = new TextValidator($post['video_url'], 0, 'url');
+        $vVideo = new TextValidator($post['video_url'], 0, 0, 'url');
         $rVideo = $vVideo->validate();
         if($rVideo!==true){
             return $rVideo;
         }
-        $vFB = new TextValidator($post['facebook_url'], 0, 'url');
+        $vFB = new TextValidator($post['facebook_url'], 0, 0, 'url');
         $rFB = $vFB->validate();
         if($rFB!==true){
             return $rFB;
         }
-        $vYT = new TextValidator($post['youtube_url'], 0, 'url');
+        $vYT = new TextValidator($post['youtube_url'], 0, 0, 'url');
         $rYT = $vYT->validate();
         if($rYT!==true){
             return $rYT;
         }
-        $vTwitter = new TextValidator($post['twitter_url'], 0, 'url');
+        $vTwitter = new TextValidator($post['twitter_url'], 0, 0, 'url');
         $rTwitter = $vTwitter->validate();
         if($rTwitter!==true){
             return $rTwitter;
         }
-        $vSpotify = new TextValidator($post['spotify_url'], 0, 'url');
+        $vSpotify = new TextValidator($post['spotify_url'], 0, 0, 'url');
         $rSpotify = $vSpotify->validate();
         if($rSpotify!==true){
             return $rSpotify;
@@ -221,10 +216,15 @@ class ProgrammationManager extends \Hph\Db
     }
     public function deleteArtist($id)
     {
-        $query = "DELETE FROM artist WHERE id = :id";
-        $prep = $this->getDb()->prepare($query);
-        $prep->bindValue(':id', $id, PDO::PARAM_INT);
-        $this->supprImg($id, 'artist');
-        return $prep->execute();
+        $querytag = "DELETE FROM tag WHERE artist_id = :id";
+        $preptag = $this->getDb()->prepare($querytag);
+        $preptag->bindValue(':id', $id, PDO::PARAM_INT);
+        if($preptag->execute()){
+            $query = "DELETE FROM artist WHERE id = :id";
+            $prep = $this->getDb()->prepare($query);
+            $prep->bindValue(':id', $id, PDO::PARAM_INT);
+            $this->supprImg($id, 'artist');
+            return $prep->execute();
+        }
     }
 }

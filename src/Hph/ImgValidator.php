@@ -17,8 +17,8 @@ class ImgValidator
     private $height;
     private $size;
     const EXT = array('png','gif','jpg','jpeg');
-    const WIDTH = 450;
-    const HEIGHT = 500;
+    const WIDTH = 500;
+    const HEIGHT = 450;
     const SIZE = 1000000;
 
     public function validate()

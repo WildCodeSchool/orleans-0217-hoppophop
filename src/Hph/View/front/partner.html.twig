@@ -8,43 +8,46 @@
             {%  for partner in partners %}
                 {% if partner.type == 'culturel' %}
                     <div class="col-md-4 col-xs-4">
-                        <a href="#" class="thumbnail thumbnail-div partnair-logo">
+                        <a href="{{ partner.url }}" class="thumbnail thumbnail-div partnair-logo">
                             <img src="/web/img/partner/{{ partner.imgPartner }}" class="img-responsive">
                         </a>
                     </div>
                 {% endif %}
             {% endfor %}
         </div>
+        <hr class="hr">
         <h2 class="text-center white font-circula">Partenaires Institutionnels</h2>
         <div class="row">
             {%  for partner in partners %}
                 {% if partner.type == 'institutionnels' %}
                     <div class="col-md-4 col-xs-4">
-                        <a href="#" class="thumbnail thumbnail-div partnair-logo">
+                        <a href="{{ partner.url }}" class="thumbnail thumbnail-div partnair-logo">
                             <img src="/web/img/partner/{{ partner.imgPartner }}" class="img-responsive">
                         </a>
                     </div>
                 {% endif %}
             {% endfor %}
         </div>
+        <hr class="hr">
         <h2 class="text-center white font-circula">Partenaires Médiatiques</h2>
         <div class="row">
             {%  for partner in partners %}
                 {% if partner.type == 'média' %}
                     <div class="col-md-4 col-xs-4">
-                        <a href="#" class="thumbnail thumbnail-div partnair-logo">
+                        <a href="{{ partner.url }}" class="thumbnail thumbnail-div partnair-logo">
                             <img src="/web/img/partner/{{ partner.imgPartner }}" class="img-responsive">
                         </a>
                     </div>
                 {% endif %}
             {% endfor %}
         </div>
+        <hr class="hr">
         <h2 class="text-center white font-circula">Partenaires Privés</h2>
         <div class="row">
             {%  for partner in partners %}
                 {% if partner.type == 'privé' %}
                     <div class="col-md-4 col-xs-4">
-                        <a href="#" class="thumbnail thumbnail-div partnair-logo">
+                        <a href="{{ partner.url }}" class="thumbnail thumbnail-div partnair-logo">
                             <img src="/web/img/partner/{{ partner.imgPartner }}" class="img-responsive">
                         </a>
                     </div>
