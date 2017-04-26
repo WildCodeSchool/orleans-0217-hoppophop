@@ -5,6 +5,18 @@ use Hph\ImgValidator;
 use Hph\TextValidator;
 use PDO;
 
+/*
+ * Permet de :
+ * - Ajouter une news (addNews)
+ * - Modifier une news (updateNews)
+ * - Supprimer une news (deleteNews)
+ * - Voir les classes ImgValidator et TextValidator pour le fonctionnement des validateurs
+ *
+ * Permet de récupérer :
+ * - Des news (getNews) avec une limite ($limi)
+ * - Une news (getNewsOne)
+ * - Uniquement les Breaking News (news qui s'affiche en haut de la page d'accueil) (getBreakingNews)
+ */
 class NewsManager extends \Hph\Db
 {
 

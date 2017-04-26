@@ -8,7 +8,15 @@
 
 namespace Hph;
 
-
+/*
+ * Validateur de date :
+ * - Le constructeur prend deux paramêtres : $date (la valeur du champ que l'on test) et $required (le champ est il requis ou non)
+ *
+ * La méthode validate vérifie la validité de la date :
+ * - Si la date est requise et que la donnée envoyée est vide, le validateur retourne le code d'erreur 10 (champ requis non remplis)
+ * - Si la date n'est pas au format Y-m-d H:i:s, le validateur retourne le code d'erreur 7 (format de date incorrect)
+ *
+ */
 class DateValidator
 {
     private $date;

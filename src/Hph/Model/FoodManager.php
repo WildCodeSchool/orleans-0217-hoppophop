@@ -12,6 +12,13 @@ use Hph\TextValidator;
 use Hph\DateValidator;
 use PDO;
 
+/*
+ * Permet de :
+ * - Ajouter un foodtruck (addFood)
+ * - Modifier un foodtruck (updateFood)
+ * - Supprimer un foodtruck (deleteFood)
+ * - Voir les classes ImgValidator, TextValidator et DateValidator pour le fonctionnement des validateurs
+ */
 class FoodManager extends \Hph\Db
 {
     public function getFood()

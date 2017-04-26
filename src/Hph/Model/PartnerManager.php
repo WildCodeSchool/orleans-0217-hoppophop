@@ -11,6 +11,12 @@ use Hph\ImgValidator;
 use Hph\TextValidator;
 use PDO;
 
+/*
+ * Permet de :
+ * - Ajouter un partenaire (addPartner)
+ * - Supprimer un partenaire (deletePartner)
+ * - Voir les classes ImgValidator et TextValidator pour le fonctionnement des validateurs
+ */
 class PartnerManager extends \Hph\Db
 {
     public function getPartner()
