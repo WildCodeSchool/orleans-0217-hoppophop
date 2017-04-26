@@ -1,4 +1,4 @@
 AuthName "Administration : Indentification"
 AuthType Basic
-AuthUserFile "/home/quentin/projets/projet/admin/.htpasswd"
+AuthUserFile "/home/wilder1/Documents/localservers/orleans-0217-hoppophop/admin/.htpasswd"
 Require valid-user
