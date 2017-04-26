@@ -13,9 +13,12 @@ body {
     margin-top: -25px;
     padding: 25px;
 }
-.container {
-    padding-left: 10%;
-    padding-right: 10%;
+
+@media (max-width: 1440px) {
+    .container {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
 }
 @media (max-width: 1110px) {
     .routes {
@@ -387,6 +390,22 @@ a:hover {
         color:#2baf97;
     }
 }
+@media (max-width: 1440px){
+    .panneau {
+        font-size: 1em;
+    }
+    .right-text{
+        font-size: 1.2em;
+    }
+}
+@media (min-width: 1440px){
+    .panneau{
+        font-size: 1.5em;
+    }
+    .right-text{
+        font-size: 1.4px;
+    }
+}
 .panneau {
     display: table-cell;
     vertical-align: middle;
@@ -394,7 +413,6 @@ a:hover {
     border-radius: 20px;
     font-weight: bold;
     text-align: center;
-    font-size: 1em;
     width: 280px;
     padding-top: 3%;
     color: #2baf97;
