@@ -17,15 +17,24 @@ class ProgrammationManager extends \Hph\Db
 
     public function allArtist()
     {
-        $req = "SELECT * FROM artist";
-        return $this->dBQuery($req, 'Artist');
+        $req = "SELECT a.*, t.name as tag_name FROM hph.artist a LEFT JOIN hph.tag t ON a.id = t.artist_id ORDER BY a.id";
+        $data = $this->dBFetchAll($req);
+        $artists = [];
+        foreach ($data as $artist) {
+            if (!array_key_exists($artist['id'], $artists)) {
+                $artists[$artist['id']] = $artist;
+            }
+            $artists[$artist['id']]['tags'][] = $artist['tag_name'];
+        }
+
+        return $artists;
     }
 
-    public function profileArtist()
-    {
-        $req = "SELECT * FROM hph.artist a LEFT JOIN hph.tag t ON a.id = t.artist_id";
-        return $this->dBQuery($req, 'Artist');
-    }
+//    public function profileArtist()
+//    {
+//        $req = "SELECT * FROM hph.artist a LEFT JOIN hph.tag t ON a.id = t.artist_id";
+//        return $this->dBQuery($req, 'Artist');
+//    }
 
     public function getArtists()
     {
@@ -130,10 +139,12 @@ class ProgrammationManager extends \Hph\Db
         if (!isset($post['local'])) {
             $post['local'] = 0;
         }
-        $vImg = new ImgValidator($file);
-        $rImg = $vImg->validate();
-        if($rImg!==true){
-            return $rImg;
+        if ($file['img']['name'] != '') {
+            $vImg = new ImgValidator($file);
+            $rImg = $vImg->validate();
+            if($rImg!==true){
+                return $rImg;
+            }
         }
         $vTitle = new TextValidator($post['name'], 150);
         $rTitle = $vTitle->validate();
@@ -177,17 +188,23 @@ class ProgrammationManager extends \Hph\Db
             $query = "UPDATE artist SET name = :name, bio = :content, video_url = :video_url, facebook_url = :facebook_url, youtube_url = :youtube_url, twitter_url = :twitter_url, spotify_url = :spotify_url, local = :local WHERE id = :id";
         }
 
-        if (!isset($post['tag'])) {
-            $post['tag'] = 0;
-            $req = "UPDATE artist SET tag = '" . $post['tag']['name'] . "', '" . $post['tag']['name'] .
-            "', '" . $post['tag']['name'] . "')";
+        if (isset($post['tags']) && $post['tags'] != '') {
+            $req = "DELETE FROM tag WHERE artist_id = :id";
+            $stmt = $this->getDb()->prepare($req);
+            $stmt->bindValue(':id', $post['id']);
+            $stmt->execute();
+
+            $tagManager = new TagManager();
+            $tags = trim($post['tags']);
+            $tags = explode(',', $tags);
+            foreach ($tags as $tag) {
+                $tagManager->insertTag($tag, $post['id']);
+            }
         }
-        return $this->getDb()->exec($sql);
 
         $prep = $this->getDb()->prepare($query);
         $prep->bindValue(':name', $post['name'], PDO::PARAM_STR);
         $prep->bindValue(':content', $post['content'], PDO::PARAM_STR);
-        $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
         $prep->bindValue(':video_url', $post['video_url'], PDO::PARAM_STR);
         $prep->bindValue(':facebook_url', $post['facebook_url'], PDO::PARAM_STR);
         $prep->bindValue(':youtube_url', $post['youtube_url'], PDO::PARAM_STR);
@@ -196,6 +213,7 @@ class ProgrammationManager extends \Hph\Db
         $prep->bindValue(':local', $post['local'], PDO::PARAM_INT);
         $prep->bindValue(':id', $post['id'], PDO::PARAM_INT);
         if($file['img']['name']!=''){
+            $prep->bindValue(':img', $file['img']['name'], PDO::PARAM_STR);
             $this->addImg($file, 'artist', $post['id']);
         }
         return $prep->execute();

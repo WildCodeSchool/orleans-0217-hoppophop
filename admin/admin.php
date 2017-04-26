@@ -34,6 +34,7 @@ if ($page == 'home') {
     }
 } else if ($page == 'updateArtist') {
     $updateArtist = new Hph\Model\ProgrammationManager();
+
     if ($updateArtist->updateArtist($_POST, $_FILES)) {
         header('Location: admin.php?page=artist');
     }

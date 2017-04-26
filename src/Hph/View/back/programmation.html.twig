@@ -124,7 +124,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="tags">Tags de l'artiste</label>
-                                        <input type="text" class="form-control" id="tags" name="tags" placeholder="Entrez tag1, tag2, tag3" value="{{ tag.name }}">
+                                        <input type="text" class="form-control" id="tags" name="tags" placeholder="Entrez tag1, tag2, tag3" value="{{ artist.tags|join(', ') }}">
                                     </div>
                                     <div class="form-group">
                                         <label for="img">Photo de l'artiste</label>
