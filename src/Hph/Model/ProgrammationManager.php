@@ -38,28 +38,28 @@ class ProgrammationManager extends \Hph\Db
 
     public function getArtists()
     {
-        $req = "SELECT * FROM artist JOIN concert ON artist.id=concert.artist_id WHERE status = 'programmed' OR status = 'canceled'";
+        $req = "SELECT * FROM artist JOIN concert ON artist.id=concert.artist_id WHERE status = 'programmed' OR status = 'canceled' ORDER BY artist.name ASC";
         return $this->dBQuery($req, 'Artist');
     }
 
 
     public function getArtistsPlace($idLieux)
     {
-        $req = " SELECT * FROM artist JOIN concert ON artist.id=concert.artist_id WHERE (status = 'programmed' OR status = 'canceled') AND concert.place_id=$idLieux";
+        $req = " SELECT * FROM artist JOIN concert ON artist.id=concert.artist_id WHERE (status = 'programmed' OR status = 'canceled') AND concert.place_id=$idLieux ORDER BY artist.name ASC";
         return $this->dBQuery($req, 'Artist');
     }
 
 
     public function getArtistsSoir($jour)
     {
-        $req = " SELECT * FROM artist JOIN concert ON artist.id=concert.artist_id WHERE (status = 'programmed' OR status = 'canceled') AND concert.concert_start LIKE '2017-09-$jour%'";
+        $req = " SELECT * FROM artist JOIN concert ON artist.id=concert.artist_id WHERE (status = 'programmed' OR status = 'canceled') AND concert.concert_start LIKE '2017-09-$jour%' ORDER BY artist.name ASC";
         return $this->dBQuery($req, 'Artist');
     }
 
 
     public function getArtistsLocal($local)
     {
-        $req = " SELECT * FROM artist JOIN concert ON artist.id=concert.artist_id WHERE (status = 'programmed' OR status = 'canceled') AND artist.local=$local";
+        $req = " SELECT * FROM artist JOIN concert ON artist.id=concert.artist_id WHERE (status = 'programmed' OR status = 'canceled') AND artist.local=$local ORDER BY artist.name ASC";
         return $this->dBQuery($req, 'Artist');
     }
 
