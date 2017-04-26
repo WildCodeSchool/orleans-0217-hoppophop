@@ -25,28 +25,31 @@ JOIN place ON place.id=eat_place.place_id
     }
     public function addFood($post, $file)
     {
+        if($file['img']['name']=='') {
+            return 10;
+        }
         $vImg = new ImgValidator($file);
         $rImg = $vImg->validate();
         if($rImg!==true){
             return $rImg;
         }
         $file['img']['name'] = $this->nameImg($file['img']['name']);
-        $vTitle = new TextValidator($post['name'], 255);
+        $vTitle = new TextValidator($post['name'], 1, 255);
         $rTitle = $vTitle->validate();
         if($rTitle!==true){
             return $rTitle;
         }
-        $vText = new TextValidator($post['content']);
+        $vText = new TextValidator($post['content'], 1);
         $rText = $vText->validate();
         if($rText!==true){
             return $rText;
         }
-        $vStart = new DateValidator($post['start']);
+        $vStart = new DateValidator($post['start'], 1);
         $rStart = $vStart->validate();
         if($rStart!==true){
             return $rStart;
         }
-        $vEnd = new DateValidator($post['start']);
+        $vEnd = new DateValidator($post['end'], 1);
         $rEnd = $vEnd->validate();
         if($rEnd!==true){
             return $rEnd;
@@ -70,27 +73,29 @@ JOIN place ON place.id=eat_place.place_id
     }
     public function updateFood($post, $file)
     {
-        $vImg = new ImgValidator($file);
-        $rImg = $vImg->validate();
-        if($rImg!==true){
-            return $rImg;
+        if ($file['img']['name'] != '') {
+            $vImg = new ImgValidator($file);
+            $rImg = $vImg->validate();
+            if($rImg!==true){
+                return $rImg;
+            }
         }
-        $vTitle = new TextValidator($post['name'], 255);
+        $vTitle = new TextValidator($post['name'], 1, 255);
         $rTitle = $vTitle->validate();
         if($rTitle!==true){
             return $rTitle;
         }
-        $vText = new TextValidator($post['content']);
+        $vText = new TextValidator($post['content'], 1);
         $rText = $vText->validate();
         if($rText!==true){
             return $rText;
         }
-        $vStart = new DateValidator($post['start']);
+        $vStart = new DateValidator($post['start'], 1);
         $rStart = $vStart->validate();
         if($rStart!==true){
             return $rStart;
         }
-        $vEnd = new DateValidator($post['start']);
+        $vEnd = new DateValidator($post['end'], 1);
         $rEnd = $vEnd->validate();
         if($rEnd!==true){
             return $rEnd;

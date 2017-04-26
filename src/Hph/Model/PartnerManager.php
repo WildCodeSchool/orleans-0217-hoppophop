@@ -10,6 +10,7 @@ namespace Hph\Model;
 use Hph\ImgValidator;
 use Hph\TextValidator;
 use PDO;
+
 class PartnerManager extends \Hph\Db
 {
     public function getPartner()
@@ -23,13 +24,16 @@ class PartnerManager extends \Hph\Db
         if(!isset($post['footer'])){
             $post['footer'] = 0;
         }
+        if($file['img']['name']=='') {
+            return 10;
+        }
         $vImg = new ImgValidator($file);
         $rImg = $vImg->validate();
         if($rImg!==true){
             return $rImg;
         }
         $file['img']['name'] = $this->nameImg($file['img']['name']);
-        $vUrl = new TextValidator($post['url'], 0, 'url');
+        $vUrl = new TextValidator($post['url'], 1, 0, 'url');
         $rUrl = $vUrl->validate();
         if($rUrl!==true){
             return $rUrl;

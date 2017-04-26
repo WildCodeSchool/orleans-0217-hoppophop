@@ -2,19 +2,7 @@
 {% block title %}Activités{% endblock %}
 {% block content %}
     <div class="container">
-        {% if error==2 %}
-            <div class="alert alert-danger" role="alert">Le titre et le contenu d'une activité doit être du texte</div>
-        {% elseif error==3 %}
-            <div class="alert alert-danger" role="alert">La taille du titre ne peut pas dépasser les 200 caractères</div>
-        {% elseif error==0 %}
-            <div class="alert alert-danger" role="alert">Une erreur s'est produite lors de l'insertion dans la base de données</div>
-        {% elseif error==4 %}
-            <div class="alert alert-danger" role="alert">L'extension n'est pas valide</div>
-        {% elseif error==5 %}
-            <div class="alert alert-danger" role="alert">La taille de l'image est trop élevé</div>
-        {% elseif error==6 %}
-            <div class="alert alert-danger" role="alert">Le poids de l'image est trop élevé</div>
-        {% endif %}
+        {% include 'error.html.twig' %}
         <div class="text-center">
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#form" aria-expanded="false">Ajouter une activité</button>
         </div>
@@ -23,17 +11,18 @@
             <div class="well">
                 <h2 class="text-center">Ajouter une activité du dimanche</h2>
                 <hr/>
+                {% include 'formInfo.html.twig' %}
                 <form method="POST" action="../../../../admin/admin.php?page=addSunday" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="title">Nom de l'activité</label>
+                        <label for="title">Nom de l'activité <span class="red">*</span></label>
                         <input type="text" class="form-control" id="title" name="title" placeholder="Entrez le nom de l'activité" required>
                     </div>
                     <div class="form-group">
-                        <label for="text">Texte de l'activité</label>
+                        <label for="text">Texte de l'activité <span class="red">*</span></label>
                         <textarea class="form-control textarea" name="content" id="content" placeholder="Entrez la description de l'activité" rows="10" required></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="img">Photo de l'activité</label>
+                        <label for="img">Photo de l'activité <span class="red">*</span></label>
                         <input type="file" id="img" name="img" required>
                         {% include 'imgInfo.html.twig' %}
                     </div>
@@ -73,18 +62,19 @@
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title">Modifier une activité</h4>
                             </div>
+                            {% include 'formInfo.html.twig' %}
                             <form method="POST" action="../../../../admin/admin.php?page=updateSunday" enctype="multipart/form-data">
                                 <div class="modal-body">
                                     <div class="form-group">
-                                        <label for="title">Nom de l'activité</label>
+                                        <label for="title">Nom de l'activité <span class="red">*</span></label>
                                         <input type="text" class="form-control" id="title" name="title" placeholder="Entrez le nom de l'activité" value="{{ sunday.title }}" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="text">Texte de l'activité</label>
+                                        <label for="text">Texte de l'activité <span class="red">*</span></label>
                                         <textarea class="form-control textarea" name="content" id="content" placeholder="Entrez la description de l'activité" rows="10" required>{{ sunday.content }}</textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="img">Photo de l'activité</label>
+                                        <label for="img">Photo de l'activité <span class="red">*</span></label>
                                         <input type="file" id="img" name="img" required>
                                         {% include 'imgInfo.html.twig' %}
                                     </div>

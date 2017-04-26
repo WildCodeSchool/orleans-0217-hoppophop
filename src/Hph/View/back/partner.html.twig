@@ -2,19 +2,7 @@
 {% block title %}Patenaires{% endblock %}
 {% block content %}
     <div class="container">
-    {% if error==2 %}
-        <div class="alert alert-danger" role="alert">Le lien d'un partenaire doit être une chaîne de caractères</div>
-    {% elseif error==0 %}
-        <div class="alert alert-danger" role="alert">Une erreur s'est produite lors de l'insertion dans la base de données</div>
-    {% elseif error==8 %}
-        <div class="alert alert-danger" role="alert">Le format du lien du partenaire est invalide</div>
-    {% elseif error==4 %}
-        <div class="alert alert-danger" role="alert">L'extension n'est pas valide</div>
-    {% elseif error==5 %}
-        <div class="alert alert-danger" role="alert">La taille de l'image est trop élevé</div>
-    {% elseif error==6 %}
-        <div class="alert alert-danger" role="alert">Le poids de l'image est trop élevé</div>
-    {% endif %}
+        {% include 'error.html.twig' %}
         <div class="text-center">
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#form" aria-expanded="false">Ajouter un partenaire</button>
         </div>
@@ -23,13 +11,14 @@
             <div class="well">
                 <h2 class="text-center">Ajouter un partenaire</h2>
                 <hr/>
+                {% include 'formInfo.html.twig' %}
                 <form method="POST" action="../../../../admin/admin.php?page=addPartner" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="url">Lien du partenaire</label>
+                        <label for="url">Lien du partenaire <span class="red">*</span></label>
                         <input type="text" class="form-control" id="url" name="url" placeholder="Entrez le lien du partenaire (le lien doit débuter par http://)" required>
                     </div>
                     <div class="form-group">
-                        <label for="type">Catégorie du partenaire</label>
+                        <label for="type">Catégorie du partenaire <span class="red">*</span></label>
                         <select  class="form-control" id="type" name="type" required>
                             <option value="institutionnels">Institutionnel</option>
                             <option value="culturel">Culturel</option>
@@ -38,7 +27,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="img">Photo du partenaire</label>
+                        <label for="img">Photo du partenaire <span class="red">*</span></label>
                         <input type="file" id="img" name="img" required>
                         {% include 'imgInfo.html.twig' %}
                     </div>

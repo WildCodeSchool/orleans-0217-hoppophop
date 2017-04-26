@@ -9,3 +9,9 @@ td {
     max-width: 400px;
     word-wrap: break-word;
 }
+.red {
+    color: red;
+}
+.info {
+    color: grey;
+}
