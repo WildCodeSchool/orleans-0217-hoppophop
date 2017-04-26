@@ -2,8 +2,6 @@
 {% block title %}Programmation{% endblock %}
 {% block content %}
     <div class="container">
-        <h2 class="text-center">Ajouter un Artiste</h2>
-        <hr />
         {% if error==2 %}
             <div class="alert alert-danger" role="alert">Le nom ou la description d'un artiste, ainsi que les liens vers les réseaux doit être une chaîne de caractères</div>
         {% elseif error==3 %}
@@ -66,8 +64,63 @@
             </div>
             <div class="text-center">
                 <input type="submit" name="submit" class="btn btn-primary" value="Créer">
+
+        <div class="text-center">
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#form" aria-expanded="false">Ajouter un artiste</button>
+        </div>
+        <br />
+        <div class="collapse" id="form">
+            <div class="well">
+                <h2 class="text-center">Ajouter un Artiste</h2>
+                <hr />
+                <form method="POST" action="../../../../admin/admin.php?page=addArtist" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="title">Nom de l'artiste</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Entrez le nom de l'artiste">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Description de l'artiste</label>
+                        <textarea class="form-control textarea" name="content" id="content" placeholder="Entrez la description de l'artiste" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="img">Photo de l'artiste</label>
+                        <input type="file" id="img" name="img">
+                        {% include 'imgInfo.html.twig' %}
+                    </div>
+                    <div class="form-group">
+                        <label for="url">Lien de la vidéo</label>
+                        <input type="text" class="form-control" id="url" name="video_url" placeholder="Entrez le lien de la vidéo">
+                    </div>
+                    <div class="form-group">
+                        <label for="url">Lien Facebook</label>
+                        <input type="text" class="form-control" id="url" name="facebook_url" placeholder="Entrez le lien Facebook">
+                    </div>
+                    <div class="form-group">
+                        <label for="url">Lien Youtube</label>
+                        <input type="text" class="form-control" id="url" name="youtube_url" placeholder="Entrez le lien Youtube">
+                    </div>
+                    <div class="form-group">
+                        <label for="url">Lien Twitter</label>
+                        <input type="text" class="form-control" id="url" name="twitter_url" placeholder="Entrez le lien Twitter">
+                    </div>
+                    <div class="form-group">
+                        <label for="url">Lien Spotify</label>
+                        <input type="text" class="form-control" id="url" name="spotify_url" placeholder="Entrez le lien Spotify">
+                    </div>
+                    <div class="form-group">
+                        <p><strong>Groupe Local</strong></p>
+                        <label for="local-1">Oui</label>
+                        <input type="radio" name="local" value="1" id="local-1" checked><br>
+                        <label for="local-0">Non</label>
+                        <input type="radio" name="local" value="0" id="local-0"><br>
+                    </div>
+                    <div class="text-center">
+                        <input type="submit" name="submit" class="btn btn-primary" value="Créer">
+                    </div>
+                </form>
+
             </div>
-        </form>
+        </div>
         <br />
         <h2 class="text-center">Liste des Artistes</h2>
         <hr />

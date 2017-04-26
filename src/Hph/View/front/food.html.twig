@@ -8,7 +8,7 @@
                 <div class="col-xs-12 col-xs-offset-0 col-sm-4">
                     <div class="content-div text-justify">
                         <div class="text-center">
-                            <img src="../../../web/img/foodtruck/{{ food.imgEat }}" class="img-255">
+                            <img src="../../../web/img/foodtruck/{{ food.imgEat }}" class="img-responsive">
                         </div>
                         <h2 class="font-circula">{{ food.name }}</h2>
                         <hr class="hr">
@@ -19,7 +19,6 @@
                             <p class="food-info">{{ food.place_name }}<span class="orange"> | </span>{{ food.start|localizeddate('long', 'none', 'fr') }}</p>
                         {% endif %}
                     </div>
-                    <br />
                 </div>
             {% endfor %}
         </div>
