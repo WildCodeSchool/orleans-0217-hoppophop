@@ -14,6 +14,7 @@ class TextValidator
     private $content;
     private $length;
     private $type;
+    private $required;
 
     public function length()
     {
@@ -22,14 +23,18 @@ class TextValidator
         }
         return false;
     }
-    public function __construct($content, $length = 0, $type = 'string')
+    public function __construct($content, $required = 0, $length = 0, $type = 'string')
     {
         $this->setContent($content);
         $this->setLength($length);
         $this->setType($type);
+        $this->setRequired($required);
     }
     public function validate()
     {
+        if($this->required==1&&$this->content==''){
+            return 10;
+        }
         if($this->type=='string'){
             if(is_string($this->content)){
                 if($this->length()){
@@ -47,6 +52,21 @@ class TextValidator
         return true;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getRequired()
+    {
+        return $this->required;
+    }
+
+    /**
+     * @param mixed $required
+     */
+    public function setRequired($required)
+    {
+        $this->required = $required;
+    }
     /**
      * @return mixed
      */

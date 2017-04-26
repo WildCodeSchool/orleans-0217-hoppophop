@@ -31,13 +31,16 @@ class PlaceManager extends \Hph\Db
         if (!isset($post['showcase'])) {
             $post['showcase'] = 0;
         }
+        if($file['img']['name']=='') {
+            return 10;
+        }
         $vImg = new ImgValidator($file);
         $rImg = $vImg->validate();
         if($rImg!==true){
             return $rImg;
         }
         $file['img']['name'] = $this->nameImg($file['img']['name']);
-        $vTitle = new TextValidator($post['name'], 150);
+        $vTitle = new TextValidator($post['name'], 1, 150);
         $rTitle = $vTitle->validate();
         if($rTitle!==true){
             return $rTitle;
