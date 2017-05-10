@@ -17,7 +17,7 @@
                 <div class="col-md-2 hidden-sm hidden-xs col-lieu bordercolor">
                     {% for heure, values in progLieu %}
                         <div class=" hidden-sm hidden-xs">
-                            <a href="index.php?page=artist&id={{ values.artiste.id }}">
+                            <a href="/artist/{{ values.artiste.id }}">
                                 <div class="planning-show font-bebas {% if values.concert.status == 'canceled' %}planning-cancel{%endif%}"><p class="artist font-bebas">{{ values.artiste.name|upper }}<br/><span class="{% if values.concert.status == 'canceled' %}cancel-hidden{% endif %} heure font-bebas">{{ heure|upper  }}</span></p>
                                     {% if values.concert.status == 'canceled' %}
                                         <p class="plan-cancel font-dokyo">Annulé</p>
@@ -45,7 +45,7 @@
                     <div class="col-md-2 hidden-sm hidden-xs col-lieu bordercolor">
                         {% for heure,values in progLieu %}
                             <div class=" hidden-sm hidden-xs">
-                                <a href="index.php?page=artist&id={{ values.artiste.id }}">
+                                <a href="/artist/{{ values.artiste.id }}">
                                     <div class="planning-show show-blue font-bebas {% if values.showcase.status == 'canceled' %}planning-cancel{%endif%}"><p class="artist font-bebas">{{ values.artiste.name|upper }}<br/><span class="{% if values.showcase.status == 'canceled' %}cancel-hidden{% endif %} heure font-bebas">{{ heure }}</span></p>
                                         {% if values.showcase.status == 'canceled' %}
                                             <p class="plan-cancel font-dokyo">Annulé</p>
@@ -73,7 +73,7 @@
                 <div class="col-md-2 hidden-sm hidden-xs col-lieu bordercolor">
                     {% for heure, values in progLieu %}
                         <div class=" hidden-sm hidden-xs">
-                            <a href="index.php?page=artist&id={{ values.artiste.id }}">
+                            <a href="/artist/{{ values.artiste.id }}">
                                 <div class="planning-show show-blue font-bebas {% if values.concert.status == 'canceled' %}planning-cancel{%endif%}"><p class="artist font-bebas">{{ values.artiste.name }}<br/><span class="{% if values.concert.status == 'canceled' %}cancel-hidden{% endif %} heure font-bebas">{{ heure }}</span></p>
                                     {% if values.concert.status == 'canceled' %}
                                         <p class="plan-cancel font-dokyo">Annulé</p>
@@ -98,7 +98,7 @@
                         {% for lieu, progLieu in prog.VENDREDI %}
                             <h3 class="planning-locationSmall font-dokyo">{{ lieu|upper }}</h3>
                             {% for heure, values in progLieu %}
-                                <a href="index.php?page=artist&id={{ values.artiste.id }}">
+                                <a href="/artist/{{ values.artiste.id }}">
                                     <p class="planning-showSmall font-circula">
                                         <span class="turquoise font-circula bold
                                             {% if values.concert.status == 'canceled' %}cancel-hidden{% endif %}">
@@ -128,7 +128,7 @@
                             {% for lieu, progLieu in progShow %}
                                 <h3 class="planning-locationSmall font-dokyo">{{ lieu|upper }}</h3>
                                 {% for heure, values in progLieu %}
-                                    <a href="index.php?page=artist&id={{ values.artiste.id }}">
+                                    <a href="/artist/{{ values.artiste.id }}">
                                         <p class="planning-showSmall font-circula">
                                         <span class="turquoise font-circula bold
                                             {% if values.showcase.status == 'canceled' %}cancel-hidden{% endif %}">
@@ -159,7 +159,7 @@
                         {% for lieu, progLieu in prog.SAMEDI %}
                             <h3 class="planning-locationSmall font-dokyo">{{ lieu|upper }}</h3>
                             {% for heure, values in progLieu %}
-                                <a href="index.php?page=artist&id={{ values.artiste.id }}">
+                                <a href="/artist/{{ values.artiste.id }}">
                                     <p class="planning-showSmall font-circula">
                                         <span class="turquoise font-circula bold
                                             {% if values.concert.status == 'canceled' %}cancel-hidden{% endif %}"
