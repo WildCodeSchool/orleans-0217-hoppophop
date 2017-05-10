@@ -17,7 +17,7 @@ if ($page == 'home') {
     $render = $home->render();
 }
 
-else if ($page == 'artistadmin') {
+else if ($page == 'artist') {
     $artist = new Hph\Controller\ProgrammationController('back');
     $render = $artist->listAllArtist();
 } else if ($page == 'addArtist') {
