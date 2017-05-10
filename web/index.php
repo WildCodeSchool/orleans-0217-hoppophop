@@ -60,6 +60,8 @@ if($page == 'home') {
 }else if($page == 'mail'){
     $mail = new Hph\Controller\ContactController();
     $render = $mail->mail($_POST);
+}else if($page == 'admin'){
+    header('Location:admin/index.php');
 }else {
     $home = new Hph\Controller\HomeController();
     $render = $home->render();
