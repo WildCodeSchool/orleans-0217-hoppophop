@@ -227,4 +227,42 @@ class ProgrammationManager extends \Hph\Db
             return $prep->execute();
         }
     }
+
+    public function getArtistes(array $params) : array
+    {
+        $query = "SELECT * FROM artist JOIN concert ON artist.id=concert.artist_id ";
+        $join = [];
+        $crit = [];
+
+        if (array_key_exists('lieux', $params) && $params['lieux'] != -1) {
+            $crit['cond'][] = " concert.place_id=:lieux ";
+            $crit['val']['lieux'] = $params['lieux'];
+        }
+        if (array_key_exists('day', $params)) {
+            $crit['cond'][] = " concert.concert_start LIKE :day ";
+            $crit['val']['day'] = '2017-09-'.$params['day'].'%';
+        }
+        if (array_key_exists('lcl', $params) && $params['lcl'] != -1) {
+            $crit['cond'][] = " artist.local=:lcl ";
+            $crit['val']['lcl'] = $params['lcl'];
+        }
+
+        $query .= " WHERE (concert.status = 'programmed' OR concert.status = 'canceled') ";
+        if (!empty($crit) && count($crit['cond']) > 0) {
+            $query .= " AND ";
+            $query .= implode(' AND ', $crit['cond']);
+        }
+        $query .= " ORDER BY artist.name ASC";
+
+        $stmt = $this->getDb()->prepare($query);
+
+        if (!empty($crit) && count($crit['val']) > 0) {
+            foreach ($crit['val'] as $key => $val) {
+                $stmt->bindValue(':' . $key, $val);
+            }
+        }
+
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 }
