@@ -8,7 +8,13 @@
 
 namespace Hph\Model;
 
-
+/*
+ * Permet de récupérer les infos sur :
+ * - tous les artistes (getArtists)
+ * - un artiste (findOne)
+ * - les tags (mots-clés) d'un artiste (findArtistTag)
+ * - les concerts (dates, horaires, lieux) d'un artiste
+ */
 class ArtistManager extends \Hph\Db
 {
     public function getArtists()
@@ -22,9 +28,6 @@ class ArtistManager extends \Hph\Db
         return $this->dBQuery($req, 'Artist');
 
     }
-    // appelle ton modèle $tags = Tag->findArtistTags($artist_id); // select * from tags where artist_id = $artist_id;
-    // affichage de la page qui affiche un seul artiste 'tags'=>$tags
-
 
     public function findArtistTag($artist_id)
     {

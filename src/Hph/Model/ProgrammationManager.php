@@ -12,6 +12,21 @@ use Hph\ImgValidator;
 use Hph\TextValidator;
 use PDO;
 
+/*
+ * Permet de :
+ * - Ajouter un artiste (addArtist)
+ * - Modifier un artiste (updateArtist)
+ * - Supprimer un artiste (deleteArtist)
+ * - Voir les classes ImgValidator et TextValidator pour le fonctionnement des validateur
+ *
+ * Permet de récupérer :
+ * - Tout les artistes et leurs tags (allArtist)
+ * - Tout les artistes et leurs concerts pour ceux qui n'ont pas un concert supprimé (deleted) (getArtists)
+ * - Tout les artistes et leurs concerts pour ceux qui n'ont pas un concert supprimé dans un lieu donné (getArtistsPlace)
+ * - Tout les artistes et leurs concerts pour ceux qui n'ont pas un concert supprimé pour une soirée donnée (getArtistsSoir)
+ * - Tout les artistes et leurs concerts pour ceux qui n'ont pas un concert supprimé selon s'il sont des artistes locaux ou non (getArtistsLocal)
+ */
+
 class ProgrammationManager extends \Hph\Db
 {
 

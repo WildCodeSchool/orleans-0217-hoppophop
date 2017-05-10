@@ -13,6 +13,18 @@ use Hph\ImgValidator;
 use Hph\TextValidator;
 use PDO;
 
+/*
+ * Permet de :
+ * - Ajouter un lieu (addPlace)
+ * - Modifier un lieu (updatePlace)
+ * - Supprimer un lieu (deletePlace)
+ * - Voir les classe DateValidator, ImgValidator et TextValidator pour le fonctionnement des validateurs
+ *
+ * Permet de récupérer :
+ * - Les lieux (permet de choisir si on veut afficher tout les lieux, uniquement les showcases ou uniquement les lieux normaux) (getPlaces)
+ * - Récupérer uniquement un lieu (finOne)
+ * - Récupérer tout les lieux (listPlace)
+ */
 
 class PlaceManager extends \Hph\Db
 {

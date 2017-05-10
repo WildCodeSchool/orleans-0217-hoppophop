@@ -8,7 +8,14 @@
 
 namespace Hph\Model;
 
-
+/*
+ * Permet de récupérer :
+ * - Tout les lieux (getPlace)
+ * - Tout les artistes (getArtist)
+ * - Tout les concerts (getConcert)
+ * - Tout les concerts qui ne sont pas des showcases (getConcertsToShowWoShowCase)
+ * - Tout les concerts qui sont des showcases (getShowCases)
+ */
 class PlanningManager extends \Hph\Db
 
 {

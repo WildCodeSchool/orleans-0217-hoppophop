@@ -8,6 +8,10 @@
 
 namespace Hph\Model;
 
+/*
+ * Permet de :
+ * - Ajouter un tag à un artiste (insertTag)
+ */
 
 class TagManager extends \Hph\Db
 {
