@@ -21,9 +21,9 @@ class ControllerDefault
     public function __construct($type = 'front')
     {
         if ($type == 'front') {
-            $loader = new \Twig_Loader_Filesystem('../src/Hph/View/front/');
+            $loader = new \Twig_Loader_Filesystem('../../src/Hph/View/front/');
         } else {
-            $loader = new \Twig_Loader_Filesystem('../src/Hph/View/back/');
+            $loader = new \Twig_Loader_Filesystem('../../src/Hph/View/back/');
         }
         $this->twig = new \Twig_Environment($loader, array('debug' => true, 'cache' => false));
         $this->twig->getExtension('Twig_Extension_Core')->setTimezone('Europe/Paris');
