@@ -41,7 +41,7 @@
                             <div class="content-div prog-info text-center">
                                 <p class="info-text">{{ artist.name }}</p>
                                 <hr class="hr-min">
-                                <p class="info-text">{{ artist.concert_start | localizeddate('long', 'short', 'fr') }}</p>
+                                <p class="info-text2">{{ artist.concert_start | localizeddate('long', 'short', 'fr', null, 'EEEE d MMM k:mm') }}</p>
                             </div>
                             {% if artist.status == 'canceled' %}
                                 <h1 class="prog-cancel font-dokyo">Annulé</h1>

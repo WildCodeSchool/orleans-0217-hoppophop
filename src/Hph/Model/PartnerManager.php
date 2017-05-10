@@ -25,6 +25,11 @@ class PartnerManager extends \Hph\Db
         return $this->dBQuery($req, 'Partner');
 
     }
+    public function getPartnerFooter()
+    {
+        $req = "SELECT * FROM partner WHERE footer=1";
+        return $this->dBQuery($req, 'Partner');
+    }
     public function addPartner($post, $file)
     {
         if(!isset($post['footer'])){

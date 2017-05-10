@@ -30,6 +30,7 @@ class Partner
      * )
      */
     private $url;
+    private $footer;
     /**
      * @return mixed
      */
@@ -72,4 +73,21 @@ class Partner
     {
         $this->url = $url;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getFooter()
+    {
+        return $this->footer;
+    }
+
+    /**
+     * @param mixed $footer
+     */
+    public function setFooter($footer)
+    {
+        $this->footer = $footer;
+    }
+
 }
