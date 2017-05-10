@@ -12,7 +12,7 @@
                 <h2 class="text-center">Ajouter une activité du dimanche</h2>
                 <hr/>
                 {% include 'formInfo.html.twig' %}
-                <form method="POST" action="../../../../admin/admin.php?page=addSunday" enctype="multipart/form-data">
+                <form method="POST" action="admin.php?page=addSunday" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="title">Nom de l'activité <span class="red">*</span></label>
                         <input type="text" class="form-control" id="title" name="title" placeholder="Entrez le nom de l'activité" required>
@@ -49,7 +49,7 @@
                 <tr>
                     <th scope="row">{{ sunday.id }}</th>
                     <td>{{ sunday.title }}</td>
-                    <td><img src="../../../../web/img/sunday/{{ sunday.imgSunday }}" alt="Image de l'activité" class="img-list"></td>
+                    <td><img src="../web/img/sunday/{{ sunday.imgSunday }}" alt="Image de l'activité" class="img-list"></td>
                     <td>
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#edit{{ sunday.id }}"><i class="fa fa-pencil"></i></button>
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{ sunday.id }}"><i class="fa fa-trash-o"></i></button>
@@ -63,7 +63,7 @@
                                 <h4 class="modal-title">Modifier une activité</h4>
                             </div>
                             {% include 'formInfo.html.twig' %}
-                            <form method="POST" action="../../../../admin/admin.php?page=updateSunday" enctype="multipart/form-data">
+                            <form method="POST" action="admin.php?page=updateSunday" enctype="multipart/form-data">
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="title">Nom de l'activité <span class="red">*</span></label>
@@ -98,7 +98,7 @@
                                 Êtes-vous sûr de vouloir supprimer l'activité {{ sunday.title }} ?
                             </div>
                             <div class="modal-footer">
-                                <form method="POST" action="../../../../admin/admin.php?page=deleteSunday">
+                                <form method="POST" action="admin.php?page=deleteSunday">
                                     <input type="hidden" name="id" value="{{ sunday.id }}">
                                     <input type="submit" name="submit" class="btn btn-danger" value="Oui">
                                 </form>

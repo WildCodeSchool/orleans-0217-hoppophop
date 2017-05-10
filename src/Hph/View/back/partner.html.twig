@@ -12,7 +12,7 @@
                 <h2 class="text-center">Ajouter un partenaire</h2>
                 <hr/>
                 {% include 'formInfo.html.twig' %}
-                <form method="POST" action="../../../../admin/admin.php?page=addPartner" enctype="multipart/form-data">
+                <form method="POST" action="admin.php?page=addPartner" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="url">Lien du partenaire <span class="red">*</span></label>
                         <input type="text" class="form-control" id="url" name="url" placeholder="Entrez le lien du partenaire (le lien doit débuter par http://)" required>
@@ -69,7 +69,7 @@
                             Non
                         {% endif %}
                     </td>
-                    <td><img src="../../../../web/img/partner/{{ partner.imgPartner }}" alt="Image du Partenaire" class="img-list"></td>
+                    <td><img src="../web/img/partner/{{ partner.imgPartner }}" alt="Image du Partenaire" class="img-list"></td>
                     <td>
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{ partner.id }}"><i class="fa fa-trash-o"></i></button>
                     </td>
@@ -85,7 +85,7 @@
                                 Êtes-vous sûr de vouloir supprimer ce partenaire ?
                             </div>
                             <div class="modal-footer">
-                                <form method="POST" action="../../../../admin/admin.php?page=deletePartner">
+                                <form method="POST" action="admin.php?page=deletePartner">
                                     <input type="hidden" name="id" value="{{ partner.id }}">
                                     <input type="submit" name="submit" class="btn btn-danger" value="Oui">
                                 </form>

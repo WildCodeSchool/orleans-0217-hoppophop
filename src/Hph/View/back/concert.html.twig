@@ -12,7 +12,7 @@
                 <h2 class="text-center">Ajouter un concert</h2>
                 <hr/>
                 {% include 'formInfo.html.twig' %}
-                <form method="POST" action="../../../../admin/admin.php?page=addConcert" enctype="multipart/form-data">
+                <form method="POST" action="admin.php?page=addConcert" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="start">Heure d'ouverture du concert <span class="red">*</span></label>
                         <input type="text" class="form-control" placeholder="Format : YYYY-MM-DD HH:MM:SS" id="start" name="start" required>
@@ -115,7 +115,7 @@
                                 <h4 class="modal-title">Modifier un Concert</h4>
                             </div>
                             {% include 'formInfo.html.twig' %}
-                            <form method="POST" action="../../../../admin/admin.php?page=updateConcert"
+                            <form method="POST" action="admin.php?page=updateConcert"
                                   enctype="multipart/form-data">
                                 <div class="modal-body">
                                     <div class="form-group">
@@ -178,7 +178,7 @@
                                 Êtes-vous sûr de vouloir supprimer le Concert {{ concert.id }} ?
                             </div>
                             <div class="modal-footer">
-                                <form method="POST" action="../../../../admin/admin.php?page=deleteConcert">
+                                <form method="POST" action="admin.php?page=deleteConcert">
                                     <input type="hidden" name="id" value="{{ concert.id }}">
                                     <input type="submit" name="submit" class="btn btn-danger" value="Oui">
                                 </form>

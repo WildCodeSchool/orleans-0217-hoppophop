@@ -12,7 +12,7 @@
                 <h2 class="text-center">Ajouter un Artiste</h2>
                 <hr />
                 {% include 'formInfo.html.twig' %}
-                <form method="POST" action="../../../../admin/admin.php?page=addArtist" enctype="multipart/form-data">
+                <form method="POST" action="admin.php?page=addArtist" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="title">Nom de l'artiste <span class="red">*</span></label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Entrez le nom de l'artiste" required>
@@ -88,7 +88,7 @@
                     <th scope="row">{{ artist.id }}</th>
                     <td>{{ artist.name }}</td>
                     {#<td>{{ artist.bio }}</td>#}
-                    <td><img src="../../../../web/img/artist/{{ artist.img_artist }}" alt="Image de l'artiste" class="img-list"></td>
+                    <td><img src="../web/img/artist/{{ artist.img_artist }}" alt="Image de l'artiste" class="img-list"></td>
                     <td>
                         {% if artist.local==1 %}
                             Oui
@@ -109,7 +109,7 @@
                                 <h4 class="modal-title">Modifier un Artiste</h4>
                             </div>
                             {% include 'formInfo.html.twig' %}
-                            <form method="POST" action="../../../../admin/admin.php?page=updateArtist" enctype="multipart/form-data">
+                            <form method="POST" action="admin.php?page=updateArtist" enctype="multipart/form-data">
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="title">Nom de l'artiste <span class="red">*</span></label>
@@ -176,7 +176,7 @@
                                 Êtes-vous sûr de vouloir supprimer l'artiste{{ artist.name }} ?
                             </div>
                             <div class="modal-footer">
-                                <form method="POST" action="../../../../admin/admin.php?page=deleteArtist">
+                                <form method="POST" action="admin.php?page=deleteArtist">
                                     <input type="hidden" name="id" value="{{ artist.id }}">
                                     <input type="submit" name="submit" class="btn btn-danger" value="Oui">
                                 </form>

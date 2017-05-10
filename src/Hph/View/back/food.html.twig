@@ -12,7 +12,7 @@
                 <h2 class="text-center">Ajouter un foodtruck</h2>
                 <hr/>
                 {% include 'formInfo.html.twig' %}
-                <form method="POST" action="../../../../admin/admin.php?page=addFood" enctype="multipart/form-data">
+                <form method="POST" action="admin.php?page=addFood" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="title">Nom du foodtruck <span class="red">*</span></label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Entrez le nom du Foodtruck" required>
@@ -68,7 +68,7 @@
                 <tr>
                     <th scope="row">{{ food.id }}</th>
                     <td>{{ food.name }}</td>
-                    <td><img src="../../../../web/img/foodtruck/{{ food.imgEat }}" alt="Image du Foodtruck" class="img-list"></td>
+                    <td><img src="../web/img/foodtruck/{{ food.imgEat }}" alt="Image du Foodtruck" class="img-list"></td>
                     <td>{{ food.place_name }}</td>
                     <td>{{ food.start|localizeddate('long', 'short', 'fr') }}</td>
                     <td>{{ food.end|localizeddate('long', 'short', 'fr') }}</td>
@@ -85,7 +85,7 @@
                                 <h4 class="modal-title">Modifier un Foodtruck</h4>
                             </div>
                             {% include 'formInfo.html.twig' %}
-                            <form method="POST" action="../../../../admin/admin.php?page=updateFood" enctype="multipart/form-data">
+                            <form method="POST" action="admin.php?page=updateFood" enctype="multipart/form-data">
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="title">Nom du Foodtruck<span class="red">*</span></label>
@@ -136,7 +136,7 @@
                                 Êtes-vous sûr de vouloir supprimer le Foodtruck {{ food.name }} ?
                             </div>
                             <div class="modal-footer">
-                                <form method="POST" action="../../../../admin/admin.php?page=deleteFood">
+                                <form method="POST" action="admin.php?page=deleteFood">
                                     <input type="hidden" name="id" value="{{ food.id }}">
                                     <input type="submit" name="submit" class="btn btn-danger" value="Oui">
                                 </form>

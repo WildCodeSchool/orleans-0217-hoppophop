@@ -12,7 +12,7 @@
                 <h2 class="text-center">Ajouter une actualité</h2>
                 <hr/>
                 {% include 'formInfo.html.twig' %}
-                <form method="POST" action="../../../../admin/admin.php?page=addNews" enctype="multipart/form-data">
+                <form method="POST" action="admin.php?page=addNews" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="title">Nom de l'actualité <span class="red">*</span></label>
                         <input type="text" class="form-control" id="title" name="title" placeholder="Entrez le nom de l'actualité" required>
@@ -55,7 +55,7 @@
                 <tr>
                     <th scope="row">{{ news.id }}</th>
                     <td>{{ news.title }}</td>
-                    <td><img src="../../../../web/img/news/{{ news.imgNews }}" alt="Image de l'actualité" class="img-list"></td>
+                    <td><img src="../web/img/news/{{ news.imgNews }}" alt="Image de l'actualité" class="img-list"></td>
                     <td>
                         {% if news.breakingNews==1 %}
                             Oui
@@ -76,7 +76,7 @@
                                 <h4 class="modal-title">Modifier une actualité</h4>
                             </div>
                             {% include 'formInfo.html.twig' %}
-                            <form method="POST" action="../../../../admin/admin.php?page=updateNews" enctype="multipart/form-data">
+                            <form method="POST" action="admin.php?page=updateNews" enctype="multipart/form-data">
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="name">Titre de l'actualité <span class="red">*</span></label>
@@ -120,7 +120,7 @@
                                 Êtes-vous sûr de vouloir supprimer l'actualité {{ news.title }} ?
                             </div>
                             <div class="modal-footer">
-                                <form method="POST" action="../../../../admin/admin.php?page=deleteNews">
+                                <form method="POST" action="admin.php?page=deleteNews">
                                     <input type="hidden" name="id" value="{{ news.id }}">
                                     <input type="submit" name="submit" class="btn btn-danger" value="Oui">
                                 </form>
