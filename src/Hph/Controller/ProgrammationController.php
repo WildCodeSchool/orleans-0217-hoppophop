@@ -66,7 +66,6 @@ class ProgrammationController extends ControllerDefault
         } else {
             $artists = $this->getArtists();
         }
-        var_dump($artists);
         return $this->twig->render('programmation.html.twig', ['artists' => $artists, 'places' => $places, 'error'=>$_GET['error']]);
     }
 }
