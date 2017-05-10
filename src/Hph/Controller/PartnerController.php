@@ -12,8 +12,8 @@ class PartnerController extends ControllerDefault
 {
     public function render()
     {
-        $partner = $this->getPartner();
-        return $this->twig->render('partner.html.twig', ['partners'=>$partner, 'error'=>$_GET['error']]);
+        $partenaires = $this->getPartner();
+        return $this->twig->render('partner.html.twig', ['partenaires'=>$partenaires, 'error'=>$_GET['error']]);
 
     }
 

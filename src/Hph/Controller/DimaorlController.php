@@ -8,6 +8,7 @@
 
 namespace Hph\Controller;
 use Hph\Model\SundayManager;
+use Hph\Model\PartnerManager;
 
 class DimaorlController extends ControllerDefault
 {
@@ -19,7 +20,6 @@ class DimaorlController extends ControllerDefault
     public function render()
     {
         $sundays = $this->getSunday();
-        $partner = $this->getPartner();
-        return $this->twig->render('dimaorl.html.twig', ['sundays'=>$sundays, 'error'=>$_GET['error'], 'partners'=>$partner]);
+        return $this->twig->render('dimaorl.html.twig', ['sundays'=>$sundays, 'error'=>$_GET['error']]);
     }
 }

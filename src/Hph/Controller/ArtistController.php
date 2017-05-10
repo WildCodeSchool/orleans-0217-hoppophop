@@ -11,8 +11,6 @@ use Hph\Model\ArtistManager;
 
 class ArtistController extends ControllerDefault
 {
-
-
     public function showArtist($id)
     {
         // appel au modèle
@@ -26,8 +24,7 @@ class ArtistController extends ControllerDefault
         // affichage de la page qui affiche un seul artiste 'tags'=>$tags
 
         // appel la methode render de twig
-        $partner = $this->getPartner();
-        return $this->twig->render('artist.html.twig', ['artist'=> $artists[0], 'tags'=> $tags, 'progs'=>$progs, 'partners'=>$partner]);
+        return $this->twig->render('artist.html.twig', ['artist'=> $artists[0], 'tags'=> $tags, 'progs'=>$progs]);
     }
 
 
