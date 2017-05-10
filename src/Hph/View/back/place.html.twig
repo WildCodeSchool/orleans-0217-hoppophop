@@ -12,7 +12,7 @@
                 <h2 class="text-center">Ajouter un lieu</h2>
                 <hr/>
                 {% include 'formInfo.html.twig' %}
-                <form method="POST" action="admin.php?page=addPlace" enctype="multipart/form-data">
+                <form method="POST" action="index.php?page=addPlace" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="name">Nom du lieux <span class="red">*</span></label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Entrez le nom du lieu" required>
@@ -90,7 +90,7 @@
                                 <h4 class="modal-title">Modifier un lieux</h4>
                             </div>
                             {% include 'formInfo.html.twig' %}
-                            <form method="POST" action="admin.php?page=updatePlace" enctype="multipart/form-data">
+                            <form method="POST" action="index.php?page=updatePlace" enctype="multipart/form-data">
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="name">Nom du lieux <span class="red">*</span></label>
@@ -142,7 +142,7 @@
                                 Êtes-vous sûr de vouloir supprimer le lieu {{ place.name }} ?
                             </div>
                             <div class="modal-footer">
-                                <form method="POST" action="admin.php?page=deletePlace">
+                                <form method="POST" action="index.php?page=deletePlace">
                                     <input type="hidden" name="id" value="{{ place.id }}">
                                     <input type="submit" name="submit" class="btn btn-danger" value="Oui">
                                 </form>

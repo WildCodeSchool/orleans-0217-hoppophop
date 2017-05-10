@@ -32,19 +32,19 @@ else if ($page == 'artist') {
             $tagManager->insertTag($tag, $id);
         }
     }
-    header('Location: admin.php?page=artist&error='.$result.'');
+    header('Location: index.php?page=artist&error='.$result.'');
 } else if ($page == 'updateArtist') {
     $updateArtist = new Hph\Model\ProgrammationManager();
     $result = $updateArtist->updateArtist($_POST, $_FILES);
-    header('Location: admin.php?page=artist&error='.$result.'');
+    header('Location: index.php?page=artist&error='.$result.'');
 } else if ($page == 'updateArtist') {
     $updateArtist = new Hph\Model\ProgrammationManager();
     $result = $updateArtist->updateArtist($_POST, $_FILES);
-    header('Location: admin.php?page=artist&error='.$result.'');
+    header('Location: index.php?page=artist&error='.$result.'');
 } else if ($page == 'deleteArtist') {
     $deleteArtist = new Hph\Model\ProgrammationManager();
     $result = $deleteArtist->deleteArtist($_POST['id']);
-    header('Location: admin.php?page=artist&error='.$result.'');
+    header('Location: index.php?page=artist&error='.$result.'');
 }
 
 else if ($page == 'concert') {
@@ -53,15 +53,15 @@ else if ($page == 'concert') {
 } else if ($page == 'addConcert') {
     $addConcert = new Hph\Model\ConcertManager();
     $result = $addConcert->addConcert($_POST);
-    header('Location: admin.php?page=concert&error='.$result.'');
+    header('Location: index.php?page=concert&error='.$result.'');
 } else if ($page == 'updateConcert') {
     $updateConcert = new Hph\Model\ConcertManager();
     $result = $updateConcert->updateConcert($_POST);
-    header('Location: admin.php?page=concert&error='.$result.'');
+    header('Location: index.php?page=concert&error='.$result.'');
 } else if ($page == 'deleteConcert') {
     $deleteConcert = new Hph\Model\ConcertManager();
     $result = $deleteConcert->deleteConcert($_POST['id']);
-    header('Location: admin.php?page=concert&error='.$result.'');
+    header('Location: index.php?page=concert&error='.$result.'');
 }
 
 else if ($page == 'place') {
@@ -70,15 +70,15 @@ else if ($page == 'place') {
 } else if ($page == 'addPlace') {
     $addPlace = new Hph\Model\PlaceManager();
     $result = $addPlace->addPlace($_POST, $_FILES);
-    header('Location: admin.php?page=place&error='.$result.'');
+    header('Location: index.php?page=place&error='.$result.'');
 } else if ($page == 'updatePlace') {
     $updatePlace = new Hph\Model\PlaceManager();
     $result = $updatePlace->updatePlace($_POST, $_FILES);
-    header('Location: admin.php?page=place&error='.$result.'');
+    header('Location: index.php?page=place&error='.$result.'');
 } else if ($page == 'deletePlace') {
     $deletePlace = new Hph\Model\PlaceManager();
     $result = $deletePlace->deletePlace($_POST['id']);
-    header('Location: admin.php?page=place&error='.$result.'');
+    header('Location: index.php?page=place&error='.$result.'');
 }
 
 else if ($page == 'news') {
@@ -87,15 +87,15 @@ else if ($page == 'news') {
 } else if ($page == 'addNews') {
     $addNews = new Hph\Model\NewsManager();
     $result = $addNews->addNews($_POST, $_FILES);
-    header('Location: admin.php?page=news&error='.$result.'');
+    header('Location: index.php?page=news&error='.$result.'');
 } else if ($page == 'updateNews') {
     $updateNews = new Hph\Model\NewsManager();
     $result = $updateNews->updateNews($_POST, $_FILES);
-    header('Location: admin.php?page=news&error='.$result.'');
+    header('Location: index.php?page=news&error='.$result.'');
 } else if ($page == 'deleteNews') {
     $deleteNews = new Hph\Model\NewsManager();
     $result = $deleteNews->deleteNews($_POST['id']);
-    header('Location: admin.php?page=news&error='.$result.'');
+    header('Location: index.php?page=news&error='.$result.'');
 }
 
 else if ($page == 'food') {
@@ -104,15 +104,15 @@ else if ($page == 'food') {
 } else if ($page == 'addFood') {
     $addFood = new Hph\Model\FoodManager();
     $result = $addFood->addFood($_POST, $_FILES);
-    header('Location: admin.php?page=food&error='.$result.'');
+    header('Location: index.php?page=food&error='.$result.'');
 } else if ($page == 'updateFood') {
     $updateFood = new Hph\Model\FoodManager();
     $result = $updateFood->updateFood($_POST, $_FILES);
-    header('Location: admin.php?page=food&error='.$result.'');
+    header('Location: index.php?page=food&error='.$result.'');
 } else if ($page == 'deleteFood') {
     $deleteFood = new Hph\Model\FoodManager();
     $result = $deleteFood->deleteFood($_POST['id']);
-    header('Location: admin.php?page=food&error='.$result.'');
+    header('Location: index.php?page=food&error='.$result.'');
 }
 
 else if ($page == 'partner') {
@@ -121,11 +121,11 @@ else if ($page == 'partner') {
 } else if ($page == 'addPartner') {
     $addPartner = new Hph\Model\PartnerManager();
     $result = $addPartner->addPartner($_POST, $_FILES);
-    header('Location: admin.php?page=partner&error='.$result.'');
+    header('Location: index.php?page=partner&error='.$result.'');
 } else if ($page == 'deletePartner') {
     $deletePartner = new Hph\Model\PartnerManager();
     $result = $deletePartner->deletePartner($_POST['id']);
-    header('Location: admin.php?page=partner&error='.$result.'');
+    header('Location: index.php?page=partner&error='.$result.'');
 }
 
 else if ($page == 'sunday') {
@@ -134,15 +134,15 @@ else if ($page == 'sunday') {
 } else if ($page == 'addSunday') {
     $addSunday = new Hph\Model\SundayManager();
     $result = $addSunday->addSunday($_POST, $_FILES);
-    header('Location: admin.php?page=sunday&error='.$result.'');
+    header('Location: index.php?page=sunday&error='.$result.'');
 } else if ($page == 'updateSunday') {
     $updateSunday = new Hph\Model\SundayManager();
     $result = $updateSunday->updateSunday($_POST, $_FILES);
-    header('Location: admin.php?page=sunday&error='.$result.'');
+    header('Location: index.php?page=sunday&error='.$result.'');
 } else if ($page == 'deleteSunday') {
     $deleteSunday = new Hph\Model\SundayManager();
     $result = $deleteSunday->deleteSunday($_POST['id']);
-    header('Location: admin.php?page=sunday&error='.$result.'');
+    header('Location: index.php?page=sunday&error='.$result.'');
 }
 
 else {
