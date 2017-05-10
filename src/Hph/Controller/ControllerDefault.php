@@ -21,7 +21,7 @@ class ControllerDefault
     public function __construct($type = 'front')
     {
         if ($type == 'front') {
-            $loader = new \Twig_Loader_Filesystem('src/Hph/View/front/');
+            $loader = new \Twig_Loader_Filesystem('../src/Hph/View/front/');
         } else {
             $loader = new \Twig_Loader_Filesystem('../src/Hph/View/back/');
         }

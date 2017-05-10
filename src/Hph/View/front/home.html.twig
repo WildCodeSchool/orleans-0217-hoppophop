@@ -7,25 +7,25 @@
             {%  for news in newsBreaking %}
                 <div class="alert alert-warning alert-danger breaking-news" role="alert">
                     <button type="button" class="close breaking-close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <a href="../../../../index.php?page=newsOne&id={{ news.id }}" class="breaking-strong">{{ news.title }}</a><br />
+                    <a href="index.php?page=newsOne&id={{ news.id }}" class="breaking-strong">{{ news.title }}</a><br />
                     <p class="breaking-text">{{ news.text }}</p>
                 </div>
             {% endfor %}
             <div class="col-xs-6 col-xs-offset-3">
-                <img src="../../../../web/img/global/logo-only.png" alt="Logo du Festival" class="img-responsive logo-big">
+                <img src="img/global/logo-only.png" alt="Logo du Festival" class="img-responsive logo-big">
             </div>
-            <h2 class="separator-title font-dokyo"><a href="../../../../index.php?page=programmation" class="white font-dokyo">PROGRAMMATION</a></h2>
+            <h2 class="separator-title font-dokyo"><a href="index.php?page=programmation" class="white font-dokyo">PROGRAMMATION</a></h2>
             <hr class="hr">
             <div class="separator-div text-justify home-progDiv">
                 {%  for artist in artists  %}
                     {% if loop.index%2 == 0 and loop.index<artists|length %}
-                        <p class="home-prog"><a href="../../../../index.php?page=artist&id={{ artist.id }}" class="home-link link-orange font-circula">{{ artist.name }}</a> <span class="orange">/</span></p>
+                        <p class="home-prog"><a href="index.php?page=artist&id={{ artist.id }}" class="home-link link-orange font-circula">{{ artist.name }}</a> <span class="orange">/</span></p>
                     {% elseif loop.index%2 != 0 and loop.index<artists|length %}
-                        <p class="home-prog"><a href="../../../../index.php?page=artist&id={{ artist.id }}" class="home-link link-turquoise font-circula">{{ artist.name }}</a> <span class="turquoise">/</span></p>
+                        <p class="home-prog"><a href="index.php?page=artist&id={{ artist.id }}" class="home-link link-turquoise font-circula">{{ artist.name }}</a> <span class="turquoise">/</span></p>
                     {% elseif loop.index%2 != 0 %}
-                        <p class="home-prog"><a href="../../../../index.php?page=artist&id={{ artist.id }}" class="home-link link-turquoise font-circula">{{ artist.name }}</a></p>
+                        <p class="home-prog"><a href="index.php?page=artist&id={{ artist.id }}" class="home-link link-turquoise font-circula">{{ artist.name }}</a></p>
                     {% else %}
-                        <p class="home-prog"><a href="../../../../index.php?page=artist&id={{ artist.id }}" class="home-link link-orange font-circula">{{ artist.name }}</a></p>
+                        <p class="home-prog"><a href="index.php?page=artist&id={{ artist.id }}" class="home-link link-orange font-circula">{{ artist.name }}</a></p>
                     {% endif %}
                 {% endfor %}
             </div>
@@ -35,7 +35,7 @@
                 <div class="container-fluid">
                     <div class="row ticket hidden-xs hidden-sm">
                         <div class="col-md-offset-1 col-md-5 hidden-xs hidden-sm col-ticket span-ticket">
-                            <a href="../../../../index.php?page=ticket">
+                            <a href="index.php?page=ticket">
                                 <div class="panneau col-ticket">
                                     <span class="left-text font-bebas">PASS</span>
                                     <span class="right-text font-bebas">1 JOUR</span>
@@ -43,7 +43,7 @@
                             </a>
                         </div>
                         <div class="col-md-5 hidden-xs hidden-sm col-ticket span-ticket">
-                            <a href="../../../../index.php?page=ticket">
+                            <a href="index.php?page=ticket">
                                 <div class="panneau col-ticket">
                                     <span class="left-text font-bebas">PASS</span>
                                     <span class="right-text font-bebas">2 JOURS</span>
@@ -54,7 +54,7 @@
                     <div class="row visible-sm visible-xs">
                         <div class="col-md-12">
                             <h3 class="font-circula"><i class="fa fa-ticket" aria-hidden="true"></i> Pass 1 Journée ou 2 Jours disponibles</h3>
-                            <a href="../../../../index.php?page=ticket" class="btn btn-primary">Accéder à la Billetterie</a>
+                            <a href="index.php?page=ticket" class="btn btn-primary">Accéder à la Billetterie</a>
                         </div>
                     </div>
                 </div>
@@ -68,16 +68,16 @@
                             <div class="col-xs-12 col-xs-offset-0 col-sm-4">
                                 <div class="content-div text-justify ">
                                     <div class="text-center">
-                                        <img src="../../../web/img/news/{{ news.imgNews }}" class="img-responsive">
+                                        <img src="img/news/{{ news.imgNews }}" class="img-responsive">
                                     </div>
-                                    <a href="../../../../index.php?page=newsOne&id={{ news.id }}" class="news-link"><h3 class="font-circula">{{ news.title }}</h3></a>
+                                    <a href="index.php?page=newsOne&id={{ news.id }}" class="news-link"><h3 class="font-circula">{{ news.title }}</h3></a>
                                     <hr class="hr">
                                     <p>{{ news.text }}</p>
                                 </div>
                             </div>
                         {% endfor %}
                     </div>
-                    <a href="../../../../index.php?page=news" class="btn btn-primary">Voir plus d'actualités</a>
+                    <a href="index.php?page=news" class="btn btn-primary">Voir plus d'actualités</a>
                 </div>
             </div>
         </div>
