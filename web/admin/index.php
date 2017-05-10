@@ -18,6 +18,7 @@ if ($page == 'home') {
 }
 
 else if ($page == 'artist') {
+    var_dump("test");
     $artist = new Hph\Controller\ProgrammationController('back');
     $render = $artist->listAllArtist();
 } else if ($page == 'addArtist') {
