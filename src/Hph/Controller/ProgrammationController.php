@@ -47,9 +47,6 @@ class ProgrammationController extends ControllerDefault
     public function listAllArtist()
     {
         $artists = $this->allArtist();
-        if(empty($artists)){
-            $artists = [];
-        }
         return $this->twig->render('programmation.html.twig', ['artists' => $artists, 'error'=>$_GET['error']]);
     }
     public function listArtist()
