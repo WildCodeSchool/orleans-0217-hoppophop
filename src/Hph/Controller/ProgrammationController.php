@@ -20,29 +20,29 @@ class ProgrammationController extends ControllerDefault
         return $artists->allArtist();
 
     }
-    public function getArtists()
-    {
-        $artists = new ProgrammationManager();
-        return $artists->getArtists();
-    }
-
-    public function getArtistsPlace($idLieux)
-    {
-        $artist = new ProgrammationManager();
-        return $artist->getArtistsPlace($idLieux);
-    }
-
-    public function getArtistsSoir($jour)
-    {
-        $artist = new ProgrammationManager();
-        return $artist->getArtistsSoir($jour);
-    }
-
-    public function getArtistsLocal($local)
-    {
-        $artist = new ProgrammationManager();
-        return $artist->getArtistsLocal($local);
-    }
+//    public function getArtists()
+//    {
+//        $artists = new ProgrammationManager();
+//        return $artists->getArtists();
+//    }
+//
+//    public function getArtistsPlace($idLieux)
+//    {
+//        $artist = new ProgrammationManager();
+//        return $artist->getArtistsPlace($idLieux);
+//    }
+//
+//    public function getArtistsSoir($jour)
+//    {
+//        $artist = new ProgrammationManager();
+//        return $artist->getArtistsSoir($jour);
+//    }
+//
+//    public function getArtistsLocal($local)
+//    {
+//        $artist = new ProgrammationManager();
+//        return $artist->getArtistsLocal($local);
+//    }
 
     public function listAllArtist()
     {
@@ -54,18 +54,18 @@ class ProgrammationController extends ControllerDefault
         $placeManager = new PlaceManager();
         $places = $placeManager->listPlaces();
 
-        if (isset($_GET['place_id'])) {
-            $idLieux = $_GET['place_id'];
-            $artists = $this->getArtistsPlace($idLieux);
-        } elseif (isset($_GET["day"])) {
-            $jour = $_GET['day'];
-            $artists = $this->getArtistsSoir($jour);
-        } elseif (isset($_GET['lcl'])) {
-            $local = $_GET['lcl'];
-            $artists = $this->getArtistsLocal($local);
-        } else {
-            $artists = $this->getArtists();
-        }
-        return $this->twig->render('programmation.html.twig', ['artists' => $artists, 'places' => $places, 'error'=>$_GET['error']]);
+
+        $progManager = new ProgrammationManager();
+        $artistes = $progManager->getArtistes($_GET);
+
+        $partner = $this->getPartner();
+        return $this->twig->render('programmation.html.twig', ['artists' => $artistes,
+                                                                'places' => $places,
+                                                                'partners'=>$partner,
+                                                                'error'=>$_GET['error'],
+                                                                'lieuSelected' => $_GET['lieux'] ?? '',
+                                                                'soirSelected' => $_GET['day'] ?? '',
+                                                                'localSelected' => $_GET['lcl'] ?? '-1',]);
+
     }
 }

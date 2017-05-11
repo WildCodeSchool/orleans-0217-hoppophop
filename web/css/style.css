@@ -98,11 +98,12 @@ body {
     border: 2.5px solid rgba(237, 122, 33, 1);
     width: 50%;
 }
+
 .separator-title {
         font-size: 7.5vw;
         color: white;
 }
-@media(ma)
+
 
 .title {
     color: white;
@@ -164,6 +165,14 @@ body {
 a:hover {
     color: rgba(43, 175, 151, 1);
     text-decoration: none;
+}
+a:focus {
+    color: #18252e;
+}
+
+a:active
+{
+    outline:none;
 }
 
 /* ~~~~~> End General <~~~~~ */
@@ -289,6 +298,9 @@ a:hover {
 .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
     color: #ed7a21 !important;
     background-color: transparent !important;
+}
+ul > a:focus {
+    color: purple;
 }
 
 /* ~~~~~> End Navbar <~~~~~ */
@@ -670,6 +682,41 @@ a:hover {
 
 .img-cancel {
     opacity: 0.25;
+}
+
+.styled-select {
+    background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+    height: 70px;
+    overflow: hidden;
+    width: 190px;
+    color: white;
+    font-size: 20px;
+}
+
+.styled-select select {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    height: 50px;
+    padding: 15px; /* If you add too much padding here, the options won't show in IE */
+    width: 170px;
+
+
+}
+.blue {
+    background-color: #18252e;
+}
+select {
+    -moz-appearance: none;
+}
+.semi-square {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+a:active
+{
+    outline:none;
 }
 
 /* ~~~~~> End Programmation <~~~~~ */
