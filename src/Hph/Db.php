@@ -101,7 +101,7 @@ class Db
 
     public function addImg($file, $type, $delete = 0)
     {
-        $src = realpath(dirname(getcwd())) . '/web/img/' . $type . '/';
+        $src = realpath(dirname(getcwd())) . '/img/' . $type . '/';
         if ($file['img']['error'] == 0) {
             $tmp = $file['img']['tmp_name'];
             $name = $file['img']['name'];
