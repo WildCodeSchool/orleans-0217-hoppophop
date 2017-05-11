@@ -83,6 +83,7 @@
             </tr>
             </thead>
             <tbody>
+            {% if artists is not empty  %}
             {%  for artist in artists %}
                 <tr>
                     <th scope="row">{{ artist.id }}</th>
@@ -186,6 +187,7 @@
                     </div>
                 </div>
             {% endfor %}
+                {% end if %}
             </tbody>
         </table>
     </div>

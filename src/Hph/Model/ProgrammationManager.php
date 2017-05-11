@@ -32,7 +32,7 @@ class ProgrammationManager extends \Hph\Db
 
     public function allArtist()
     {
-        $req = "SELECT a.*, t.name as tag_name FROM hph.artist a LEFT JOIN hph.tag t ON a.id = t.artist_id ORDER BY a.id";
+        $req = "SELECT a.*, t.name as tag_name FROM artist a LEFT JOIN tag t ON a.id = t.artist_id ORDER BY a.id";
         $data = $this->dBFetchAll($req);
         $artists = [];
         foreach ($data as $artist) {
