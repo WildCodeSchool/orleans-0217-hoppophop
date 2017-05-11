@@ -66,6 +66,6 @@ class ProgrammationController extends ControllerDefault
                                                                 'error'=>$_GET['error'],
                                                                 'lieuSelected' => $_GET['lieux'] ?? '',
                                                                 'soirSelected' => $_GET['day'] ?? '',
-                                                                'localSelected' => $_GET['lcl'] ?? '',]);
+                                                                'localSelected' => $_GET['lcl'] ?? '-1',]);
     }
 }

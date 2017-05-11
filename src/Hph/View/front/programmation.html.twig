@@ -2,29 +2,20 @@
 {% block title %}Programmation{% endblock %}
 {% block titleMobile %}PROG'{% endblock %}
 {% block content %}
+    <div>
     <div class="text-center">
         <form action="index.php" method="get">
-            <div class="dropdown prog-dropdown">
-                <select name="lieux">
+            <div class="prog-dropdown styled-select blue semi-square font-bebas">
+                <select {#class="select-attr"#} name="lieux">
                     <option value="-1" {% if -1 == lieuSelected %}selected="selected"{% endif %}>Lieux</option>
                     {% for place in places %}
                         <option value="{{ place.id }}" {% if place.id == lieuSelected %}selected="selected"{% endif %}>{{ place.name }}</option>
                     {% endfor %}
                 </select>
-                {#
-                <button class="btn btn-default dropdown-toggle filter-btn font-circula" type="button" id="filter-places" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Lieux <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="filter-places">
-                    {% for place in places %}
-                        <li>
-                            <a href="../../../../index.php?page=programmation&place_id={{ place.id }}" class="font-circula">{{ place.name }}</a>
-                        </li>
-                    {% endfor %}
-                </ul>
-                #}
             </div>
-            <div class="dropdown prog-dropdown">
-                <select name="day">
+            <div class="prog-dropdown styled-select blue semi-square font-bebas">
+                <select {#class="select-attr"#} name="day">
+                    <option value="-1" {% if -1 == soirSelected %}selected="selected"{% endif %}>Jour</option>
                     <option value="15" {% if 15 == soirSelected %}selected="selected"{% endif %}>Vendredi Soir</option>
                     <option value="16" {% if 16 == soirSelected %}selected="selected"{% endif %}>Samedi Soir</option>
                 </select>
@@ -37,9 +28,9 @@
                 </ul>
                 #}
             </div>
-            <div class="dropdown prog-dropdown">
-                <select name="lcl">
-                    <option value="-1" {% if -1 == localSelected %}selected="selected"{% endif %}>Local</option>
+            <div class="prog-dropdown styled-select blue semi-square font-bebas">
+                <select {#class="select-attr"#} name="lcl">
+                    <option value="-1" {% if -1 == localSelected %}selected="selected"{% endif %}>Artistes locaux</option>
                     <option value="1" {% if 1 == localSelected %}selected="selected"{% endif %}>Oui</option>
                     <option value="0" {% if 0 == localSelected %}selected="selected"{% endif %}>Non</option>
                 </select>
@@ -76,5 +67,6 @@
                 </div>
             {% endfor %}
         </div>
+    </div>
     </div>
 {% endblock %}

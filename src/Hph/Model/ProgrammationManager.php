@@ -238,7 +238,7 @@ class ProgrammationManager extends \Hph\Db
             $crit['cond'][] = " concert.place_id=:lieux ";
             $crit['val']['lieux'] = $params['lieux'];
         }
-        if (array_key_exists('day', $params)) {
+        if (array_key_exists('day', $params) && $params['day'] != -1) {
             $crit['cond'][] = " concert.concert_start LIKE :day ";
             $crit['val']['day'] = '2017-09-'.$params['day'].'%';
         }
@@ -261,8 +261,9 @@ class ProgrammationManager extends \Hph\Db
                 $stmt->bindValue(':' . $key, $val);
             }
         }
-
         $stmt->execute();
         return $stmt->fetchAll();
+
     }
+
 }
