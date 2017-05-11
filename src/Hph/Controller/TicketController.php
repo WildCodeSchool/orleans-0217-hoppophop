@@ -13,7 +13,6 @@ class TicketController extends ControllerDefault
 {
     public function render()
     {
-        $partner = $this->getPartner();
-        return $this->twig->render('ticket.html.twig', ['partners'=>$partner]);
+        return $this->twig->render('ticket.html.twig');
     }
 }

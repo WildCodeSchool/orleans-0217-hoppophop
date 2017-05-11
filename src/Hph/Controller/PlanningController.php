@@ -38,8 +38,6 @@ class PlanningController extends ControllerDefault
         $concerts = $planningManager->getConcert();
         return $concerts;
     }
-
-
     public function showPlanning()
     {
         $planningManager = new PlanningManager();
@@ -106,11 +104,9 @@ class PlanningController extends ControllerDefault
             $progShow[$lieu][$heure] = array('artiste' => $artist,
                                              'showcase' => $showcase);
         }
-        $partner = $this->getPartner();
         return $this->twig->render('planning.html.twig', [
             'prog' => $prog,
             'progShow' => $progShow,
-            'partners'=>$partner
         ]);
 
     }

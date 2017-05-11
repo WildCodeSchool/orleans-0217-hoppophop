@@ -9,9 +9,18 @@
 namespace Hph\Model;
 
 use Hph\DateValidator;
-use Hph\TextValidator;
 use PDO;
 
+/*
+ * Permet de :
+ * - Ajouter un concert (addConcert)
+ * - Modifier un concert (updateConcert)
+ * - Supprimer un concert (deleteConcert)
+ * - Voir la Classe DateValidator pour le fonctionnement du validateur de date
+ *
+ * Permet de récupérer les informations sur :
+ * - la programmation (informations du concert, de l'artiste, du lieu) via getConcerts
+ */
 class ConcertManager extends \Hph\Db
 {
     public function getConcerts()

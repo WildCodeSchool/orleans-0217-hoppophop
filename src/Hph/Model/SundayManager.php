@@ -12,6 +12,16 @@ use Hph\ImgValidator;
 use Hph\TextValidator;
 use PDO;
 
+/*
+ * Permet de :
+ * - Ajouter une activité du dimanche (addSunday)
+ * - Modifier une activité du dimanche (updateSunday)
+ * - Supprimer une activité du dimanche (deleteSunday)
+ * - Voir les classes ImgValidator, TextValidator pour le fonctionnement des validateurs
+ *
+ * Permet de récupérer :
+ * - Toutes les acitivtés du diamanche (getSunday)
+ */
 class SundayManager extends \Hph\Db
 {
     public function getSunday()

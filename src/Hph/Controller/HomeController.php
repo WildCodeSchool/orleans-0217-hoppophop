@@ -3,6 +3,7 @@
 namespace Hph\Controller;
 use Hph\Model\NewsManager;
 use Hph\Model\ArtistManager;
+use Hph\Model\PartnerManager;
 
 class HomeController extends ControllerDefault
 {
@@ -21,12 +22,17 @@ class HomeController extends ControllerDefault
         $artists = new ArtistManager();
         return $artists -> getArtists();
     }
+    private function getPartnerFooter()
+    {
+        $partners = new PartnerManager();
+        return $partners -> getPartnerFooter();
+    }
     public function render()
     {
         $news = $this->getNews();
         $breaking = $this->getBreakingNews();
         $artists = $this->getArtists();
-        $partner = $this->getPartner();
-        return $this->twig->render('home.html.twig', ['newsAll'=>$news, 'newsBreaking'=>$breaking, 'artists'=>$artists, 'partners'=>$partner]);
+        $partners = $this->getPartnerFooter();
+        return $this->twig->render('home.html.twig', ['newsAll'=>$news, 'newsBreaking'=>$breaking, 'artists'=>$artists, 'partners'=>$partners]);
     }
 }

@@ -8,6 +8,22 @@
 
 namespace Hph;
 
+/*
+ * Validateur d'image :
+ * - Le constructeur prend un paramêtre $img qui contient $_FILES (l'image envoyé et ses infos)
+ * - A partir de ce tableau, le constructeur va remplir les différentes propriétés de l'objet : l'extension ($ext), la largeur ($width), la hauteur ($height), le poids ($size)
+ *
+ * La classe dispose de 4 constantes :
+ * - EXT : le tableau des extensions authorisées
+ * - WIDTH : la largeur maximale authorisée
+ * - HEIGHT : la hauteur maximale authorisée
+ * - SIZE : le poids maximal authorisé
+ *
+ * La méthode validate vérifié la validité de l'image :
+ * - Si l'extension n'est pas authorisée, le validateur retourne le code d'erreur 4 (extension de l'image non authorisée)
+ * - Si l'image est trop haute ou trop large, le validateur retourne le code d'erreur 5 (dimensions de l'image incorrectes)
+ * - Si l'image est trop lourde, le validateur retourne le code d'erreur 6 (image trop lourde)
+ */
 
 class ImgValidator
 {

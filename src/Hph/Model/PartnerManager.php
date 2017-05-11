@@ -11,6 +11,12 @@ use Hph\ImgValidator;
 use Hph\TextValidator;
 use PDO;
 
+/*
+ * Permet de :
+ * - Ajouter un partenaire (addPartner)
+ * - Supprimer un partenaire (deletePartner)
+ * - Voir les classes ImgValidator et TextValidator pour le fonctionnement des validateurs
+ */
 class PartnerManager extends \Hph\Db
 {
     public function getPartner()
@@ -18,6 +24,11 @@ class PartnerManager extends \Hph\Db
         $req = "SELECT * FROM partner ORDER BY type ASC";
         return $this->dBQuery($req, 'Partner');
 
+    }
+    public function getPartnerFooter()
+    {
+        $req = "SELECT * FROM partner WHERE footer=1";
+        return $this->dBQuery($req, 'Partner');
     }
     public function addPartner($post, $file)
     {
