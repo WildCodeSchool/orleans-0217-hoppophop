@@ -56,7 +56,7 @@ class ProgrammationController extends ControllerDefault
 
 
         $progManager = new ProgrammationManager();
-        $artistes = $progManager->getArtistes($_GET);
+        $artistes = $progManager->getArtistes($_POST);
 
         $partner = $this->getPartner();
         return $this->twig->render('programmation.html.twig', ['artists' => $artistes,
