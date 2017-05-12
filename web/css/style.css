@@ -691,17 +691,23 @@ ul > a:focus {
     width: 190px;
     color: white;
     font-size: 20px;
+    padding: 4px;
 }
 
 .styled-select select {
     background: transparent;
     border: none;
     font-size: 14px;
-    height: 50px;
-    padding: 15px; /* If you add too much padding here, the options won't show in IE */
+    height: 25px;
+    padding: 5px; /* If you add too much padding here, the options won't show in IE */
     width: 170px;
+    margin-left: 13px;
+    margin-bottom: 20px;
 
 
+}
+.btn-filtre {
+    padding: 8px;
 }
 .blue {
     background-color: #18252e;
@@ -718,6 +724,7 @@ a:active
 {
     outline:none;
 }
+
 
 /* ~~~~~> End Programmation <~~~~~ */
 
