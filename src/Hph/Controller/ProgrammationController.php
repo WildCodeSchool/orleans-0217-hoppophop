@@ -61,7 +61,6 @@ class ProgrammationController extends ControllerDefault
         $partner = $this->getPartner();
         return $this->twig->render('programmation.html.twig', ['artists' => $artistes,
                                                                 'places' => $places,
-                                                                'partners'=>$partner,
                                                                 'error'=>$_GET['error'],
                                                                 'lieuSelected' => $_GET['lieux'] ?? '',
                                                                 'soirSelected' => $_GET['day'] ?? '',
