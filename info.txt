@@ -1,0 +1,5 @@
+Password SQL = 5J7mEMNJ@DA5QZjj4GqEnD6XuU^kb^kN
+
+Accès SSH = ssh -p2226 ubuntu@92.222.74.168
+
+Root :  root / ee4pahD6
