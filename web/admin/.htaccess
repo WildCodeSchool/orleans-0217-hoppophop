@@ -1,4 +1,4 @@
 AuthName "Page d'administration du site Hop Pop Hop : Identification"
 AuthType Basic
-AuthUserFile "/home/ubuntu/projets/projet/admin/.htpasswd"
+AuthUserFile "/home/ubuntu/hoppophop/web/admin/.htpasswd"
 Require valid-user
