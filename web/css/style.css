@@ -449,13 +449,11 @@ ul > a:focus {
     text-align: center;
     width: 280px;
     padding-top: 3%;
-    color: #2baf97;
-    border: 2px solid #2baf97;
-    box-shadow: -8px 2px #2baf97;
-    transform: perspective(10em) rotateY(15deg);
-    height: 50px;
+    color: #ed7a22;
+    border: 2px solid #ed7a21;
+    box-shadow: 2px 2px 0 #ed7a22;
     width: 15%;
-    animation-name: neon;
+    animation-name: neonbis;
     animation-timing-function: ease-in;
     animation-duration: 0.8s;
     animation-play-state: paused;
@@ -525,8 +523,8 @@ ul > a:focus {
 .left-text {
     margin-left: 2%;
     margin-top: 0;
-    border-top: 5px solid #004e57;
-    border-bottom: 6px solid #004e57;
+    border-top: 6px solid #a54d1e;
+    border-bottom: 6px solid #a54d1e;
 
     padding-bottom: -3%;
     vertical-align: 10%;
