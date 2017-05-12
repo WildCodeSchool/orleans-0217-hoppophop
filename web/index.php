@@ -9,10 +9,12 @@ if(!isset($_GET['error'])){
 if(isset($_GET['page'])){
     $page = $_GET['page'];
 }else {
-    $page = 'home';
+    $page = '';
 }
 
-if($page == 'home') {
+if($page == ''){
+    require('maintenance.html');
+}else if($page == 'home') {
     $home = new Hph\Controller\HomeController();
     $render = $home->render();
 }else if($page == 'programmation'){
