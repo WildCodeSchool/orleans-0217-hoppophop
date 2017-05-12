@@ -615,7 +615,7 @@ ul > a:focus {
 @media (max-width: 1110px) {
     .prog-dropdown {
         display: inline;
-        margin: 0;
+        margin: 0px;
     }
 }
 
