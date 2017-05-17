@@ -520,8 +520,8 @@ ul > a:focus {
     animation-iteration-count: 4;
 }
 
-.left-text {
-    margin-left: 2%;
+.right-text {
+    margin-right: 2%;
     margin-top: 0;
     border-top: 6px solid #a54d1e;
     border-bottom: 6px solid #a54d1e;
@@ -535,8 +535,8 @@ ul > a:focus {
     border-bottom: 6px solid #a54d1e;
 }
 
-.right-text {
-    margin-right: 2%;
+.left-text {
+    margin-left: 2%;
     font-size: 1.4em;
 }
 
