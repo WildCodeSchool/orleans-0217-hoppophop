@@ -33,7 +33,16 @@ class ArtistManager extends \Hph\Db
         $prep->execute();
         return $prep->fetch();
     }
+    public function findOneId($id)
+    {
 
+        $req = "SELECT * FROM artist WHERE id = :id";
+        $prep = $this->getDb()->prepare($req);
+        $prep->setFetchMode(\PDO::FETCH_CLASS, __NAMESPACE__ .'\Artist');
+        $prep->bindValue(':id', $id, PDO::PARAM_STR);
+        $prep->execute();
+        return $prep->fetch();
+    }
     public function findArtistTag($artist_id)
     {
         $req = "SELECT tag.name FROM tag WHERE artist_id = $artist_id";

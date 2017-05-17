@@ -65,8 +65,8 @@ class PlanningController extends ControllerDefault
             // recupération de l'artiste correspondant à $artistId
             $artistId = $concert['artist_id'];
             $artistManager = new ArtistManager();
-            $artists = $artistManager->findOne($artistId);
-            $artist = $artists[0];
+            $artists = $artistManager->findOneId($artistId);
+            $artist = $artists;
             // recupération du lieu correspondant à $placeId
             $placeId = $concert['place_id'];
             $placeManager = new PlaceManager();
