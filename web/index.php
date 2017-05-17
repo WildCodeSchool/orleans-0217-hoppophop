@@ -20,7 +20,7 @@ if($page == ''){
 }else if($page == 'programmation'){
     $page = new Hph\Controller\ProgrammationController();
     $render = $page->listArtist();
-}else if($page == 'artist'){
+}else if($page == 'artiste'){
     $artiste = new Hph\Controller\ArtistController();
     $render = $artiste->showArtist($_GET['id']);
 }else if($page == 'planning'){
@@ -47,7 +47,7 @@ if($page == ''){
 }else if($page == 'dimaorl') {
     $dimaorl = new Hph\Controller\DimaorlController();
     $render = $dimaorl->render();
-}else if($page == 'partner') {
+}else if($page == 'partenaires') {
     $partner = new Hph\Controller\PartnerController();
     $render = $partner->render();
 }else if($page == 'contact') {
