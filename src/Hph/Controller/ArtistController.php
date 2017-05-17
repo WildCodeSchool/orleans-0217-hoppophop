@@ -11,13 +11,13 @@ use Hph\Model\ArtistManager;
 
 class ArtistController extends ControllerDefault
 {
-    public function showArtist($id)
+    public function showArtist($slug)
     {
         // appel au modèle
         $artistManager = new ArtistManager();
-        $artists = $artistManager->findOne($id);
-        $tags = $artistManager->findArtistTag($id);
-        $progs = $artistManager->findProg($id);
+        $artists = $artistManager->findOne($slug);
+        $tags = $artistManager->findArtistTag($artists[0]->id);
+        $progs = $artistManager->findProg($artists[0]->id);
 
         //recupere le tags pour un artist
         // appelle ton modèle $tags = Tag->findArtistTags($artist_id); // select * from tags where artist_id = $artist_id;
