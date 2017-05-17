@@ -128,7 +128,7 @@ class ProgrammationManager extends \Hph\Db
         if($rSpotify!==true){
             return $rSpotify;
         }
-        $query = "INSERT INTO artist VALUES (NULL, :name, :content, :img, :video_url, :facebook_url, :youtube_url, :twitter_url, :spotify_url, :local)";
+        $query = "INSERT INTO artist VALUES (NULL, :name, :content, :img, :video_url, :facebook_url, :youtube_url, :twitter_url, :spotify_url, :local, :slug)";
         $prep = $this->getDb()->prepare($query);
         $prep->bindValue(':name', $post['name'], PDO::PARAM_STR);
         $prep->bindValue(':content', $post['content'], PDO::PARAM_STR);
@@ -138,6 +138,7 @@ class ProgrammationManager extends \Hph\Db
         $prep->bindValue(':youtube_url', $post['youtube_url'], PDO::PARAM_STR);
         $prep->bindValue(':twitter_url', $post['twitter_url'], PDO::PARAM_STR);
         $prep->bindValue(':spotify_url', $post['spotify_url'], PDO::PARAM_STR);
+        $prep->bindValue(':slug', $this->slugArtist($post['name']), PDO::PARAM_STR);
         $prep->bindValue(':local', $post['local'], PDO::PARAM_INT);
         $this->addImg($file, 'artist');
         return $prep->execute();
@@ -193,9 +194,9 @@ class ProgrammationManager extends \Hph\Db
         }
         if ($file['img']['name'] != '') {
             $file['img']['name'] = $this->nameImg($file['img']['name']);
-            $query = "UPDATE artist SET name = :name, bio = :content, img_artist = :img, video_url = :video_url, facebook_url = :facebook_url, youtube_url = :youtube_url, twitter_url = :twitter_url, spotify_url = :spotify_url, local = :local WHERE id = :id";
+            $query = "UPDATE artist SET name = :name, slug = :slug, bio = :content, img_artist = :img, video_url = :video_url, facebook_url = :facebook_url, youtube_url = :youtube_url, twitter_url = :twitter_url, spotify_url = :spotify_url, local = :local WHERE id = :id";
         } else {
-            $query = "UPDATE artist SET name = :name, bio = :content, video_url = :video_url, facebook_url = :facebook_url, youtube_url = :youtube_url, twitter_url = :twitter_url, spotify_url = :spotify_url, local = :local WHERE id = :id";
+            $query = "UPDATE artist SET name = :name, slug = :slug, bio = :content, video_url = :video_url, facebook_url = :facebook_url, youtube_url = :youtube_url, twitter_url = :twitter_url, spotify_url = :spotify_url, local = :local WHERE id = :id";
         }
 
         if (isset($post['tags']) && $post['tags'] != '') {
@@ -214,6 +215,7 @@ class ProgrammationManager extends \Hph\Db
 
         $prep = $this->getDb()->prepare($query);
         $prep->bindValue(':name', $post['name'], PDO::PARAM_STR);
+        $prep->bindValue(':slug', $this->slugArtist($post['name']), PDO::PARAM_STR);
         $prep->bindValue(':content', $post['content'], PDO::PARAM_STR);
         $prep->bindValue(':video_url', $post['video_url'], PDO::PARAM_STR);
         $prep->bindValue(':facebook_url', $post['facebook_url'], PDO::PARAM_STR);
