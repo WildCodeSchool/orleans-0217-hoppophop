@@ -7,6 +7,7 @@
  */
 
 namespace Hph\Model;
+use PDO;
 
 /*
  * Permet de récupérer les infos sur :
@@ -24,9 +25,13 @@ class ArtistManager extends \Hph\Db
     }
     public function findOne($slug)
     {
-        $req = "SELECT * FROM artist WHERE slug = $slug";
-        return $this->dBQuery($req, 'Artist');
 
+        $req = "SELECT * FROM artist WHERE slug = :slug";
+        $prep = $this->getDb()->prepare($req);
+        $prep->setFetchMode(\PDO::FETCH_CLASS, __NAMESPACE__ .'\Artist');
+        $prep->bindValue(':slug', $slug, PDO::PARAM_STR);
+        $prep->execute();
+        return $prep->fetch();
     }
 
     public function findArtistTag($artist_id)
