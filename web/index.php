@@ -26,19 +26,19 @@ if($page == ''){
 }else if($page == 'planning'){
     $planning = new \Hph\Controller\PlanningController();
     $render = $planning->showPlanning();
-}else if($page == 'ticket') {
+}else if($page == 'billeterie') {
     $ticket = new Hph\Controller\TicketController();
     $render = $ticket->render();
 }else if($page == 'cashless') {
     $cashless = new \Hph\Controller\CashlessController();
     $render = $cashless->render();
-}else if($page == 'food') {
+}else if($page == 'animations') {
     $food = new Hph\Controller\FoodController();
     $render = $food->render();
-}else if($page == 'place') {
+}else if($page == 'lieux') {
     $place = new Hph\Controller\PlaceController();
     $render = $place->render();
-}else if($page == 'volunteer') {
+}else if($page == 'benevolat') {
     $volunteer = new Hph\Controller\VolunteerController();
     $render = $volunteer->render();
 }else if($page == 'transport') {
