@@ -20,7 +20,7 @@ if($page == ''){
 }else if($page == 'programmation'){
     $page = new Hph\Controller\ProgrammationController();
     $render = $page->listArtist();
-}else if($page == 'artist'){
+}else if($page == 'artiste'){
     $artiste = new Hph\Controller\ArtistController();
     $render = $artiste->showArtist($_GET['id']);
 }else if($page == 'planning'){
