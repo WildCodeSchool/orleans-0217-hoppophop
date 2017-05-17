@@ -25,6 +25,7 @@ class ArtistManager extends \Hph\Db
     }
     public function findOne($slug)
     {
+
         $req = "SELECT * FROM artist WHERE slug = :slug";
         $prep = $this->getDb()->prepare($req);
         $prep->setFetchMode(\PDO::FETCH_CLASS, __NAMESPACE__ .'\Artist');
