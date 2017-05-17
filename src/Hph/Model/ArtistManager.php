@@ -27,10 +27,10 @@ class ArtistManager extends \Hph\Db
     {
         $req = "SELECT * FROM artist WHERE slug = :slug";
         $prep = $this->getDb()->prepare($req);
+        $prep->setFetchMode(\PDO::FETCH_CLASS, __NAMESPACE__ .'\Artist');
         $prep->bindValue(':slug', $slug, PDO::PARAM_STR);
-        return $prep->execute();
-        //return $this->dBQuery($req, 'Artist');
-
+        $prep->execute();
+        return $prep->fetch();
     }
 
     public function findArtistTag($artist_id)

@@ -21,6 +21,26 @@ class Artist
     private $twitter_url;
     private $spotify_url;
     private $tags;
+    private $slug;
+
+    /**
+     * @return mixed
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param mixed $slug
+     * @return Artist
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+        return $this;
+    }
+
     /**
      * @return mixed
      */
