@@ -119,4 +119,12 @@ class Db
     {
         return rand(0,9999999).'_'.$name;
     }
+
+    public function slugArtist($name)
+    {
+        $name = strtolower($name);
+        $name = str_replace(' ', '-', $name);
+        $name = str_replace('\'', '-', $name);
+        return $name;
+    }
 }

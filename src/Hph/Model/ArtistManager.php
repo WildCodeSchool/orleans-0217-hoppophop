@@ -22,9 +22,9 @@ class ArtistManager extends \Hph\Db
         $req = "SELECT * FROM artist";
         return $this->dBQuery($req, 'Artist');
     }
-    public function findOne($id)
+    public function findOne($slug)
     {
-        $req = "SELECT * FROM artist WHERE id = $id";
+        $req = "SELECT * FROM artist WHERE slug = $slug";
         return $this->dBQuery($req, 'Artist');
 
     }
