@@ -47,7 +47,7 @@ if($page == ''){
 }else if($page == 'dimaorl') {
     $dimaorl = new Hph\Controller\DimaorlController();
     $render = $dimaorl->render();
-}else if($page == 'partner') {
+}else if($page == 'partenaires') {
     $partner = new Hph\Controller\PartnerController();
     $render = $partner->render();
 }else if($page == 'contact') {
