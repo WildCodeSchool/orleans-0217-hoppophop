@@ -29,10 +29,10 @@
             {% endfor %}
         </div>
         <hr class="hr">
-        <h2 class="text-center white font-circula">Partenaires Médiatiques</h2>
+        <h2 class="text-center white font-circula">Partenaires Privés</h2>
         <div class="row">
             {%  for partenaire in partenaires %}
-                {% if partenaire.type == 'média' %}
+                {% if partenaire.type == 'privé' %}
                     <div class="col-md-4 col-xs-4">
                         <a href="{{ partenaire.url }}" class="thumbnail thumbnail-div partnair-logo">
                             <img src="../../../img/partner/{{ partenaire.imgPartner }}" class="img-responsive">
@@ -42,10 +42,10 @@
             {% endfor %}
         </div>
         <hr class="hr">
-        <h2 class="text-center white font-circula">Partenaires Privés</h2>
+        <h2 class="text-center white font-circula">Partenaires Médias</h2>
         <div class="row">
             {%  for partenaire in partenaires %}
-                {% if partenaire.type == 'privé' %}
+                {% if partenaire.type == 'média' %}
                     <div class="col-md-4 col-xs-4">
                         <a href="{{ partenaire.url }}" class="thumbnail thumbnail-div partnair-logo">
                             <img src="../../../img/partner/{{ partenaire.imgPartner }}" class="img-responsive">
