@@ -237,12 +237,19 @@ class ProgrammationManager extends \Hph\Db
         $preptag = $this->getDb()->prepare($querytag);
         $preptag->bindValue(':id', $id, PDO::PARAM_INT);
         if($preptag->execute()){
-            $query = "DELETE FROM artist WHERE id = :id";
-            $prep = $this->getDb()->prepare($query);
-            $prep->bindValue(':id', $id, PDO::PARAM_INT);
-            $this->supprImg($id, 'artist');
-            return $prep->execute();
+            $queryconcert = "DELETE FROM concert WHERE artist_id = :artist_id";
+            $prepconcert = $this->getDb()->prepare($queryconcert);
+            $prepconcert->bindValue(':artist_id', $id, PDO::PARAM_INT);
+            if($prepconcert->execute()){
+                $query = "DELETE FROM artist WHERE id = :id";
+                $prep = $this->getDb()->prepare($query);
+                $prep->bindValue(':id', $id, PDO::PARAM_INT);
+                $this->supprImg($id, 'artist');
+                return $prep->execute();
+            }
+            return 0;
         }
+        return 0;
     }
 
     public function getArtistes(array $params) : array
