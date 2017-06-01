@@ -20,7 +20,7 @@ class ArtistManager extends \Hph\Db
 {
     public function getArtists()
     {
-        $req = "SELECT * FROM artist";
+        $req = "SELECT * FROM artist  ORDER BY artist.name";
         return $this->dBQuery($req, 'Artist');
     }
     public function findOne($slug)

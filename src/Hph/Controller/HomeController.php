@@ -4,7 +4,6 @@ namespace Hph\Controller;
 use Hph\Model\NewsManager;
 use Hph\Model\ArtistManager;
 use Hph\Model\PartnerManager;
-use Hph\Model\ProgrammationManager;
 
 class HomeController extends ControllerDefault
 {
@@ -20,8 +19,8 @@ class HomeController extends ControllerDefault
     }
     private function getArtists()
     {
-        $artists = new ProgrammationManager();
-        return $artists->allArtist();
+        $artists = new ArtistManager();
+        return $artists -> getArtists();
     }
     private function getPartnerFooter()
     {
