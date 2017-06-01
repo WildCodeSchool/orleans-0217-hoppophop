@@ -122,7 +122,7 @@ class Db
 
     public function slugArtist($name)
     {
-        $name = strtolower($name);
+        $name = strtolower(trim($name));
         $name = str_replace(' ', '-', $name);
         $name = str_replace('\'', '-', $name);
         return $name;
