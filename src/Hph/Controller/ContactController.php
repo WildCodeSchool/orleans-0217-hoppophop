@@ -23,7 +23,7 @@ class ContactController extends ControllerDefault
             ->setSubject($post['subject'])
             ->setFrom(array($post['email'] => $post['name']))
             ->setReplyTo($post['email'])
-            ->setTo(array('quentin.riandiere@gmail.com'))//A remplacer par l'adresse mail du client
+            ->setTo(array('communication@lastrolabe.org'))//A remplacer par l'adresse mail du client
             ->setBody($post['text']);
         $result = $mailer->send($message);
         return $this->render($result);
