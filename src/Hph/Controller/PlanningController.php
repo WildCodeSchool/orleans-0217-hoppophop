@@ -94,6 +94,8 @@ class PlanningController extends ControllerDefault
             $artistManager = new ArtistManager();
             $artists = $artistManager->findOne($artistId);
             $artist = $artists[0];
+            var_dump($artist);
+            die();
             // recupération du lieu correspondant à $placeId
             $placeId = $showcase['place_id'];
             $placeManager = new PlaceManager();
