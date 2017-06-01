@@ -12,9 +12,7 @@ if(isset($_GET['page'])){
     $page = '';
 }
 
-if($page == ''){
-    require('maintenance.html');
-}else if($page == 'home') {
+if($page == 'home') {
     $home = new Hph\Controller\HomeController();
     $render = $home->render();
 }else if($page == 'programmation'){
