@@ -2,6 +2,7 @@
 {% block title %}Planning{% endblock %}
 {% block titleMobile %}PLANNING{% endblock %}
 {% block content %}
+    {{ dump(progShow) }}
     <div class="container text-center">
         <h2 class="separator-title hidden-sm hidden-xs font-dokyo">VENDREDI</h2>
         <hr class="hr hidden-xs hidden-sm">
@@ -45,8 +46,8 @@
                     <div class="col-md-2 hidden-sm hidden-xs col-lieu bordercolor">
                         {% for heure,values in progLieu %}
                             <div class=" hidden-sm hidden-xs">
-                                <a href="/artiste/{{ values.artist.slug }}">
-                                    <div class="planning-show show-blue font-bebas {% if values.showcase.status == 'canceled' %}planning-cancel{%endif%}"><p class="artist font-bebas">{{ values.artist.name|upper }}<br/><span class="{% if values.showcase.status == 'canceled' %}cancel-hidden{% endif %} heure font-bebas">{{ heure }}</span></p>
+                                <a href="/artiste/{{ values.artiste.slug }}">
+                                    <div class="planning-show show-blue font-bebas {% if values.showcase.status == 'canceled' %}planning-cancel{%endif%}"><p class="artist font-bebas">{{ values.artiste.name|upper }}<br/><span class="{% if values.showcase.status == 'canceled' %}cancel-hidden{% endif %} heure font-bebas">{{ heure }}</span></p>
                                         {% if values.showcase.status == 'canceled' %}
                                             <p class="plan-cancel font-dokyo">Annulé</p>
                                         {% endif %}
